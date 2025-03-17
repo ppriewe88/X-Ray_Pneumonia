@@ -17,6 +17,8 @@ def generate_data(chosen_test_size):
     digits = load_digits(return_X_y=True)
     data = digits[0]
     targets = digits[1]
+    1=2
+    # blablabla
 
     #%%  Onehotencoding
     onehot = OneHotEncoder(sparse_output=False)
