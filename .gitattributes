@@ -1,3 +1,4 @@
+*.keras filter=lfs diff=lfs merge=lfs -text
 /data/test/NORMAL/IM-0001-0001.jpeg filter=lfs diff=lfs merge=lfs -text
 /data/test/NORMAL/IM-0003-0001.jpeg filter=lfs diff=lfs merge=lfs -text
 /data/test/NORMAL/IM-0005-0001.jpeg filter=lfs diff=lfs merge=lfs -text
