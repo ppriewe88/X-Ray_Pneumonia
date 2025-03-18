@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/106513280649305973/fb4bb4ee4eba4891bf8e308ade6a8562/artifacts
+end_time: 1742319481325
+entry_point_name: ''
+experiment_id: '106513280649305973'
+lifecycle_stage: active
+run_id: fb4bb4ee4eba4891bf8e308ade6a8562
+run_name: wise-ray-956
+run_uuid: fb4bb4ee4eba4891bf8e308ade6a8562
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1742319467391
+status: 3
+tags: []
+user_id: pprie

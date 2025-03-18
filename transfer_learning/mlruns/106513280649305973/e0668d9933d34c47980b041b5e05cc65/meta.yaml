@@ -1,0 +1,16 @@
+artifact_uri: mlflow-artifacts:/106513280649305973/e0668d9933d34c47980b041b5e05cc65/artifacts
+deleted_time: 1742301344224
+end_time: 1742301229024
+entry_point_name: ''
+experiment_id: '106513280649305973'
+lifecycle_stage: deleted
+run_id: e0668d9933d34c47980b041b5e05cc65
+run_name: dapper-fox-624
+run_uuid: e0668d9933d34c47980b041b5e05cc65
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1742301227902
+status: 4
+tags: []
+user_id: pprie

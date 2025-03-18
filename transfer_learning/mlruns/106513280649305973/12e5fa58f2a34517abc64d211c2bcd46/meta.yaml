@@ -1,0 +1,16 @@
+artifact_uri: mlflow-artifacts:/106513280649305973/12e5fa58f2a34517abc64d211c2bcd46/artifacts
+deleted_time: 1742315588447
+end_time: 1742312028216
+entry_point_name: ''
+experiment_id: '106513280649305973'
+lifecycle_stage: deleted
+run_id: 12e5fa58f2a34517abc64d211c2bcd46
+run_name: funny-cub-491
+run_uuid: 12e5fa58f2a34517abc64d211c2bcd46
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1742312010502
+status: 3
+tags: []
+user_id: pprie
