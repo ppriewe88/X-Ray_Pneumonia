@@ -1,0 +1,16 @@
+artifact_uri: mlflow-artifacts:/106513280649305973/8492b36d28e3408f9b2e9ead73ca48b9/artifacts
+deleted_time: 1742301344269
+end_time: 1742300249228
+entry_point_name: ''
+experiment_id: '106513280649305973'
+lifecycle_stage: deleted
+run_id: 8492b36d28e3408f9b2e9ead73ca48b9
+run_name: righteous-tern-405
+run_uuid: 8492b36d28e3408f9b2e9ead73ca48b9
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1742300121858
+status: 4
+tags: []
+user_id: pprie

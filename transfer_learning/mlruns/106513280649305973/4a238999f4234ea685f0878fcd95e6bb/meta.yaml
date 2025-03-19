@@ -1,0 +1,16 @@
+artifact_uri: mlflow-artifacts:/106513280649305973/4a238999f4234ea685f0878fcd95e6bb/artifacts
+deleted_time: 1742301344265
+end_time: 1742300321598
+entry_point_name: ''
+experiment_id: '106513280649305973'
+lifecycle_stage: deleted
+run_id: 4a238999f4234ea685f0878fcd95e6bb
+run_name: kindly-lynx-523
+run_uuid: 4a238999f4234ea685f0878fcd95e6bb
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1742300259514
+status: 4
+tags: []
+user_id: pprie

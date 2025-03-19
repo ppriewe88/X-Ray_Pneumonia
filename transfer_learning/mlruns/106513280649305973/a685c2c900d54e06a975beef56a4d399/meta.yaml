@@ -1,0 +1,16 @@
+artifact_uri: mlflow-artifacts:/106513280649305973/a685c2c900d54e06a975beef56a4d399/artifacts
+deleted_time: 1742301344257
+end_time: 1742300432623
+entry_point_name: ''
+experiment_id: '106513280649305973'
+lifecycle_stage: deleted
+run_id: a685c2c900d54e06a975beef56a4d399
+run_name: learned-duck-516
+run_uuid: a685c2c900d54e06a975beef56a4d399
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1742300369946
+status: 4
+tags: []
+user_id: pprie
