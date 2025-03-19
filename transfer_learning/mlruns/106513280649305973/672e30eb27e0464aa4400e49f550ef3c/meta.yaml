@@ -1,0 +1,16 @@
+artifact_uri: mlflow-artifacts:/106513280649305973/672e30eb27e0464aa4400e49f550ef3c/artifacts
+deleted_time: 1742301344225
+end_time: 1742301216466
+entry_point_name: ''
+experiment_id: '106513280649305973'
+lifecycle_stage: deleted
+run_id: 672e30eb27e0464aa4400e49f550ef3c
+run_name: efficient-wren-362
+run_uuid: 672e30eb27e0464aa4400e49f550ef3c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1742301215604
+status: 4
+tags: []
+user_id: pprie
