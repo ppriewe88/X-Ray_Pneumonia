@@ -24,12 +24,13 @@ print('max pixel value = ', img_array.max())
 
 BATCH_SIZE = 128
 IMG_SIZE = 256
-EPOCHS = 200
+EPOCHS = 100
 
 loss_func = "binary_crossentropy"
-learning_rate = 0.005
+learning_rate = 0.01
 momentum = 0.8
 optimizer = keras.optimizers.SGD(learning_rate= learning_rate, momentum = momentum)
+dropout_rate = 0.3
 tag = "Own CNN"
 
 # params for mlflow; will need to add more 
@@ -39,6 +40,7 @@ params_dict = {
     "optimizer": optimizer,
     "learning_rate": learning_rate,
     "momentum": momentum,
+    "dropout_rate": dropout_rate,
     "tag": tag }
 
 
@@ -49,7 +51,7 @@ train_data, val_data = keras.utils.image_dataset_from_directory(
     r'/home/anandrei90/pneumonia_project/data/train',
     labels='inferred',              # labels are generated from the directory structure
     label_mode='binary',            # 'binary' => binary cross-entropy
-    # class_names=class_names_list, # such that i can control the order of the class names
+    # class_names=class_names_list, # such that i can control the order of the class names; otherwise alphanumerical order is used (i.e. 0 for normal, 1 for pneumonia)
     color_mode='grayscale',         # alternatives: 'grayscale', 'rgba'
     batch_size=BATCH_SIZE,
     image_size=(IMG_SIZE, IMG_SIZE),
@@ -73,7 +75,31 @@ input_example = np.expand_dims(input_example, axis=0)
 # print('batch shape = ', list(batch)[0][0].numpy().shape) # (BATCH_SIZE, IMG_SIZE, IMG_SIZE, 1)
 
 
-def get_model(): # parameters to be added later: add_dropout = True, dropout_rate = 0.3, add_batch_normalization = True
+# get class weights
+
+def get_class_weights():
+
+    all_labels = np.array([])
+    
+    for _, y in train_data:
+        y_flat = y.numpy().flatten()
+        all_labels = np.concatenate((all_labels,y_flat))
+
+    label_counts = [np.sum(all_labels == i) for i in range(2)]
+
+    class_weights = 0.5 * np.sum(label_counts) / label_counts
+    class_weights = np.around(class_weights,2)
+
+    class_weights_dict = dict(enumerate(class_weights))
+    
+    return class_weights_dict
+
+
+class_weights_dict = get_class_weights()
+params_dict.update({"class_weights": class_weights_dict})
+
+
+def get_model(dropout_rate): # parameters to be added later: add_dropout = True, dropout_rate = 0.3, add_batch_normalization = True
     
     inputs = keras.layers.Input(shape=(IMG_SIZE, IMG_SIZE, 1))
     
@@ -121,6 +147,9 @@ def get_model(): # parameters to be added later: add_dropout = True, dropout_rat
     x = keras.layers.Flatten()(x) # output shape = 512
     x = keras.layers.Dense(64, activation="relu", kernel_regularizer = None)(x)
     
+    if dropout_rate > 0:
+        x = keras.layers.Dropout(dropout_rate)(x)
+
     #Final Layer (Output)
     output = keras.layers.Dense(1, activation='sigmoid')(x)
     
@@ -129,7 +158,7 @@ def get_model(): # parameters to be added later: add_dropout = True, dropout_rat
     return model
 
 
-model = get_model()
+model = get_model(dropout_rate)
 
 metrics = ["accuracy", "f1_score"]
 
@@ -147,9 +176,6 @@ buffer = io.StringIO()
 model.summary(print_fn=lambda x: buffer.write(x + '\n'))
 summary_str = buffer.getvalue()
 
-# TO DO:
-# add class weights
-# add callbacks
 
 
 start = time.time()
@@ -160,7 +186,7 @@ history = model.fit(
     train_data, 
     epochs = EPOCHS, 
     verbose = True,
-    # class_weight = class_weights_dict,
+    class_weight = class_weights_dict,
     validation_data = val_data,
     # callbacks = [lr_reduction, model_checkpoint_callback]
     )
@@ -169,15 +195,8 @@ history = model.fit(
 print(f'Training time = {time.time() - start} sec')
 
 
-
-
-
-
-
-
-# validation_metrics_values = [history.history['val_' + metric] for metric in metrics] # mlflow logs only numbers/strings for metrics, not lists
 validation_metrics = ['val_' + metric for metric in metrics]
-validation_metrics_values = [history.history['val_' + metric][-1] for metric in metrics] 
+validation_metrics_values = [history.history['val_' + metric][-1] for metric in metrics] # mlflow logs only numbers/strings for metrics, not lists
 metrics_dict = dict(zip(validation_metrics, validation_metrics_values)) # for mlflow logging
 
 
@@ -220,16 +239,18 @@ experiment_tags = {
 # returns the Experiment metadata
 mlflow.set_experiment("convolutional_net_training")
     
-# First step: run "mlflow server --host 127.0.0.1 --port 8080" in a different terminal to open the server
+# First step: run "mlflow server --host 127.0.0.1 --port 8080" in a different terminal to open the server; 
+# Make sure that both the python script and rhe mlflow server command are ran from the same folder !!!!!! (in the current case, the folder is "own_model_training") 
 # When http://127.0.0.1:8080 displays nonsense, one can try to do a hard refresh while on the webpage with Crtl+Shift+R (worked for me)   
  
-mlflow.set_tracking_uri("http://127.0.0.1:8080")    
+mlflow.set_tracking_uri("http://127.0.0.1:8080")
     
 
 
 # Define a run name for this iteration of training.
 # If this is not set, a unique name will be auto-generated for your run.
-run_name = "cnn_train_1"
+
+run_name = "cnn_train_2"
 
 # Define an artifact path that the model will be saved to.
 artifact_path = "cnn_artifacts"
@@ -252,8 +273,9 @@ with mlflow.start_run(run_name=run_name) as run:
     mlflow.log_text(summary_str, "model_summary.txt")
 
     # Set a tag that we can use to remind ourselves what this run was for
-    mlflow.set_tag("Training Info", "1st run: no batchnorm and no dropout layers")
-
+    
+    mlflow.set_tag("Training Info", "2nd run: added class weighting and a dropout layer after the dense layer")
+    
     # Infer the model signature
     signature = mlflow.models.infer_signature(input_example, prediction_example)
 
