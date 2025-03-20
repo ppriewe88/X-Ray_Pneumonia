@@ -218,7 +218,7 @@ experiment_tags = {
 
 # Sets the current active experiment to the "own_model_training" experiment and
 # returns the Experiment metadata
-mlflow.set_experiment("convolutional_net__training")
+mlflow.set_experiment("convolutional_net_training")
     
 # First step: run "mlflow server --host 127.0.0.1 --port 8080" in a different terminal to open the server
 # When http://127.0.0.1:8080 displays nonsense, one can try to do a hard refresh while on the webpage with Crtl+Shift+R (worked for me)   
