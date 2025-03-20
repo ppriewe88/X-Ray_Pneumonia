@@ -1,20 +1,15 @@
 import time
-
-
-import os
-
-# You can use 'tensorflow', 'torch' or 'jax' as backend. Make sure to set the environment variable before importing Keras.
-os.environ["KERAS_BACKEND"] = "tensorflow"
+import io
 
 import numpy as np
 import matplotlib.pyplot as plt
 from tensorflow import keras
 import mlflow
-from PIL import Image
+from mlflow import MlflowClient
+#from PIL import Image
 
 
-# params to log: model_summary (as string), parameters from get_model() function, learning curves + metrics, 
-# infer model signature (gives input shape and output shape)
+
 
 '''
 img = Image.open("./data/train/PNEUMONIA/person2_bacteria_4.jpeg")
@@ -24,50 +19,34 @@ print('image shape = ', img_array.shape)
 print('max pixel value = ', img_array.max())
 '''
 
-'''
-
-# params for training
-BATCHSIZE = 1000
-IMGSIZE = 256
-CHOSEN_EPOCHS = 5
-dense_layer_top_neurons = 128
-dense_layer_top_activation = "relu"
-dropout_rate_top = 0.1
-chosen_loss = "binary_crossentropy"
-chosen_optimizer = "adam"
-chosen_learning_rate = 0.001
-data_path = os.path.join("..","data/train/")
-tag = "ResNet + Dense Top"
-
-# params for mlflow
-params = {"batch size": BATCHSIZE,
-          "image size": IMGSIZE,
-          "epochs": CHOSEN_EPOCHS,
-          "top dense layer neurons": dense_layer_top_neurons,
-          "top dense layer activation": dense_layer_top_activation,
-          "top dropout rate": dropout_rate_top,
-          "loss": chosen_loss,
-          "optimizer": chosen_optimizer,
-          "learning rate": chosen_learning_rate,
-          "momentum": momentum
-          "data": data_path,
-          "tag": tag}
-mlflow_tracking = True
-
-'''
-
-
-
+# params to log: model_summary (as string), parameters from get_model() function, learning curves + metrics, 
+# infer model signature (gives input shape and output shape)
 
 BATCH_SIZE = 128
 IMG_SIZE = 256
-EPOCHS = 3 
+EPOCHS = 200
+
+loss_func = "binary_crossentropy"
+learning_rate = 0.005
+momentum = 0.8
+optimizer = keras.optimizers.SGD(learning_rate= learning_rate, momentum = momentum)
+tag = "Own CNN"
+
+# params for mlflow; will need to add more 
+params_dict = {
+    "epochs": EPOCHS,
+    "loss_function": loss_func,
+    "optimizer": optimizer,
+    "learning_rate": learning_rate,
+    "momentum": momentum,
+    "tag": tag }
+
 
 # images are grayscale, max pixel value is 255
 
 train_data, val_data = keras.utils.image_dataset_from_directory(
     # relative path to images
-    r'./data/train',
+    r'/home/anandrei90/pneumonia_project/data/train',
     labels='inferred',              # labels are generated from the directory structure
     label_mode='binary',            # 'binary' => binary cross-entropy
     # class_names=class_names_list, # such that i can control the order of the class names
@@ -84,15 +63,17 @@ train_data, val_data = keras.utils.image_dataset_from_directory(
     )
 
 
-'''
+# take an input example out of the train data -> needed for mlflow
+
 batch = train_data.take(1)
+batch_as_nparray = list(batch)[0][0].numpy()
+input_example = batch_as_nparray[0]
+input_example = np.expand_dims(input_example, axis=0)
 
-print('batch shape = ', list(batch)[0][0].numpy().shape) # (BATCH_SIZE, IMG_SIZE, IMG_SIZE, 1)
-'''
+# print('batch shape = ', list(batch)[0][0].numpy().shape) # (BATCH_SIZE, IMG_SIZE, IMG_SIZE, 1)
 
 
-
-def get_model(add_dropout = True, dropout_rate = 0.3, add_batch_normalization = True):
+def get_model(): # parameters to be added later: add_dropout = True, dropout_rate = 0.3, add_batch_normalization = True
     
     inputs = keras.layers.Input(shape=(IMG_SIZE, IMG_SIZE, 1))
     
@@ -150,29 +131,31 @@ def get_model(add_dropout = True, dropout_rate = 0.3, add_batch_normalization = 
 
 model = get_model()
 
+metrics = ["accuracy", "f1_score"]
+
 model.compile(
-    loss="binary_crossentropy", 
-    metrics=["accuracy", "f1_score"],
-    optimizer=keras.optimizers.SGD(learning_rate=0.1)
+    loss=loss_func, 
+    metrics = metrics,
+    optimizer = optimizer
     )
 
+# print model summary
 model.summary()
+
+# get model summary as string
+buffer = io.StringIO()
+model.summary(print_fn=lambda x: buffer.write(x + '\n'))
+summary_str = buffer.getvalue()
 
 # TO DO:
 # add class weights
 # add callbacks
 
 
-# first run    mlflow server --host 127.0.0.1 --port 8080   in a different terminal to open the server
-mlflow.set_tracking_uri("http://127.0.0.1:8080")
-
-
-
 start = time.time()
 
 # 188 sec for 5 epochs => ~ 37.6 s/epoch
 
-'''
 history = model.fit(
     train_data, 
     epochs = EPOCHS, 
@@ -181,24 +164,102 @@ history = model.fit(
     validation_data = val_data,
     # callbacks = [lr_reduction, model_checkpoint_callback]
     )
-'''
-
-
-
-# i should do the logging the classic way, as mlflow.keras.MlflowCallback() is an experimental...
-
-run = mlflow.start_run()
-
-model.fit(
-    train_data, 
-    epochs = EPOCHS, 
-    verbose = True,
-    # class_weight = class_weights_dict,
-    validation_data = val_data,
-    callbacks=[mlflow.keras.MlflowCallback(run)],
-)
-
-mlflow.end_run()
 
 
 print(f'Training time = {time.time() - start} sec')
+
+
+
+
+
+
+
+
+# validation_metrics_values = [history.history['val_' + metric] for metric in metrics] # mlflow logs only numbers/strings for metrics, not lists
+validation_metrics = ['val_' + metric for metric in metrics]
+validation_metrics_values = [history.history['val_' + metric][-1] for metric in metrics] 
+metrics_dict = dict(zip(validation_metrics, validation_metrics_values)) # for mlflow logging
+
+
+def learning_curve_fig(metric):
+    # returns learning curve figures -> use for figure logging
+    fig, ax = plt.subplots()
+    ax.plot(history.history[metric], label='Train ' + metric )
+    ax.plot(history.history['val_' + metric], label='Validation ' + metric)
+    ax.set_xlabel('Epoch')
+    ax.set_ylabel(metric)
+    ax.legend()
+    ax.set_title("Training and Validation " + metric)
+    plt.close(fig)
+    return fig
+
+fig_accuracy = learning_curve_fig(metrics[0])
+fig_f1_score = learning_curve_fig(metrics[1])
+
+prediction_example = model(input_example).numpy() # for mlflow logging
+
+
+
+
+
+
+# Provide an Experiment description that will appear in the UI
+experiment_description = (
+    "This experiment contains the first attempts at training a self-built CNN to detect Pneumonia from chest-xray images."
+)
+
+# Provide searchable tags that define characteristics of the Runs that
+# will be in this Experiment
+experiment_tags = {
+    "project_name": "pneumonia-detection",
+    "authors": "andrei & patrick",
+    "mlflow.note.content": experiment_description,
+}
+
+# Sets the current active experiment to the "own_model_training" experiment and
+# returns the Experiment metadata
+mlflow.set_experiment("convolutional_net__training")
+    
+# First step: run "mlflow server --host 127.0.0.1 --port 8080" in a different terminal to open the server
+# When http://127.0.0.1:8080 displays nonsense, one can try to do a hard refresh while on the webpage with Crtl+Shift+R (worked for me)   
+ 
+mlflow.set_tracking_uri("http://127.0.0.1:8080")    
+    
+
+
+# Define a run name for this iteration of training.
+# If this is not set, a unique name will be auto-generated for your run.
+run_name = "cnn_train_1"
+
+# Define an artifact path that the model will be saved to.
+artifact_path = "cnn_artifacts"
+
+
+# Start an MLflow run
+with mlflow.start_run(run_name=run_name) as run:
+    
+    # Log the hyperparameters
+    mlflow.log_params(params_dict)
+
+    # Log the metrics
+    mlflow.log_metrics(metrics_dict)
+    
+    # Log figures
+    mlflow.log_figure(fig_accuracy, "learning_curve_acc.png")
+    mlflow.log_figure(fig_f1_score, "learning_curve_f1.png")
+
+    # log model summary as text artifact
+    mlflow.log_text(summary_str, "model_summary.txt")
+
+    # Set a tag that we can use to remind ourselves what this run was for
+    mlflow.set_tag("Training Info", "1st run: no batchnorm and no dropout layers")
+
+    # Infer the model signature
+    signature = mlflow.models.infer_signature(input_example, prediction_example)
+
+    # Log the model
+    model_info = mlflow.keras.log_model(
+            model = model,
+            artifact_path = artifact_path,
+            signature = signature
+        )

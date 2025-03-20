@@ -1,0 +1,15 @@
+artifact_uri: file:///home/anandrei90/pneumonia_project/own_model_training/mlruns/643101934417608435/575d4941cc764b4287623b2423037d2e/artifacts
+end_time: 1742430296526
+entry_point_name: ''
+experiment_id: '643101934417608435'
+lifecycle_stage: active
+run_id: 575d4941cc764b4287623b2423037d2e
+run_name: cnn_train_1
+run_uuid: 575d4941cc764b4287623b2423037d2e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1742430288449
+status: 3
+tags: []
+user_id: anandrei90
