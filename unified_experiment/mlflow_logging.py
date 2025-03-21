@@ -87,8 +87,8 @@ def log_mlflow_run(
         signature = mlflow.models.infer_signature(input_example, prediction_example)
 
         # Log the model
-        model_info = mlflow.keras.log_model(
-                model = model,
-                artifact_path = "model_artifact",
-                signature = signature
+        mlflow.keras.log_model(
+            model = model,
+            artifact_path = "model_artifact",
+            signature = signature
             )	
