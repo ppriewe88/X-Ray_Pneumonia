@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/106513280649305973/0aeb1221230c4eef9c6b59270911f1ed/artifacts
+end_time: 1742405328921
+entry_point_name: ''
+experiment_id: '106513280649305973'
+lifecycle_stage: active
+run_id: 0aeb1221230c4eef9c6b59270911f1ed
+run_name: auspicious-midge-106
+run_uuid: 0aeb1221230c4eef9c6b59270911f1ed
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1742405315895
+status: 3
+tags: []
+user_id: pprie
