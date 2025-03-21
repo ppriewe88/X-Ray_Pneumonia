@@ -141,8 +141,8 @@ train_data, val_data = get_data(BATCHSIZE, IMGSIZE, selected_data = "train")
 
 # %%
 ' ########################################## callbacks #######################'
-# define callbacks
-
+# define callbacks. create empty vessel
+chosen_callbacks = []
 # model checkpoint: create temp path for temp storage of best model
 temp_dir = tempfile.TemporaryDirectory()
 current_dir = os.getcwd()
@@ -159,7 +159,7 @@ checkpoint = keras.callbacks.ModelCheckpoint(
     save_freq="epoch"
 )
 
-chosen_callbacks = [checkpoint]
+chosen_callbacks.append(checkpoint)
 
 # define early stopping callback
 if early_stopping:
@@ -173,7 +173,7 @@ if early_stopping:
         restore_best_weights=True,
         start_from_epoch=0,
     )
-    chosen_callbacks = chosen_callbacks.append(early_stopping)
+    chosen_callbacks.append(early_stopping)
 
 # %% 
 ' ################################### training ####################################'

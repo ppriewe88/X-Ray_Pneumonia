@@ -94,7 +94,7 @@ model_summary_str = training_helpers.generate_model_summary_string(model)
 
 # %%
 ' ########################################## callbacks #######################'
-# define callbacks
+# define callbacks. create empty vessel
 chosen_callbacks = []
 # model checkpoint: create temp path for temp storage of best model
 current_dir = os.getcwd()
