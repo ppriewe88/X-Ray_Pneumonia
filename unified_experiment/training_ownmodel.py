@@ -201,31 +201,13 @@ fig_f1_score = learning_curve_fig(metrics[1])
 
 prediction_example = model(input_example).numpy() # for mlflow logging
 
-
-
-
-
-
-# Provide an Experiment description that will appear in the UI
-experiment_description = (
-    "This experiment contains the first attempts at training a self-built CNN to detect Pneumonia from chest-xray images."
-)
-
-# Provide searchable tags that define characteristics of the Runs that
-# will be in this Experiment
-experiment_tags = {
-    "project_name": "pneumonia-detection",
-    "authors": "andrei & patrick",
-    "mlflow.note.content": experiment_description,
-}
-
-
-    
+   
 # First step: run "mlflow server --host 127.0.0.1 --port 8080" in a different terminal to open the server; 
 # Make sure that both the python script and rhe mlflow server command are ran from the same folder !!!!!! (in the current case, the folder is "own_model_training") 
 # When http://127.0.0.1:8080 displays nonsense, one can try to do a hard refresh while on the webpage with Crtl+Shift+R (worked for me)   
 
 if mlflow_logging: 
+    
     mlflow.set_tracking_uri("http://127.0.0.1:8080")
 
     # Sets the current active experiment to the "own_model_training" experiment and
