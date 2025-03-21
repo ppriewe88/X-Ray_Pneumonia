@@ -1,0 +1,26 @@
+artifact_path: digits_model
+flavors:
+  keras:
+    data: data
+    keras_backend: tensorflow
+    keras_version: 3.8.0
+    save_exported_model: false
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.keras
+    python_version: 3.12.2
+is_signature_from_type_hint: false
+mlflow_version: 2.20.4
+model_size_bytes: 14824628
+model_uuid: c6b8b698ac724ef88b082b17ca49c7ce
+run_id: c48568e2de8b4961a75b37b4c781fefb
+signature:
+  inputs: '[{"type": "tensor", "tensor-spec": {"dtype": "float32", "shape": [-1, 256,
+    256, 3]}}]'
+  outputs: '[{"type": "tensor", "tensor-spec": {"dtype": "float32", "shape": [-1,
+    1]}}]'
+  params: null
+type_hint_from_example: false
+utc_time_created: '2025-03-19 11:31:24.176390'

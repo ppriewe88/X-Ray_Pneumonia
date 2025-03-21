@@ -1,11 +1,15 @@
 """
-This script contains the training routine for transfer learning with MobileNet and/or ResNet.
+This script contains the training routine for fine_tuning of artifacts that were generated during transfer learning.
 It also contains the setup for experiment tracking via mlflow.
 If you run this script to train, and you want to log with mlflow, you have to start the tracking server of mlflow. 
 To do so, in the directory of this script (i.e. folder transfer_learning), run the following command in terminal to start mlflow server for tracking experiments:
 mlflow server --host 127.0.0.1 --port 8080
 Then check the localhost port to access the MLFlow GUI for tracking!
-Run this script to conduct training experiments (runs). If mlflow server is running, the experiment will be tracked as a run"""
+Run this script to conduct training experiments (runs). If mlflow server is running, the experiment will be tracked as a run.
+
+IMPORTANT NOTICE: Resulting mlflow-runs will be logged into the transfer learning mlflow-directory!
+Check the folder "transfer_learning" to find resulting runs and artifacts!
+"""
 
 
 import numpy as np
@@ -14,85 +18,105 @@ import tensorflow as tf
 from tensorflow import keras
 from tensorflow.keras import layers
 from tensorflow.keras.models import Model
+from keras.saving import load_model
+from sklearn import metrics
 import os
 import mlflow
 from mlflow.models import infer_signature
 import io
 import time
-
 import sys
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 from data.helpers import get_data, DATA_PATH, IMGSIZE
 
+# %%
+' ################# select experiment ID and run ID from mlflow GUI, enter for model loading #######'
+
+# manually selected experiment and run ID. Extracted from MLFlow frontend.
+mlflow_experiment_ID = "106513280649305973"
+mlflow_run_ID = "b8d8e5c4b1dd4e05b61bfee9de958501"
+
 
 # %%
-' ####################### params #######################'
-# params for training
-BATCHSIZE = 10
-CHOSEN_EPOCHS = 20
-dense_layer_top_neurons = 128
-dense_layer_top_activation = "relu"
-dropout_rate_top = 0.5
-chosen_loss = "binary_crossentropy"
-chosen_optimizer = "adam"
-chosen_learning_rate = 0.001
-early_stopping = True
+' ################### extract params logged during transfer learning ######################'
 
-# param for base model selection
-selected_model = "MobileNet" # "MobileNet
-if selected_model == "ResNet":
-    tag = "ResNet152V2 with Dense top"
-elif selected_model == "MobileNet":
-    tag = "MobileNet"
-# params for mlflow
-params = {"batch size": BATCHSIZE,
-          "image size": IMGSIZE,
-          "epochs": CHOSEN_EPOCHS,
-          "top dense layer neurons": dense_layer_top_neurons,
-          "top dense layer activation": dense_layer_top_activation,
-          "top dropout rate": dropout_rate_top,
-          "loss": chosen_loss,
-          "optimizer": chosen_optimizer,
-          "learning rate": chosen_learning_rate,
-          "data": DATA_PATH,
-          "tag": tag}
+# get paths of the run, to later extract the stored model artifact and the logged parameters
+run_path = os.path.join("..", f"transfer_learning/mlruns/{mlflow_experiment_ID}/{mlflow_run_ID}")
+params_path = os.path.join(run_path, "params")
+
+# empty dict as vessel to extract logged parameters
+params = {}
+
+if os.path.exists(params_path):
+    # list file names
+    param_files = os.listdir(params_path)
+    
+    # extract param from each file
+    for param_file in param_files:
+        # get file path
+        param_file_path = os.path.join(params_path, param_file)
+        # open file, extract value
+        with open(param_file_path, "r") as file:
+            param_value = file.read().strip()
+        # retrieve numerical representation, if possible
+        if param_value.isdigit():
+            param_value = int(param_value)
+        elif param_value.isnumeric():
+            param_value = float(param_value)
+        # store extracted value in parameters dict
+        params[param_file] = param_value
+else:
+    print("params folder not found! Check if experiment and run ID are correct and exist!!")
+
+
+# %%
+' ################################### params for fine tuning #############################'
+
+CHOSEN_EPOCHS = 5
+BATCHSIZE = 10
+chosen_learning_rate = 0.00001
+chosen_loss = params["loss"]
+early_stopping = True
+# update params dictionary to override old epochs and learning rate, and batch size
+try:
+    params["learning rate"] = chosen_learning_rate
+    params["epochs"] = CHOSEN_EPOCHS
+    params["batch size"] = BATCHSIZE
+    params["tag"] = params["tag"] + "_finetuning"
+except:
+    raise ValueError("learning rate and epochs parameter not found in extracted params of old run!" 
+                     "Check spelling and old run params!")
+
 mlflow_tracking = True
 
 # %%
-' ######################################### getting training and validation data ################################'
+' ################################# load model artifact, unfreeze layers #################################'
 
-train_data, val_data = get_data(BATCHSIZE, IMGSIZE, selected_data = "train")
+# get model path
+try:
+    model_path = os.path.join("..", f"transfer_learning/mlartifacts/{mlflow_experiment_ID}/{mlflow_run_ID}/artifacts/digits_model/data/model.keras")
+    model_path = os.path.abspath(model_path) 
+except:
+    raise NameError("model path not found. Check the arctifact path, i.e. the child path of the mlflow_run_ID in the try clause!!" 
+                    "Possible the name can have changed")
 
- # %%
-' ################################################## defining the model #########################'
-# base model
-if selected_model == "ResNet":
-    # ResNet
-    base_model = keras.applications.ResNet152V2(
-        weights = "imagenet",
-        input_shape = (IMGSIZE,IMGSIZE, 3),
-        include_top = False)
-elif selected_model == "MobileNet":
-    # MobileNet
-    base_model = keras.applications.MobileNet(
-    input_shape = (IMGSIZE,IMGSIZE, 3),
-    include_top=False,
-    weights="imagenet")
+# load model
+model = load_model(model_path, compile=False, safe_mode=True)
 
-base_model.trainable = False
+# extract base_model
+base_model = model.layers[1]
 
-# complete model setup
-inputs = tf.keras.layers.Input(shape = (IMGSIZE, IMGSIZE, 3))
-x = keras.layers.Rescaling(scale = 1./255)(inputs)
-x = base_model(inputs)
-x = layers.GlobalAveragePooling2D()(x)
-x = layers.Dense(dense_layer_top_neurons, activation=dense_layer_top_activation)(x)
-x = layers.Dropout(dropout_rate_top)(x)
-output = layers.Dense(1, activation='sigmoid')(x)
-model = Model(inputs=inputs, outputs=output)
+# unfreeze base model, but keep only last fex layers unfrozen (MobileNet gast 85 layers!)
+base_model.trainable = True
+for layer in base_model.layers[:-5]:
+    layer.trainable = False
 
-' ######################################### compile and summary #######################################'
-# compile model
+for layer_number, layer in enumerate(model.layers):
+    print(layer_number, layer.name, layer.trainable)
+
+# %%
+' ################################ compile again, create summary ##################################'
+
 model.compile(loss=chosen_loss, 
               optimizer = keras.optimizers.Adam(learning_rate=chosen_learning_rate), 
               metrics=['binary_accuracy'])
@@ -104,6 +128,12 @@ model.summary()
 buffer = io.StringIO()
 model.summary(print_fn=lambda x: buffer.write(x + '\n'))
 summary_str = buffer.getvalue()
+
+# %%
+' ######################################### getting training and validation data ################################'
+
+# get the data
+train_data, val_data = get_data(BATCHSIZE, IMGSIZE, selected_data = "train")
 
 # %%
 ' ########################################## training #######################'
@@ -138,9 +168,11 @@ print(f"train time:  {training_time:.2f} seconds = {training_time/60:.1f} minute
 
 # %%
 ' ########################################## prediction on validation and test set ########'
+
 # get training data again (generators have been consumed during training and need to be reconstructed)
 train_data, val_data = get_data(BATCHSIZE, IMGSIZE, selected_data = "train")
 val_loss, val_binary_accuracy = model.evaluate(val_data, verbose = 1)
+
 # get test data
 test_data_throwaway, test_data = get_data(BATCHSIZE, IMGSIZE, selected_data = "test")
 test_loss, test_binary_accuracy = model.evaluate(test_data, verbose = 1)
@@ -165,7 +197,7 @@ ax.set_title("Training and Validation binary accuracy")
 # Set tracking server uri for logging
 mlflow.set_tracking_uri(uri="http://127.0.0.1:8080")
 
-# Create a new MLflow Experiment
+# log the run into existing project in transfer_learning directory
 mlflow.set_experiment("Xray_Pneumonia")
 
 if mlflow_tracking:
@@ -187,7 +219,7 @@ if mlflow_tracking:
         mlflow.log_text(summary_str, "model_summary.txt")
     
         # Set a tag that we can use to remind ourselves what this run was for
-        mlflow.set_tag("Training Info", tag)
+        mlflow.set_tag("Training Info", params["tag"])
     
         # infer model signature
         batch = next(iter(train_data.take(1)))
