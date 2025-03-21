@@ -25,6 +25,7 @@ import mlflow
 from mlflow.models import infer_signature
 import io
 import time
+import training_helpers
 import sys
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 from data.helpers import get_data, IMGSIZE
@@ -35,7 +36,6 @@ from data.helpers import get_data, IMGSIZE
 # manually selected experiment and run ID. Extracted from MLFlow frontend.
 mlflow_experiment_ID = "106513280649305973"
 mlflow_run_ID = "b8d8e5c4b1dd4e05b61bfee9de958501"
-
 
 # %%
 ' ################### extract params logged during transfer learning ######################'
@@ -123,11 +123,8 @@ model.compile(loss=chosen_loss,
 
 # print model summary
 model.summary()
-
 # get model summary as string
-buffer = io.StringIO()
-model.summary(print_fn=lambda x: buffer.write(x + '\n'))
-summary_str = buffer.getvalue()
+model_summary_str = training_helpers.generate_model_summary_string(model)
 
 # %%
 ' ######################################### getting training and validation data ################################'
@@ -184,13 +181,7 @@ print('test binary accuracy:', test_binary_accuracy)
 # %%
 '####################### generate plot of learning curves ################'
 # create learning curve (for logging with MLFlow)
-fig, ax = plt.subplots()
-ax.plot(history.history['binary_accuracy'], label='Train accuracy (binary)')
-ax.plot(history.history['val_binary_accuracy'], label='Validation accuracy (binary)')
-ax.set_xlabel('Epoch')
-ax.set_ylabel('binary accuracy')
-ax.legend()
-ax.set_title("Training and Validation binary accuracy")
+learning_curves = training_helpers(history)
 
 # %%
 ' ########################### MLFlow model logging #######################'

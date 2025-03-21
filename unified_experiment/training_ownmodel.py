@@ -11,7 +11,7 @@ import os
 import sys
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 from data.helpers import get_data, DATA_PATH, IMGSIZE
-
+import training_helpers
 
 
 '''
@@ -144,7 +144,7 @@ def get_model(dropout_rate): # parameters to be added later: add_dropout = True,
 
 model = get_model(dropout_rate)
 
-metrics = ["accuracy", "f1_score"]
+metrics = ["binary_accuracy"]
 
 model.compile(
     loss=loss_func, 
@@ -156,11 +156,7 @@ model.compile(
 model.summary()
 
 # get model summary as string
-buffer = io.StringIO()
-model.summary(print_fn=lambda x: buffer.write(x + '\n'))
-summary_str = buffer.getvalue()
-
-
+model_summary_str = training_helpers.generate_model_summary_string(model)
 
 start = time.time()
 
@@ -184,20 +180,8 @@ validation_metrics_values = [history.history['val_' + metric][-1] for metric in 
 metrics_dict = dict(zip(validation_metrics, validation_metrics_values)) # for mlflow logging
 
 
-def learning_curve_fig(metric):
-    # returns learning curve figures -> use for figure logging
-    fig, ax = plt.subplots()
-    ax.plot(history.history[metric], label='Train ' + metric )
-    ax.plot(history.history['val_' + metric], label='Validation ' + metric)
-    ax.set_xlabel('Epoch')
-    ax.set_ylabel(metric)
-    ax.legend()
-    ax.set_title("Training and Validation " + metric)
-    plt.close(fig)
-    return fig
-
-fig_accuracy = learning_curve_fig(metrics[0])
-fig_f1_score = learning_curve_fig(metrics[1])
+# create learning curve (for logging with MLFlow)
+learning_curves = training_helpers.generate_plot_of_learning_curves(history)
 
 prediction_example = model(input_example).numpy() # for mlflow logging
 
@@ -234,11 +218,10 @@ if mlflow_logging:
         mlflow.log_metrics(metrics_dict)
         
         # Log figures
-        mlflow.log_figure(fig_accuracy, "learning_curve_acc.png")
-        mlflow.log_figure(fig_f1_score, "learning_curve_f1.png")
+        mlflow.log_figure(learning_curves, "learning_curve_bin_acc.png")
 
         # log model summary as text artifact
-        mlflow.log_text(summary_str, "model_summary.txt")
+        mlflow.log_text(model_summary_str, "model_summary.txt")
 
         # Set a tag that we can use to remind ourselves what this run was for
         

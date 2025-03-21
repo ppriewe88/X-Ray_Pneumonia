@@ -19,7 +19,7 @@ import mlflow
 from mlflow.models import infer_signature
 import io
 import time
-
+import training_helpers
 import sys
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 from data.helpers import get_data, DATA_PATH, IMGSIZE
@@ -99,12 +99,8 @@ model.compile(loss=chosen_loss,
 
 # print model summary
 model.summary()
-
 # get model summary as string
-buffer = io.StringIO()
-model.summary(print_fn=lambda x: buffer.write(x + '\n'))
-summary_str = buffer.getvalue()
-
+model_summary_str = training_helpers.generate_model_summary_string(model)
 # %%
 ' ########################################## training #######################'
 # define callbacks 
@@ -141,9 +137,11 @@ print(f"train time:  {training_time:.2f} seconds = {training_time/60:.1f} minute
 # get training data again (generators have been consumed during training and need to be reconstructed)
 train_data, val_data = get_data(BATCHSIZE, IMGSIZE, selected_data = "train")
 val_loss, val_binary_accuracy = model.evaluate(val_data, verbose = 1)
+
 # get test data
 test_data_throwaway, test_data = get_data(BATCHSIZE, IMGSIZE, selected_data = "test")
 test_loss, test_binary_accuracy = model.evaluate(test_data, verbose = 1)
+
 print('Val loss:', val_loss)
 print('Val binary accuracy:', val_binary_accuracy)
 print('test loss:', test_loss)
@@ -152,14 +150,7 @@ print('test binary accuracy:', test_binary_accuracy)
 # %%
 '####################### generate plot of learning curves ################'
 # create learning curve (for logging with MLFlow)
-fig, ax = plt.subplots()
-ax.plot(history.history['binary_accuracy'], label='Train accuracy (binary)')
-ax.plot(history.history['val_binary_accuracy'], label='Validation accuracy (binary)')
-ax.set_xlabel('Epoch')
-ax.set_ylabel('binary accuracy')
-ax.legend()
-ax.set_title("Training and Validation binary accuracy")
-
+learning_curves = training_helpers.generate_plot_of_learning_curves(history)
 # %%
 ' ########################### MLFlow model logging #######################'
 # Set tracking server uri for logging
@@ -180,11 +171,11 @@ if mlflow_tracking:
         mlflow.log_metrics(metrics)
     
         # log plot of learning curve (and close plt.object afterwards)
-        mlflow.log_figure(fig, "learning_curve_bin_acc.png")
-        plt.close(fig)
+        mlflow.log_figure(learning_curves, "learning_curve_bin_acc.png")
+        plt.close(learning_curves)
         
         # log model summary as text artifact
-        mlflow.log_text(summary_str, "model_summary.txt")
+        mlflow.log_text(model_summary_str, "model_summary.txt")
     
         # Set a tag that we can use to remind ourselves what this run was for
         mlflow.set_tag("Training Info", tag)
