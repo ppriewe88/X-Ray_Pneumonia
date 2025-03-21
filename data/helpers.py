@@ -6,7 +6,7 @@ IMGSIZE = 256
 DATA_PATH = os.path.join("..","data/train/")
 DATA_PATH = os.path.abspath(DATA_PATH)
 
-def get_data(batch_size, imgsize, selected_data = "train"):
+def get_data(batch_size, imgsize, channelmode = "rgb", selected_data = "train"):
     # for training data, do 20% split
     if selected_data == "train":
         chosen_validation_split=0.2
@@ -23,7 +23,7 @@ def get_data(batch_size, imgsize, selected_data = "train"):
         data_path,
         labels='inferred',              # labels are generated from the directory structure
         label_mode='binary',            # 'binary' => binary cross-entropy
-        color_mode='rgb',         # alternatives: 'rgb', 'rgba'
+        color_mode=channelmode,         # alternatives: 'rgb', 'rgba'
         batch_size=batch_size,
         image_size=(imgsize, imgsize),
         shuffle=True,                   # shuffle images before each epoch
