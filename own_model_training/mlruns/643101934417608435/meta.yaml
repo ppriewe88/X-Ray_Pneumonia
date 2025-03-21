@@ -1,0 +1,7 @@
+artifact_location: file:///home/anandrei90/pneumonia_project/own_model_training/mlruns/643101934417608435
+creation_time: 1742430288373
+experiment_id: '643101934417608435'
+last_update_time: 1742465237396
+lifecycle_stage: active
+name: convolutional_net_training
+tags: {}

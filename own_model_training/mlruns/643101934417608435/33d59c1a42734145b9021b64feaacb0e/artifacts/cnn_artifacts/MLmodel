@@ -1,0 +1,26 @@
+artifact_path: cnn_artifacts
+flavors:
+  keras:
+    data: data
+    keras_backend: tensorflow
+    keras_version: 3.8.0
+    save_exported_model: false
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.keras
+    python_version: 3.12.3
+is_signature_from_type_hint: false
+mlflow_version: 2.20.4
+model_size_bytes: 360178
+model_uuid: 283524cb00fa42be9cb375b54da94c9c
+run_id: 33d59c1a42734145b9021b64feaacb0e
+signature:
+  inputs: '[{"type": "tensor", "tensor-spec": {"dtype": "float32", "shape": [-1, 256,
+    256, 1]}}]'
+  outputs: '[{"type": "tensor", "tensor-spec": {"dtype": "float32", "shape": [-1,
+    1]}}]'
+  params: null
+type_hint_from_example: false
+utc_time_created: '2025-03-20 20:31:28.840945'
