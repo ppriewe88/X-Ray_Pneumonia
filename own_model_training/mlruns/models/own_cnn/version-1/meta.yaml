@@ -1,0 +1,14 @@
+aliases: []
+creation_timestamp: 1742546764322
+current_stage: None
+description: ''
+last_updated_timestamp: 1742546764322
+name: own_cnn
+run_id: 33d59c1a42734145b9021b64feaacb0e
+run_link: ''
+source: file:///home/anandrei90/pneumonia_project/own_model_training/mlruns/643101934417608435/33d59c1a42734145b9021b64feaacb0e/artifacts/cnn_artifacts
+status: READY
+status_message: null
+storage_location: file:///home/anandrei90/pneumonia_project/own_model_training/mlruns/643101934417608435/33d59c1a42734145b9021b64feaacb0e/artifacts/cnn_artifacts
+user_id: null
+version: 1

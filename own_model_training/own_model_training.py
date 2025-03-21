@@ -41,7 +41,8 @@ params_dict = {
     "learning_rate": learning_rate,
     "momentum": momentum,
     "dropout_rate": dropout_rate,
-    "tag": tag }
+    "tag": tag
+    }
 
 
 # images are grayscale, max pixel value is 255
