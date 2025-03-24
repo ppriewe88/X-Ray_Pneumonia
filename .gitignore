@@ -4,6 +4,10 @@ __pycache__/
 *.pyo
 *.pyd
 
-
+.gitignore
 
 data/train
+
+transfer_learning
+own_model_training
+fine_tuning
