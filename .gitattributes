@@ -1,9 +1,9 @@
 *.keras filter=lfs diff=lfs merge=lfs -text
 
-/transfer_learning/mlartifacts/106513280649305973/05dae26304e5484ca12349d252c54e7a/artifacts/digits_model/data/model.keras filter=lfs diff=lfs merge=lfs -text
-/transfer_learning/mlartifacts/106513280649305973/12e5fa58f2a34517abc64d211c2bcd46/artifacts/digits_model/data/model.keras filter=lfs diff=lfs merge=lfs -text
-/transfer_learning/mlartifacts/106513280649305973/3f2bc8521e134d8f93515b97bdbbbb61/artifacts/digits_model/data/model.keras filter=lfs diff=lfs merge=lfs -text
-/transfer_learning/mlartifacts/106513280649305973/94ed24fe68cb4756a468e047a878a193/artifacts/digits_model/data/model.keras filter=lfs diff=lfs merge=lfs -text
-/transfer_learning/mlartifacts/106513280649305973/956e9f07c6b3496587f05684c744789a/artifacts/digits_model/data/model.keras filter=lfs diff=lfs merge=lfs -text
-/transfer_learning/mlartifacts/106513280649305973/ec76dd7e4c464721987dd77a2680f242/artifacts/digits_model/data/model.keras filter=lfs diff=lfs merge=lfs -text
-/transfer_learning/mlartifacts/106513280649305973/fb4bb4ee4eba4891bf8e308ade6a8562/artifacts/digits_model/data/model.keras filter=lfs diff=lfs merge=lfs -text
+# /transfer_learning/mlartifacts/106513280649305973/05dae26304e5484ca12349d252c54e7a/artifacts/digits_model/data/model.keras filter=lfs diff=lfs merge=lfs -text
+# /transfer_learning/mlartifacts/106513280649305973/12e5fa58f2a34517abc64d211c2bcd46/artifacts/digits_model/data/model.keras filter=lfs diff=lfs merge=lfs -text
+# /transfer_learning/mlartifacts/106513280649305973/3f2bc8521e134d8f93515b97bdbbbb61/artifacts/digits_model/data/model.keras filter=lfs diff=lfs merge=lfs -text
+# /transfer_learning/mlartifacts/106513280649305973/94ed24fe68cb4756a468e047a878a193/artifacts/digits_model/data/model.keras filter=lfs diff=lfs merge=lfs -text
+# /transfer_learning/mlartifacts/106513280649305973/956e9f07c6b3496587f05684c744789a/artifacts/digits_model/data/model.keras filter=lfs diff=lfs merge=lfs -text
+# /transfer_learning/mlartifacts/106513280649305973/ec76dd7e4c464721987dd77a2680f242/artifacts/digits_model/data/model.keras filter=lfs diff=lfs merge=lfs -text
+# /transfer_learning/mlartifacts/106513280649305973/fb4bb4ee4eba4891bf8e308ade6a8562/artifacts/digits_model/data/model.keras filter=lfs diff=lfs merge=lfs -text
