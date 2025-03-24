@@ -2,6 +2,8 @@
 import os
 
 import mlflow
+import tensorflow as tf
+from tensorflow import keras
 import numpy as np
 
 
@@ -27,6 +29,11 @@ def log_mlflow_run(
     fig # in case there are more figs
 ):
     
+    if not isinstance(model, keras.Model):
+        raise TypeError(
+            f"Invalid model object. Expected tf.keras.Model or keras.Model, but got {type(model).__name__} instead."
+        )
+    
     params_dict = {
         "epochs": epochs,
         "batch size": batch_size,
@@ -34,7 +41,7 @@ def log_mlflow_run(
         "optimizer": optimizer,
         "learning rate": learning_rate,
         "dense layer dropout rate": top_dropout_rate,
-        "dataset": DATA_PATH,
+        "dataset": DATA_PATH
         }
     
     try:
@@ -87,8 +94,8 @@ def log_mlflow_run(
         signature = mlflow.models.infer_signature(input_example, prediction_example)
 
         # Log the model
-        model_info = mlflow.keras.log_model(
-                model = model,
-                artifact_path = "model_artifact",
-                signature = signature
-            )	
+        mlflow.keras.log_model(
+            model = model,
+            artifact_path = "model_artifact",
+            signature = signature
+        )
