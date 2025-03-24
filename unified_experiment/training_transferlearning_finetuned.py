@@ -39,7 +39,7 @@ from mlflow_logging import log_mlflow_run
 mlflow_experiment_ID = "182313552410587795"
 mlflow_run_ID = "023db44e237343a4b00258299a0419c2"
 mlflow_run_name = "2nd try"
-mlflow_run_name = f'{mlflow_run_name} - finetuning'
+mlflow_run_name = f'{mlflow_run_name}-finetuning'
 
 # %%
 ' ################### extract params logged during transfer learning ######################'
@@ -234,68 +234,3 @@ log_mlflow_run(model,
                test_accuracy = test_binary_accuracy, 
                custom_params = custom_params, 
                fig = learning_curves)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# # %%
-# ' ########################### MLFlow model logging #######################'
-# # Set tracking server uri for logging
-# mlflow.set_tracking_uri(uri="http://127.0.0.1:8080")
-
-# # log the run into existing project in transfer_learning directory
-# mlflow.set_experiment("Xray_Pneumonia")
-
-# if mlflow_tracking:
-#     # start logging the run
-#     with mlflow.start_run():
-#         # Log the hyperparameters
-#         mlflow.log_params(params)
-    
-#         # Log the metrics (validation and test)
-#         metrics = {"binary accuracy validation data": val_binary_accuracy,
-#                    "binary accuracy test data": test_binary_accuracy}
-#         mlflow.log_metrics(metrics)
-    
-#         # log plot of learning curve (and close plt.object afterwards)
-#         mlflow.log_figure(fig, "learning_curve_bin_acc.png")
-#         plt.close(fig)
-        
-#         # log model summary as text artifact
-#         mlflow.log_text(summary_str, "model_summary.txt")
-    
-#         # Set a tag that we can use to remind ourselves what this run was for
-#         mlflow.set_tag("Training Info", params["tag"])
-    
-#         # infer model signature
-#         batch = next(iter(train_data.take(1)))
-#         single_image = batch[0][0]
-#         single_image_batch = tf.expand_dims(single_image, axis=0)
-#         single_image_batch = tf.expand_dims(single_image, axis=0)
-#         predictions = model.predict(single_image_batch)
-#         signature = infer_signature(single_image_batch.numpy(), predictions)
-    
-#         # Log the model
-#         model_info = mlflow.keras.log_model(
-#             model = model,
-#             artifact_path = "digits_model",
-#             signature = signature
-#         )
