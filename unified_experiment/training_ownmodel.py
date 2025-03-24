@@ -5,13 +5,15 @@ import numpy as np
 import matplotlib.pyplot as plt
 from tensorflow import keras
 import mlflow
-from mlflow import MlflowClient
 #from PIL import Image
 import os
 import sys
+
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
-from data.helpers import get_data, DATA_PATH, IMGSIZE
+from data.helpers import get_train_val_data, get_test_data, IMGSIZE
 import training_helpers
+
+from mlflow_logging import log_mlflow_run
 
 
 '''
@@ -25,7 +27,7 @@ print('max pixel value = ', img_array.max())
 # params to log: model_summary (as string), parameters from get_model() function, learning curves + metrics, 
 # infer model signature (gives input shape and output shape)
 
-BATCH_SIZE = 600
+BATCH_SIZE = 100
 EPOCHS = 1
 
 loss_func = "binary_crossentropy"
@@ -33,28 +35,13 @@ learning_rate = 0.01
 momentum = 0.8
 optimizer = keras.optimizers.SGD(learning_rate= learning_rate, momentum = momentum)
 dropout_rate = 0.3
-tag = "Own CNN"
 
-# params for mlflow; will need to add more 
-params_dict = {
-    "epochs": EPOCHS,
-    "loss_function": loss_func,
-    "optimizer": optimizer,
-    "learning_rate": learning_rate,
-    "momentum": momentum,
-    "dropout_rate": dropout_rate,
-    "tag": tag
-    }
 mlflow_logging=False
 
-train_data, val_data = get_data(BATCH_SIZE, IMGSIZE, channelmode = "grayscale", selected_data = "train")
-
+train_data, val_data = get_train_val_data(BATCH_SIZE, IMGSIZE, channel_mode = "grayscale")
 # take an input example out of the train data -> needed for mlflow
 
 batch = train_data.take(1)
-batch_as_nparray = list(batch)[0][0].numpy()
-input_example = batch_as_nparray[0]
-input_example = np.expand_dims(input_example, axis=0)
 
 # print('batch shape = ', list(batch)[0][0].numpy().shape) # (BATCH_SIZE, IMGSIZE, IMGSIZE, 1)
 
@@ -80,7 +67,6 @@ def get_class_weights():
 
 
 class_weights_dict = get_class_weights()
-params_dict.update({"class_weights": class_weights_dict})
 
 
 def get_model(dropout_rate): # parameters to be added later: add_dropout = True, dropout_rate = 0.3, add_batch_normalization = True
@@ -175,64 +161,44 @@ history = model.fit(
 print(f'Training time = {time.time() - start} sec')
 
 
-validation_metrics = ['val_' + metric for metric in metrics]
-validation_metrics_values = [history.history['val_' + metric][-1] for metric in metrics] # mlflow logs only numbers/strings for metrics, not lists
-metrics_dict = dict(zip(validation_metrics, validation_metrics_values)) # for mlflow logging
+val_accuracy =  history.history['val_binary_accuracy'][-1]
+
+# model.evaluate(test_data) returns loss, test_accuracy
+
+test_data = get_test_data(BATCH_SIZE, IMGSIZE, channel_mode = "grayscale")
+_, test_accuracy = model.evaluate(test_data) ###### need to define test data and test the code line
 
 
 # create learning curve (for logging with MLFlow)
 learning_curves = training_helpers.generate_plot_of_learning_curves(history)
 
-prediction_example = model(input_example).numpy() # for mlflow logging
+# prediction_example = model(input_example).numpy() # for mlflow logging
 
    
 # First step: run "mlflow server --host 127.0.0.1 --port 8080" in a different terminal to open the server; 
-# Make sure that both the python script and rhe mlflow server command are ran from the same folder !!!!!! (in the current case, the folder is "own_model_training") 
-# When http://127.0.0.1:8080 displays nonsense, one can try to do a hard refresh while on the webpage with Crtl+Shift+R (worked for me)   
+# Make sure that both the python script and rhe mlflow server command are ran from the same folder !!!!!! 
+# When http://127.0.0.1:8080 displays nonsense, one can try to do a hard refresh while on the webpage with Crtl+Shift+R
+
+
+custom_params_dict = {'momentum': momentum, 'class weights': class_weights_dict}
 
 if mlflow_logging: 
     
-    mlflow.set_tracking_uri("http://127.0.0.1:8080")
-
-    # Sets the current active experiment to the "own_model_training" experiment and
-    # returns the Experiment metadata
-    mlflow.set_experiment("convolutional_net_training")
-
-
-    # Define a run name for this iteration of training.
-    # If this is not set, a unique name will be auto-generated for your run.
-
-    run_name = "cnn_train_2"
-
-    # Define an artifact path that the model will be saved to.
-    artifact_path = "cnn_artifacts"
-
-
-    # Start an MLflow run
-    with mlflow.start_run(run_name=run_name) as run:
-        
-        # Log the hyperparameters
-        mlflow.log_params(params_dict)
-
-        # Log the metrics
-        mlflow.log_metrics(metrics_dict)
-        
-        # Log figures
-        mlflow.log_figure(learning_curves, "learning_curve_bin_acc.png")
-
-        # log model summary as text artifact
-        mlflow.log_text(model_summary_str, "model_summary.txt")
-
-        # Set a tag that we can use to remind ourselves what this run was for
-        
-        mlflow.set_tag("Training Info", "2nd run: added class weighting and a dropout layer after the dense layer")
-        
-        # Infer the model signature
-        signature = mlflow.models.infer_signature(input_example, prediction_example)
-
-        # Log the model
-        model_info = mlflow.keras.log_model(
-                model = model,
-                artifact_path = artifact_path,
-                signature = signature
-            )
+    
+    log_mlflow_run(
+    model, # keras model to be logged
+    run_name = 'Own CNN', # string that will be displayed as the run title in mlflow GUI
+    epochs = EPOCHS,
+	batch_size = BATCH_SIZE,
+	loss_function = loss_func,
+	optimizer = optimizer, # can be an optimizer object
+	learning_rate = learning_rate,
+	top_dropout_rate = dropout_rate,
+	model_summary_string = model_summary_str, # string for model summary (comes from a helper function)
+    run_tag = 'Self-built CNN with a dropout layer; trained using class weights.', # string explaining what this run was for
+    signature_batch = batch, # needed for infer_signature
+    val_accuracy = val_accuracy,
+    test_accuracy = test_accuracy,
+	custom_params = custom_params_dict, # must be a dictionary (eg for momentum, activation functions in the top layer)
+    fig = learning_curves # in case there are more figs
+)
