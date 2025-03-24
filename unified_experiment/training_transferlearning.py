@@ -18,7 +18,7 @@ import time
 import training_helpers
 import sys
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
-from data.helpers import get_data, IMGSIZE
+from data.helpers import get_train_val_data, get_test_data, IMGSIZE
 from mlflow_logging import log_mlflow_run
 
 
@@ -27,7 +27,7 @@ from mlflow_logging import log_mlflow_run
 
 # params for training
 BATCHSIZE = 10
-CHOSEN_EPOCHS = 1
+CHOSEN_EPOCHS = 20
 dense_layer_top_neurons = 128
 dense_layer_top_activation = "relu"
 dropout_rate_top = 0.4
@@ -40,14 +40,14 @@ early_stopping = True
 selected_model = "MobileNet" # MobileNet or ResNet
 
 # custom params for mlflow logging
-mlflow_run_name = "3nd try"
+mlflow_run_name = "optimized params"
 custom_params = {"top dense layer activation": dense_layer_top_activation}
 mlflow_tracking = True
 
 # %%
 ' ######################################### getting training and validation data ################################'
 
-train_data, val_data = get_data(BATCHSIZE, IMGSIZE, selected_data = "train")
+train_data, val_data = get_train_val_data(BATCHSIZE, IMGSIZE, channel_mode="rgb")
 
  # %%
 ' ################################################## defining the model #########################'
@@ -149,11 +149,11 @@ if os.path.exists(checkpoint_path):
 # %%
 ' ########################################## prediction on validation and test set ########'
 # get training data again (generators have been consumed during training and need to be reconstructed)
-train_data, val_data = get_data(BATCHSIZE, IMGSIZE, selected_data = "train")
+train_data, val_data = get_train_val_data(BATCHSIZE, IMGSIZE, channel_mode="rgb")
 val_loss, val_binary_accuracy = model.evaluate(val_data, verbose = 1)
 
 # get test data
-test_data_throwaway, test_data = get_data(BATCHSIZE, IMGSIZE, selected_data = "test")
+test_data = get_test_data(BATCHSIZE, IMGSIZE, channel_mode="rgb")
 test_loss, test_binary_accuracy = model.evaluate(test_data, verbose = 1)
 
 print('Val loss:', val_loss)

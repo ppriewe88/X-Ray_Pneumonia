@@ -29,17 +29,17 @@ import time
 import training_helpers
 import sys
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
-from data.helpers import get_data, IMGSIZE
+from data.helpers import get_train_val_data, get_test_data, IMGSIZE
 from mlflow_logging import log_mlflow_run
 
 # %%
-' ################# select experiment ID and run ID from mlflow GUI, enter for model loading #######'
+' ################# enter transfer learning experiment ID + run ID (mlflow GUI), that you want to finetune  #######'
 
 # manually selected experiment and run ID and run name. Extracted from MLFlow frontend.
-mlflow_experiment_ID = "182313552410587795"
-mlflow_run_ID = "023db44e237343a4b00258299a0419c2"
-mlflow_run_name = "2nd try"
-mlflow_run_name = f'{mlflow_run_name}-finetuning'
+mlflow_experiment_ID = "844491794960209754"
+mlflow_run_ID = "863b7a1434c040b89c06974255b10e13"
+mlflow_old_run_name = "optimized params"
+mlflow_run_name = f'{mlflow_old_run_name} - finetuning nr. 2'
 
 # %%
 ' ################### extract params logged during transfer learning ######################'
@@ -74,10 +74,10 @@ else:
 
 
 # %%
-' ################################### params for fine tuning #############################'
+' ################################### params for finetuning #############################'
 
-CHOSEN_EPOCHS = 1
-BATCHSIZE = 600
+CHOSEN_EPOCHS = 15
+BATCHSIZE = 10
 chosen_learning_rate = 0.00001
 chosen_loss = params["loss function"]
 unfrozen_last_layers = 5
@@ -137,7 +137,7 @@ model_summary_str = training_helpers.generate_model_summary_string(model)
 ' ######################################### getting training and validation data ################################'
 
 # get the data
-train_data, val_data = get_data(BATCHSIZE, IMGSIZE, selected_data = "train")
+train_data, val_data = get_train_val_data(BATCHSIZE, IMGSIZE, channel_mode = "rgb")
 
 # %%
 ' ########################################## callbacks #######################'
@@ -151,7 +151,7 @@ checkpoint_path = os.path.join(current_dir, "temp_model.h5")
 # define checkpoint callback
 checkpoint = keras.callbacks.ModelCheckpoint(
     checkpoint_path,
-    monitor="val_loss",
+    monitor="val_binary_accuracy",
     verbose=0,
     save_best_only=True,
     save_weights_only=False,
@@ -198,11 +198,11 @@ if os.path.exists(checkpoint_path):
 ' ########################################## prediction on validation and test set ########'
 
 # get training data again (generators have been consumed during training and need to be reconstructed)
-train_data, val_data = get_data(BATCHSIZE, IMGSIZE, selected_data = "train")
+train_data, val_data = get_train_val_data(BATCHSIZE, IMGSIZE, channel_mode= "rgb")
 val_loss, val_binary_accuracy = model.evaluate(val_data, verbose = 1)
 
 # get test data
-test_data_throwaway, test_data = get_data(BATCHSIZE, IMGSIZE, selected_data = "test")
+test_data = get_test_data(BATCHSIZE, IMGSIZE, channel_mode= "rgb")
 test_loss, test_binary_accuracy = model.evaluate(test_data, verbose = 1)
 print('Val loss:', val_loss)
 print('Val binary accuracy:', val_binary_accuracy)
