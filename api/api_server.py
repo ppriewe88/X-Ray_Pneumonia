@@ -2,7 +2,7 @@ import io
 import uvicorn
 import numpy as np
 from fastapi import FastAPI, UploadFile, File, HTTPException
-from fastapi.responses import StreamingResponse
+from enum import Enum
 from PIL import Image
 import mlflow
 from api_helpers import resize_image, load_model_from_registry, make_prediction
@@ -16,19 +16,32 @@ Has to be called from parent directory via: uvicorn api_server:app --host 0.0.0.
 """
 
 
+' ############################### helper class for label input #################'
+
+class Label(int, Enum):
+    NEGATIVE = 0
+    POSITIVE = 1
+
+
+' ############################### creating app  ################################'
 # make app
 app = FastAPI(title = "Deploying an ML Model for Pneumonia Detection")
 
+
+' ############################### root endpoint ###############################'
 # root
 @app.get("/")
 def home():
     return "root of this API"
 
+
+' ############################### model serving/prediction endpoint ###############################'
 # endpoint for uploading image
 @app.post("/upload_image")
 # async defines an asynchronous function => These functions can be paused and resumed, 
 # allowing other tasks to run while waiting for external operations, such as network requests or file I/O.
 async def upload_image_and_integer( 
+    label: Label,
     file: UploadFile = File(...)
 ):
 
@@ -50,7 +63,7 @@ async def upload_image_and_integer(
     image_array = np.asarray(image)
 
     # modell laden
-    model_name_test = "MobileNet_transfer_learning"  # Small_CNN, MobileNet_transfer_learning, MobileNet_transfer_learning_finetuned
+    model_name_test = "Small_CNN"  # Small_CNN, MobileNet_transfer_learning, MobileNet_transfer_learning_finetuned
     model_version_test = 1
 
     # Bild laden
@@ -67,9 +80,29 @@ async def upload_image_and_integer(
     formatted_image = resize_image(image=img, signature_shape = input_shape, signature_dtype=input_type)
 
 
-    y_pred = {"prediction": str(make_prediction(model, image_as_array=formatted_image))}
+    #y_pred = {"prediction": str(make_prediction(model, image_as_array=formatted_image))}
 
-    return y_pred
+    y_pred = make_prediction(model, image_as_array=formatted_image)
+    y_pred_as_str = {"prediction": str(y_pred)}
+
+    # monitor the performance of our model
+    mlflow.set_experiment(f"performancel logging test for model {model_name_test}")
+    
+    label_input = label
+    
+    with mlflow.start_run():
+        
+        # log the metrics
+        metrics_dict = {
+            "y_true": label_input,
+            "y_pred": y_pred,
+            "accuracy": int(label_input == np.around(y_pred))
+            }
+        
+        mlflow.log_metrics(metrics_dict)
+        
+    
+    return y_pred_as_str
 
 ################# host specification #################
 
