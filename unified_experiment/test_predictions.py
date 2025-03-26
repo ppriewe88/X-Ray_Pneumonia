@@ -1,8 +1,12 @@
 from tensorflow.keras.models import load_model
+import time
 
 
-model = load_model("model.keras")
+start_loading = time.time()
+model = load_model("model_transferlearning.keras")  # model_smallCNN, model_transferlearning
+end_loading = time.time()
 
+print("loading time: ", end_loading - start_loading)
 
 import numpy as np
 from PIL import Image
