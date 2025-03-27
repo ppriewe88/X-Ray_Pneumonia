@@ -2,10 +2,10 @@ import io
 import uvicorn
 import numpy as np
 from fastapi import FastAPI, UploadFile, File, HTTPException
-from fastapi.responses import StreamingResponse
+from enum import Enum
 from PIL import Image
 import mlflow
-from api_helpers import resize_image, load_model_from_registry, make_prediction
+from api_helpers import resize_image, load_model_from_registry, make_prediction, return_verified_image_as_numpy_arr
 
 
 """ 
@@ -16,60 +16,76 @@ Has to be called from parent directory via: uvicorn api_server:app --host 0.0.0.
 """
 
 
+' ############################### helper class for label input #################'
+
+class Label(int, Enum):
+    NEGATIVE = 0
+    POSITIVE = 1
+
+# class RegisteredModel(int, Enum):
+
+
+' ############################### creating app  ################################'
 # make app
 app = FastAPI(title = "Deploying an ML Model for Pneumonia Detection")
 
+
+' ############################### root endpoint ###############################'
 # root
 @app.get("/")
 def home():
     return "root of this API"
 
+
+' ############################### model serving/prediction endpoint ###############################'
 # endpoint for uploading image
 @app.post("/upload_image")
 # async defines an asynchronous function => These functions can be paused and resumed, 
 # allowing other tasks to run while waiting for external operations, such as network requests or file I/O.
 async def upload_image_and_integer( 
+    # model_name: RegisteredModel,
+    label: Label,
     file: UploadFile = File(...)
 ):
 
-    try: 
-        # read the uploaded file into memory as bytes
-        image_bytes = await file.read()
-        
-        # convert bytes to a PIL image, then ensure its integrity
-        image = Image.open(io.BytesIO(image_bytes))
-        image.verify() # can't be used if i want to process the image
-    
-    except Exception:
-        raise HTTPException(status_code=400, detail="Uploaded file is not a valid image.")
-    
-    # load image again (as it has been deconstructed by .verify())
-    image = Image.open(io.BytesIO(image_bytes))
 
-    # convert the PIL image to np.array
-    image_array = np.asarray(image)
+    # read the uploaded file into memory as bytes
+    image_bytes = await file.read()
 
-    # modell laden
-    model_name_test = "MobileNet_transfer_learning"  # Small_CNN, MobileNet_transfer_learning, MobileNet_transfer_learning_finetuned
-    model_version_test = 1
+    # validate image and return as numpy
+    img = return_verified_image_as_numpy_arr(image_bytes)
 
-    # Bild laden
-    img = image_array
-
-    # mlflow setting
-    "    mlflow server --host 127.0.0.1 --port 8080     "
+    # set tracking uri for mlflow
     mlflow.set_tracking_uri("http://127.0.0.1:8080")
 
+    # vessel for API-output
+    y_pred_as_str = {}
+    
+    # ########################### load, predict, log metric for champion and challenger ################'
+    for  model_name in ["Small_CNN", "MobileNet_transfer_learning", "MobileNet_transfer_learning_finetuned"]:
+        
+        model, input_shape, input_type = load_model_from_registry(model_name = model_name, model_version=1)
+        formatted_image = resize_image(image=img, signature_shape = input_shape, signature_dtype=input_type)
+        y_pred = make_prediction(model, image_as_array=formatted_image)
 
-    model, input_shape, input_type = load_model_from_registry(model_name = model_name_test, model_version=model_version_test)
+        # set experiment name for model (logging performance for each model in separate experiment)
+        mlflow.set_experiment(f"performance {model_name}")
+        
+        with mlflow.start_run():
+            
+            # log the metrics
+            metrics_dict = {
+                "y_true": label,
+                "y_pred": y_pred,
+                "accuracy": int(label == np.around(y_pred))
+                }
+            
+            mlflow.log_metrics(metrics_dict)  
 
-
-    formatted_image = resize_image(image=img, signature_shape = input_shape, signature_dtype=input_type)
-
-
-    y_pred = {"prediction": str(make_prediction(model, image_as_array=formatted_image))}
-
-    return y_pred
+        # update dictionary for API-output
+        y_pred_as_str.update({f"prediction {model_name}": str(y_pred)})
+    
+    return y_pred_as_str
 
 ################# host specification #################
 
