@@ -36,19 +36,19 @@ def resize_image(
     return image_array
 
 
-def load_model_from_registry(model_name, model_version = 1):
+def load_model_from_registry(model_name, alias):
     
     # start_loading = time.time()
     print("start loading model")
-    model = mlflow.pyfunc.load_model(model_uri=f"models:/{model_name}/{model_version}")
+    model = mlflow.pyfunc.load_model(model_uri=f"models:/{model_name}@{alias}")
     # end_loading = time.time()
     # print("loading time: ", end_loading - start_loading)
     print("model loaded")
-    # Signature abrufen
+    # extract signature
     signature = model.metadata.signature
     input_shape = signature.inputs.to_dict()[0]['tensor-spec']['shape'] 
     input_type = signature.inputs.to_dict()[0]['tensor-spec']['dtype']
-
+    
     return model, input_shape, input_type
 
 def make_prediction(model, image_as_array):

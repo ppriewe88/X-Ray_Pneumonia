@@ -1,6 +1,0 @@
-artifact_location: mlflow-artifacts:/645989268359015904
-creation_time: 1743074381961
-experiment_id: '645989268359015904'
-last_update_time: 1743074381961
-lifecycle_stage: active
-name: performance MobileNet_transfer_learning_finetuned

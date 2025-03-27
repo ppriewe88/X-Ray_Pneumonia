@@ -62,14 +62,14 @@ async def upload_image_and_integer(
     y_pred_as_str = {}
     
     # ########################### load, predict, log metric for champion and challenger ################'
-    for  model_name in ["Small_CNN", "MobileNet_transfer_learning", "MobileNet_transfer_learning_finetuned"]:
+    for  alias in ["champion", "challenger", "baseline"]:
         
-        model, input_shape, input_type = load_model_from_registry(model_name = model_name, model_version=1)
+        model, input_shape, input_type  = load_model_from_registry(model_name = "Xray_classifier", alias = alias)
         formatted_image = resize_image(image=img, signature_shape = input_shape, signature_dtype=input_type)
         y_pred = make_prediction(model, image_as_array=formatted_image)
 
         # set experiment name for model (logging performance for each model in separate experiment)
-        mlflow.set_experiment(f"performance {model_name}")
+        mlflow.set_experiment(f"performance {alias}")
         
         with mlflow.start_run():
             
@@ -79,11 +79,10 @@ async def upload_image_and_integer(
                 "y_pred": y_pred,
                 "accuracy": int(label == np.around(y_pred))
                 }
-            
-            mlflow.log_metrics(metrics_dict)  
+            mlflow.log_metrics(metrics_dict)
 
         # update dictionary for API-output
-        y_pred_as_str.update({f"prediction {model_name}": str(y_pred)})
+        y_pred_as_str.update({f"prediction {alias}": str(y_pred)})
     
     return y_pred_as_str
 
