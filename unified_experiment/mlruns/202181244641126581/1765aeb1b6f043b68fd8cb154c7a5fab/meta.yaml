@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/202181244641126581/1765aeb1b6f043b68fd8cb154c7a5fab/artifacts
+end_time: 1743097801464
+entry_point_name: ''
+experiment_id: '202181244641126581'
+lifecycle_stage: active
+run_id: 1765aeb1b6f043b68fd8cb154c7a5fab
+run_name: aged-gnat-338
+run_uuid: 1765aeb1b6f043b68fd8cb154c7a5fab
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743097801387
+status: 3
+tags: []
+user_id: pprie

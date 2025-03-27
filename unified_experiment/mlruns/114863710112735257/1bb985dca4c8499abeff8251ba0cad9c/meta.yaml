@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/114863710112735257/1bb985dca4c8499abeff8251ba0cad9c/artifacts
+end_time: 1743097804295
+entry_point_name: ''
+experiment_id: '114863710112735257'
+lifecycle_stage: active
+run_id: 1bb985dca4c8499abeff8251ba0cad9c
+run_name: gaudy-elk-149
+run_uuid: 1bb985dca4c8499abeff8251ba0cad9c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743097804214
+status: 3
+tags: []
+user_id: pprie

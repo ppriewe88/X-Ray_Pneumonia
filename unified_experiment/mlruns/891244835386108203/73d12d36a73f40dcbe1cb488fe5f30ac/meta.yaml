@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/891244835386108203/73d12d36a73f40dcbe1cb488fe5f30ac/artifacts
+end_time: 1743097821657
+entry_point_name: ''
+experiment_id: '891244835386108203'
+lifecycle_stage: active
+run_id: 73d12d36a73f40dcbe1cb488fe5f30ac
+run_name: nebulous-tern-419
+run_uuid: 73d12d36a73f40dcbe1cb488fe5f30ac
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743097821563
+status: 3
+tags: []
+user_id: pprie
