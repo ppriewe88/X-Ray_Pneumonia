@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/850885704010922040/baca497c32034d91b0bb54191f669240/artifacts
+end_time: 1743086292489
+entry_point_name: ''
+experiment_id: '850885704010922040'
+lifecycle_stage: active
+run_id: baca497c32034d91b0bb54191f669240
+run_name: tasteful-bat-501
+run_uuid: baca497c32034d91b0bb54191f669240
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743086292384
+status: 3
+tags: []
+user_id: pprie
