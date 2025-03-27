@@ -2,6 +2,9 @@ import numpy as np
 from tensorflow import keras
 import mlflow
 from PIL import Image
+import io
+from fastapi import HTTPException
+
 
 def resize_image(
     image,
@@ -54,6 +57,25 @@ def make_prediction(model, image_as_array):
     pred_reshaped = float(prediction.flatten())
 
     return pred_reshaped
+
+
+def return_verified_image_as_numpy_arr(image_bytes):
+        try: 
+            
+            # convert bytes to a PIL image, then ensure its integrity
+            image = Image.open(io.BytesIO(image_bytes))
+            image.verify() # can't be used if i want to process the image
+        
+        except Exception:
+            raise HTTPException(status_code=400, detail="Uploaded file is not a valid image.")
+        
+        # load image again (as it has been deconstructed by .verify())
+        validated_image = Image.open(io.BytesIO(image_bytes))
+
+        # convert the PIL image to np.array
+        validated_image_as_numpy = np.asarray(validated_image)
+        return validated_image_as_numpy
+
 
 
 # if run locally (for tests)
