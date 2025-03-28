@@ -112,9 +112,11 @@ def get_performance_indicators(num_steps_short_term = 1):
     client = MlflowClient(tracking_uri="http://127.0.0.1:8080")
         
     # get the three experiments: performance + (baseline, challenger, champion)
+    print("getting experiment list")
     experiments = list(client.search_experiments())[:3]
     
     # get experiment names and ids
+    print("getting experiment names and ids")
     exp_names = [exp.name for exp in experiments]
     exp_ids = [exp.experiment_id for exp in experiments]
     
@@ -123,7 +125,7 @@ def get_performance_indicators(num_steps_short_term = 1):
     
     # for loop to calculate perfomance indicators for each experiment/model
     for exp_name, exp_id in zip(exp_names, exp_ids):
-        
+        print(f"{exp_name}: getting runs")
         # all runs in the experiment with exp_id, i.e. number of predictions made
         runs = list(client.search_runs(experiment_ids = exp_id))
         
@@ -132,8 +134,11 @@ def get_performance_indicators(num_steps_short_term = 1):
         
         # extract lists of accuracies, timestamps, and correct prediction labels
         # within the given experiment (0 = no pneumonia, 1 = pneumonia)
+        print(f"{exp_name}: starting extraction of accuracies")
         accuracies = [list(client.get_metric_history(run_id = run_id, key = 'accuracy'))[0].value for run_id in run_ids]
+        print(f"{exp_name}: starting extraction of time stamps")
         timestamps = [list(client.get_metric_history(run_id = run_id, key = 'accuracy'))[0].timestamp for run_id in run_ids]
+        print(f"{exp_name}: starting extraction of input_labels")
         y_true = [list(client.get_metric_history(run_id = run_id, key = 'y_true'))[0].value for run_id in run_ids]
         
         # 1st row is timestamps, 2nd is accuracies and so on
@@ -143,22 +148,23 @@ def get_performance_indicators(num_steps_short_term = 1):
         # get rid of the timestamps row
         values_array = values_array[1:]
         
+        print(f"{exp_name}: calc confusion matrix")
         # calculate confusion matrix elements
         true_positives = np.sum((values_array[0] == 1) & (values_array[1] == 1))
         true_negatives = np.sum((values_array[0] == 1) & (values_array[1] == 0))
-        false_positives = np.sum((values_array[0] == 0) & (values_array[1] == 1))
-        false_negatives = np.sum((values_array[0] == 0) & (values_array[1] == 0))
+        false_negatives = np.sum((values_array[0] == 0) & (values_array[1] == 1))
+        false_positives = np.sum((values_array[0] == 0) & (values_array[1] == 0))
         
         
         # save the experiment information in a dictionary
         exp_dictionary ={
-            'all-time average accuracy': np.mean(values_array[0]),
-            'total number of predictions': len(accuracies),
-            f'average accuracy for the last {num_steps_short_term} predictions': np.mean(values_array[0,-num_steps_short_term:]),
-            'pneumonia true positives': true_positives,
-            'pneumonia false positives': false_positives, 
-            'pneumonia false negatives': false_negatives,
-            'pneumonia true negatives': true_negatives, 
+            'all-time average accuracy': str(np.mean(values_array[0])),
+            'total number of predictions': str(len(accuracies)),
+            f'average accuracy for the last {num_steps_short_term} predictions': str(np.mean(values_array[0,-num_steps_short_term:])),
+            'pneumonia true positives': str(true_positives),
+            'pneumonia false positives': str(false_positives), 
+            'pneumonia false negatives': str(false_negatives),
+            'pneumonia true negatives': str(true_negatives), 
         }
         
         # update the dictionary containing the information from the other experiments

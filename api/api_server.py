@@ -3,7 +3,7 @@ import numpy as np
 from fastapi import FastAPI, UploadFile, File
 from enum import Enum
 import mlflow
-from api_helpers import resize_image, load_model_from_registry, make_prediction, return_verified_image_as_numpy_arr, get_modelversion_and_tag
+from api_helpers import resize_image, load_model_from_registry, make_prediction, return_verified_image_as_numpy_arr, get_modelversion_and_tag, get_performance_indicators
 
 
 """ 
@@ -99,6 +99,23 @@ async def upload_image_and_integer(
         y_pred_as_str.update({f"prediction {alias}": str(y_pred)})
     
     return y_pred_as_str
+
+
+' ############################### model serving/prediction endpoint ###############################'
+# endpoint for uploading image
+@app.post("/get_performance")
+async def get_performance(
+    last_n_predictions: int,
+    model_name: str
+    ):
+    # gets the dictionary for all three model
+    perf_dict = get_performance_indicators(num_steps_short_term = last_n_predictions)
+    # select one model
+    perf_dict = perf_dict["performance " + model_name]
+    
+    return perf_dict
+
+
 
 ################# host specification #################
 
