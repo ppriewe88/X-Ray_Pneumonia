@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/891244835386108203/355783ada532471ab161e9780bbeb1d7/artifacts
+end_time: 1743097842984
+entry_point_name: ''
+experiment_id: '891244835386108203'
+lifecycle_stage: active
+run_id: 355783ada532471ab161e9780bbeb1d7
+run_name: treasured-foal-244
+run_uuid: 355783ada532471ab161e9780bbeb1d7
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743097842901
+status: 3
+tags: []
+user_id: pprie

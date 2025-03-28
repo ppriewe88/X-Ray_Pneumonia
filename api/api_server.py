@@ -1,11 +1,9 @@
-import io
 import uvicorn
 import numpy as np
-from fastapi import FastAPI, UploadFile, File, HTTPException
+from fastapi import FastAPI, UploadFile, File
 from enum import Enum
-from PIL import Image
 import mlflow
-from api_helpers import resize_image, load_model_from_registry, make_prediction, return_verified_image_as_numpy_arr
+from api_helpers import resize_image, load_model_from_registry, make_prediction, return_verified_image_as_numpy_arr, get_modelversion_and_tag
 
 
 """ 
@@ -43,11 +41,9 @@ def home():
 # async defines an asynchronous function => These functions can be paused and resumed, 
 # allowing other tasks to run while waiting for external operations, such as network requests or file I/O.
 async def upload_image_and_integer( 
-    # model_name: RegisteredModel,
     label: Label,
     file: UploadFile = File(...)
 ):
-
 
     # read the uploaded file into memory as bytes
     image_bytes = await file.read()
@@ -61,16 +57,27 @@ async def upload_image_and_integer(
     # vessel for API-output
     y_pred_as_str = {}
     
+    model_name = "Xray_classifier"
+
     # ########################### load, predict, log metric for champion and challenger ################'
     for  alias in ["champion", "challenger", "baseline"]:
         
-        model, input_shape, input_type  = load_model_from_registry(model_name = "Xray_classifier", alias = alias)
-        formatted_image = resize_image(image=img, signature_shape = input_shape, signature_dtype=input_type)
-        y_pred = make_prediction(model, image_as_array=formatted_image)
+        # get model and signature
+        model, input_shape, input_type  = load_model_from_registry(model_name = model_name, alias = alias)
+        
+        # get model version and tag for logging
+        model_version, model_tag = get_modelversion_and_tag(model_name=model_name, model_alias=alias)
 
+        # resize image according to signature
+        formatted_image = resize_image(image=img, signature_shape = input_shape, signature_dtype=input_type)
+        
+        # make prediction
+        y_pred = make_prediction(model, image_as_array=formatted_image)
+        
         # set experiment name for model (logging performance for each model in separate experiment)
         mlflow.set_experiment(f"performance {alias}")
         
+        # logging of metrics
         with mlflow.start_run():
             
             # log the metrics
@@ -80,6 +87,13 @@ async def upload_image_and_integer(
                 "accuracy": int(label == np.around(y_pred))
                 }
             mlflow.log_metrics(metrics_dict)
+
+            # log model version and tag
+            params = {
+                "model version": model_version,
+                "model tag": model_tag
+                }
+            mlflow.log_params(params)
 
         # update dictionary for API-output
         y_pred_as_str.update({f"prediction {alias}": str(y_pred)})

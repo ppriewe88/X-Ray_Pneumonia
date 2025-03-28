@@ -3,6 +3,7 @@ from tensorflow import keras
 import mlflow
 from PIL import Image
 import io
+import os
 from fastapi import HTTPException
 from mlflow import MlflowClient
 
@@ -77,6 +78,33 @@ def return_verified_image_as_numpy_arr(image_bytes):
         validated_image_as_numpy = np.asarray(validated_image)
         return validated_image_as_numpy
 
+def get_modelversion_and_tag(model_name, model_alias):
+
+    # get path of model folder and aliases subfolder (both are used later)
+    aliases_path = os.path.abspath(os.path.join("..",f"unified_experiment/mlruns/models/{model_name}/aliases"))
+    model_path = os.path.dirname(aliases_path)
+
+    # find alias (containing version number) in aliases subfolder, read version number from found file
+    alias_file = os.path.join(aliases_path, model_alias)
+    with open(alias_file, 'r') as file:
+        version_number = int(file.read().strip())
+        
+    # use version number to find folder of model version
+    version_dir = os.path.join(model_path, f"version-{version_number}")
+    if not os.path.exists(version_dir):
+        raise FileNotFoundError(f"Folder {version_dir} does not exist")
+    
+    # find subfolder containing tags
+    tags_dir = os.path.join(version_dir, "tags")
+    if not os.path.exists(tags_dir):
+        raise FileNotFoundError(f"folder 'tags' in {version_dir} is missing")
+    
+    # extract titel from first tag-file found
+    tag_files = os.listdir(tags_dir)
+    if not tag_files:
+        raise FileNotFoundError(f"No tags found in {tags_dir}")
+    
+    return version_number, tag_files[0].strip()
 
 def get_performance_indicators(num_steps_short_term = 1):
     
@@ -135,31 +163,33 @@ def get_performance_indicators(num_steps_short_term = 1):
         
         # update the dictionary containing the information from the other experiments
         performance_dictionary.update({exp_name: exp_dictionary})
-        
-    
+          
     return performance_dictionary
 
-
 # if run locally (for tests)
-if __name__ == "__main__":
+'''if __name__ == "__main__":
+    # modell laden
+    model_name_test = "Xray_classifier"  # Small_CNN, MobileNet_transfer_learning, MobileNet_transfer_learning_finetuned
+    model_alias = "baseline"
     
-    '''# modell laden
-    model_name_test = "MobileNet_transfer_learning_finetuned"  # Small_CNN, MobileNet_transfer_learning, MobileNet_transfer_learning_finetuned
-    model_version_test = 1
+    ' ###################### test: extract version via alias ########### '
+    print(get_modelversion_and_tag(model_name=model_name_test, model_alias=model_alias))
 
-    # Bild laden (ist )
-    img = Image.open('IM-0001-0001.jpeg')
+    ' #################### test: extract tag of model version #############'
+    
+    # Bild laden
+    img = Image.open(r"C:\Users\pprie\OneDrive\Dokumente\Python_Projekte\95_Xray\data\test\NORMAL\IM-0001-0001.jpeg")
 
     # mlflow setting
     "    mlflow server --host 127.0.0.1 --port 8080     "
     mlflow.set_tracking_uri("http://127.0.0.1:8080")
 
-    model, input_shape, input_type = load_model_from_registry(model_name = model_name_test, model_version=model_version_test)
+    model, input_shape, input_type = load_model_from_registry(model_name = model_name_test, alias=model_alias)
 
     formatted_image = resize_image(image=img, signature_shape = input_shape, signature_dtype=input_type)
 
     y_pred = make_prediction(model, image_as_array=formatted_image)
 
-    print(y_pred)'''
+    print(y_pred)
     
-    print(get_performance_indicators())
+    print(get_performance_indicators())'''
