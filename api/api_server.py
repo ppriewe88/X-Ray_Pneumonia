@@ -106,12 +106,9 @@ async def upload_image_and_integer(
 @app.post("/get_performance")
 async def get_performance(
     last_n_predictions: int,
-    model_name: str
     ):
     # gets the dictionary for all three model
     perf_dict = get_performance_indicators(num_steps_short_term = last_n_predictions)
-    # select one model
-    perf_dict = perf_dict["performance " + model_name]
     
     return perf_dict
 
