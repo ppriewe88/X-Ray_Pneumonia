@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/891244835386108203/cff28b66621e4d6a8d1e57c593d03165/artifacts
+end_time: 1743171415284
+entry_point_name: ''
+experiment_id: '891244835386108203'
+lifecycle_stage: active
+run_id: cff28b66621e4d6a8d1e57c593d03165
+run_name: suave-carp-294
+run_uuid: cff28b66621e4d6a8d1e57c593d03165
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743171415265
+status: 3
+tags: []
+user_id: anandrei90
