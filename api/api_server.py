@@ -20,9 +20,6 @@ class Label(int, Enum):
     NEGATIVE = 0
     POSITIVE = 1
 
-# class RegisteredModel(int, Enum):
-
-
 ' ############################### creating app  ################################'
 # make app
 app = FastAPI(title = "Deploying an ML Model for Pneumonia Detection")
