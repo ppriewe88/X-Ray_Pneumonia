@@ -2,10 +2,11 @@ import requests
 from pathlib import Path
 from enum import Enum
 
+
+' ################# class for labels; as in endpoint for prediciton ###############'
 class Label(int, Enum):
     NEGATIVE = 0
     POSITIVE = 1
-
 
 ' ################# configure communication with API endpoint ############'
 base_url = "http://127.0.0.1:8000"
@@ -13,17 +14,16 @@ endpoint = "/upload_image"
 
 url_with_endpoint = base_url + endpoint
 
-
-samples = 5
+' ################# make n=samples calls for each class  #########################'
+samples = 30
 
 for data_class in ["NORMAL", "PNEUMONIA"]:
     ' ################### folder to data (images) #################################'
-    # Pfad zum Ordner mit den Bildern
+    # path to images; currently absolute path
     image_folder = Path(rf"C:\Users\pprie\OneDrive\Dokumente\Python_Projekte\95_Xray\data\test\{data_class}")
 
-
     ' ######################## take first n images and make prediction + logging ###########'
-    # Sammeln der ersten n=samples Bilddateien
+    # get first n=samples images
     image_files = list(image_folder.glob("*"))[:samples]
 
     for i, image_file in enumerate(image_files):
@@ -48,11 +48,11 @@ for data_class in ["NORMAL", "PNEUMONIA"]:
             # keep status_code
             status_code = response.status_code
 
-            # quick error handling
+            # simple error handling
             if status_code == 200:
                 print(f"Image {files["file"][0]} sent successfully. Response:", response.json())
             else:
                 print(f"Error during sending. status code: {status_code}")
                 print("Error details:", response.text)
 
-        print(f"Call no. {i+1} done.")
+        print(f"Call no. {i+1} with class {data_class} done.")

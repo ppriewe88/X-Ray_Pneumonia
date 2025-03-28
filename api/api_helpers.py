@@ -155,16 +155,16 @@ def get_performance_indicators(num_steps_short_term = 1):
         false_negatives = np.sum((values_array[0] == 0) & (values_array[1] == 1))
         false_positives = np.sum((values_array[0] == 0) & (values_array[1] == 0))
         
-        
         # save the experiment information in a dictionary
         exp_dictionary ={
             'all-time average accuracy': str(np.mean(values_array[0])),
             'total number of predictions': str(len(accuracies)),
             f'average accuracy for the last {num_steps_short_term} predictions': str(np.mean(values_array[0,-num_steps_short_term:])),
             'pneumonia true positives': str(true_positives),
+            'pneumonia true negatives': str(true_negatives),
             'pneumonia false positives': str(false_positives), 
             'pneumonia false negatives': str(false_negatives),
-            'pneumonia true negatives': str(true_negatives), 
+             
         }
         
         # update the dictionary containing the information from the other experiments

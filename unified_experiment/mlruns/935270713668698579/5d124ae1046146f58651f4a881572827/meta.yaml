@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/5d124ae1046146f58651f4a881572827/artifacts
+end_time: 1743174037291
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: 5d124ae1046146f58651f4a881572827
+run_name: dapper-koi-125
+run_uuid: 5d124ae1046146f58651f4a881572827
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743174037213
+status: 3
+tags: []
+user_id: pprie

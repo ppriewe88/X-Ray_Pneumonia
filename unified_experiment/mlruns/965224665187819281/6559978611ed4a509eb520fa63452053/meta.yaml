@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/6559978611ed4a509eb520fa63452053/artifacts
+end_time: 1743174270714
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: 6559978611ed4a509eb520fa63452053
+run_name: polite-squirrel-419
+run_uuid: 6559978611ed4a509eb520fa63452053
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743174270634
+status: 3
+tags: []
+user_id: pprie

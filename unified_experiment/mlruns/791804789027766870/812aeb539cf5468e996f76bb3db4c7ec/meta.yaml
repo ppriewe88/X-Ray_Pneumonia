@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/791804789027766870/812aeb539cf5468e996f76bb3db4c7ec/artifacts
+end_time: 1743174028744
+entry_point_name: ''
+experiment_id: '791804789027766870'
+lifecycle_stage: active
+run_id: 812aeb539cf5468e996f76bb3db4c7ec
+run_name: calm-stoat-906
+run_uuid: 812aeb539cf5468e996f76bb3db4c7ec
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743174028668
+status: 3
+tags: []
+user_id: pprie

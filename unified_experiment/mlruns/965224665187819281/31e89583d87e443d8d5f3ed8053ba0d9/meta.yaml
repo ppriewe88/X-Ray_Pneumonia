@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/31e89583d87e443d8d5f3ed8053ba0d9/artifacts
+end_time: 1743173940397
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: 31e89583d87e443d8d5f3ed8053ba0d9
+run_name: redolent-roo-220
+run_uuid: 31e89583d87e443d8d5f3ed8053ba0d9
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743173940324
+status: 3
+tags: []
+user_id: pprie

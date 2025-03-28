@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/6f48e722794746ffbf464298bae05fbe/artifacts
+end_time: 1743174184218
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: 6f48e722794746ffbf464298bae05fbe
+run_name: rebellious-dove-467
+run_uuid: 6f48e722794746ffbf464298bae05fbe
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743174184080
+status: 3
+tags: []
+user_id: pprie

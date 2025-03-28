@@ -15,18 +15,14 @@ Has to be called from parent directory via: uvicorn api_server:app --host 0.0.0.
 
 
 ' ############################### helper class for label input #################'
-
+# class for input in uploading-endpoint
 class Label(int, Enum):
     NEGATIVE = 0
     POSITIVE = 1
 
-# class RegisteredModel(int, Enum):
-
-
 ' ############################### creating app  ################################'
 # make app
 app = FastAPI(title = "Deploying an ML Model for Pneumonia Detection")
-
 
 ' ############################### root endpoint ###############################'
 # root
@@ -34,12 +30,9 @@ app = FastAPI(title = "Deploying an ML Model for Pneumonia Detection")
 def home():
     return "root of this API"
 
-
 ' ############################### model serving/prediction endpoint ###############################'
 # endpoint for uploading image
 @app.post("/upload_image")
-# async defines an asynchronous function => These functions can be paused and resumed, 
-# allowing other tasks to run while waiting for external operations, such as network requests or file I/O.
 async def upload_image_and_integer( 
     label: Label,
     file: UploadFile = File(...)
@@ -101,9 +94,9 @@ async def upload_image_and_integer(
     return y_pred_as_str
 
 
-' ############################### model serving/prediction endpoint ###############################'
+' ############################### performance review endpoint ###############################'
 # endpoint for uploading image
-@app.post("/get_performance")
+@app.post("/get_performance_review")
 async def get_performance(
     last_n_predictions: int,
     ):
@@ -113,8 +106,7 @@ async def get_performance(
     return perf_dict
 
 
-
-################# host specification #################
+' ################################ host specification ################# '
 
 # my localhost adress
 host = "127.0.0.1"

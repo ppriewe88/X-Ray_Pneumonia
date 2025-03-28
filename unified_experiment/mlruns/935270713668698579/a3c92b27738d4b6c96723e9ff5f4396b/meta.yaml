@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/a3c92b27738d4b6c96723e9ff5f4396b/artifacts
+end_time: 1743174012717
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: a3c92b27738d4b6c96723e9ff5f4396b
+run_name: fearless-eel-142
+run_uuid: a3c92b27738d4b6c96723e9ff5f4396b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743174012644
+status: 3
+tags: []
+user_id: pprie

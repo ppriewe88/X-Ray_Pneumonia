@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/6a440b05cf3744b0a70d3b351a8966d4/artifacts
+end_time: 1743174177212
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: 6a440b05cf3744b0a70d3b351a8966d4
+run_name: nimble-gnat-770
+run_uuid: 6a440b05cf3744b0a70d3b351a8966d4
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743174177146
+status: 3
+tags: []
+user_id: pprie

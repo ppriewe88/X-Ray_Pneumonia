@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/325b92a4a006441ea97ad1ab78a31eea/artifacts
+end_time: 1743174087325
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: 325b92a4a006441ea97ad1ab78a31eea
+run_name: classy-stag-650
+run_uuid: 325b92a4a006441ea97ad1ab78a31eea
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743174087250
+status: 3
+tags: []
+user_id: pprie
