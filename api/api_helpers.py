@@ -4,6 +4,7 @@ import mlflow
 from PIL import Image
 import io
 from fastapi import HTTPException
+from mlflow import MlflowClient
 
 
 def resize_image(
@@ -77,10 +78,72 @@ def return_verified_image_as_numpy_arr(image_bytes):
         return validated_image_as_numpy
 
 
+def get_performance_indicators(num_steps_short_term = 1):
+    
+    # setting the uri 
+    client = MlflowClient(tracking_uri="http://127.0.0.1:8080")
+        
+    # get the three experiments: performance + (baseline, challenger, champion)
+    experiments = list(client.search_experiments())[:3]
+    
+    # get experiment names and ids
+    exp_names = [exp.name for exp in experiments]
+    exp_ids = [exp.experiment_id for exp in experiments]
+    
+    # define an empty dictionary to hold the performance indicators for each experiment
+    performance_dictionary = {}
+    
+    # for loop to calculate perfomance indicators for each experiment/model
+    for exp_name, exp_id in zip(exp_names, exp_ids):
+        
+        # all runs in the experiment with exp_id, i.e. number of predictions made
+        runs = list(client.search_runs(experiment_ids = exp_id))
+        
+        # run_ids
+        run_ids = [run.info.run_id for run in runs]
+        
+        # extract lists of accuracies, timestamps, and correct prediction labels
+        # within the given experiment (0 = no pneumonia, 1 = pneumonia)
+        accuracies = [list(client.get_metric_history(run_id = run_id, key = 'accuracy'))[0].value for run_id in run_ids]
+        timestamps = [list(client.get_metric_history(run_id = run_id, key = 'accuracy'))[0].timestamp for run_id in run_ids]
+        y_true = [list(client.get_metric_history(run_id = run_id, key = 'y_true'))[0].value for run_id in run_ids]
+        
+        # 1st row is timestamps, 2nd is accuracies and so on
+        values_array = np.array([timestamps, accuracies, y_true])
+        # sorts according to the timestamps
+        values_array = values_array[:, values_array[0].argsort()]
+        # get rid of the timestamps row
+        values_array = values_array[1:]
+        
+        # calculate confusion matrix elements
+        true_positives = np.sum((values_array[0] == 1) & (values_array[1] == 1))
+        true_negatives = np.sum((values_array[0] == 1) & (values_array[1] == 0))
+        false_positives = np.sum((values_array[0] == 0) & (values_array[1] == 1))
+        false_negatives = np.sum((values_array[0] == 0) & (values_array[1] == 0))
+        
+        
+        # save the experiment information in a dictionary
+        exp_dictionary ={
+            'all-time average accuracy': np.mean(values_array[0]),
+            'total number of predictions': len(accuracies),
+            f'average accuracy for the last {num_steps_short_term} predictions': np.mean(values_array[0,-num_steps_short_term:]),
+            'pneumonia true positives': true_positives,
+            'pneumonia false positives': false_positives, 
+            'pneumonia false negatives': false_negatives,
+            'pneumonia true negatives': true_negatives, 
+        }
+        
+        # update the dictionary containing the information from the other experiments
+        performance_dictionary.update({exp_name: exp_dictionary})
+        
+    
+    return performance_dictionary
+
 
 # if run locally (for tests)
 if __name__ == "__main__":
-    # modell laden
+    
+    '''# modell laden
     model_name_test = "MobileNet_transfer_learning_finetuned"  # Small_CNN, MobileNet_transfer_learning, MobileNet_transfer_learning_finetuned
     model_version_test = 1
 
@@ -97,4 +160,6 @@ if __name__ == "__main__":
 
     y_pred = make_prediction(model, image_as_array=formatted_image)
 
-    print(y_pred)
+    print(y_pred)'''
+    
+    print(get_performance_indicators())
