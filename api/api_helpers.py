@@ -167,7 +167,7 @@ def get_performance_indicators(num_steps_short_term = 1):
     return performance_dictionary
 
 # if run locally (for tests)
-'''if __name__ == "__main__":
+if __name__ == "__main__":
     # modell laden
     model_name_test = "Xray_classifier"  # Small_CNN, MobileNet_transfer_learning, MobileNet_transfer_learning_finetuned
     model_alias = "baseline"
@@ -192,4 +192,4 @@ def get_performance_indicators(num_steps_short_term = 1):
 
     print(y_pred)
     
-    print(get_performance_indicators())'''
+    print(get_performance_indicators())
