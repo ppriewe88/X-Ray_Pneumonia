@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/791804789027766870/637e79b0e55b42038b7f4927e7df5e1c/artifacts
+end_time: 1743177610047
+entry_point_name: ''
+experiment_id: '791804789027766870'
+lifecycle_stage: active
+run_id: 637e79b0e55b42038b7f4927e7df5e1c
+run_name: rebellious-boar-927
+run_uuid: 637e79b0e55b42038b7f4927e7df5e1c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743177609961
+status: 3
+tags: []
+user_id: pprie

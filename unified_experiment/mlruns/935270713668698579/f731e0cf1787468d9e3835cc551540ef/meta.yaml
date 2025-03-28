@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/f731e0cf1787468d9e3835cc551540ef/artifacts
+end_time: 1743175540259
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: f731e0cf1787468d9e3835cc551540ef
+run_name: clumsy-duck-423
+run_uuid: f731e0cf1787468d9e3835cc551540ef
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743175540171
+status: 3
+tags: []
+user_id: pprie

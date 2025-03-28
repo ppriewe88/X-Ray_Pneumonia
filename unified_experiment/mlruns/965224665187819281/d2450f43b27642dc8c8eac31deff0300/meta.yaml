@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/d2450f43b27642dc8c8eac31deff0300/artifacts
+end_time: 1743177631139
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: d2450f43b27642dc8c8eac31deff0300
+run_name: delicate-calf-329
+run_uuid: d2450f43b27642dc8c8eac31deff0300
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743177631023
+status: 3
+tags: []
+user_id: pprie

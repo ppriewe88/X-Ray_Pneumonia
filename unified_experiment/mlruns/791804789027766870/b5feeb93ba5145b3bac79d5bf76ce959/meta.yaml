@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/791804789027766870/b5feeb93ba5145b3bac79d5bf76ce959/artifacts
+end_time: 1743175757154
+entry_point_name: ''
+experiment_id: '791804789027766870'
+lifecycle_stage: active
+run_id: b5feeb93ba5145b3bac79d5bf76ce959
+run_name: bedecked-crow-639
+run_uuid: b5feeb93ba5145b3bac79d5bf76ce959
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743175757072
+status: 3
+tags: []
+user_id: pprie

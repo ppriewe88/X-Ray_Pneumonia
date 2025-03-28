@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/9bd08f8b46ad4909a4c18a5cc7603f8d/artifacts
+end_time: 1743175239616
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: 9bd08f8b46ad4909a4c18a5cc7603f8d
+run_name: dapper-fly-387
+run_uuid: 9bd08f8b46ad4909a4c18a5cc7603f8d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743175239537
+status: 3
+tags: []
+user_id: pprie

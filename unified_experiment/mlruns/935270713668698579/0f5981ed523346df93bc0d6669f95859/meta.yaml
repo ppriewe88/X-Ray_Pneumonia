@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/0f5981ed523346df93bc0d6669f95859/artifacts
+end_time: 1743176789382
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: 0f5981ed523346df93bc0d6669f95859
+run_name: languid-hare-493
+run_uuid: 0f5981ed523346df93bc0d6669f95859
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743176789288
+status: 3
+tags: []
+user_id: pprie

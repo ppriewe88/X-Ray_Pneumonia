@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/d97c7936315b4067a6e174945d37130b/artifacts
+end_time: 1743177310821
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: d97c7936315b4067a6e174945d37130b
+run_name: grandiose-fly-141
+run_uuid: d97c7936315b4067a6e174945d37130b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743177310710
+status: 3
+tags: []
+user_id: pprie

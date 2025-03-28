@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/139bc300c46b4b30abb80b60d50c1a22/artifacts
+end_time: 1743175848631
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: 139bc300c46b4b30abb80b60d50c1a22
+run_name: gaudy-mare-995
+run_uuid: 139bc300c46b4b30abb80b60d50c1a22
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743175848497
+status: 3
+tags: []
+user_id: pprie

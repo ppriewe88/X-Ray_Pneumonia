@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/791804789027766870/1e1bb020333f456eae9af7ae8a6958d4/artifacts
+end_time: 1743176749343
+entry_point_name: ''
+experiment_id: '791804789027766870'
+lifecycle_stage: active
+run_id: 1e1bb020333f456eae9af7ae8a6958d4
+run_name: clean-ant-468
+run_uuid: 1e1bb020333f456eae9af7ae8a6958d4
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743176749262
+status: 3
+tags: []
+user_id: pprie

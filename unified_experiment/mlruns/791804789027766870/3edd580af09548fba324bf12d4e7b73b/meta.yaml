@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/791804789027766870/3edd580af09548fba324bf12d4e7b73b/artifacts
+end_time: 1743176443534
+entry_point_name: ''
+experiment_id: '791804789027766870'
+lifecycle_stage: active
+run_id: 3edd580af09548fba324bf12d4e7b73b
+run_name: traveling-shrike-18
+run_uuid: 3edd580af09548fba324bf12d4e7b73b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743176443420
+status: 3
+tags: []
+user_id: pprie

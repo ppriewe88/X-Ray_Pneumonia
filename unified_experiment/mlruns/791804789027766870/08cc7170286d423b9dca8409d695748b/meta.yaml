@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/791804789027766870/08cc7170286d423b9dca8409d695748b/artifacts
+end_time: 1743175731235
+entry_point_name: ''
+experiment_id: '791804789027766870'
+lifecycle_stage: active
+run_id: 08cc7170286d423b9dca8409d695748b
+run_name: bittersweet-toad-985
+run_uuid: 08cc7170286d423b9dca8409d695748b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743175731110
+status: 3
+tags: []
+user_id: pprie

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/791804789027766870/046c0d4feb65418483701589901bf90b/artifacts
+end_time: 1743175371415
+entry_point_name: ''
+experiment_id: '791804789027766870'
+lifecycle_stage: active
+run_id: 046c0d4feb65418483701589901bf90b
+run_name: masked-wolf-419
+run_uuid: 046c0d4feb65418483701589901bf90b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743175371331
+status: 3
+tags: []
+user_id: pprie

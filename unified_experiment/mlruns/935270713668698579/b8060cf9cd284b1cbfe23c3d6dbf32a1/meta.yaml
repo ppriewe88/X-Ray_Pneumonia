@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/b8060cf9cd284b1cbfe23c3d6dbf32a1/artifacts
+end_time: 1743175970455
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: b8060cf9cd284b1cbfe23c3d6dbf32a1
+run_name: resilient-steed-303
+run_uuid: b8060cf9cd284b1cbfe23c3d6dbf32a1
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743175970349
+status: 3
+tags: []
+user_id: pprie

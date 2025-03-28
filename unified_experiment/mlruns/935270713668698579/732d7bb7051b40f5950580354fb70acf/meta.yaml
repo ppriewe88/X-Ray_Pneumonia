@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/732d7bb7051b40f5950580354fb70acf/artifacts
+end_time: 1743175022107
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: 732d7bb7051b40f5950580354fb70acf
+run_name: big-flea-104
+run_uuid: 732d7bb7051b40f5950580354fb70acf
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743175022028
+status: 3
+tags: []
+user_id: pprie

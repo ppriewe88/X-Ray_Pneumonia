@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/e9439ee99d2c46b9947460724583a8f6/artifacts
+end_time: 1743174706381
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: e9439ee99d2c46b9947460724583a8f6
+run_name: blushing-shark-233
+run_uuid: e9439ee99d2c46b9947460724583a8f6
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743174706296
+status: 3
+tags: []
+user_id: pprie

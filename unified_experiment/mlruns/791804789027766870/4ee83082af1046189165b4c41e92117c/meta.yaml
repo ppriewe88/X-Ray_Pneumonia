@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/791804789027766870/4ee83082af1046189165b4c41e92117c/artifacts
+end_time: 1743176017297
+entry_point_name: ''
+experiment_id: '791804789027766870'
+lifecycle_stage: active
+run_id: 4ee83082af1046189165b4c41e92117c
+run_name: gifted-elk-23
+run_uuid: 4ee83082af1046189165b4c41e92117c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743176017216
+status: 3
+tags: []
+user_id: pprie

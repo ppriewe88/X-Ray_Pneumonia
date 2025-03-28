@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/6da67386ae764618955edd8175e02194/artifacts
+end_time: 1743175552264
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: 6da67386ae764618955edd8175e02194
+run_name: mercurial-crab-50
+run_uuid: 6da67386ae764618955edd8175e02194
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743175552169
+status: 3
+tags: []
+user_id: pprie

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/c4b501577c1f4c42ab4348c1de63e8ab/artifacts
+end_time: 1743177117992
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: c4b501577c1f4c42ab4348c1de63e8ab
+run_name: rebellious-smelt-227
+run_uuid: c4b501577c1f4c42ab4348c1de63e8ab
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743177117809
+status: 3
+tags: []
+user_id: pprie

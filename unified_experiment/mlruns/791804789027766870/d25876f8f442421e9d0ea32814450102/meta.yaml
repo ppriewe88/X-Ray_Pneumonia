@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/791804789027766870/d25876f8f442421e9d0ea32814450102/artifacts
+end_time: 1743175612558
+entry_point_name: ''
+experiment_id: '791804789027766870'
+lifecycle_stage: active
+run_id: d25876f8f442421e9d0ea32814450102
+run_name: delightful-perch-235
+run_uuid: d25876f8f442421e9d0ea32814450102
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743175612460
+status: 3
+tags: []
+user_id: pprie

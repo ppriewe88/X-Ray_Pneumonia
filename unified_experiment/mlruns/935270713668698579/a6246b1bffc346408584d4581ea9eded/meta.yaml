@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/a6246b1bffc346408584d4581ea9eded/artifacts
+end_time: 1743177838044
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: a6246b1bffc346408584d4581ea9eded
+run_name: youthful-fish-227
+run_uuid: a6246b1bffc346408584d4581ea9eded
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743177837919
+status: 3
+tags: []
+user_id: pprie

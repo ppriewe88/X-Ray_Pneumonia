@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/791804789027766870/46d7be03374c4d9ea83facc98914c142/artifacts
+end_time: 1743177065382
+entry_point_name: ''
+experiment_id: '791804789027766870'
+lifecycle_stage: active
+run_id: 46d7be03374c4d9ea83facc98914c142
+run_name: judicious-worm-179
+run_uuid: 46d7be03374c4d9ea83facc98914c142
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743177065298
+status: 3
+tags: []
+user_id: pprie

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/22115fd39c2c4e0fbebcd5b5fd39f74e/artifacts
+end_time: 1743177750744
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: 22115fd39c2c4e0fbebcd5b5fd39f74e
+run_name: melodic-sponge-854
+run_uuid: 22115fd39c2c4e0fbebcd5b5fd39f74e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743177750507
+status: 3
+tags: []
+user_id: pprie

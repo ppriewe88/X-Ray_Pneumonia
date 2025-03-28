@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/dfce91a7610f468f9a0e4cd73fe96f4c/artifacts
+end_time: 1743177450768
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: dfce91a7610f468f9a0e4cd73fe96f4c
+run_name: shivering-elk-693
+run_uuid: dfce91a7610f468f9a0e4cd73fe96f4c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743177450664
+status: 3
+tags: []
+user_id: pprie

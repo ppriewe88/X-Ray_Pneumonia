@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/45c9e6815b664fd98c923149741d1752/artifacts
+end_time: 1743177738311
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: 45c9e6815b664fd98c923149741d1752
+run_name: painted-jay-462
+run_uuid: 45c9e6815b664fd98c923149741d1752
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743177738190
+status: 3
+tags: []
+user_id: pprie

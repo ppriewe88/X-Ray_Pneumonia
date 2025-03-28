@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/5f878126b9e74c7491a8b063ed5b3f6e/artifacts
+end_time: 1743176801391
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: 5f878126b9e74c7491a8b063ed5b3f6e
+run_name: dashing-foal-963
+run_uuid: 5f878126b9e74c7491a8b063ed5b3f6e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743176801298
+status: 3
+tags: []
+user_id: pprie

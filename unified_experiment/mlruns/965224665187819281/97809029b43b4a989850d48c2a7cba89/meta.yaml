@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/97809029b43b4a989850d48c2a7cba89/artifacts
+end_time: 1743176875593
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: 97809029b43b4a989850d48c2a7cba89
+run_name: amazing-fowl-989
+run_uuid: 97809029b43b4a989850d48c2a7cba89
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743176875440
+status: 3
+tags: []
+user_id: pprie

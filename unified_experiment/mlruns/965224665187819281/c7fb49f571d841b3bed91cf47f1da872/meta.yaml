@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/c7fb49f571d841b3bed91cf47f1da872/artifacts
+end_time: 1743176465297
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: c7fb49f571d841b3bed91cf47f1da872
+run_name: persistent-seal-694
+run_uuid: c7fb49f571d841b3bed91cf47f1da872
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743176465196
+status: 3
+tags: []
+user_id: pprie

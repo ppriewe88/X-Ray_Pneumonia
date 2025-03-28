@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/458325c0a5a24a2bb22037891058cf47/artifacts
+end_time: 1743176189281
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: 458325c0a5a24a2bb22037891058cf47
+run_name: nosy-dog-412
+run_uuid: 458325c0a5a24a2bb22037891058cf47
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743176189178
+status: 3
+tags: []
+user_id: pprie

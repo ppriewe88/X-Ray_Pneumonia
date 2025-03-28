@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/4ee814b08dbb4084ac66cfa0c7579e9f/artifacts
+end_time: 1743177290778
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: 4ee814b08dbb4084ac66cfa0c7579e9f
+run_name: thundering-duck-590
+run_uuid: 4ee814b08dbb4084ac66cfa0c7579e9f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743177290682
+status: 3
+tags: []
+user_id: pprie

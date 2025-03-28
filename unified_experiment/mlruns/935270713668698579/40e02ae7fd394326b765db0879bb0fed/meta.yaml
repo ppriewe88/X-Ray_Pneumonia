@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/40e02ae7fd394326b765db0879bb0fed/artifacts
+end_time: 1743177550117
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: 40e02ae7fd394326b765db0879bb0fed
+run_name: intrigued-donkey-944
+run_uuid: 40e02ae7fd394326b765db0879bb0fed
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743177550013
+status: 3
+tags: []
+user_id: pprie

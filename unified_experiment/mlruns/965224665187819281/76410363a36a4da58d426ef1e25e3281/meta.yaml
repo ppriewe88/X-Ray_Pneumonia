@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/76410363a36a4da58d426ef1e25e3281/artifacts
+end_time: 1743175667512
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: 76410363a36a4da58d426ef1e25e3281
+run_name: bedecked-bug-421
+run_uuid: 76410363a36a4da58d426ef1e25e3281
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743175667338
+status: 3
+tags: []
+user_id: pprie

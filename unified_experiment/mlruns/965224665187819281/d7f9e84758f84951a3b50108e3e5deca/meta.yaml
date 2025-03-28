@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/d7f9e84758f84951a3b50108e3e5deca/artifacts
+end_time: 1743175508656
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: d7f9e84758f84951a3b50108e3e5deca
+run_name: sedate-seal-937
+run_uuid: d7f9e84758f84951a3b50108e3e5deca
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743175508508
+status: 3
+tags: []
+user_id: pprie

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/3685556af6c348799e2f50e264c6941a/artifacts
+end_time: 1743177235867
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: 3685556af6c348799e2f50e264c6941a
+run_name: brawny-mouse-123
+run_uuid: 3685556af6c348799e2f50e264c6941a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743177235714
+status: 3
+tags: []
+user_id: pprie

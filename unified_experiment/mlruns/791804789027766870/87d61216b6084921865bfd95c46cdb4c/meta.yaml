@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/791804789027766870/87d61216b6084921865bfd95c46cdb4c/artifacts
+end_time: 1743176798978
+entry_point_name: ''
+experiment_id: '791804789027766870'
+lifecycle_stage: active
+run_id: 87d61216b6084921865bfd95c46cdb4c
+run_name: aged-deer-297
+run_uuid: 87d61216b6084921865bfd95c46cdb4c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743176798893
+status: 3
+tags: []
+user_id: pprie

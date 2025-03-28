@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/c1dff950950641aab420741f58afe91d/artifacts
+end_time: 1743176925460
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: c1dff950950641aab420741f58afe91d
+run_name: delightful-carp-45
+run_uuid: c1dff950950641aab420741f58afe91d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743176925348
+status: 3
+tags: []
+user_id: pprie

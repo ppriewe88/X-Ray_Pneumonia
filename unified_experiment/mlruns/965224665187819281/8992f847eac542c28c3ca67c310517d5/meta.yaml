@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/8992f847eac542c28c3ca67c310517d5/artifacts
+end_time: 1743175609486
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: 8992f847eac542c28c3ca67c310517d5
+run_name: invincible-koi-208
+run_uuid: 8992f847eac542c28c3ca67c310517d5
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743175609396
+status: 3
+tags: []
+user_id: pprie

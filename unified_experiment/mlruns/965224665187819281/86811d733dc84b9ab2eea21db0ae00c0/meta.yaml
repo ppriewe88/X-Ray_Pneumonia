@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/86811d733dc84b9ab2eea21db0ae00c0/artifacts
+end_time: 1743174731338
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: 86811d733dc84b9ab2eea21db0ae00c0
+run_name: judicious-stork-756
+run_uuid: 86811d733dc84b9ab2eea21db0ae00c0
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743174731251
+status: 3
+tags: []
+user_id: pprie

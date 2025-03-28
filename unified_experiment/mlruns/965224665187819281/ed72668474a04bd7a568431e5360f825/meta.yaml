@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/ed72668474a04bd7a568431e5360f825/artifacts
+end_time: 1743176497856
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: ed72668474a04bd7a568431e5360f825
+run_name: clumsy-wolf-462
+run_uuid: ed72668474a04bd7a568431e5360f825
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743176497691
+status: 3
+tags: []
+user_id: pprie

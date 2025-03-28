@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/2a516c9543744bf587e97ded942cf1d8/artifacts
+end_time: 1743176968391
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: 2a516c9543744bf587e97ded942cf1d8
+run_name: bright-shrew-22
+run_uuid: 2a516c9543744bf587e97ded942cf1d8
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743176968282
+status: 3
+tags: []
+user_id: pprie

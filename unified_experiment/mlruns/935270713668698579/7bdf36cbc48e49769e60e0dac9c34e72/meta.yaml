@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/7bdf36cbc48e49769e60e0dac9c34e72/artifacts
+end_time: 1743177593932
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: 7bdf36cbc48e49769e60e0dac9c34e72
+run_name: colorful-grub-396
+run_uuid: 7bdf36cbc48e49769e60e0dac9c34e72
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743177593834
+status: 3
+tags: []
+user_id: pprie

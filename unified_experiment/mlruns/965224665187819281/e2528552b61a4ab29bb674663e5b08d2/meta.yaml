@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/e2528552b61a4ab29bb674663e5b08d2/artifacts
+end_time: 1743177457810
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: e2528552b61a4ab29bb674663e5b08d2
+run_name: righteous-kit-545
+run_uuid: e2528552b61a4ab29bb674663e5b08d2
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743177457680
+status: 3
+tags: []
+user_id: pprie

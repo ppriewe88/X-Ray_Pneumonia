@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/791804789027766870/dbe5731568424d1ea07b04e8f42c415a/artifacts
+end_time: 1743177095948
+entry_point_name: ''
+experiment_id: '791804789027766870'
+lifecycle_stage: active
+run_id: dbe5731568424d1ea07b04e8f42c415a
+run_name: blushing-finch-325
+run_uuid: dbe5731568424d1ea07b04e8f42c415a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743177095859
+status: 3
+tags: []
+user_id: pprie

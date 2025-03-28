@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/791804789027766870/f1f8c51309d444d68f966d62b568315f/artifacts
+end_time: 1743175919401
+entry_point_name: ''
+experiment_id: '791804789027766870'
+lifecycle_stage: active
+run_id: f1f8c51309d444d68f966d62b568315f
+run_name: exultant-shrimp-804
+run_uuid: f1f8c51309d444d68f966d62b568315f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743175919320
+status: 3
+tags: []
+user_id: pprie

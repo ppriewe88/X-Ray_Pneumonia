@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/791804789027766870/08ef38bc21e045c8a55bf75ea9ef9a18/artifacts
+end_time: 1743177653611
+entry_point_name: ''
+experiment_id: '791804789027766870'
+lifecycle_stage: active
+run_id: 08ef38bc21e045c8a55bf75ea9ef9a18
+run_name: treasured-hare-165
+run_uuid: 08ef38bc21e045c8a55bf75ea9ef9a18
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743177653525
+status: 3
+tags: []
+user_id: pprie

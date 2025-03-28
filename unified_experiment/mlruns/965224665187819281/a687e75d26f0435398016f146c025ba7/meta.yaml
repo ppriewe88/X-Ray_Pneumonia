@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/a687e75d26f0435398016f146c025ba7/artifacts
+end_time: 1743177619138
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: a687e75d26f0435398016f146c025ba7
+run_name: monumental-kit-791
+run_uuid: a687e75d26f0435398016f146c025ba7
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743177619025
+status: 3
+tags: []
+user_id: pprie

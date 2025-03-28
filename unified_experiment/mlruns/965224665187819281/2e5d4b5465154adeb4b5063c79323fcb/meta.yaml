@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/2e5d4b5465154adeb4b5063c79323fcb/artifacts
+end_time: 1743177005927
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: 2e5d4b5465154adeb4b5063c79323fcb
+run_name: intelligent-cow-132
+run_uuid: 2e5d4b5465154adeb4b5063c79323fcb
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743177005817
+status: 3
+tags: []
+user_id: pprie

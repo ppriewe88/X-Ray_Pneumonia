@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/4aea668a90af459a812e26b0b274747c/artifacts
+end_time: 1743177750034
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: 4aea668a90af459a812e26b0b274747c
+run_name: enchanting-skunk-812
+run_uuid: 4aea668a90af459a812e26b0b274747c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743177749930
+status: 3
+tags: []
+user_id: pprie

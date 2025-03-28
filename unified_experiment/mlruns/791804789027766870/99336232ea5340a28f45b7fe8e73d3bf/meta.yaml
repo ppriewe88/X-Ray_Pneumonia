@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/791804789027766870/99336232ea5340a28f45b7fe8e73d3bf/artifacts
+end_time: 1743176519763
+entry_point_name: ''
+experiment_id: '791804789027766870'
+lifecycle_stage: active
+run_id: 99336232ea5340a28f45b7fe8e73d3bf
+run_name: auspicious-sow-704
+run_uuid: 99336232ea5340a28f45b7fe8e73d3bf
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743176519678
+status: 3
+tags: []
+user_id: pprie

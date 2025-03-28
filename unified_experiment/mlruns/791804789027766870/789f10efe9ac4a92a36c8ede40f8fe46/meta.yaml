@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/791804789027766870/789f10efe9ac4a92a36c8ede40f8fe46/artifacts
+end_time: 1743175037666
+entry_point_name: ''
+experiment_id: '791804789027766870'
+lifecycle_stage: active
+run_id: 789f10efe9ac4a92a36c8ede40f8fe46
+run_name: rare-conch-262
+run_uuid: 789f10efe9ac4a92a36c8ede40f8fe46
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743175037590
+status: 3
+tags: []
+user_id: pprie

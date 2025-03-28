@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/f0b40dd09d944bb68bb1ffb0a8fb4d59/artifacts
+end_time: 1743175204560
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: f0b40dd09d944bb68bb1ffb0a8fb4d59
+run_name: smiling-goose-690
+run_uuid: f0b40dd09d944bb68bb1ffb0a8fb4d59
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743175204474
+status: 3
+tags: []
+user_id: pprie

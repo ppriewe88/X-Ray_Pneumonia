@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/791804789027766870/c5a778d17d3347c394e7f801b804091f/artifacts
+end_time: 1743174935546
+entry_point_name: ''
+experiment_id: '791804789027766870'
+lifecycle_stage: active
+run_id: c5a778d17d3347c394e7f801b804091f
+run_name: unequaled-hawk-916
+run_uuid: c5a778d17d3347c394e7f801b804091f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743174935468
+status: 3
+tags: []
+user_id: pprie

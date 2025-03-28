@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/635e30e57bc8409b819966565216b552/artifacts
+end_time: 1743176770159
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: 635e30e57bc8409b819966565216b552
+run_name: learned-penguin-749
+run_uuid: 635e30e57bc8409b819966565216b552
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743176770067
+status: 3
+tags: []
+user_id: pprie

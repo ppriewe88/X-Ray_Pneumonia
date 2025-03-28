@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/f5e88443264844d8a7f6b23876f03cad/artifacts
+end_time: 1743175367962
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: f5e88443264844d8a7f6b23876f03cad
+run_name: unleashed-ant-33
+run_uuid: f5e88443264844d8a7f6b23876f03cad
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743175367879
+status: 3
+tags: []
+user_id: pprie

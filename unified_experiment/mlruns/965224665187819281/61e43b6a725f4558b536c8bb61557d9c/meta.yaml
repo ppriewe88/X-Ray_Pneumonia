@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/61e43b6a725f4558b536c8bb61557d9c/artifacts
+end_time: 1743175271120
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: 61e43b6a725f4558b536c8bb61557d9c
+run_name: funny-skink-810
+run_uuid: 61e43b6a725f4558b536c8bb61557d9c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743175271034
+status: 3
+tags: []
+user_id: pprie

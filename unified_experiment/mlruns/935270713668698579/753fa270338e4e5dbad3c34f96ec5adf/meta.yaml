@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/753fa270338e4e5dbad3c34f96ec5adf/artifacts
+end_time: 1743176236948
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: 753fa270338e4e5dbad3c34f96ec5adf
+run_name: gentle-ant-722
+run_uuid: 753fa270338e4e5dbad3c34f96ec5adf
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743176236854
+status: 3
+tags: []
+user_id: pprie

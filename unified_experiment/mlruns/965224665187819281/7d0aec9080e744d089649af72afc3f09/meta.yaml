@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/7d0aec9080e744d089649af72afc3f09/artifacts
+end_time: 1743176446947
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: 7d0aec9080e744d089649af72afc3f09
+run_name: rogue-wren-540
+run_uuid: 7d0aec9080e744d089649af72afc3f09
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743176446848
+status: 3
+tags: []
+user_id: pprie

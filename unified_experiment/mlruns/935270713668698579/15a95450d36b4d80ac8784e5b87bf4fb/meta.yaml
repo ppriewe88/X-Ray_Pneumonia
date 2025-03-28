@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/15a95450d36b4d80ac8784e5b87bf4fb/artifacts
+end_time: 1743175804853
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: 15a95450d36b4d80ac8784e5b87bf4fb
+run_name: shivering-donkey-606
+run_uuid: 15a95450d36b4d80ac8784e5b87bf4fb
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743175804763
+status: 3
+tags: []
+user_id: pprie

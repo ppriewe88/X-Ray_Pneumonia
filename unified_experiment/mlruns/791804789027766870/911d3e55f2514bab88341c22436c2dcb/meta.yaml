@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/791804789027766870/911d3e55f2514bab88341c22436c2dcb/artifacts
+end_time: 1743176069460
+entry_point_name: ''
+experiment_id: '791804789027766870'
+lifecycle_stage: active
+run_id: 911d3e55f2514bab88341c22436c2dcb
+run_name: overjoyed-quail-797
+run_uuid: 911d3e55f2514bab88341c22436c2dcb
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743176069366
+status: 3
+tags: []
+user_id: pprie

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/791804789027766870/c18b797edd544f4d9ef622ccf24a7bdd/artifacts
+end_time: 1743177791485
+entry_point_name: ''
+experiment_id: '791804789027766870'
+lifecycle_stage: active
+run_id: c18b797edd544f4d9ef622ccf24a7bdd
+run_name: smiling-shark-470
+run_uuid: c18b797edd544f4d9ef622ccf24a7bdd
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743177791403
+status: 3
+tags: []
+user_id: pprie

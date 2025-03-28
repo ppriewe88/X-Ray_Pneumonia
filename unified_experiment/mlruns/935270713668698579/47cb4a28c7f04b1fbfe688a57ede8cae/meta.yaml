@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/47cb4a28c7f04b1fbfe688a57ede8cae/artifacts
+end_time: 1743174688149
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: 47cb4a28c7f04b1fbfe688a57ede8cae
+run_name: trusting-frog-247
+run_uuid: 47cb4a28c7f04b1fbfe688a57ede8cae
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743174688060
+status: 3
+tags: []
+user_id: pprie

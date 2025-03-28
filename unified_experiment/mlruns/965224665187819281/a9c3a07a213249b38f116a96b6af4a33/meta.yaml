@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/a9c3a07a213249b38f116a96b6af4a33/artifacts
+end_time: 1743175766522
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: a9c3a07a213249b38f116a96b6af4a33
+run_name: upset-fox-359
+run_uuid: a9c3a07a213249b38f116a96b6af4a33
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743175766418
+status: 3
+tags: []
+user_id: pprie

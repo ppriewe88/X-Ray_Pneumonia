@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/60243f460dcf4ee4b47fcd1e01d1b5dd/artifacts
+end_time: 1743175686617
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: 60243f460dcf4ee4b47fcd1e01d1b5dd
+run_name: spiffy-shrew-124
+run_uuid: 60243f460dcf4ee4b47fcd1e01d1b5dd
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743175686517
+status: 3
+tags: []
+user_id: pprie

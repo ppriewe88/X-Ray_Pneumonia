@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/60dd74edf6fd45659aa4ba9ba4161138/artifacts
+end_time: 1743174843351
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: 60dd74edf6fd45659aa4ba9ba4161138
+run_name: defiant-koi-85
+run_uuid: 60dd74edf6fd45659aa4ba9ba4161138
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743174843263
+status: 3
+tags: []
+user_id: pprie

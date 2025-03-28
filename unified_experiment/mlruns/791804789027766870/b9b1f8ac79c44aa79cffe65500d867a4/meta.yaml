@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/791804789027766870/b9b1f8ac79c44aa79cffe65500d867a4/artifacts
+end_time: 1743177151675
+entry_point_name: ''
+experiment_id: '791804789027766870'
+lifecycle_stage: active
+run_id: b9b1f8ac79c44aa79cffe65500d867a4
+run_name: fearless-fowl-957
+run_uuid: b9b1f8ac79c44aa79cffe65500d867a4
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743177151590
+status: 3
+tags: []
+user_id: pprie

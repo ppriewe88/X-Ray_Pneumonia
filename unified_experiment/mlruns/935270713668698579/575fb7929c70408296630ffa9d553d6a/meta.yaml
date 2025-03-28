@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/575fb7929c70408296630ffa9d553d6a/artifacts
+end_time: 1743177316301
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: 575fb7929c70408296630ffa9d553d6a
+run_name: defiant-fawn-674
+run_uuid: 575fb7929c70408296630ffa9d553d6a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743177316202
+status: 3
+tags: []
+user_id: pprie

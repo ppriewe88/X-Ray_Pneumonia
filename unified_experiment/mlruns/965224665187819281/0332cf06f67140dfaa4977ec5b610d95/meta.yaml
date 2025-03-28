@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/0332cf06f67140dfaa4977ec5b610d95/artifacts
+end_time: 1743176893972
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: 0332cf06f67140dfaa4977ec5b610d95
+run_name: silent-gnat-700
+run_uuid: 0332cf06f67140dfaa4977ec5b610d95
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743176893862
+status: 3
+tags: []
+user_id: pprie

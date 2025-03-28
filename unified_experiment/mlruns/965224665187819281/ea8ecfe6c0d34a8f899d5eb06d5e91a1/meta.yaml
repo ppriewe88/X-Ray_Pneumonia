@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/ea8ecfe6c0d34a8f899d5eb06d5e91a1/artifacts
+end_time: 1743177920077
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: ea8ecfe6c0d34a8f899d5eb06d5e91a1
+run_name: tasteful-slug-734
+run_uuid: ea8ecfe6c0d34a8f899d5eb06d5e91a1
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743177919954
+status: 3
+tags: []
+user_id: pprie

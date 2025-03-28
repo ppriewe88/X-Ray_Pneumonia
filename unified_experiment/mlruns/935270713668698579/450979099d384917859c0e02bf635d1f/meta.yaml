@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/450979099d384917859c0e02bf635d1f/artifacts
+end_time: 1743177397140
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: 450979099d384917859c0e02bf635d1f
+run_name: puzzled-sloth-642
+run_uuid: 450979099d384917859c0e02bf635d1f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743177397040
+status: 3
+tags: []
+user_id: pprie

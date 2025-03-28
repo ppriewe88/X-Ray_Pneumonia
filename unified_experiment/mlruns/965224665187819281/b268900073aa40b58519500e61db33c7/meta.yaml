@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/b268900073aa40b58519500e61db33c7/artifacts
+end_time: 1743176857253
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: b268900073aa40b58519500e61db33c7
+run_name: illustrious-jay-821
+run_uuid: b268900073aa40b58519500e61db33c7
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743176857149
+status: 3
+tags: []
+user_id: pprie

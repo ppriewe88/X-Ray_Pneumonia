@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/d0489fe38c7f4338867b3c54728719a4/artifacts
+end_time: 1743177956395
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: d0489fe38c7f4338867b3c54728719a4
+run_name: enchanting-cow-472
+run_uuid: d0489fe38c7f4338867b3c54728719a4
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743177956293
+status: 3
+tags: []
+user_id: pprie

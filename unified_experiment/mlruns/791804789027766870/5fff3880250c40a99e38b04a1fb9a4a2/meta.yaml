@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/791804789027766870/5fff3880250c40a99e38b04a1fb9a4a2/artifacts
+end_time: 1743177547737
+entry_point_name: ''
+experiment_id: '791804789027766870'
+lifecycle_stage: active
+run_id: 5fff3880250c40a99e38b04a1fb9a4a2
+run_name: adorable-fox-976
+run_uuid: 5fff3880250c40a99e38b04a1fb9a4a2
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743177547644
+status: 3
+tags: []
+user_id: pprie

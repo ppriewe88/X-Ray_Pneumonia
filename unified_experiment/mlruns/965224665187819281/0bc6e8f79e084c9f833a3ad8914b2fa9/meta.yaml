@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/0bc6e8f79e084c9f833a3ad8914b2fa9/artifacts
+end_time: 1743175904193
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: 0bc6e8f79e084c9f833a3ad8914b2fa9
+run_name: debonair-crab-340
+run_uuid: 0bc6e8f79e084c9f833a3ad8914b2fa9
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743175904098
+status: 3
+tags: []
+user_id: pprie

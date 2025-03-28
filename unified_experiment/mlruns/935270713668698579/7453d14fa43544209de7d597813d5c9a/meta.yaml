@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/7453d14fa43544209de7d597813d5c9a/artifacts
+end_time: 1743176758159
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: 7453d14fa43544209de7d597813d5c9a
+run_name: melodic-cub-517
+run_uuid: 7453d14fa43544209de7d597813d5c9a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743176758067
+status: 3
+tags: []
+user_id: pprie

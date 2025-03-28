@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/e215acb5de674e3b86e662d57f3382af/artifacts
+end_time: 1743176391022
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: e215acb5de674e3b86e662d57f3382af
+run_name: stately-vole-20
+run_uuid: e215acb5de674e3b86e662d57f3382af
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743176390930
+status: 3
+tags: []
+user_id: pprie

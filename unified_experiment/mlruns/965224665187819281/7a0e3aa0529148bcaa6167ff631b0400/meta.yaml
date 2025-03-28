@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/7a0e3aa0529148bcaa6167ff631b0400/artifacts
+end_time: 1743175198311
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: 7a0e3aa0529148bcaa6167ff631b0400
+run_name: melodic-fox-158
+run_uuid: 7a0e3aa0529148bcaa6167ff631b0400
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743175198197
+status: 3
+tags: []
+user_id: pprie

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/0f9ffd91838f4c8ea55221d1de406e9f/artifacts
+end_time: 1743175990185
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: 0f9ffd91838f4c8ea55221d1de406e9f
+run_name: luxuriant-shrike-78
+run_uuid: 0f9ffd91838f4c8ea55221d1de406e9f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743175990075
+status: 3
+tags: []
+user_id: pprie

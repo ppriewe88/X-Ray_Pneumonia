@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/791804789027766870/0173f499c49444998048c5c4dda784e5/artifacts
+end_time: 1743176619503
+entry_point_name: ''
+experiment_id: '791804789027766870'
+lifecycle_stage: active
+run_id: 0173f499c49444998048c5c4dda784e5
+run_name: illustrious-sow-162
+run_uuid: 0173f499c49444998048c5c4dda784e5
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743176619420
+status: 3
+tags: []
+user_id: pprie

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/791804789027766870/c7c6f9f949ad4c5e8398010f830a7ebf/artifacts
+end_time: 1743175788820
+entry_point_name: ''
+experiment_id: '791804789027766870'
+lifecycle_stage: active
+run_id: c7c6f9f949ad4c5e8398010f830a7ebf
+run_name: languid-squirrel-473
+run_uuid: c7c6f9f949ad4c5e8398010f830a7ebf
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743175788742
+status: 3
+tags: []
+user_id: pprie

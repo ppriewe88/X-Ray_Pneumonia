@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/79d105342f7a4ed5b65ff6aad9ca56ad/artifacts
+end_time: 1743177055831
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: 79d105342f7a4ed5b65ff6aad9ca56ad
+run_name: learned-smelt-21
+run_uuid: 79d105342f7a4ed5b65ff6aad9ca56ad
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743177055735
+status: 3
+tags: []
+user_id: pprie

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/6da5b2d4cb64459b8717ec0615f75fe0/artifacts
+end_time: 1743177700161
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: 6da5b2d4cb64459b8717ec0615f75fe0
+run_name: powerful-vole-55
+run_uuid: 6da5b2d4cb64459b8717ec0615f75fe0
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743177700036
+status: 3
+tags: []
+user_id: pprie

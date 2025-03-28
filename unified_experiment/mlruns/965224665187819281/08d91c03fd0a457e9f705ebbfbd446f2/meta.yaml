@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/08d91c03fd0a457e9f705ebbfbd446f2/artifacts
+end_time: 1743175034661
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: 08d91c03fd0a457e9f705ebbfbd446f2
+run_name: abundant-skink-783
+run_uuid: 08d91c03fd0a457e9f705ebbfbd446f2
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743175034577
+status: 3
+tags: []
+user_id: pprie

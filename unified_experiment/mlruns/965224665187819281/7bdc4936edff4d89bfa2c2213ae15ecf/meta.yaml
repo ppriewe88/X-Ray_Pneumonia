@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/7bdc4936edff4d89bfa2c2213ae15ecf/artifacts
+end_time: 1743177098955
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: 7bdc4936edff4d89bfa2c2213ae15ecf
+run_name: bustling-squid-894
+run_uuid: 7bdc4936edff4d89bfa2c2213ae15ecf
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743177098838
+status: 3
+tags: []
+user_id: pprie

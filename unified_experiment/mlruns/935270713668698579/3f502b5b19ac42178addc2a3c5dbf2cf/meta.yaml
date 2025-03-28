@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/3f502b5b19ac42178addc2a3c5dbf2cf/artifacts
+end_time: 1743176106566
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: 3f502b5b19ac42178addc2a3c5dbf2cf
+run_name: unique-snail-344
+run_uuid: 3f502b5b19ac42178addc2a3c5dbf2cf
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743176106440
+status: 3
+tags: []
+user_id: pprie

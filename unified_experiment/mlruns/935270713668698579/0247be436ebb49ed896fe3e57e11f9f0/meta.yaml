@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/0247be436ebb49ed896fe3e57e11f9f0/artifacts
+end_time: 1743176001952
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: 0247be436ebb49ed896fe3e57e11f9f0
+run_name: loud-bee-617
+run_uuid: 0247be436ebb49ed896fe3e57e11f9f0
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743176001863
+status: 3
+tags: []
+user_id: pprie

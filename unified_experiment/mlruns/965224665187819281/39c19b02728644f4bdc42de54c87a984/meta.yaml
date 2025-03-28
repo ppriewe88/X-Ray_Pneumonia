@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/39c19b02728644f4bdc42de54c87a984/artifacts
+end_time: 1743177086770
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: 39c19b02728644f4bdc42de54c87a984
+run_name: tasteful-finch-992
+run_uuid: 39c19b02728644f4bdc42de54c87a984
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743177086661
+status: 3
+tags: []
+user_id: pprie

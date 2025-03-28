@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/dba60df16178402cbad7ff734e9a1e02/artifacts
+end_time: 1743177970973
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: dba60df16178402cbad7ff734e9a1e02
+run_name: gregarious-loon-63
+run_uuid: dba60df16178402cbad7ff734e9a1e02
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743177970818
+status: 3
+tags: []
+user_id: pprie

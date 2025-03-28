@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/791804789027766870/fd3b359840fb49e288fce120e93fc03d/artifacts
+end_time: 1743175587415
+entry_point_name: ''
+experiment_id: '791804789027766870'
+lifecycle_stage: active
+run_id: fd3b359840fb49e288fce120e93fc03d
+run_name: agreeable-hare-928
+run_uuid: fd3b359840fb49e288fce120e93fc03d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743175587335
+status: 3
+tags: []
+user_id: pprie

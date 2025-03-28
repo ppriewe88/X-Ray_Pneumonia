@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/1dbc867eb4d54277b0493e6b73df8518/artifacts
+end_time: 1743175571433
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: 1dbc867eb4d54277b0493e6b73df8518
+run_name: resilient-kite-918
+run_uuid: 1dbc867eb4d54277b0493e6b73df8518
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743175571325
+status: 3
+tags: []
+user_id: pprie

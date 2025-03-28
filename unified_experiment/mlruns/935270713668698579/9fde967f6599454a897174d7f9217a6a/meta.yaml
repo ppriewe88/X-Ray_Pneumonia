@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/9fde967f6599454a897174d7f9217a6a/artifacts
+end_time: 1743175373812
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: 9fde967f6599454a897174d7f9217a6a
+run_name: capricious-loon-993
+run_uuid: 9fde967f6599454a897174d7f9217a6a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743175373728
+status: 3
+tags: []
+user_id: pprie

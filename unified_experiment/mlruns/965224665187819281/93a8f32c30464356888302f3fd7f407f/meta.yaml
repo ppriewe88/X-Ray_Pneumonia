@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/93a8f32c30464356888302f3fd7f407f/artifacts
+end_time: 1743176225705
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: 93a8f32c30464356888302f3fd7f407f
+run_name: rebellious-gnu-896
+run_uuid: 93a8f32c30464356888302f3fd7f407f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743176225609
+status: 3
+tags: []
+user_id: pprie

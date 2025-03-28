@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/dea5787e44c44b63af39e35f17cc383b/artifacts
+end_time: 1743175653153
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: dea5787e44c44b63af39e35f17cc383b
+run_name: painted-moose-858
+run_uuid: dea5787e44c44b63af39e35f17cc383b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743175653067
+status: 3
+tags: []
+user_id: pprie

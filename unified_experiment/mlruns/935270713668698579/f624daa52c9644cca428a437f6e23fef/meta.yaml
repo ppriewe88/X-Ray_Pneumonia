@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/f624daa52c9644cca428a437f6e23fef/artifacts
+end_time: 1743175300303
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: f624daa52c9644cca428a437f6e23fef
+run_name: sedate-duck-185
+run_uuid: f624daa52c9644cca428a437f6e23fef
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743175300221
+status: 3
+tags: []
+user_id: pprie

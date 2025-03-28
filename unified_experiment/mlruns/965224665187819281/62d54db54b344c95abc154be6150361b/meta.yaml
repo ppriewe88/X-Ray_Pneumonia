@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/62d54db54b344c95abc154be6150361b/artifacts
+end_time: 1743175495338
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: 62d54db54b344c95abc154be6150361b
+run_name: rumbling-slug-288
+run_uuid: 62d54db54b344c95abc154be6150361b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743175495239
+status: 3
+tags: []
+user_id: pprie

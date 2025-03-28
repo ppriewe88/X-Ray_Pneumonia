@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/5238eb6dc03444c9b5345f6c239a3486/artifacts
+end_time: 1743176610430
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: 5238eb6dc03444c9b5345f6c239a3486
+run_name: tasteful-midge-258
+run_uuid: 5238eb6dc03444c9b5345f6c239a3486
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743176610330
+status: 3
+tags: []
+user_id: pprie

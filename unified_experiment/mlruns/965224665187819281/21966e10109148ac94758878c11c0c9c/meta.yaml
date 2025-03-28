@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/21966e10109148ac94758878c11c0c9c/artifacts
+end_time: 1743177812953
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: 21966e10109148ac94758878c11c0c9c
+run_name: unleashed-shark-114
+run_uuid: 21966e10109148ac94758878c11c0c9c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743177812836
+status: 3
+tags: []
+user_id: pprie

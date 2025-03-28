@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/cf373cbda45f42388c3a5c72d296d45c/artifacts
+end_time: 1743175094354
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: cf373cbda45f42388c3a5c72d296d45c
+run_name: capricious-quail-966
+run_uuid: cf373cbda45f42388c3a5c72d296d45c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743175094245
+status: 3
+tags: []
+user_id: pprie

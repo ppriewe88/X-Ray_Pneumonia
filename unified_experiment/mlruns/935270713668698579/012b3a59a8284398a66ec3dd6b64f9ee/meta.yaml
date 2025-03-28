@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/012b3a59a8284398a66ec3dd6b64f9ee/artifacts
+end_time: 1743177011463
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: 012b3a59a8284398a66ec3dd6b64f9ee
+run_name: fun-fawn-552
+run_uuid: 012b3a59a8284398a66ec3dd6b64f9ee
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743177011367
+status: 3
+tags: []
+user_id: pprie

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/c107db842bfb43a6a5d8683ebc04a0ca/artifacts
+end_time: 1743175590715
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: c107db842bfb43a6a5d8683ebc04a0ca
+run_name: funny-seal-285
+run_uuid: c107db842bfb43a6a5d8683ebc04a0ca
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743175590622
+status: 3
+tags: []
+user_id: pprie

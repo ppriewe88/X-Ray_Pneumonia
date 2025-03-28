@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/a021b01a92be4c07b7852448891355da/artifacts
+end_time: 1743174694503
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: a021b01a92be4c07b7852448891355da
+run_name: worried-flea-155
+run_uuid: a021b01a92be4c07b7852448891355da
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743174694417
+status: 3
+tags: []
+user_id: pprie

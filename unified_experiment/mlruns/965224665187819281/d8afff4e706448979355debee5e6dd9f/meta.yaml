@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/d8afff4e706448979355debee5e6dd9f/artifacts
+end_time: 1743176213552
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: d8afff4e706448979355debee5e6dd9f
+run_name: masked-zebra-765
+run_uuid: d8afff4e706448979355debee5e6dd9f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743176213430
+status: 3
+tags: []
+user_id: pprie

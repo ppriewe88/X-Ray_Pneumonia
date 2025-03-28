@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/791804789027766870/17d51bdc5f8043a0858570a54d77948b/artifacts
+end_time: 1743177077771
+entry_point_name: ''
+experiment_id: '791804789027766870'
+lifecycle_stage: active
+run_id: 17d51bdc5f8043a0858570a54d77948b
+run_name: bright-seal-191
+run_uuid: 17d51bdc5f8043a0858570a54d77948b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743177077687
+status: 3
+tags: []
+user_id: pprie

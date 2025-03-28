@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/0c5c847fa08a4cd39e163b1eb89ca3df/artifacts
+end_time: 1743175149717
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: 0c5c847fa08a4cd39e163b1eb89ca3df
+run_name: amazing-stoat-48
+run_uuid: 0c5c847fa08a4cd39e163b1eb89ca3df
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743175149611
+status: 3
+tags: []
+user_id: pprie

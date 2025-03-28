@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/79c119e60ebf4cd79747febdc53a7cd0/artifacts
+end_time: 1743176298862
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: 79c119e60ebf4cd79747febdc53a7cd0
+run_name: nervous-goose-984
+run_uuid: 79c119e60ebf4cd79747febdc53a7cd0
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743176298767
+status: 3
+tags: []
+user_id: pprie

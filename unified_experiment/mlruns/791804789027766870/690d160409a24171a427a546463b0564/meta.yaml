@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/791804789027766870/690d160409a24171a427a546463b0564/artifacts
+end_time: 1743177375775
+entry_point_name: ''
+experiment_id: '791804789027766870'
+lifecycle_stage: active
+run_id: 690d160409a24171a427a546463b0564
+run_name: chill-panda-143
+run_uuid: 690d160409a24171a427a546463b0564
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743177375663
+status: 3
+tags: []
+user_id: pprie

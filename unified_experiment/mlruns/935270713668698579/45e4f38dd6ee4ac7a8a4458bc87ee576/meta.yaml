@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/45e4f38dd6ee4ac7a8a4458bc87ee576/artifacts
+end_time: 1743175416747
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: 45e4f38dd6ee4ac7a8a4458bc87ee576
+run_name: unleashed-sheep-552
+run_uuid: 45e4f38dd6ee4ac7a8a4458bc87ee576
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743175416659
+status: 3
+tags: []
+user_id: pprie

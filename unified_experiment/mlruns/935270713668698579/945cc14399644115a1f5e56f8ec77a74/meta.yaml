@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/945cc14399644115a1f5e56f8ec77a74/artifacts
+end_time: 1743175124749
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: 945cc14399644115a1f5e56f8ec77a74
+run_name: colorful-ray-1
+run_uuid: 945cc14399644115a1f5e56f8ec77a74
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743175124663
+status: 3
+tags: []
+user_id: pprie

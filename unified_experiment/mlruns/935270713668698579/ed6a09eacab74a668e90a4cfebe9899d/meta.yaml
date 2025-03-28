@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/ed6a09eacab74a668e90a4cfebe9899d/artifacts
+end_time: 1743174925318
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: ed6a09eacab74a668e90a4cfebe9899d
+run_name: clean-shrew-126
+run_uuid: ed6a09eacab74a668e90a4cfebe9899d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743174925238
+status: 3
+tags: []
+user_id: pprie

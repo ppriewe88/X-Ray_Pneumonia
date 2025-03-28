@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/bcfc31b8ddc04ed28b4ae467de68e42f/artifacts
+end_time: 1743174824519
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: bcfc31b8ddc04ed28b4ae467de68e42f
+run_name: upbeat-swan-340
+run_uuid: bcfc31b8ddc04ed28b4ae467de68e42f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743174824432
+status: 3
+tags: []
+user_id: pprie

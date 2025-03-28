@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/791804789027766870/3afef9e8e8ef4b1181183ffe7a1f0e56/artifacts
+end_time: 1743176891000
+entry_point_name: ''
+experiment_id: '791804789027766870'
+lifecycle_stage: active
+run_id: 3afef9e8e8ef4b1181183ffe7a1f0e56
+run_name: merciful-foal-463
+run_uuid: 3afef9e8e8ef4b1181183ffe7a1f0e56
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743176890916
+status: 3
+tags: []
+user_id: pprie

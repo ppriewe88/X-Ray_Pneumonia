@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/791804789027766870/bb222c8c29d1403eb6c371032da19f24/artifacts
+end_time: 1743177860665
+entry_point_name: ''
+experiment_id: '791804789027766870'
+lifecycle_stage: active
+run_id: bb222c8c29d1403eb6c371032da19f24
+run_name: judicious-deer-596
+run_uuid: bb222c8c29d1403eb6c371032da19f24
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743177860577
+status: 3
+tags: []
+user_id: pprie

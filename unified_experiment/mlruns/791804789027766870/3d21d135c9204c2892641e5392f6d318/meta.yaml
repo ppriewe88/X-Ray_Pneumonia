@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/791804789027766870/3d21d135c9204c2892641e5392f6d318/artifacts
+end_time: 1743177953872
+entry_point_name: ''
+experiment_id: '791804789027766870'
+lifecycle_stage: active
+run_id: 3d21d135c9204c2892641e5392f6d318
+run_name: bright-tern-576
+run_uuid: 3d21d135c9204c2892641e5392f6d318
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743177953786
+status: 3
+tags: []
+user_id: pprie

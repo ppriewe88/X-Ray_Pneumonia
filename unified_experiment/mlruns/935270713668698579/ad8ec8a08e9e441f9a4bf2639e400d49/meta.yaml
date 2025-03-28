@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/ad8ec8a08e9e441f9a4bf2639e400d49/artifacts
+end_time: 1743175246073
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: ad8ec8a08e9e441f9a4bf2639e400d49
+run_name: caring-shrike-925
+run_uuid: ad8ec8a08e9e441f9a4bf2639e400d49
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743175245992
+status: 3
+tags: []
+user_id: pprie

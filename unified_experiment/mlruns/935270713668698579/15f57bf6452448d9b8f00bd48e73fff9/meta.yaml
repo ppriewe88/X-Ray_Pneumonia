@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/15f57bf6452448d9b8f00bd48e73fff9/artifacts
+end_time: 1743176274474
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: 15f57bf6452448d9b8f00bd48e73fff9
+run_name: loud-moth-186
+run_uuid: 15f57bf6452448d9b8f00bd48e73fff9
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743176274376
+status: 3
+tags: []
+user_id: pprie

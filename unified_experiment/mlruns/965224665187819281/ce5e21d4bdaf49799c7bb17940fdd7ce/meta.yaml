@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/ce5e21d4bdaf49799c7bb17940fdd7ce/artifacts
+end_time: 1743176510326
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: ce5e21d4bdaf49799c7bb17940fdd7ce
+run_name: gregarious-fish-128
+run_uuid: ce5e21d4bdaf49799c7bb17940fdd7ce
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743176510196
+status: 3
+tags: []
+user_id: pprie

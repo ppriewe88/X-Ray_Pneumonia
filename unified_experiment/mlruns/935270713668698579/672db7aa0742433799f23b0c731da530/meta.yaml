@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/672db7aa0742433799f23b0c731da530/artifacts
+end_time: 1743176182351
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: 672db7aa0742433799f23b0c731da530
+run_name: casual-fish-322
+run_uuid: 672db7aa0742433799f23b0c731da530
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743176182253
+status: 3
+tags: []
+user_id: pprie

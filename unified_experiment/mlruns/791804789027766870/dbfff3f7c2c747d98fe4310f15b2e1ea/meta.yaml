@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/791804789027766870/dbfff3f7c2c747d98fe4310f15b2e1ea/artifacts
+end_time: 1743177891339
+entry_point_name: ''
+experiment_id: '791804789027766870'
+lifecycle_stage: active
+run_id: dbfff3f7c2c747d98fe4310f15b2e1ea
+run_name: whimsical-bee-50
+run_uuid: dbfff3f7c2c747d98fe4310f15b2e1ea
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743177891250
+status: 3
+tags: []
+user_id: pprie

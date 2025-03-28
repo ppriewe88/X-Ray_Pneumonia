@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/d4043d76caf64ad6ac70626c88ff283b/artifacts
+end_time: 1743175720982
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: d4043d76caf64ad6ac70626c88ff283b
+run_name: able-panda-17
+run_uuid: d4043d76caf64ad6ac70626c88ff283b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743175720880
+status: 3
+tags: []
+user_id: pprie

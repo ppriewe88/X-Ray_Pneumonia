@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/3266302601a24581948d6b6851ebcbea/artifacts
+end_time: 1743177499905
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: 3266302601a24581948d6b6851ebcbea
+run_name: bright-wren-112
+run_uuid: 3266302601a24581948d6b6851ebcbea
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743177499806
+status: 3
+tags: []
+user_id: pprie

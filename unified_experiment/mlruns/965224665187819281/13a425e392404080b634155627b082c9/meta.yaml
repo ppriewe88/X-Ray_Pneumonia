@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/13a425e392404080b634155627b082c9/artifacts
+end_time: 1743176114423
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: 13a425e392404080b634155627b082c9
+run_name: adorable-fawn-158
+run_uuid: 13a425e392404080b634155627b082c9
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743176114313
+status: 3
+tags: []
+user_id: pprie

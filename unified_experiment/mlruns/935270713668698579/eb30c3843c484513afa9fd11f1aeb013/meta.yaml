@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/eb30c3843c484513afa9fd11f1aeb013/artifacts
+end_time: 1743176585318
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: eb30c3843c484513afa9fd11f1aeb013
+run_name: masked-squid-663
+run_uuid: eb30c3843c484513afa9fd11f1aeb013
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743176585211
+status: 3
+tags: []
+user_id: pprie

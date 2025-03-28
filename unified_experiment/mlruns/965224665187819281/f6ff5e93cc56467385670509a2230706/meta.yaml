@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/f6ff5e93cc56467385670509a2230706/artifacts
+end_time: 1743177726270
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: f6ff5e93cc56467385670509a2230706
+run_name: silent-squid-67
+run_uuid: f6ff5e93cc56467385670509a2230706
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743177726145
+status: 3
+tags: []
+user_id: pprie

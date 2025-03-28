@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/a0dd753f311044af8d0e04d9ec4bb4f4/artifacts
+end_time: 1743176961843
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: a0dd753f311044af8d0e04d9ec4bb4f4
+run_name: classy-dolphin-30
+run_uuid: a0dd753f311044af8d0e04d9ec4bb4f4
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743176961747
+status: 3
+tags: []
+user_id: pprie

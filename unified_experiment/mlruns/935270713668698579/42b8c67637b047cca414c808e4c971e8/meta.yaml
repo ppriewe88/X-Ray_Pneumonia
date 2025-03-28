@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/42b8c67637b047cca414c808e4c971e8/artifacts
+end_time: 1743177525091
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: 42b8c67637b047cca414c808e4c971e8
+run_name: skillful-elk-56
+run_uuid: 42b8c67637b047cca414c808e4c971e8
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743177524989
+status: 3
+tags: []
+user_id: pprie

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/791804789027766870/4e96b8792b4041948ecee51b7e826cad/artifacts
+end_time: 1743176984405
+entry_point_name: ''
+experiment_id: '791804789027766870'
+lifecycle_stage: active
+run_id: 4e96b8792b4041948ecee51b7e826cad
+run_name: resilient-zebra-471
+run_uuid: 4e96b8792b4041948ecee51b7e826cad
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743176984317
+status: 3
+tags: []
+user_id: pprie

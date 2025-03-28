@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/35e44b5937a749f5a028cd927ebf4fc9/artifacts
+end_time: 1743177575568
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: 35e44b5937a749f5a028cd927ebf4fc9
+run_name: wistful-hound-411
+run_uuid: 35e44b5937a749f5a028cd927ebf4fc9
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743177575466
+status: 3
+tags: []
+user_id: pprie

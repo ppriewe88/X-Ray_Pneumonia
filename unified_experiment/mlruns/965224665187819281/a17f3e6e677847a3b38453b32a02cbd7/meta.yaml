@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/a17f3e6e677847a3b38453b32a02cbd7/artifacts
+end_time: 1743177938735
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: a17f3e6e677847a3b38453b32a02cbd7
+run_name: burly-mouse-799
+run_uuid: a17f3e6e677847a3b38453b32a02cbd7
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743177938622
+status: 3
+tags: []
+user_id: pprie

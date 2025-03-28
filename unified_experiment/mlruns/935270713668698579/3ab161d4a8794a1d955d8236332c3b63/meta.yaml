@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/3ab161d4a8794a1d955d8236332c3b63/artifacts
+end_time: 1743174743551
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: 3ab161d4a8794a1d955d8236332c3b63
+run_name: whimsical-koi-472
+run_uuid: 3ab161d4a8794a1d955d8236332c3b63
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743174743471
+status: 3
+tags: []
+user_id: pprie

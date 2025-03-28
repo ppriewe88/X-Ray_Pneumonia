@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/791804789027766870/7038e952b71e4c6abe2f50c980567b30/artifacts
+end_time: 1743177434468
+entry_point_name: ''
+experiment_id: '791804789027766870'
+lifecycle_stage: active
+run_id: 7038e952b71e4c6abe2f50c980567b30
+run_name: delicate-dog-849
+run_uuid: 7038e952b71e4c6abe2f50c980567b30
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743177434375
+status: 3
+tags: []
+user_id: pprie

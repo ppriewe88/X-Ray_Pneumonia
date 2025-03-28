@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/5d6c7169915847cdadc94f5d9765d4e6/artifacts
+end_time: 1743175489523
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: 5d6c7169915847cdadc94f5d9765d4e6
+run_name: trusting-panda-51
+run_uuid: 5d6c7169915847cdadc94f5d9765d4e6
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743175489434
+status: 3
+tags: []
+user_id: pprie

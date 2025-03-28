@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/73974f365c614bb5bb09c9800311423a/artifacts
+end_time: 1743176133456
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: 73974f365c614bb5bb09c9800311423a
+run_name: delicate-newt-780
+run_uuid: 73974f365c614bb5bb09c9800311423a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743176133362
+status: 3
+tags: []
+user_id: pprie

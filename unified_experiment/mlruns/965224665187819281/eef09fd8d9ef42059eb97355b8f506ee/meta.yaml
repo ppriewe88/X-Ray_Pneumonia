@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/eef09fd8d9ef42059eb97355b8f506ee/artifacts
+end_time: 1743177663269
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: eef09fd8d9ef42059eb97355b8f506ee
+run_name: shivering-robin-668
+run_uuid: eef09fd8d9ef42059eb97355b8f506ee
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743177663153
+status: 3
+tags: []
+user_id: pprie

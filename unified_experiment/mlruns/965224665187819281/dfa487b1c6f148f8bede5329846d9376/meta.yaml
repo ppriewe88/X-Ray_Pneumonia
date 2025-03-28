@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/dfa487b1c6f148f8bede5329846d9376/artifacts
+end_time: 1743174831033
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: dfa487b1c6f148f8bede5329846d9376
+run_name: fearless-grouse-467
+run_uuid: dfa487b1c6f148f8bede5329846d9376
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743174830948
+status: 3
+tags: []
+user_id: pprie

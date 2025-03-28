@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/9f225e94d386486f9ab13bc9add54db3/artifacts
+end_time: 1743175910397
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: 9f225e94d386486f9ab13bc9add54db3
+run_name: defiant-ant-557
+run_uuid: 9f225e94d386486f9ab13bc9add54db3
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743175910297
+status: 3
+tags: []
+user_id: pprie

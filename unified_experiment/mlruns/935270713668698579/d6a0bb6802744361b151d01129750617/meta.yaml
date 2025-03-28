@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/d6a0bb6802744361b151d01129750617/artifacts
+end_time: 1743177403400
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: d6a0bb6802744361b151d01129750617
+run_name: abundant-perch-357
+run_uuid: d6a0bb6802744361b151d01129750617
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743177403289
+status: 3
+tags: []
+user_id: pprie

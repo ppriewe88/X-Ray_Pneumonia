@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/60e8e26f54444080b0e44494ea2cd7c0/artifacts
+end_time: 1743176874980
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: 60e8e26f54444080b0e44494ea2cd7c0
+run_name: upbeat-fish-761
+run_uuid: 60e8e26f54444080b0e44494ea2cd7c0
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743176874881
+status: 3
+tags: []
+user_id: pprie

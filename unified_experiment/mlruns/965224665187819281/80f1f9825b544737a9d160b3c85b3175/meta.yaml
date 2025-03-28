@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/80f1f9825b544737a9d160b3c85b3175/artifacts
+end_time: 1743177148734
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: 80f1f9825b544737a9d160b3c85b3175
+run_name: burly-hound-143
+run_uuid: 80f1f9825b544737a9d160b3c85b3175
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743177148600
+status: 3
+tags: []
+user_id: pprie

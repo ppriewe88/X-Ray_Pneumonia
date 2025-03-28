@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/d2c5b29c8bd446c488ef0fdbde54829a/artifacts
+end_time: 1743176250215
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: d2c5b29c8bd446c488ef0fdbde54829a
+run_name: defiant-finch-347
+run_uuid: d2c5b29c8bd446c488ef0fdbde54829a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743176250098
+status: 3
+tags: []
+user_id: pprie

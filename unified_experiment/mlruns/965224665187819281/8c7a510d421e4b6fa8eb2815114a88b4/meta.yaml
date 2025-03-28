@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/8c7a510d421e4b6fa8eb2815114a88b4/artifacts
+end_time: 1743174974339
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: 8c7a510d421e4b6fa8eb2815114a88b4
+run_name: loud-goat-828
+run_uuid: 8c7a510d421e4b6fa8eb2815114a88b4
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743174974241
+status: 3
+tags: []
+user_id: pprie

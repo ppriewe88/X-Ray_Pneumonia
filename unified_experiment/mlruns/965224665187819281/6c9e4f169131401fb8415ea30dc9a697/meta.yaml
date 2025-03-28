@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/6c9e4f169131401fb8415ea30dc9a697/artifacts
+end_time: 1743177944756
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: 6c9e4f169131401fb8415ea30dc9a697
+run_name: learned-shark-749
+run_uuid: 6c9e4f169131401fb8415ea30dc9a697
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743177944640
+status: 3
+tags: []
+user_id: pprie

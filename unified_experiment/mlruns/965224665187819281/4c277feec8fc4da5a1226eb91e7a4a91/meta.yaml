@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/4c277feec8fc4da5a1226eb91e7a4a91/artifacts
+end_time: 1743175640550
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: 4c277feec8fc4da5a1226eb91e7a4a91
+run_name: defiant-doe-741
+run_uuid: 4c277feec8fc4da5a1226eb91e7a4a91
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743175640454
+status: 3
+tags: []
+user_id: pprie

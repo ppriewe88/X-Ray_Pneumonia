@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/ebde274c178a459892cf5886846e0f14/artifacts
+end_time: 1743176547607
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: ebde274c178a459892cf5886846e0f14
+run_name: likeable-chimp-107
+run_uuid: ebde274c178a459892cf5886846e0f14
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743176547506
+status: 3
+tags: []
+user_id: pprie

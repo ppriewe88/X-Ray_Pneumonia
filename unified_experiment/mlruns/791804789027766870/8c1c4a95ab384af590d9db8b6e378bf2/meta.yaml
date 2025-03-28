@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/791804789027766870/8c1c4a95ab384af590d9db8b6e378bf2/artifacts
+end_time: 1743175359263
+entry_point_name: ''
+experiment_id: '791804789027766870'
+lifecycle_stage: active
+run_id: 8c1c4a95ab384af590d9db8b6e378bf2
+run_name: capable-shoat-879
+run_uuid: 8c1c4a95ab384af590d9db8b6e378bf2
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743175359188
+status: 3
+tags: []
+user_id: pprie

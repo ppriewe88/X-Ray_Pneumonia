@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/791804789027766870/056c31baf95843b29bb704845a9cd599/artifacts
+end_time: 1743175347453
+entry_point_name: ''
+experiment_id: '791804789027766870'
+lifecycle_stage: active
+run_id: 056c31baf95843b29bb704845a9cd599
+run_name: burly-quail-691
+run_uuid: 056c31baf95843b29bb704845a9cd599
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743175347377
+status: 3
+tags: []
+user_id: pprie
