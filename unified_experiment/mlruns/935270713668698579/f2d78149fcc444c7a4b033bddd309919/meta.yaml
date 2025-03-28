@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/f2d78149fcc444c7a4b033bddd309919/artifacts
+end_time: 1743173696582
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: f2d78149fcc444c7a4b033bddd309919
+run_name: rebellious-rook-281
+run_uuid: f2d78149fcc444c7a4b033bddd309919
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743173696503
+status: 3
+tags: []
+user_id: pprie

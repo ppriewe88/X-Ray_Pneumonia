@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/6341c124ae5547809f95700d5882b409/artifacts
+end_time: 1743175534235
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: 6341c124ae5547809f95700d5882b409
+run_name: rare-squid-511
+run_uuid: 6341c124ae5547809f95700d5882b409
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743175534137
+status: 3
+tags: []
+user_id: pprie

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/791804789027766870/c374b0fc16e541f1a6bcbab254cd4f81/artifacts
+end_time: 1743174123231
+entry_point_name: ''
+experiment_id: '791804789027766870'
+lifecycle_stage: active
+run_id: c374b0fc16e541f1a6bcbab254cd4f81
+run_name: funny-newt-2
+run_uuid: c374b0fc16e541f1a6bcbab254cd4f81
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743174123167
+status: 3
+tags: []
+user_id: pprie

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/d2add49335a74fb4872ad339f8bb6328/artifacts
+end_time: 1743177278704
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: d2add49335a74fb4872ad339f8bb6328
+run_name: secretive-auk-69
+run_uuid: d2add49335a74fb4872ad339f8bb6328
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743177278586
+status: 3
+tags: []
+user_id: pprie

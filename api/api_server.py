@@ -3,7 +3,7 @@ import numpy as np
 from fastapi import FastAPI, UploadFile, File
 from enum import Enum
 import mlflow
-from api_helpers import resize_image, load_model_from_registry, make_prediction, return_verified_image_as_numpy_arr, get_modelversion_and_tag
+from api_helpers import resize_image, load_model_from_registry, make_prediction, return_verified_image_as_numpy_arr, get_modelversion_and_tag, get_performance_indicators
 
 
 """ 
@@ -15,7 +15,7 @@ Has to be called from parent directory via: uvicorn api_server:app --host 0.0.0.
 
 
 ' ############################### helper class for label input #################'
-
+# class for input in uploading-endpoint
 class Label(int, Enum):
     NEGATIVE = 0
     POSITIVE = 1
@@ -24,19 +24,15 @@ class Label(int, Enum):
 # make app
 app = FastAPI(title = "Deploying an ML Model for Pneumonia Detection")
 
-
 ' ############################### root endpoint ###############################'
 # root
 @app.get("/")
 def home():
     return "root of this API"
 
-
 ' ############################### model serving/prediction endpoint ###############################'
 # endpoint for uploading image
 @app.post("/upload_image")
-# async defines an asynchronous function => These functions can be paused and resumed, 
-# allowing other tasks to run while waiting for external operations, such as network requests or file I/O.
 async def upload_image_and_integer( 
     label: Label,
     file: UploadFile = File(...)
@@ -97,7 +93,20 @@ async def upload_image_and_integer(
     
     return y_pred_as_str
 
-################# host specification #################
+
+' ############################### performance review endpoint ###############################'
+# endpoint for uploading image
+@app.post("/get_performance_review")
+async def get_performance(
+    last_n_predictions: int,
+    ):
+    # gets the dictionary for all three model
+    perf_dict = get_performance_indicators(num_steps_short_term = last_n_predictions)
+    
+    return perf_dict
+
+
+' ################################ host specification ################# '
 
 # my localhost adress
 host = "127.0.0.1"

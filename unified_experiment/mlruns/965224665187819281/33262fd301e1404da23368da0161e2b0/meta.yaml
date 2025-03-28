@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/33262fd301e1404da23368da0161e2b0/artifacts
+end_time: 1743176422147
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: 33262fd301e1404da23368da0161e2b0
+run_name: bittersweet-cod-56
+run_uuid: 33262fd301e1404da23368da0161e2b0
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743176422048
+status: 3
+tags: []
+user_id: pprie

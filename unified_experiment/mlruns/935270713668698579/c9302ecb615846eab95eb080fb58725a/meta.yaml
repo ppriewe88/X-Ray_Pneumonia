@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/c9302ecb615846eab95eb080fb58725a/artifacts
+end_time: 1743177005329
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: c9302ecb615846eab95eb080fb58725a
+run_name: abrasive-shrimp-394
+run_uuid: c9302ecb615846eab95eb080fb58725a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743177005230
+status: 3
+tags: []
+user_id: pprie

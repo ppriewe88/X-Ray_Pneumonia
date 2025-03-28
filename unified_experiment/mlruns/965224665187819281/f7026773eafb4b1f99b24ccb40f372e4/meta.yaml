@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/f7026773eafb4b1f99b24ccb40f372e4/artifacts
+end_time: 1743175754179
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: f7026773eafb4b1f99b24ccb40f372e4
+run_name: nimble-shad-113
+run_uuid: f7026773eafb4b1f99b24ccb40f372e4
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743175754074
+status: 3
+tags: []
+user_id: pprie

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/a48f80ccd4424e8ca77400f2235710f0/artifacts
+end_time: 1743176231540
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: a48f80ccd4424e8ca77400f2235710f0
+run_name: dapper-flea-457
+run_uuid: a48f80ccd4424e8ca77400f2235710f0
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743176231441
+status: 3
+tags: []
+user_id: pprie

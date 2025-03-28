@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/791804789027766870/7dde1b79701c4414be77f4290f1272c3/artifacts
+end_time: 1743173663578
+entry_point_name: ''
+experiment_id: '791804789027766870'
+lifecycle_stage: active
+run_id: 7dde1b79701c4414be77f4290f1272c3
+run_name: upset-owl-44
+run_uuid: 7dde1b79701c4414be77f4290f1272c3
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743173663510
+status: 3
+tags: []
+user_id: pprie

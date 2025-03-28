@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/a5357450dba4496685e2943683e269cd/artifacts
+end_time: 1743174919495
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: a5357450dba4496685e2943683e269cd
+run_name: salty-lark-34
+run_uuid: a5357450dba4496685e2943683e269cd
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743174919398
+status: 3
+tags: []
+user_id: pprie

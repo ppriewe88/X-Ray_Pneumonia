@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/992e4c5b63fd40909eadb751ef8bf337/artifacts
+end_time: 1743174869350
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: 992e4c5b63fd40909eadb751ef8bf337
+run_name: whimsical-gnat-831
+run_uuid: 992e4c5b63fd40909eadb751ef8bf337
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743174869270
+status: 3
+tags: []
+user_id: pprie

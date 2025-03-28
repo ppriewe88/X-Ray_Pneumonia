@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/791804789027766870/10745b788ab0456182fc45a6c4d1d799/artifacts
+end_time: 1743177108489
+entry_point_name: ''
+experiment_id: '791804789027766870'
+lifecycle_stage: active
+run_id: 10745b788ab0456182fc45a6c4d1d799
+run_name: unequaled-snail-313
+run_uuid: 10745b788ab0456182fc45a6c4d1d799
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743177108405
+status: 3
+tags: []
+user_id: pprie

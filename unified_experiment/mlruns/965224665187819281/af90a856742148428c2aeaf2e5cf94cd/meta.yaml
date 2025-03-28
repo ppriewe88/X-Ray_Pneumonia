@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/af90a856742148428c2aeaf2e5cf94cd/artifacts
+end_time: 1743175977639
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: af90a856742148428c2aeaf2e5cf94cd
+run_name: abrasive-seal-159
+run_uuid: af90a856742148428c2aeaf2e5cf94cd
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743175977545
+status: 3
+tags: []
+user_id: pprie

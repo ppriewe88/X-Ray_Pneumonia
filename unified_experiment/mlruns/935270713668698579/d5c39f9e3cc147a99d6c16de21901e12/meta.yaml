@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/d5c39f9e3cc147a99d6c16de21901e12/artifacts
+end_time: 1743176044398
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: d5c39f9e3cc147a99d6c16de21901e12
+run_name: awesome-asp-256
+run_uuid: d5c39f9e3cc147a99d6c16de21901e12
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743176044307
+status: 3
+tags: []
+user_id: pprie

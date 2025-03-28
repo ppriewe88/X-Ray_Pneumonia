@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/fc2d413693ca47afb09fb9ffae79db53/artifacts
+end_time: 1743175847969
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: fc2d413693ca47afb09fb9ffae79db53
+run_name: tasteful-wren-164
+run_uuid: fc2d413693ca47afb09fb9ffae79db53
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743175847882
+status: 3
+tags: []
+user_id: pprie

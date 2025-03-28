@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/ce6da96161244320bf83b7aea500d5e8/artifacts
+end_time: 1743177328954
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: ce6da96161244320bf83b7aea500d5e8
+run_name: bright-sheep-489
+run_uuid: ce6da96161244320bf83b7aea500d5e8
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743177328845
+status: 3
+tags: []
+user_id: pprie

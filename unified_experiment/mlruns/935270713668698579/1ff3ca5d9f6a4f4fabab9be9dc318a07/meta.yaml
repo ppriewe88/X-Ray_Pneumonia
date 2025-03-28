@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/1ff3ca5d9f6a4f4fabab9be9dc318a07/artifacts
+end_time: 1743175428394
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: 1ff3ca5d9f6a4f4fabab9be9dc318a07
+run_name: welcoming-kit-81
+run_uuid: 1ff3ca5d9f6a4f4fabab9be9dc318a07
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743175428312
+status: 3
+tags: []
+user_id: pprie

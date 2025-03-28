@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/bd2432efb9894e4589604b841b0fbba0/artifacts
+end_time: 1743177976606
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: bd2432efb9894e4589604b841b0fbba0
+run_name: legendary-skink-728
+run_uuid: bd2432efb9894e4589604b841b0fbba0
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743177976485
+status: 3
+tags: []
+user_id: pprie

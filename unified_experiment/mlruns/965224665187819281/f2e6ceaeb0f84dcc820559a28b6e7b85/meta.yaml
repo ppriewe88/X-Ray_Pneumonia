@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/f2e6ceaeb0f84dcc820559a28b6e7b85/artifacts
+end_time: 1743176038609
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: f2e6ceaeb0f84dcc820559a28b6e7b85
+run_name: dashing-stag-554
+run_uuid: f2e6ceaeb0f84dcc820559a28b6e7b85
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743176038515
+status: 3
+tags: []
+user_id: pprie

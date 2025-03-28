@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/8df0515df4c6453ca8a117a762c672f1/artifacts
+end_time: 1743176999729
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: 8df0515df4c6453ca8a117a762c672f1
+run_name: smiling-penguin-123
+run_uuid: 8df0515df4c6453ca8a117a762c672f1
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743176999621
+status: 3
+tags: []
+user_id: pprie

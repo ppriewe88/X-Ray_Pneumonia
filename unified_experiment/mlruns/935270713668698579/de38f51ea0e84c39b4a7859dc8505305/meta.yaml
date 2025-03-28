@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/de38f51ea0e84c39b4a7859dc8505305/artifacts
+end_time: 1743175422581
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: de38f51ea0e84c39b4a7859dc8505305
+run_name: grandiose-wolf-578
+run_uuid: de38f51ea0e84c39b4a7859dc8505305
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743175422497
+status: 3
+tags: []
+user_id: pprie

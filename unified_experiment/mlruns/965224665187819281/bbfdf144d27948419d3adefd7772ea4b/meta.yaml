@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/bbfdf144d27948419d3adefd7772ea4b/artifacts
+end_time: 1743176869557
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: bbfdf144d27948419d3adefd7772ea4b
+run_name: selective-toad-786
+run_uuid: bbfdf144d27948419d3adefd7772ea4b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743176869453
+status: 3
+tags: []
+user_id: pprie

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/dc5197db0e904ab6ba6ec89abed3728a/artifacts
+end_time: 1743177487181
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: dc5197db0e904ab6ba6ec89abed3728a
+run_name: charming-sponge-305
+run_uuid: dc5197db0e904ab6ba6ec89abed3728a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743177487005
+status: 3
+tags: []
+user_id: pprie

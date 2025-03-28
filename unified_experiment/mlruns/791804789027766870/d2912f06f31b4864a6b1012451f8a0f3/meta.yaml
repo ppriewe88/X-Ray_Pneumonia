@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/791804789027766870/d2912f06f31b4864a6b1012451f8a0f3/artifacts
+end_time: 1743175128286
+entry_point_name: ''
+experiment_id: '791804789027766870'
+lifecycle_stage: active
+run_id: d2912f06f31b4864a6b1012451f8a0f3
+run_name: valuable-cow-265
+run_uuid: d2912f06f31b4864a6b1012451f8a0f3
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743175128207
+status: 3
+tags: []
+user_id: pprie

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/791804789027766870/f27b9ab1ce9f47718010d65c0b68a2fe/artifacts
+end_time: 1743174303504
+entry_point_name: ''
+experiment_id: '791804789027766870'
+lifecycle_stage: active
+run_id: f27b9ab1ce9f47718010d65c0b68a2fe
+run_name: nebulous-dog-726
+run_uuid: f27b9ab1ce9f47718010d65c0b68a2fe
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743174303419
+status: 3
+tags: []
+user_id: pprie

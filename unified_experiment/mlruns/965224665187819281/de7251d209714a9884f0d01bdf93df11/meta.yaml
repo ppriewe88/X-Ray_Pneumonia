@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/de7251d209714a9884f0d01bdf93df11/artifacts
+end_time: 1743173952531
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: de7251d209714a9884f0d01bdf93df11
+run_name: bold-deer-436
+run_uuid: de7251d209714a9884f0d01bdf93df11
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743173952439
+status: 3
+tags: []
+user_id: pprie

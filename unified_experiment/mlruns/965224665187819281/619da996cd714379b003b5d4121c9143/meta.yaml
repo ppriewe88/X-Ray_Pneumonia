@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/619da996cd714379b003b5d4121c9143/artifacts
+end_time: 1743174850903
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: 619da996cd714379b003b5d4121c9143
+run_name: sincere-mule-124
+run_uuid: 619da996cd714379b003b5d4121c9143
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743174850806
+status: 3
+tags: []
+user_id: pprie

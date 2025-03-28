@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/791804789027766870/9f0be93656134f7996d9ad5aa4e9d3c9/artifacts
+end_time: 1743177678625
+entry_point_name: ''
+experiment_id: '791804789027766870'
+lifecycle_stage: active
+run_id: 9f0be93656134f7996d9ad5aa4e9d3c9
+run_name: legendary-hare-860
+run_uuid: 9f0be93656134f7996d9ad5aa4e9d3c9
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743177678539
+status: 3
+tags: []
+user_id: pprie

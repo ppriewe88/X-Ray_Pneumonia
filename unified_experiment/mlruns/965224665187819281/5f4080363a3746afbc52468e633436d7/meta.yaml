@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/5f4080363a3746afbc52468e633436d7/artifacts
+end_time: 1743177844940
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: 5f4080363a3746afbc52468e633436d7
+run_name: honorable-bass-208
+run_uuid: 5f4080363a3746afbc52468e633436d7
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743177844820
+status: 3
+tags: []
+user_id: pprie

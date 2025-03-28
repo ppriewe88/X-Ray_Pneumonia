@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/51d3450326b847ffa47ee979ddf46076/artifacts
+end_time: 1743174144200
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: 51d3450326b847ffa47ee979ddf46076
+run_name: dazzling-sloth-837
+run_uuid: 51d3450326b847ffa47ee979ddf46076
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743174144121
+status: 3
+tags: []
+user_id: pprie

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/791804789027766870/c082621edd364b5d999bc27acb9e88a8/artifacts
+end_time: 1743176041820
+entry_point_name: ''
+experiment_id: '791804789027766870'
+lifecycle_stage: active
+run_id: c082621edd364b5d999bc27acb9e88a8
+run_name: monumental-sheep-621
+run_uuid: c082621edd364b5d999bc27acb9e88a8
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743176041739
+status: 3
+tags: []
+user_id: pprie

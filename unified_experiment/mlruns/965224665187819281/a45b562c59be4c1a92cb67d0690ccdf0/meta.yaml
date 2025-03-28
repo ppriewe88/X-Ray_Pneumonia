@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/a45b562c59be4c1a92cb67d0690ccdf0/artifacts
+end_time: 1743176485450
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: a45b562c59be4c1a92cb67d0690ccdf0
+run_name: redolent-smelt-239
+run_uuid: a45b562c59be4c1a92cb67d0690ccdf0
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743176485351
+status: 3
+tags: []
+user_id: pprie

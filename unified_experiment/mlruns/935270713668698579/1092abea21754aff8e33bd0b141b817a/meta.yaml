@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/1092abea21754aff8e33bd0b141b817a/artifacts
+end_time: 1743177303402
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: 1092abea21754aff8e33bd0b141b817a
+run_name: salty-yak-354
+run_uuid: 1092abea21754aff8e33bd0b141b817a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743177303301
+status: 3
+tags: []
+user_id: pprie

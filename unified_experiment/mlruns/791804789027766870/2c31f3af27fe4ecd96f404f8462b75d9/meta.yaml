@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/791804789027766870/2c31f3af27fe4ecd96f404f8462b75d9/artifacts
+end_time: 1743175365231
+entry_point_name: ''
+experiment_id: '791804789027766870'
+lifecycle_stage: active
+run_id: 2c31f3af27fe4ecd96f404f8462b75d9
+run_name: omniscient-zebra-223
+run_uuid: 2c31f3af27fe4ecd96f404f8462b75d9
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743175365140
+status: 3
+tags: []
+user_id: pprie

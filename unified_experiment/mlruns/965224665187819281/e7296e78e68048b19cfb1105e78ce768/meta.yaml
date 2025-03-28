@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/e7296e78e68048b19cfb1105e78ce768/artifacts
+end_time: 1743174132250
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: e7296e78e68048b19cfb1105e78ce768
+run_name: learned-fox-967
+run_uuid: e7296e78e68048b19cfb1105e78ce768
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743174132171
+status: 3
+tags: []
+user_id: pprie

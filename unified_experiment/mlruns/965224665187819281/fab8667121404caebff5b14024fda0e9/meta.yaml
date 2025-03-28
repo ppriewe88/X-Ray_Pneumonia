@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/fab8667121404caebff5b14024fda0e9/artifacts
+end_time: 1743176409827
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: fab8667121404caebff5b14024fda0e9
+run_name: skillful-wasp-179
+run_uuid: fab8667121404caebff5b14024fda0e9
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743176409726
+status: 3
+tags: []
+user_id: pprie

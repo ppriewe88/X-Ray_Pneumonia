@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/04cd0b51115f43e6a7efc8eea38a2f16/artifacts
+end_time: 1743177906888
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: 04cd0b51115f43e6a7efc8eea38a2f16
+run_name: shivering-skunk-6
+run_uuid: 04cd0b51115f43e6a7efc8eea38a2f16
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743177906785
+status: 3
+tags: []
+user_id: pprie

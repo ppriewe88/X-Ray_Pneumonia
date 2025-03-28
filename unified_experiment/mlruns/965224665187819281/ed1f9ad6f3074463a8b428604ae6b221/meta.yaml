@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/ed1f9ad6f3074463a8b428604ae6b221/artifacts
+end_time: 1743177888393
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: ed1f9ad6f3074463a8b428604ae6b221
+run_name: persistent-fox-934
+run_uuid: ed1f9ad6f3074463a8b428604ae6b221
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743177888274
+status: 3
+tags: []
+user_id: pprie

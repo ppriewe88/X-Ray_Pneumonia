@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/791804789027766870/c7814085404649debe5d6becebc2b4aa/artifacts
+end_time: 1743175420219
+entry_point_name: ''
+experiment_id: '791804789027766870'
+lifecycle_stage: active
+run_id: c7814085404649debe5d6becebc2b4aa
+run_name: melodic-duck-676
+run_uuid: c7814085404649debe5d6becebc2b4aa
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743175420138
+status: 3
+tags: []
+user_id: pprie

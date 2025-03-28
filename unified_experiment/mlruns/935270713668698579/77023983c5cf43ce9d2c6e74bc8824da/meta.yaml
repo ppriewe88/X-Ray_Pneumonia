@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/77023983c5cf43ce9d2c6e74bc8824da/artifacts
+end_time: 1743174191269
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: 77023983c5cf43ce9d2c6e74bc8824da
+run_name: honorable-perch-330
+run_uuid: 77023983c5cf43ce9d2c6e74bc8824da
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743174191176
+status: 3
+tags: []
+user_id: pprie

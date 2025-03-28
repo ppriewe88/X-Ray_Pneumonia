@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/791804789027766870/a198c0cdab274503b2c9beeeda4c9cae/artifacts
+end_time: 1743176940926
+entry_point_name: ''
+experiment_id: '791804789027766870'
+lifecycle_stage: active
+run_id: a198c0cdab274503b2c9beeeda4c9cae
+run_name: resilient-hawk-43
+run_uuid: a198c0cdab274503b2c9beeeda4c9cae
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743176940788
+status: 3
+tags: []
+user_id: pprie

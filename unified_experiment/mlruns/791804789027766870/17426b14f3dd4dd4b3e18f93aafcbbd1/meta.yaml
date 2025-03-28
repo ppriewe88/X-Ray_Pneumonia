@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/791804789027766870/17426b14f3dd4dd4b3e18f93aafcbbd1/artifacts
+end_time: 1743175999601
+entry_point_name: ''
+experiment_id: '791804789027766870'
+lifecycle_stage: active
+run_id: 17426b14f3dd4dd4b3e18f93aafcbbd1
+run_name: ambitious-dove-352
+run_uuid: 17426b14f3dd4dd4b3e18f93aafcbbd1
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743175999521
+status: 3
+tags: []
+user_id: pprie

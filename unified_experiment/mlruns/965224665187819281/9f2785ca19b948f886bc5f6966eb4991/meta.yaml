@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/9f2785ca19b948f886bc5f6966eb4991/artifacts
+end_time: 1743176566244
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: 9f2785ca19b948f886bc5f6966eb4991
+run_name: awesome-deer-85
+run_uuid: 9f2785ca19b948f886bc5f6966eb4991
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743176566142
+status: 3
+tags: []
+user_id: pprie

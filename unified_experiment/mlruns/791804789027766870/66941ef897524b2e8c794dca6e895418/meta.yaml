@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/791804789027766870/66941ef897524b2e8c794dca6e895418/artifacts
+end_time: 1743176083015
+entry_point_name: ''
+experiment_id: '791804789027766870'
+lifecycle_stage: active
+run_id: 66941ef897524b2e8c794dca6e895418
+run_name: receptive-lamb-683
+run_uuid: 66941ef897524b2e8c794dca6e895418
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743176082930
+status: 3
+tags: []
+user_id: pprie

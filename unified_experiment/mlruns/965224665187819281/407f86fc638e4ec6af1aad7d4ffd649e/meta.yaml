@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/407f86fc638e4ec6af1aad7d4ffd649e/artifacts
+end_time: 1743176434081
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: 407f86fc638e4ec6af1aad7d4ffd649e
+run_name: big-tern-887
+run_uuid: 407f86fc638e4ec6af1aad7d4ffd649e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743176433981
+status: 3
+tags: []
+user_id: pprie

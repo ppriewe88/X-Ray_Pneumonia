@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/60f089ac42f6452cb15fb38afa1a9503/artifacts
+end_time: 1743175958413
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: 60f089ac42f6452cb15fb38afa1a9503
+run_name: calm-flea-618
+run_uuid: 60f089ac42f6452cb15fb38afa1a9503
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743175958325
+status: 3
+tags: []
+user_id: pprie

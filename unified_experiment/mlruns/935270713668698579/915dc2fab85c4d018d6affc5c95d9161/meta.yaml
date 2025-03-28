@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/915dc2fab85c4d018d6affc5c95d9161/artifacts
+end_time: 1743174049627
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: 915dc2fab85c4d018d6affc5c95d9161
+run_name: bemused-mare-360
+run_uuid: 915dc2fab85c4d018d6affc5c95d9161
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743174049560
+status: 3
+tags: []
+user_id: pprie

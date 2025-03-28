@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/791804789027766870/134f859689454e28a21096d0209e9cf0/artifacts
+end_time: 1743175524851
+entry_point_name: ''
+experiment_id: '791804789027766870'
+lifecycle_stage: active
+run_id: 134f859689454e28a21096d0209e9cf0
+run_name: casual-colt-758
+run_uuid: 134f859689454e28a21096d0209e9cf0
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743175524767
+status: 3
+tags: []
+user_id: pprie

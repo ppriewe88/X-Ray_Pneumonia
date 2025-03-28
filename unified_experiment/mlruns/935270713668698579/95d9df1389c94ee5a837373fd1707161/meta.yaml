@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/95d9df1389c94ee5a837373fd1707161/artifacts
+end_time: 1743176421547
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: 95d9df1389c94ee5a837373fd1707161
+run_name: bouncy-grub-927
+run_uuid: 95d9df1389c94ee5a837373fd1707161
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743176421447
+status: 3
+tags: []
+user_id: pprie

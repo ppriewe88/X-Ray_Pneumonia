@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/8aca6e1731c3447eadd6cb66d0aa37e8/artifacts
+end_time: 1743177086147
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: 8aca6e1731c3447eadd6cb66d0aa37e8
+run_name: caring-eel-376
+run_uuid: 8aca6e1731c3447eadd6cb66d0aa37e8
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743177086038
+status: 3
+tags: []
+user_id: pprie

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/284cc4acbcbc4acf92a0094acf6a3276/artifacts
+end_time: 1743176585975
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: 284cc4acbcbc4acf92a0094acf6a3276
+run_name: enthused-fowl-226
+run_uuid: 284cc4acbcbc4acf92a0094acf6a3276
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743176585844
+status: 3
+tags: []
+user_id: pprie

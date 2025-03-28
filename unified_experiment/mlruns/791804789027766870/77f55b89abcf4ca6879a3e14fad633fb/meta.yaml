@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/791804789027766870/77f55b89abcf4ca6879a3e14fad633fb/artifacts
+end_time: 1743177461145
+entry_point_name: ''
+experiment_id: '791804789027766870'
+lifecycle_stage: active
+run_id: 77f55b89abcf4ca6879a3e14fad633fb
+run_name: upbeat-shoat-549
+run_uuid: 77f55b89abcf4ca6879a3e14fad633fb
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743177461063
+status: 3
+tags: []
+user_id: pprie

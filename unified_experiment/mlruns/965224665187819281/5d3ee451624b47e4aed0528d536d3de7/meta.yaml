@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/5d3ee451624b47e4aed0528d536d3de7/artifacts
+end_time: 1743174013325
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: 5d3ee451624b47e4aed0528d536d3de7
+run_name: grandiose-steed-690
+run_uuid: 5d3ee451624b47e4aed0528d536d3de7
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743174013237
+status: 3
+tags: []
+user_id: pprie

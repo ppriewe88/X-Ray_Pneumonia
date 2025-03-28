@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/791804789027766870/d787def7cf6c4cc189c57c6cc7681d4c/artifacts
+end_time: 1743176117766
+entry_point_name: ''
+experiment_id: '791804789027766870'
+lifecycle_stage: active
+run_id: d787def7cf6c4cc189c57c6cc7681d4c
+run_name: unruly-wolf-32
+run_uuid: d787def7cf6c4cc189c57c6cc7681d4c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743176117679
+status: 3
+tags: []
+user_id: pprie

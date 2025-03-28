@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/791804789027766870/d38937dca4c74c9da76efa96e919e9e9/artifacts
+end_time: 1743176506984
+entry_point_name: ''
+experiment_id: '791804789027766870'
+lifecycle_stage: active
+run_id: d38937dca4c74c9da76efa96e919e9e9
+run_name: bittersweet-bear-469
+run_uuid: d38937dca4c74c9da76efa96e919e9e9
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743176506895
+status: 3
+tags: []
+user_id: pprie

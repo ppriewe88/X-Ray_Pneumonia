@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/945bc1019e5346ef86249a03627860ba/artifacts
+end_time: 1743177211328
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: 945bc1019e5346ef86249a03627860ba
+run_name: able-colt-742
+run_uuid: 945bc1019e5346ef86249a03627860ba
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743177211217
+status: 3
+tags: []
+user_id: pprie

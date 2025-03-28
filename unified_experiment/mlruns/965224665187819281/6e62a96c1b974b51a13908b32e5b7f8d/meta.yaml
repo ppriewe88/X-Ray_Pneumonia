@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/6e62a96c1b974b51a13908b32e5b7f8d/artifacts
+end_time: 1743175246703
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: 6e62a96c1b974b51a13908b32e5b7f8d
+run_name: secretive-hawk-954
+run_uuid: 6e62a96c1b974b51a13908b32e5b7f8d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743175246606
+status: 3
+tags: []
+user_id: pprie

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/b251762a061e456282df1d3ad84cbaf8/artifacts
+end_time: 1743174823926
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: b251762a061e456282df1d3ad84cbaf8
+run_name: salty-hare-170
+run_uuid: b251762a061e456282df1d3ad84cbaf8
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743174823843
+status: 3
+tags: []
+user_id: pprie

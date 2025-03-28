@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/f7097db52ada4c29bf6bdf5a24445a55/artifacts
+end_time: 1743177316904
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: f7097db52ada4c29bf6bdf5a24445a55
+run_name: marvelous-elk-274
+run_uuid: f7097db52ada4c29bf6bdf5a24445a55
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743177316795
+status: 3
+tags: []
+user_id: pprie

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/4aeab6755f234e0aa81dad3d1bafe528/artifacts
+end_time: 1743174730738
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: 4aeab6755f234e0aa81dad3d1bafe528
+run_name: entertaining-ox-443
+run_uuid: 4aeab6755f234e0aa81dad3d1bafe528
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743174730657
+status: 3
+tags: []
+user_id: pprie

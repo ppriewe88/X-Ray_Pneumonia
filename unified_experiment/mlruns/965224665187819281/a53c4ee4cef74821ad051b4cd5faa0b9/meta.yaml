@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/a53c4ee4cef74821ad051b4cd5faa0b9/artifacts
+end_time: 1743175022648
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: a53c4ee4cef74821ad051b4cd5faa0b9
+run_name: bemused-mole-861
+run_uuid: a53c4ee4cef74821ad051b4cd5faa0b9
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743175022566
+status: 3
+tags: []
+user_id: pprie

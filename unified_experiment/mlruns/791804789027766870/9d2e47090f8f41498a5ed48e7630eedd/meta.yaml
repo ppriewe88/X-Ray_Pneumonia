@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/791804789027766870/9d2e47090f8f41498a5ed48e7630eedd/artifacts
+end_time: 1743175637263
+entry_point_name: ''
+experiment_id: '791804789027766870'
+lifecycle_stage: active
+run_id: 9d2e47090f8f41498a5ed48e7630eedd
+run_name: peaceful-roo-650
+run_uuid: 9d2e47090f8f41498a5ed48e7630eedd
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743175637184
+status: 3
+tags: []
+user_id: pprie

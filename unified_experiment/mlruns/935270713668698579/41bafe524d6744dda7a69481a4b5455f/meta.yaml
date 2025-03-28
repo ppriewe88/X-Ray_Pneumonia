@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/41bafe524d6744dda7a69481a4b5455f/artifacts
+end_time: 1743174811275
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: 41bafe524d6744dda7a69481a4b5455f
+run_name: funny-worm-439
+run_uuid: 41bafe524d6744dda7a69481a4b5455f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743174811198
+status: 3
+tags: []
+user_id: pprie

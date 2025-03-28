@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/4a1081d988504071874695e07c64d779/artifacts
+end_time: 1743177857081
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: 4a1081d988504071874695e07c64d779
+run_name: unequaled-mouse-286
+run_uuid: 4a1081d988504071874695e07c64d779
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743177856977
+status: 3
+tags: []
+user_id: pprie

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/a8c0da5248bc44da82f99135c83e177b/artifacts
+end_time: 1743177844332
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: a8c0da5248bc44da82f99135c83e177b
+run_name: intrigued-shrew-314
+run_uuid: a8c0da5248bc44da82f99135c83e177b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743177844228
+status: 3
+tags: []
+user_id: pprie

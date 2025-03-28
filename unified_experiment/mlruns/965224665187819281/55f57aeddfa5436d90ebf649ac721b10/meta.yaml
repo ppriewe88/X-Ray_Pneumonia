@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/55f57aeddfa5436d90ebf649ac721b10/artifacts
+end_time: 1743177217394
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: 55f57aeddfa5436d90ebf649ac721b10
+run_name: fun-penguin-315
+run_uuid: 55f57aeddfa5436d90ebf649ac721b10
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743177217254
+status: 3
+tags: []
+user_id: pprie

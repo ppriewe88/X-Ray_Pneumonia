@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/791804789027766870/bda2f99c9a7245e7a1d621114299bb03/artifacts
+end_time: 1743175225513
+entry_point_name: ''
+experiment_id: '791804789027766870'
+lifecycle_stage: active
+run_id: bda2f99c9a7245e7a1d621114299bb03
+run_name: likeable-perch-216
+run_uuid: bda2f99c9a7245e7a1d621114299bb03
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743175225436
+status: 3
+tags: []
+user_id: pprie

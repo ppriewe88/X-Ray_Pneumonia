@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/28940602ae724fb2917f39065307d0db/artifacts
+end_time: 1743174007129
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: 28940602ae724fb2917f39065307d0db
+run_name: resilient-pug-444
+run_uuid: 28940602ae724fb2917f39065307d0db
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743174007073
+status: 3
+tags: []
+user_id: pprie

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/791804789027766870/64838163e49e4605b3326b12b096938a/artifacts
+end_time: 1743177747598
+entry_point_name: ''
+experiment_id: '791804789027766870'
+lifecycle_stage: active
+run_id: 64838163e49e4605b3326b12b096938a
+run_name: judicious-yak-701
+run_uuid: 64838163e49e4605b3326b12b096938a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743177747515
+status: 3
+tags: []
+user_id: pprie

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/9d95c6ade87e4b67b17bcd97b44b7e5c/artifacts
+end_time: 1743174764162
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: 9d95c6ade87e4b67b17bcd97b44b7e5c
+run_name: youthful-stag-426
+run_uuid: 9d95c6ade87e4b67b17bcd97b44b7e5c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743174764077
+status: 3
+tags: []
+user_id: pprie

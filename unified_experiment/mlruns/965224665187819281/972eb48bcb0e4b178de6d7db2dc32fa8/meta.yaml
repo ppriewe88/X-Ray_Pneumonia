@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/972eb48bcb0e4b178de6d7db2dc32fa8/artifacts
+end_time: 1743175411087
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: 972eb48bcb0e4b178de6d7db2dc32fa8
+run_name: awesome-shrimp-603
+run_uuid: 972eb48bcb0e4b178de6d7db2dc32fa8
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743175410998
+status: 3
+tags: []
+user_id: pprie

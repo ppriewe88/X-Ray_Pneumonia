@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/6c0d86d97e8a41fbb52c7fe64b4e68b2/artifacts
+end_time: 1743173982082
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: 6c0d86d97e8a41fbb52c7fe64b4e68b2
+run_name: crawling-bear-257
+run_uuid: 6c0d86d97e8a41fbb52c7fe64b4e68b2
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743173982004
+status: 3
+tags: []
+user_id: pprie

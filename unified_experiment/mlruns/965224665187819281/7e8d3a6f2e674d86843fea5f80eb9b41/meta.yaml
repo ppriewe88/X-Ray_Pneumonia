@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/7e8d3a6f2e674d86843fea5f80eb9b41/artifacts
+end_time: 1743173697112
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: 7e8d3a6f2e674d86843fea5f80eb9b41
+run_name: polite-jay-490
+run_uuid: 7e8d3a6f2e674d86843fea5f80eb9b41
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743173697040
+status: 3
+tags: []
+user_id: pprie

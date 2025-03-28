@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/51f21f18f6af4719894ac2a6b127f666/artifacts
+end_time: 1743176304739
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: 51f21f18f6af4719894ac2a6b127f666
+run_name: treasured-gnat-758
+run_uuid: 51f21f18f6af4719894ac2a6b127f666
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743176304651
+status: 3
+tags: []
+user_id: pprie

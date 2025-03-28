@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/791804789027766870/81f2f413b57245fda2617ae44c2a2286/artifacts
+end_time: 1743174734438
+entry_point_name: ''
+experiment_id: '791804789027766870'
+lifecycle_stage: active
+run_id: 81f2f413b57245fda2617ae44c2a2286
+run_name: skillful-snake-10
+run_uuid: 81f2f413b57245fda2617ae44c2a2286
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743174734364
+status: 3
+tags: []
+user_id: pprie

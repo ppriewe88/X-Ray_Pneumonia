@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/31444307e1214cf9a0bd10e8ceb09c6f/artifacts
+end_time: 1743177437363
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: 31444307e1214cf9a0bd10e8ceb09c6f
+run_name: languid-roo-776
+run_uuid: 31444307e1214cf9a0bd10e8ceb09c6f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743177437258
+status: 3
+tags: []
+user_id: pprie

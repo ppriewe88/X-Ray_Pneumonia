@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/791804789027766870/6864a1987a954ab58d76dfa9480a9586/artifacts
+end_time: 1743177196076
+entry_point_name: ''
+experiment_id: '791804789027766870'
+lifecycle_stage: active
+run_id: 6864a1987a954ab58d76dfa9480a9586
+run_name: upset-shad-720
+run_uuid: 6864a1987a954ab58d76dfa9480a9586
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743177195995
+status: 3
+tags: []
+user_id: pprie

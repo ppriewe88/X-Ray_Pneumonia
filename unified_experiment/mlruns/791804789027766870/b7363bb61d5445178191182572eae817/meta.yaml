@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/791804789027766870/b7363bb61d5445178191182572eae817/artifacts
+end_time: 1743176462200
+entry_point_name: ''
+experiment_id: '791804789027766870'
+lifecycle_stage: active
+run_id: b7363bb61d5445178191182572eae817
+run_name: salty-kit-298
+run_uuid: b7363bb61d5445178191182572eae817
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743176462110
+status: 3
+tags: []
+user_id: pprie

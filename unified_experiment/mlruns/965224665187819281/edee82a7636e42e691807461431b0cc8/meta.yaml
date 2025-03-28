@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/edee82a7636e42e691807461431b0cc8/artifacts
+end_time: 1743176182916
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: edee82a7636e42e691807461431b0cc8
+run_name: smiling-ape-909
+run_uuid: edee82a7636e42e691807461431b0cc8
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743176182821
+status: 3
+tags: []
+user_id: pprie

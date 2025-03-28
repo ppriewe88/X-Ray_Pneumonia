@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/fe7a946279514c02a7c348ca554b6d92/artifacts
+end_time: 1743173709471
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: fe7a946279514c02a7c348ca554b6d92
+run_name: incongruous-cat-948
+run_uuid: fe7a946279514c02a7c348ca554b6d92
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743173709381
+status: 3
+tags: []
+user_id: pprie

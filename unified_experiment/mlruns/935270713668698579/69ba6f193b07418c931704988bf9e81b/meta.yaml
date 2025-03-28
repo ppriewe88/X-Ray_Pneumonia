@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/69ba6f193b07418c931704988bf9e81b/artifacts
+end_time: 1743175306131
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: 69ba6f193b07418c931704988bf9e81b
+run_name: smiling-duck-663
+run_uuid: 69ba6f193b07418c931704988bf9e81b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743175306049
+status: 3
+tags: []
+user_id: pprie

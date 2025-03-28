@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/92d7bb13969645818427c5145d371662/artifacts
+end_time: 1743176887484
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: 92d7bb13969645818427c5145d371662
+run_name: shivering-fish-258
+run_uuid: 92d7bb13969645818427c5145d371662
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743176887384
+status: 3
+tags: []
+user_id: pprie

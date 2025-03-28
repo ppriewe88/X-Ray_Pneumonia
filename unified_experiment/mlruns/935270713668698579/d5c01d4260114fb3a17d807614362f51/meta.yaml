@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/d5c01d4260114fb3a17d807614362f51/artifacts
+end_time: 1743177359294
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: d5c01d4260114fb3a17d807614362f51
+run_name: gaudy-smelt-520
+run_uuid: d5c01d4260114fb3a17d807614362f51
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743177359190
+status: 3
+tags: []
+user_id: pprie

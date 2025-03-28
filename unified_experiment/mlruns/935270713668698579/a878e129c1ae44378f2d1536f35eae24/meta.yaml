@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/a878e129c1ae44378f2d1536f35eae24/artifacts
+end_time: 1743175288167
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: a878e129c1ae44378f2d1536f35eae24
+run_name: abrasive-swan-763
+run_uuid: a878e129c1ae44378f2d1536f35eae24
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743175288085
+status: 3
+tags: []
+user_id: pprie

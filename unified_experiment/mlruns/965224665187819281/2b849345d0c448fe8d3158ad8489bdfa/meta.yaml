@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/2b849345d0c448fe8d3158ad8489bdfa/artifacts
+end_time: 1743176981312
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: 2b849345d0c448fe8d3158ad8489bdfa
+run_name: vaunted-gnat-449
+run_uuid: 2b849345d0c448fe8d3158ad8489bdfa
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743176981151
+status: 3
+tags: []
+user_id: pprie

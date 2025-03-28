@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/791804789027766870/23ec46958cd449279b0174fa0187e986/artifacts
+end_time: 1743174016652
+entry_point_name: ''
+experiment_id: '791804789027766870'
+lifecycle_stage: active
+run_id: 23ec46958cd449279b0174fa0187e986
+run_name: masked-toad-345
+run_uuid: 23ec46958cd449279b0174fa0187e986
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743174016585
+status: 3
+tags: []
+user_id: pprie

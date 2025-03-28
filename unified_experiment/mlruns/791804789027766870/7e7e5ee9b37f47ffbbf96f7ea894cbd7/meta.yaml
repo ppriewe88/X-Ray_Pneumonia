@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/791804789027766870/7e7e5ee9b37f47ffbbf96f7ea894cbd7/artifacts
+end_time: 1743177785396
+entry_point_name: ''
+experiment_id: '791804789027766870'
+lifecycle_stage: active
+run_id: 7e7e5ee9b37f47ffbbf96f7ea894cbd7
+run_name: sedate-steed-443
+run_uuid: 7e7e5ee9b37f47ffbbf96f7ea894cbd7
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743177785305
+status: 3
+tags: []
+user_id: pprie

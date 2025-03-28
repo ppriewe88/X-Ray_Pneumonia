@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/d7e99b44803f4b4eba933307021df2d0/artifacts
+end_time: 1743177824758
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: d7e99b44803f4b4eba933307021df2d0
+run_name: colorful-lark-506
+run_uuid: d7e99b44803f4b4eba933307021df2d0
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743177824657
+status: 3
+tags: []
+user_id: pprie

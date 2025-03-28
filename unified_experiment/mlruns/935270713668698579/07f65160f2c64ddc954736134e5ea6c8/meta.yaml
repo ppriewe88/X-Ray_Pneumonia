@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/07f65160f2c64ddc954736134e5ea6c8/artifacts
+end_time: 1743176943301
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: 07f65160f2c64ddc954736134e5ea6c8
+run_name: bright-ant-601
+run_uuid: 07f65160f2c64ddc954736134e5ea6c8
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743176943205
+status: 3
+tags: []
+user_id: pprie

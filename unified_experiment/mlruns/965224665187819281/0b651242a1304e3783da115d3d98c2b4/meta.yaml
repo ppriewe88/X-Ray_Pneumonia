@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/0b651242a1304e3783da115d3d98c2b4/artifacts
+end_time: 1743174857687
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: 0b651242a1304e3783da115d3d98c2b4
+run_name: adventurous-foal-794
+run_uuid: 0b651242a1304e3783da115d3d98c2b4
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743174857605
+status: 3
+tags: []
+user_id: pprie

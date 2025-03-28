@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/1d807b12b21b4655bc6e916fa8eb28ad/artifacts
+end_time: 1743176790057
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: 1d807b12b21b4655bc6e916fa8eb28ad
+run_name: merciful-flea-312
+run_uuid: 1d807b12b21b4655bc6e916fa8eb28ad
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743176789952
+status: 3
+tags: []
+user_id: pprie

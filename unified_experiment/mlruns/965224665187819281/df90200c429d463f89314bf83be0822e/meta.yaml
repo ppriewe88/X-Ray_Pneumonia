@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/df90200c429d463f89314bf83be0822e/artifacts
+end_time: 1743176660349
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: df90200c429d463f89314bf83be0822e
+run_name: adorable-vole-463
+run_uuid: df90200c429d463f89314bf83be0822e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743176660247
+status: 3
+tags: []
+user_id: pprie

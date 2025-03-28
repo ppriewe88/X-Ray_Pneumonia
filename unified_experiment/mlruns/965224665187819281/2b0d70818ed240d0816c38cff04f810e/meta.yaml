@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/2b0d70818ed240d0816c38cff04f810e/artifacts
+end_time: 1743173988918
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: 2b0d70818ed240d0816c38cff04f810e
+run_name: masked-smelt-963
+run_uuid: 2b0d70818ed240d0816c38cff04f810e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743173988822
+status: 3
+tags: []
+user_id: pprie

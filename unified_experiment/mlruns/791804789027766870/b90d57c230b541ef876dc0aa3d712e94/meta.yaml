@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/791804789027766870/b90d57c230b541ef876dc0aa3d712e94/artifacts
+end_time: 1743174254768
+entry_point_name: ''
+experiment_id: '791804789027766870'
+lifecycle_stage: active
+run_id: b90d57c230b541ef876dc0aa3d712e94
+run_name: sassy-hare-715
+run_uuid: b90d57c230b541ef876dc0aa3d712e94
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743174254705
+status: 3
+tags: []
+user_id: pprie

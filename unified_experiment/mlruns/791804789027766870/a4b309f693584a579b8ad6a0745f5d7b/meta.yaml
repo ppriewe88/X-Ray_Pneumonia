@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/791804789027766870/a4b309f693584a579b8ad6a0745f5d7b/artifacts
+end_time: 1743175769648
+entry_point_name: ''
+experiment_id: '791804789027766870'
+lifecycle_stage: active
+run_id: a4b309f693584a579b8ad6a0745f5d7b
+run_name: vaunted-elk-458
+run_uuid: a4b309f693584a579b8ad6a0745f5d7b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743175769564
+status: 3
+tags: []
+user_id: pprie

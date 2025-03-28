@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/791804789027766870/4ec96ce136004292953805a8a0bba47a/artifacts
+end_time: 1743177841894
+entry_point_name: ''
+experiment_id: '791804789027766870'
+lifecycle_stage: active
+run_id: 4ec96ce136004292953805a8a0bba47a
+run_name: unequaled-donkey-834
+run_uuid: 4ec96ce136004292953805a8a0bba47a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743177841781
+status: 3
+tags: []
+user_id: pprie

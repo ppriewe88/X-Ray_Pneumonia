@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/0317b78c278e4af7a076de960f264c32/artifacts
+end_time: 1743176622461
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: 0317b78c278e4af7a076de960f264c32
+run_name: magnificent-bird-201
+run_uuid: 0317b78c278e4af7a076de960f264c32
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743176622361
+status: 3
+tags: []
+user_id: pprie

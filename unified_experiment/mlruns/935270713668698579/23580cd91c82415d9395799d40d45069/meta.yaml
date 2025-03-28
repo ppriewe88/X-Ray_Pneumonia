@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/23580cd91c82415d9395799d40d45069/artifacts
+end_time: 1743177919432
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: 23580cd91c82415d9395799d40d45069
+run_name: classy-cub-998
+run_uuid: 23580cd91c82415d9395799d40d45069
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743177919328
+status: 3
+tags: []
+user_id: pprie

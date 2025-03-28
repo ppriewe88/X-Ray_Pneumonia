@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/791804789027766870/cc187c0de5414186af9ad8c658f4d35a/artifacts
+end_time: 1743175462264
+entry_point_name: ''
+experiment_id: '791804789027766870'
+lifecycle_stage: active
+run_id: cc187c0de5414186af9ad8c658f4d35a
+run_name: amusing-dog-440
+run_uuid: cc187c0de5414186af9ad8c658f4d35a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743175462184
+status: 3
+tags: []
+user_id: pprie

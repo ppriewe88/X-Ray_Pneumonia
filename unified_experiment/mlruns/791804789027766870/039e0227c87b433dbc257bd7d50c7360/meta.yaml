@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/791804789027766870/039e0227c87b433dbc257bd7d50c7360/artifacts
+end_time: 1743177252100
+entry_point_name: ''
+experiment_id: '791804789027766870'
+lifecycle_stage: active
+run_id: 039e0227c87b433dbc257bd7d50c7360
+run_name: clumsy-kit-655
+run_uuid: 039e0227c87b433dbc257bd7d50c7360
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743177252016
+status: 3
+tags: []
+user_id: pprie

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/eab5b993da764f0f96ae4505efbc6e03/artifacts
+end_time: 1743174818060
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: eab5b993da764f0f96ae4505efbc6e03
+run_name: omniscient-gnu-565
+run_uuid: eab5b993da764f0f96ae4505efbc6e03
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743174817961
+status: 3
+tags: []
+user_id: pprie

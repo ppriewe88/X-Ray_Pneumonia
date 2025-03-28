@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/791804789027766870/965e29a77a854af789d9d9200f60d930/artifacts
+end_time: 1743174827706
+entry_point_name: ''
+experiment_id: '791804789027766870'
+lifecycle_stage: active
+run_id: 965e29a77a854af789d9d9200f60d930
+run_name: unequaled-wren-224
+run_uuid: 965e29a77a854af789d9d9200f60d930
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743174827581
+status: 3
+tags: []
+user_id: pprie

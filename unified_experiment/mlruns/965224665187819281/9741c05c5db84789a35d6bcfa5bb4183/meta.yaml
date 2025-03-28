@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/9741c05c5db84789a35d6bcfa5bb4183/artifacts
+end_time: 1743176523398
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: 9741c05c5db84789a35d6bcfa5bb4183
+run_name: beautiful-wasp-776
+run_uuid: 9741c05c5db84789a35d6bcfa5bb4183
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743176523017
+status: 3
+tags: []
+user_id: pprie

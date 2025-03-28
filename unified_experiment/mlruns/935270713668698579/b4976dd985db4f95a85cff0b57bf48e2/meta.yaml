@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/b4976dd985db4f95a85cff0b57bf48e2/artifacts
+end_time: 1743177737733
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: b4976dd985db4f95a85cff0b57bf48e2
+run_name: bustling-boar-985
+run_uuid: b4976dd985db4f95a85cff0b57bf48e2
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743177737619
+status: 3
+tags: []
+user_id: pprie

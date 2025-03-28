@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/af085da31d004bca8b55a11a72de6afb/artifacts
+end_time: 1743176032504
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: af085da31d004bca8b55a11a72de6afb
+run_name: fearless-mouse-675
+run_uuid: af085da31d004bca8b55a11a72de6afb
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743176032404
+status: 3
+tags: []
+user_id: pprie

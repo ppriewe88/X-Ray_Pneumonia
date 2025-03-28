@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/791804789027766870/ed3c270369c441a08f5365a8f1235832/artifacts
+end_time: 1743177911012
+entry_point_name: ''
+experiment_id: '791804789027766870'
+lifecycle_stage: active
+run_id: ed3c270369c441a08f5365a8f1235832
+run_name: masked-wren-368
+run_uuid: ed3c270369c441a08f5365a8f1235832
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743177910923
+status: 3
+tags: []
+user_id: pprie

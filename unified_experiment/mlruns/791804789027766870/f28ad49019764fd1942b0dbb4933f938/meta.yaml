@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/791804789027766870/f28ad49019764fd1942b0dbb4933f938/artifacts
+end_time: 1743176089941
+entry_point_name: ''
+experiment_id: '791804789027766870'
+lifecycle_stage: active
+run_id: f28ad49019764fd1942b0dbb4933f938
+run_name: traveling-sloth-748
+run_uuid: f28ad49019764fd1942b0dbb4933f938
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743176089456
+status: 3
+tags: []
+user_id: pprie

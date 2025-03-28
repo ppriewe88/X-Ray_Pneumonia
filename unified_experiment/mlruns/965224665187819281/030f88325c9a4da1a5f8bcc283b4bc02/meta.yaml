@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/030f88325c9a4da1a5f8bcc283b4bc02/artifacts
+end_time: 1743175465757
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: 030f88325c9a4da1a5f8bcc283b4bc02
+run_name: intrigued-quail-365
+run_uuid: 030f88325c9a4da1a5f8bcc283b4bc02
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743175465590
+status: 3
+tags: []
+user_id: pprie

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/7262633b8960446db0a1153d3597e0db/artifacts
+end_time: 1743177074233
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: 7262633b8960446db0a1153d3597e0db
+run_name: valuable-dog-908
+run_uuid: 7262633b8960446db0a1153d3597e0db
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743177074134
+status: 3
+tags: []
+user_id: pprie

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/791804789027766870/2829dc0fe8a54a769f58ce9b82b8b3ca/artifacts
+end_time: 1743176885060
+entry_point_name: ''
+experiment_id: '791804789027766870'
+lifecycle_stage: active
+run_id: 2829dc0fe8a54a769f58ce9b82b8b3ca
+run_name: polite-stag-220
+run_uuid: 2829dc0fe8a54a769f58ce9b82b8b3ca
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743176884974
+status: 3
+tags: []
+user_id: pprie

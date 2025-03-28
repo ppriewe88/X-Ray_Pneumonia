@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/ee3160880b484ba7a9c4e27929de3f2d/artifacts
+end_time: 1743175589847
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: ee3160880b484ba7a9c4e27929de3f2d
+run_name: delicate-boar-855
+run_uuid: ee3160880b484ba7a9c4e27929de3f2d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743175589759
+status: 3
+tags: []
+user_id: pprie

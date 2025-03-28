@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/22dd2954c1a64fd0b93084cef6f837bc/artifacts
+end_time: 1743177513436
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: 22dd2954c1a64fd0b93084cef6f837bc
+run_name: enthused-quail-323
+run_uuid: 22dd2954c1a64fd0b93084cef6f837bc
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743177513325
+status: 3
+tags: []
+user_id: pprie

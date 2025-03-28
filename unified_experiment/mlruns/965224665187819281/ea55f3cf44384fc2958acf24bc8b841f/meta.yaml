@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/ea55f3cf44384fc2958acf24bc8b841f/artifacts
+end_time: 1743176974908
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: ea55f3cf44384fc2958acf24bc8b841f
+run_name: charming-bass-33
+run_uuid: ea55f3cf44384fc2958acf24bc8b841f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743176974784
+status: 3
+tags: []
+user_id: pprie

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/d04230b8d7ab471fb21c763523c2902e/artifacts
+end_time: 1743177506546
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: d04230b8d7ab471fb21c763523c2902e
+run_name: popular-grouse-539
+run_uuid: d04230b8d7ab471fb21c763523c2902e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743177506424
+status: 3
+tags: []
+user_id: pprie

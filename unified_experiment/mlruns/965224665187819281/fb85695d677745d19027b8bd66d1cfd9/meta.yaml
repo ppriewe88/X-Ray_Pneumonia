@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/fb85695d677745d19027b8bd66d1cfd9/artifacts
+end_time: 1743176360678
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: fb85695d677745d19027b8bd66d1cfd9
+run_name: big-donkey-672
+run_uuid: fb85695d677745d19027b8bd66d1cfd9
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743176360576
+status: 3
+tags: []
+user_id: pprie

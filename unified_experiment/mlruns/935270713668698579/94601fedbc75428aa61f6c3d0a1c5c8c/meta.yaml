@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/94601fedbc75428aa61f6c3d0a1c5c8c/artifacts
+end_time: 1743177104571
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: 94601fedbc75428aa61f6c3d0a1c5c8c
+run_name: shivering-steed-502
+run_uuid: 94601fedbc75428aa61f6c3d0a1c5c8c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743177104471
+status: 3
+tags: []
+user_id: pprie

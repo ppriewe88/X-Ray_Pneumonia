@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/d44643bf7f784d6ba5ae4d5999696fbe/artifacts
+end_time: 1743174962604
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: d44643bf7f784d6ba5ae4d5999696fbe
+run_name: upset-seal-873
+run_uuid: d44643bf7f784d6ba5ae4d5999696fbe
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743174962476
+status: 3
+tags: []
+user_id: pprie

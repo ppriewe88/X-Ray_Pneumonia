@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/deaeb1bda55c4aeb80f2c93d5b370b73/artifacts
+end_time: 1743174980785
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: deaeb1bda55c4aeb80f2c93d5b370b73
+run_name: popular-gull-530
+run_uuid: deaeb1bda55c4aeb80f2c93d5b370b73
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743174980691
+status: 3
+tags: []
+user_id: pprie

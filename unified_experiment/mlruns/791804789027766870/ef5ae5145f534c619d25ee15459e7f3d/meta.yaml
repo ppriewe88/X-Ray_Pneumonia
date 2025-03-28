@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/791804789027766870/ef5ae5145f534c619d25ee15459e7f3d/artifacts
+end_time: 1743177163833
+entry_point_name: ''
+experiment_id: '791804789027766870'
+lifecycle_stage: active
+run_id: ef5ae5145f534c619d25ee15459e7f3d
+run_name: tasteful-ox-410
+run_uuid: ef5ae5145f534c619d25ee15459e7f3d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743177163749
+status: 3
+tags: []
+user_id: pprie

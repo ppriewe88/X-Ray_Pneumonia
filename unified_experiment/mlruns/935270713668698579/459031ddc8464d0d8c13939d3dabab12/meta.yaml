@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/459031ddc8464d0d8c13939d3dabab12/artifacts
+end_time: 1743175440226
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: 459031ddc8464d0d8c13939d3dabab12
+run_name: able-turtle-670
+run_uuid: 459031ddc8464d0d8c13939d3dabab12
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743175440142
+status: 3
+tags: []
+user_id: pprie

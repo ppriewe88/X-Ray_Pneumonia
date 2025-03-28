@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/94af109d39094e699598c7d254064ae2/artifacts
+end_time: 1743176497219
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: 94af109d39094e699598c7d254064ae2
+run_name: popular-hawk-878
+run_uuid: 94af109d39094e699598c7d254064ae2
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743176497127
+status: 3
+tags: []
+user_id: pprie

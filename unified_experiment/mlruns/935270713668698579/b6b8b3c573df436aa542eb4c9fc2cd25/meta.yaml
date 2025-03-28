@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/b6b8b3c573df436aa542eb4c9fc2cd25/artifacts
+end_time: 1743175167044
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: b6b8b3c573df436aa542eb4c9fc2cd25
+run_name: bold-lamb-175
+run_uuid: b6b8b3c573df436aa542eb4c9fc2cd25
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743175166923
+status: 3
+tags: []
+user_id: pprie

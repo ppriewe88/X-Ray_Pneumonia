@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/791804789027766870/1e662edec33e4f199e0b781915eb65ca/artifacts
+end_time: 1743176582502
+entry_point_name: ''
+experiment_id: '791804789027766870'
+lifecycle_stage: active
+run_id: 1e662edec33e4f199e0b781915eb65ca
+run_name: calm-carp-61
+run_uuid: 1e662edec33e4f199e0b781915eb65ca
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743176582392
+status: 3
+tags: []
+user_id: pprie

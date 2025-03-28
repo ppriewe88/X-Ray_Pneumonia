@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/791804789027766870/ba89e0f4dbb64fec8c4df819a5a6a168/artifacts
+end_time: 1743173925407
+entry_point_name: ''
+experiment_id: '791804789027766870'
+lifecycle_stage: active
+run_id: ba89e0f4dbb64fec8c4df819a5a6a168
+run_name: handsome-crow-957
+run_uuid: ba89e0f4dbb64fec8c4df819a5a6a168
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743173925328
+status: 3
+tags: []
+user_id: pprie

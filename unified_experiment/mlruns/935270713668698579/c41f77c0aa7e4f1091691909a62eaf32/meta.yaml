@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/c41f77c0aa7e4f1091691909a62eaf32/artifacts
+end_time: 1743174777047
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: c41f77c0aa7e4f1091691909a62eaf32
+run_name: carefree-seal-121
+run_uuid: c41f77c0aa7e4f1091691909a62eaf32
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743174776969
+status: 3
+tags: []
+user_id: pprie

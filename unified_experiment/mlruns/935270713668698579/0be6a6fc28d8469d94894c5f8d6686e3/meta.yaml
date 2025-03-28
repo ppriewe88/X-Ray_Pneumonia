@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/0be6a6fc28d8469d94894c5f8d6686e3/artifacts
+end_time: 1743173939878
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: 0be6a6fc28d8469d94894c5f8d6686e3
+run_name: valuable-snake-605
+run_uuid: 0be6a6fc28d8469d94894c5f8d6686e3
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743173939796
+status: 3
+tags: []
+user_id: pprie

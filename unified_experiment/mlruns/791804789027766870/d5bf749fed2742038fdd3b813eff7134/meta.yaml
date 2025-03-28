@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/791804789027766870/d5bf749fed2742038fdd3b813eff7134/artifacts
+end_time: 1743175518915
+entry_point_name: ''
+experiment_id: '791804789027766870'
+lifecycle_stage: active
+run_id: d5bf749fed2742038fdd3b813eff7134
+run_name: carefree-wren-280
+run_uuid: d5bf749fed2742038fdd3b813eff7134
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743175518823
+status: 3
+tags: []
+user_id: pprie

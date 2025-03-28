@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/791804789027766870/b0b5e85cdc6a4521a7fce54646957b68/artifacts
+end_time: 1743177935357
+entry_point_name: ''
+experiment_id: '791804789027766870'
+lifecycle_stage: active
+run_id: b0b5e85cdc6a4521a7fce54646957b68
+run_name: sincere-bass-419
+run_uuid: b0b5e85cdc6a4521a7fce54646957b68
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743177935184
+status: 3
+tags: []
+user_id: pprie

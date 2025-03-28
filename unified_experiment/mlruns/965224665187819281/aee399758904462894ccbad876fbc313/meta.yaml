@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/aee399758904462894ccbad876fbc313/artifacts
+end_time: 1743176195537
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: aee399758904462894ccbad876fbc313
+run_name: incongruous-colt-282
+run_uuid: aee399758904462894ccbad876fbc313
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743176195440
+status: 3
+tags: []
+user_id: pprie

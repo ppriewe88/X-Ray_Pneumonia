@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/d0a5845bd6234766ad99cc37c9518d80/artifacts
+end_time: 1743175915901
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: d0a5845bd6234766ad99cc37c9518d80
+run_name: spiffy-bear-967
+run_uuid: d0a5845bd6234766ad99cc37c9518d80
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743175915813
+status: 3
+tags: []
+user_id: pprie

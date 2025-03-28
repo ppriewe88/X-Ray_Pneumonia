@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/791804789027766870/63cf0a71f8674ecd963f73213f1acc4e/artifacts
+end_time: 1743175486282
+entry_point_name: ''
+experiment_id: '791804789027766870'
+lifecycle_stage: active
+run_id: 63cf0a71f8674ecd963f73213f1acc4e
+run_name: capable-stoat-374
+run_uuid: 63cf0a71f8674ecd963f73213f1acc4e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743175486204
+status: 3
+tags: []
+user_id: pprie

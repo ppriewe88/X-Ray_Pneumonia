@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/c72cf4f464e840fa9295d69d1357ef4d/artifacts
+end_time: 1743176188598
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: c72cf4f464e840fa9295d69d1357ef4d
+run_name: fortunate-midge-17
+run_uuid: c72cf4f464e840fa9295d69d1357ef4d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743176188478
+status: 3
+tags: []
+user_id: pprie

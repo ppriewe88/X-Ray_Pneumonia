@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/04ea8a97382e4e7284ef851ece83f1e8/artifacts
+end_time: 1743175996303
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: 04ea8a97382e4e7284ef851ece83f1e8
+run_name: unleashed-dove-967
+run_uuid: 04ea8a97382e4e7284ef851ece83f1e8
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743175996205
+status: 3
+tags: []
+user_id: pprie

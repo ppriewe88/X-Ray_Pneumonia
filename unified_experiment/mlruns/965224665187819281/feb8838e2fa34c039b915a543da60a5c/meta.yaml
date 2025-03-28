@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/feb8838e2fa34c039b915a543da60a5c/artifacts
+end_time: 1743176783928
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: feb8838e2fa34c039b915a543da60a5c
+run_name: abrasive-pug-98
+run_uuid: feb8838e2fa34c039b915a543da60a5c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743176783813
+status: 3
+tags: []
+user_id: pprie

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/791804789027766870/f2417433225047d9abb4a3bfcffbb8bc/artifacts
+end_time: 1743176449875
+entry_point_name: ''
+experiment_id: '791804789027766870'
+lifecycle_stage: active
+run_id: f2417433225047d9abb4a3bfcffbb8bc
+run_name: amazing-worm-929
+run_uuid: f2417433225047d9abb4a3bfcffbb8bc
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743176449765
+status: 3
+tags: []
+user_id: pprie

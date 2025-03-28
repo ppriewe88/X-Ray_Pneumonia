@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/506b396f1467457bb4a3533f8a85ba48/artifacts
+end_time: 1743174836597
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: 506b396f1467457bb4a3533f8a85ba48
+run_name: capricious-colt-505
+run_uuid: 506b396f1467457bb4a3533f8a85ba48
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743174836514
+status: 3
+tags: []
+user_id: pprie

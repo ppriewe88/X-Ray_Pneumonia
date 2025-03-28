@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/791804789027766870/0771f67bd53c4a939d80cccb4a855fec/artifacts
+end_time: 1743177529777
+entry_point_name: ''
+experiment_id: '791804789027766870'
+lifecycle_stage: active
+run_id: 0771f67bd53c4a939d80cccb4a855fec
+run_name: abundant-gnat-499
+run_uuid: 0771f67bd53c4a939d80cccb4a855fec
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743177529593
+status: 3
+tags: []
+user_id: pprie

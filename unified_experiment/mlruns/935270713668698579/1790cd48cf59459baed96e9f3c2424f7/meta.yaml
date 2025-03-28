@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/1790cd48cf59459baed96e9f3c2424f7/artifacts
+end_time: 1743174980183
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: 1790cd48cf59459baed96e9f3c2424f7
+run_name: overjoyed-cow-299
+run_uuid: 1790cd48cf59459baed96e9f3c2424f7
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743174980099
+status: 3
+tags: []
+user_id: pprie

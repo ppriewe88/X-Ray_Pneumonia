@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/29f41978b782433b8bf7074b8c58db88/artifacts
+end_time: 1743174197766
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: 29f41978b782433b8bf7074b8c58db88
+run_name: marvelous-skink-40
+run_uuid: 29f41978b782433b8bf7074b8c58db88
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743174197637
+status: 3
+tags: []
+user_id: pprie

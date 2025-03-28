@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/791804789027766870/fd0e425746d344a186da99c509ca3548/artifacts
+end_time: 1743174195031
+entry_point_name: ''
+experiment_id: '791804789027766870'
+lifecycle_stage: active
+run_id: fd0e425746d344a186da99c509ca3548
+run_name: nebulous-shrew-540
+run_uuid: fd0e425746d344a186da99c509ca3548
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743174194956
+status: 3
+tags: []
+user_id: pprie

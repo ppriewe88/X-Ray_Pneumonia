@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/efeb25e9d2ec4d79891728bd744a1fc3/artifacts
+end_time: 1743176079182
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: efeb25e9d2ec4d79891728bd744a1fc3
+run_name: salty-mink-873
+run_uuid: efeb25e9d2ec4d79891728bd744a1fc3
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743176079091
+status: 3
+tags: []
+user_id: pprie

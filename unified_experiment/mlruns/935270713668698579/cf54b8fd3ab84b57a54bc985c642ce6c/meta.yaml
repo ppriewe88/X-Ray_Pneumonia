@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/cf54b8fd3ab84b57a54bc985c642ce6c/artifacts
+end_time: 1743176628150
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: cf54b8fd3ab84b57a54bc985c642ce6c
+run_name: learned-snake-306
+run_uuid: cf54b8fd3ab84b57a54bc985c642ce6c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743176628057
+status: 3
+tags: []
+user_id: pprie

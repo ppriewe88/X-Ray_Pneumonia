@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/a52840ae0c7b4fa9bc101719a9930105/artifacts
+end_time: 1743175621319
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: a52840ae0c7b4fa9bc101719a9930105
+run_name: nebulous-foal-237
+run_uuid: a52840ae0c7b4fa9bc101719a9930105
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743175621231
+status: 3
+tags: []
+user_id: pprie

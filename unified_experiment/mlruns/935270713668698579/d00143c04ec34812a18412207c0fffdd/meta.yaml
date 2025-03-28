@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/d00143c04ec34812a18412207c0fffdd/artifacts
+end_time: 1743177141809
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: d00143c04ec34812a18412207c0fffdd
+run_name: nosy-asp-821
+run_uuid: d00143c04ec34812a18412207c0fffdd
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743177141701
+status: 3
+tags: []
+user_id: pprie

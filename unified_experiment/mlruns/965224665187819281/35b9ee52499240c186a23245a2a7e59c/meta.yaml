@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/35b9ee52499240c186a23245a2a7e59c/artifacts
+end_time: 1743175143532
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: 35b9ee52499240c186a23245a2a7e59c
+run_name: delightful-snipe-374
+run_uuid: 35b9ee52499240c186a23245a2a7e59c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743175143396
+status: 3
+tags: []
+user_id: pprie

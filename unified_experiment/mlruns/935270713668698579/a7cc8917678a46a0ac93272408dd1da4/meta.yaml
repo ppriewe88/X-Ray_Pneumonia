@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/a7cc8917678a46a0ac93272408dd1da4/artifacts
+end_time: 1743177775861
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: a7cc8917678a46a0ac93272408dd1da4
+run_name: righteous-sponge-360
+run_uuid: a7cc8917678a46a0ac93272408dd1da4
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743177775757
+status: 3
+tags: []
+user_id: pprie

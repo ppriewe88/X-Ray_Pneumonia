@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/c2e98346cb9e4ebe95c26987b57efe34/artifacts
+end_time: 1743178008257
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: c2e98346cb9e4ebe95c26987b57efe34
+run_name: orderly-hound-798
+run_uuid: c2e98346cb9e4ebe95c26987b57efe34
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743178008157
+status: 3
+tags: []
+user_id: pprie

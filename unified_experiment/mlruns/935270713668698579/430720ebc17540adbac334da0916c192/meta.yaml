@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/430720ebc17540adbac334da0916c192/artifacts
+end_time: 1743174756652
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: 430720ebc17540adbac334da0916c192
+run_name: placid-sponge-975
+run_uuid: 430720ebc17540adbac334da0916c192
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743174756545
+status: 3
+tags: []
+user_id: pprie

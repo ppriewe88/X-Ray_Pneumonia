@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/447dec27f323439d8d1670caa31c784a/artifacts
+end_time: 1743175282856
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: 447dec27f323439d8d1670caa31c784a
+run_name: gregarious-doe-545
+run_uuid: 447dec27f323439d8d1670caa31c784a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743175282768
+status: 3
+tags: []
+user_id: pprie
