@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/391650517118197406/1cebbfc3fe2e4d30a082bc9b51bf8bf6/artifacts
+end_time: 1743248711744
+entry_point_name: ''
+experiment_id: '391650517118197406'
+lifecycle_stage: active
+run_id: 1cebbfc3fe2e4d30a082bc9b51bf8bf6
+run_name: dashing-ray-393
+run_uuid: 1cebbfc3fe2e4d30a082bc9b51bf8bf6
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743248711659
+status: 3
+tags: []
+user_id: pprie

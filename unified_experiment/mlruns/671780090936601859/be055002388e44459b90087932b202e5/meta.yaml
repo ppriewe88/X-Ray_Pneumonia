@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/671780090936601859/be055002388e44459b90087932b202e5/artifacts
+end_time: 1743247287843
+entry_point_name: ''
+experiment_id: '671780090936601859'
+lifecycle_stage: active
+run_id: be055002388e44459b90087932b202e5
+run_name: adorable-dog-931
+run_uuid: be055002388e44459b90087932b202e5
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743247287744
+status: 3
+tags: []
+user_id: pprie

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/671780090936601859/d79a5663cc564b488df526ecac574ae1/artifacts
+end_time: 1743250117750
+entry_point_name: ''
+experiment_id: '671780090936601859'
+lifecycle_stage: active
+run_id: d79a5663cc564b488df526ecac574ae1
+run_name: useful-croc-467
+run_uuid: d79a5663cc564b488df526ecac574ae1
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743250117649
+status: 3
+tags: []
+user_id: pprie

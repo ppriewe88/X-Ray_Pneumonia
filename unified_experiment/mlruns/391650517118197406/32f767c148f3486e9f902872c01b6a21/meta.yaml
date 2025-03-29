@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/391650517118197406/32f767c148f3486e9f902872c01b6a21/artifacts
+end_time: 1743250028115
+entry_point_name: ''
+experiment_id: '391650517118197406'
+lifecycle_stage: active
+run_id: 32f767c148f3486e9f902872c01b6a21
+run_name: righteous-calf-492
+run_uuid: 32f767c148f3486e9f902872c01b6a21
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743250028024
+status: 3
+tags: []
+user_id: pprie

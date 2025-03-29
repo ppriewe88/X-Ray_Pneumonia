@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/671780090936601859/03f44c2e82dc4a8888a4cee5a2ea6a07/artifacts
+end_time: 1743248851131
+entry_point_name: ''
+experiment_id: '671780090936601859'
+lifecycle_stage: active
+run_id: 03f44c2e82dc4a8888a4cee5a2ea6a07
+run_name: classy-shad-194
+run_uuid: 03f44c2e82dc4a8888a4cee5a2ea6a07
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743248850975
+status: 3
+tags: []
+user_id: pprie

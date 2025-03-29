@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/671780090936601859/28435570f27746b29ab4db108424e9d1/artifacts
+end_time: 1743249310803
+entry_point_name: ''
+experiment_id: '671780090936601859'
+lifecycle_stage: active
+run_id: 28435570f27746b29ab4db108424e9d1
+run_name: monumental-boar-557
+run_uuid: 28435570f27746b29ab4db108424e9d1
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743249310713
+status: 3
+tags: []
+user_id: pprie

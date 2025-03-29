@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/671780090936601859/3850979eb4dc46788f7edb5747a8bc8c/artifacts
+end_time: 1743249973824
+entry_point_name: ''
+experiment_id: '671780090936601859'
+lifecycle_stage: active
+run_id: 3850979eb4dc46788f7edb5747a8bc8c
+run_name: classy-lark-683
+run_uuid: 3850979eb4dc46788f7edb5747a8bc8c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743249973722
+status: 3
+tags: []
+user_id: pprie

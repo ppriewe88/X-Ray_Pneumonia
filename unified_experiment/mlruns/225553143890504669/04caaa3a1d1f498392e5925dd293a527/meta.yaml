@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/225553143890504669/04caaa3a1d1f498392e5925dd293a527/artifacts
+end_time: 1743248454398
+entry_point_name: ''
+experiment_id: '225553143890504669'
+lifecycle_stage: active
+run_id: 04caaa3a1d1f498392e5925dd293a527
+run_name: chill-skink-894
+run_uuid: 04caaa3a1d1f498392e5925dd293a527
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743248454324
+status: 3
+tags: []
+user_id: pprie

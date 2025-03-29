@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/225553143890504669/b531a6ed2811448089f0a03804ce161e/artifacts
+end_time: 1743247161840
+entry_point_name: ''
+experiment_id: '225553143890504669'
+lifecycle_stage: active
+run_id: b531a6ed2811448089f0a03804ce161e
+run_name: delicate-jay-92
+run_uuid: b531a6ed2811448089f0a03804ce161e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743247161742
+status: 3
+tags: []
+user_id: pprie

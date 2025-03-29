@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/671780090936601859/4060156d454143f38f7741d841e1faa4/artifacts
+end_time: 1743249404019
+entry_point_name: ''
+experiment_id: '671780090936601859'
+lifecycle_stage: active
+run_id: 4060156d454143f38f7741d841e1faa4
+run_name: monumental-turtle-13
+run_uuid: 4060156d454143f38f7741d841e1faa4
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743249403929
+status: 3
+tags: []
+user_id: pprie

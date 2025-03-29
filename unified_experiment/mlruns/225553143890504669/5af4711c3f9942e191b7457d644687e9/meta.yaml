@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/225553143890504669/5af4711c3f9942e191b7457d644687e9/artifacts
+end_time: 1743248255383
+entry_point_name: ''
+experiment_id: '225553143890504669'
+lifecycle_stage: active
+run_id: 5af4711c3f9942e191b7457d644687e9
+run_name: sedate-fawn-408
+run_uuid: 5af4711c3f9942e191b7457d644687e9
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743248255310
+status: 3
+tags: []
+user_id: pprie

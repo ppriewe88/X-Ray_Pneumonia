@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/225553143890504669/79ede73b614b4b01bba23f6125c491cf/artifacts
+end_time: 1743248162788
+entry_point_name: ''
+experiment_id: '225553143890504669'
+lifecycle_stage: active
+run_id: 79ede73b614b4b01bba23f6125c491cf
+run_name: treasured-ant-559
+run_uuid: 79ede73b614b4b01bba23f6125c491cf
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743248162691
+status: 3
+tags: []
+user_id: pprie

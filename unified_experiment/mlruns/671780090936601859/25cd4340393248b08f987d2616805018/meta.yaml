@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/671780090936601859/25cd4340393248b08f987d2616805018/artifacts
+end_time: 1743249263940
+entry_point_name: ''
+experiment_id: '671780090936601859'
+lifecycle_stage: active
+run_id: 25cd4340393248b08f987d2616805018
+run_name: redolent-foal-853
+run_uuid: 25cd4340393248b08f987d2616805018
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743249263852
+status: 3
+tags: []
+user_id: pprie

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/225553143890504669/509a69dee21d43aab12d9a712fadee1e/artifacts
+end_time: 1743249917512
+entry_point_name: ''
+experiment_id: '225553143890504669'
+lifecycle_stage: active
+run_id: 509a69dee21d43aab12d9a712fadee1e
+run_name: serious-fly-158
+run_uuid: 509a69dee21d43aab12d9a712fadee1e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743249917431
+status: 3
+tags: []
+user_id: pprie

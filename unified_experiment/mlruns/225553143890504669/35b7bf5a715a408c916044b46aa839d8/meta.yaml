@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/225553143890504669/35b7bf5a715a408c916044b46aa839d8/artifacts
+end_time: 1743248628221
+entry_point_name: ''
+experiment_id: '225553143890504669'
+lifecycle_stage: active
+run_id: 35b7bf5a715a408c916044b46aa839d8
+run_name: sassy-fowl-88
+run_uuid: 35b7bf5a715a408c916044b46aa839d8
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743248628141
+status: 3
+tags: []
+user_id: pprie

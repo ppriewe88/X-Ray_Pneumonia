@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/671780090936601859/0cf98f2f2d78419fa87d1e1a2fdbba20/artifacts
+end_time: 1743249935758
+entry_point_name: ''
+experiment_id: '671780090936601859'
+lifecycle_stage: active
+run_id: 0cf98f2f2d78419fa87d1e1a2fdbba20
+run_name: polite-gnat-783
+run_uuid: 0cf98f2f2d78419fa87d1e1a2fdbba20
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743249935661
+status: 3
+tags: []
+user_id: pprie

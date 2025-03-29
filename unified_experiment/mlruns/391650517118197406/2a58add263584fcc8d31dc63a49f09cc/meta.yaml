@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/391650517118197406/2a58add263584fcc8d31dc63a49f09cc/artifacts
+end_time: 1743248680715
+entry_point_name: ''
+experiment_id: '391650517118197406'
+lifecycle_stage: active
+run_id: 2a58add263584fcc8d31dc63a49f09cc
+run_name: vaunted-newt-152
+run_uuid: 2a58add263584fcc8d31dc63a49f09cc
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743248680632
+status: 3
+tags: []
+user_id: pprie

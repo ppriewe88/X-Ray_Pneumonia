@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/225553143890504669/fd0e4dd57fa54f7287edd0d1e6355a7c/artifacts
+end_time: 1743249738958
+entry_point_name: ''
+experiment_id: '225553143890504669'
+lifecycle_stage: active
+run_id: fd0e4dd57fa54f7287edd0d1e6355a7c
+run_name: funny-fox-447
+run_uuid: fd0e4dd57fa54f7287edd0d1e6355a7c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743249738873
+status: 3
+tags: []
+user_id: pprie

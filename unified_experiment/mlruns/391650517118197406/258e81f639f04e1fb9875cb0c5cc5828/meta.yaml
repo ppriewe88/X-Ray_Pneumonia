@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/391650517118197406/258e81f639f04e1fb9875cb0c5cc5828/artifacts
+end_time: 1743250295915
+entry_point_name: ''
+experiment_id: '391650517118197406'
+lifecycle_stage: active
+run_id: 258e81f639f04e1fb9875cb0c5cc5828
+run_name: sassy-pig-748
+run_uuid: 258e81f639f04e1fb9875cb0c5cc5828
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743250295822
+status: 3
+tags: []
+user_id: pprie

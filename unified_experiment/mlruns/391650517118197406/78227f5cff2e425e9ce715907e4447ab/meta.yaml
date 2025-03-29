@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/391650517118197406/78227f5cff2e425e9ce715907e4447ab/artifacts
+end_time: 1743249693870
+entry_point_name: ''
+experiment_id: '391650517118197406'
+lifecycle_stage: active
+run_id: 78227f5cff2e425e9ce715907e4447ab
+run_name: peaceful-smelt-781
+run_uuid: 78227f5cff2e425e9ce715907e4447ab
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743249693783
+status: 3
+tags: []
+user_id: pprie

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/671780090936601859/eb9a9c01aaea41cdabecb99b74ca7f90/artifacts
+end_time: 1743248807743
+entry_point_name: ''
+experiment_id: '671780090936601859'
+lifecycle_stage: active
+run_id: eb9a9c01aaea41cdabecb99b74ca7f90
+run_name: indecisive-bear-611
+run_uuid: eb9a9c01aaea41cdabecb99b74ca7f90
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743248807656
+status: 3
+tags: []
+user_id: pprie

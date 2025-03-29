@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/391650517118197406/72a0d208b14746189ab910a86527b905/artifacts
+end_time: 1743249742008
+entry_point_name: ''
+experiment_id: '391650517118197406'
+lifecycle_stage: active
+run_id: 72a0d208b14746189ab910a86527b905
+run_name: thundering-hawk-927
+run_uuid: 72a0d208b14746189ab910a86527b905
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743249741920
+status: 3
+tags: []
+user_id: pprie

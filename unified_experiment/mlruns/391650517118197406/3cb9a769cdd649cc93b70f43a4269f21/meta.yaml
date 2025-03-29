@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/391650517118197406/3cb9a769cdd649cc93b70f43a4269f21/artifacts
+end_time: 1743249817598
+entry_point_name: ''
+experiment_id: '391650517118197406'
+lifecycle_stage: active
+run_id: 3cb9a769cdd649cc93b70f43a4269f21
+run_name: charming-cat-666
+run_uuid: 3cb9a769cdd649cc93b70f43a4269f21
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743249817514
+status: 3
+tags: []
+user_id: pprie

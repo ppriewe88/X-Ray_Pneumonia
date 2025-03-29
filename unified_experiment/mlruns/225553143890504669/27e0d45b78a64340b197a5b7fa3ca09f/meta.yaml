@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/225553143890504669/27e0d45b78a64340b197a5b7fa3ca09f/artifacts
+end_time: 1743249404604
+entry_point_name: ''
+experiment_id: '225553143890504669'
+lifecycle_stage: active
+run_id: 27e0d45b78a64340b197a5b7fa3ca09f
+run_name: inquisitive-roo-349
+run_uuid: 27e0d45b78a64340b197a5b7fa3ca09f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743249404525
+status: 3
+tags: []
+user_id: pprie

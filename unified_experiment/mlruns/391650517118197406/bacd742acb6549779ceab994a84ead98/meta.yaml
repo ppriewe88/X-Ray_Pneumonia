@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/391650517118197406/bacd742acb6549779ceab994a84ead98/artifacts
+end_time: 1743249293793
+entry_point_name: ''
+experiment_id: '391650517118197406'
+lifecycle_stage: active
+run_id: bacd742acb6549779ceab994a84ead98
+run_name: magnificent-moth-352
+run_uuid: bacd742acb6549779ceab994a84ead98
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743249293707
+status: 3
+tags: []
+user_id: pprie

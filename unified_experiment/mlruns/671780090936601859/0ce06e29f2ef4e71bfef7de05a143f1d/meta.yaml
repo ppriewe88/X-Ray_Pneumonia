@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/671780090936601859/0ce06e29f2ef4e71bfef7de05a143f1d/artifacts
+end_time: 1743248453800
+entry_point_name: ''
+experiment_id: '671780090936601859'
+lifecycle_stage: active
+run_id: 0ce06e29f2ef4e71bfef7de05a143f1d
+run_name: debonair-steed-588
+run_uuid: 0ce06e29f2ef4e71bfef7de05a143f1d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743248453688
+status: 3
+tags: []
+user_id: pprie

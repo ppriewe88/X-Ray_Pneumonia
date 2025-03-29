@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/391650517118197406/8336a5991e664136a7b842981663a4f2/artifacts
+end_time: 1743248327043
+entry_point_name: ''
+experiment_id: '391650517118197406'
+lifecycle_stage: active
+run_id: 8336a5991e664136a7b842981663a4f2
+run_name: popular-ant-296
+run_uuid: 8336a5991e664136a7b842981663a4f2
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743248326961
+status: 3
+tags: []
+user_id: pprie

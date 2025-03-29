@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/225553143890504669/47286ab331b34d79b55aad7032984695/artifacts
+end_time: 1743250161759
+entry_point_name: ''
+experiment_id: '225553143890504669'
+lifecycle_stage: active
+run_id: 47286ab331b34d79b55aad7032984695
+run_name: rare-frog-655
+run_uuid: 47286ab331b34d79b55aad7032984695
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743250161679
+status: 3
+tags: []
+user_id: pprie

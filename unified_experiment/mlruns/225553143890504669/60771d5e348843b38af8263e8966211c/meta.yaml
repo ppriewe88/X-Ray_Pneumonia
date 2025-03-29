@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/225553143890504669/60771d5e348843b38af8263e8966211c/artifacts
+end_time: 1743250281001
+entry_point_name: ''
+experiment_id: '225553143890504669'
+lifecycle_stage: active
+run_id: 60771d5e348843b38af8263e8966211c
+run_name: shivering-swan-904
+run_uuid: 60771d5e348843b38af8263e8966211c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743250280888
+status: 3
+tags: []
+user_id: pprie

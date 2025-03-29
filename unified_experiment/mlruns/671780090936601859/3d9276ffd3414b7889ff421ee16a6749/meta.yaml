@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/671780090936601859/3d9276ffd3414b7889ff421ee16a6749/artifacts
+end_time: 1743247089220
+entry_point_name: ''
+experiment_id: '671780090936601859'
+lifecycle_stage: active
+run_id: 3d9276ffd3414b7889ff421ee16a6749
+run_name: thoughtful-ram-225
+run_uuid: 3d9276ffd3414b7889ff421ee16a6749
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743247089143
+status: 3
+tags: []
+user_id: pprie

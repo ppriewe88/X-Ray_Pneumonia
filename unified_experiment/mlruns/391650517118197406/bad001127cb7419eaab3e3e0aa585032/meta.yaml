@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/391650517118197406/bad001127cb7419eaab3e3e0aa585032/artifacts
+end_time: 1743248115992
+entry_point_name: ''
+experiment_id: '391650517118197406'
+lifecycle_stage: active
+run_id: bad001127cb7419eaab3e3e0aa585032
+run_name: marvelous-lynx-927
+run_uuid: bad001127cb7419eaab3e3e0aa585032
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743248115924
+status: 3
+tags: []
+user_id: pprie

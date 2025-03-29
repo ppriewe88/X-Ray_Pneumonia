@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/225553143890504669/d0151b70664645628c723de5c5609c5a/artifacts
+end_time: 1743248889571
+entry_point_name: ''
+experiment_id: '225553143890504669'
+lifecycle_stage: active
+run_id: d0151b70664645628c723de5c5609c5a
+run_name: zealous-steed-772
+run_uuid: d0151b70664645628c723de5c5609c5a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743248889493
+status: 3
+tags: []
+user_id: pprie

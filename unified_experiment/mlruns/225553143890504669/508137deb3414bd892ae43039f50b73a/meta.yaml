@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/225553143890504669/508137deb3414bd892ae43039f50b73a/artifacts
+end_time: 1743249910839
+entry_point_name: ''
+experiment_id: '225553143890504669'
+lifecycle_stage: active
+run_id: 508137deb3414bd892ae43039f50b73a
+run_name: gregarious-mink-468
+run_uuid: 508137deb3414bd892ae43039f50b73a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743249910758
+status: 3
+tags: []
+user_id: pprie

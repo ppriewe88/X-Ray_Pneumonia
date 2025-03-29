@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/391650517118197406/28ba93a90dac4af7b51883bde02e662d/artifacts
+end_time: 1743247276346
+entry_point_name: ''
+experiment_id: '391650517118197406'
+lifecycle_stage: active
+run_id: 28ba93a90dac4af7b51883bde02e662d
+run_name: blushing-kite-800
+run_uuid: 28ba93a90dac4af7b51883bde02e662d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743247276253
+status: 3
+tags: []
+user_id: pprie

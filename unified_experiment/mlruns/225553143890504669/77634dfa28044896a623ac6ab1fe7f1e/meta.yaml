@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/225553143890504669/77634dfa28044896a623ac6ab1fe7f1e/artifacts
+end_time: 1743248336005
+entry_point_name: ''
+experiment_id: '225553143890504669'
+lifecycle_stage: active
+run_id: 77634dfa28044896a623ac6ab1fe7f1e
+run_name: bold-mink-713
+run_uuid: 77634dfa28044896a623ac6ab1fe7f1e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743248335931
+status: 3
+tags: []
+user_id: pprie

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/391650517118197406/3c166f0049714b20850d6a3938543f66/artifacts
+end_time: 1743249226865
+entry_point_name: ''
+experiment_id: '391650517118197406'
+lifecycle_stage: active
+run_id: 3c166f0049714b20850d6a3938543f66
+run_name: invincible-fawn-89
+run_uuid: 3c166f0049714b20850d6a3938543f66
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743249226744
+status: 3
+tags: []
+user_id: pprie

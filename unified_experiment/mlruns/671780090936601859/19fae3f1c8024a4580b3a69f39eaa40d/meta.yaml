@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/671780090936601859/19fae3f1c8024a4580b3a69f39eaa40d/artifacts
+end_time: 1743248125904
+entry_point_name: ''
+experiment_id: '671780090936601859'
+lifecycle_stage: active
+run_id: 19fae3f1c8024a4580b3a69f39eaa40d
+run_name: loud-frog-885
+run_uuid: 19fae3f1c8024a4580b3a69f39eaa40d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743248125818
+status: 3
+tags: []
+user_id: pprie

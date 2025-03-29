@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/671780090936601859/cb4d9178bbc4430f8a90ac575f663bfd/artifacts
+end_time: 1743247311730
+entry_point_name: ''
+experiment_id: '671780090936601859'
+lifecycle_stage: active
+run_id: cb4d9178bbc4430f8a90ac575f663bfd
+run_name: receptive-panda-962
+run_uuid: cb4d9178bbc4430f8a90ac575f663bfd
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743247311631
+status: 3
+tags: []
+user_id: pprie

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/391650517118197406/f8d3a3e7a20f42a2907db6c31ff0672d/artifacts
+end_time: 1743246867287
+entry_point_name: ''
+experiment_id: '391650517118197406'
+lifecycle_stage: active
+run_id: f8d3a3e7a20f42a2907db6c31ff0672d
+run_name: gaudy-snake-959
+run_uuid: f8d3a3e7a20f42a2907db6c31ff0672d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743246867146
+status: 3
+tags: []
+user_id: pprie

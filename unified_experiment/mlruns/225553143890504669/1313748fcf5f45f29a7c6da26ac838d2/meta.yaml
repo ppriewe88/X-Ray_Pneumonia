@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/225553143890504669/1313748fcf5f45f29a7c6da26ac838d2/artifacts
+end_time: 1743248913873
+entry_point_name: ''
+experiment_id: '225553143890504669'
+lifecycle_stage: active
+run_id: 1313748fcf5f45f29a7c6da26ac838d2
+run_name: honorable-quail-760
+run_uuid: 1313748fcf5f45f29a7c6da26ac838d2
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743248913790
+status: 3
+tags: []
+user_id: pprie

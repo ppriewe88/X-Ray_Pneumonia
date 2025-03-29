@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/391650517118197406/10634ce5f91e45f2aa4c1915f1e2bf76/artifacts
+end_time: 1743248363997
+entry_point_name: ''
+experiment_id: '391650517118197406'
+lifecycle_stage: active
+run_id: 10634ce5f91e45f2aa4c1915f1e2bf76
+run_name: handsome-newt-861
+run_uuid: 10634ce5f91e45f2aa4c1915f1e2bf76
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743248363914
+status: 3
+tags: []
+user_id: pprie

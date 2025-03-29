@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/671780090936601859/0f9107fab0724c549ee18fae85065ccc/artifacts
+end_time: 1743249223361
+entry_point_name: ''
+experiment_id: '671780090936601859'
+lifecycle_stage: active
+run_id: 0f9107fab0724c549ee18fae85065ccc
+run_name: redolent-skunk-291
+run_uuid: 0f9107fab0724c549ee18fae85065ccc
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743249223270
+status: 3
+tags: []
+user_id: pprie

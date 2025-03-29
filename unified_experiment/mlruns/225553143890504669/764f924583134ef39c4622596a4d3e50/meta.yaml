@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/225553143890504669/764f924583134ef39c4622596a4d3e50/artifacts
+end_time: 1743248764957
+entry_point_name: ''
+experiment_id: '225553143890504669'
+lifecycle_stage: active
+run_id: 764f924583134ef39c4622596a4d3e50
+run_name: masked-gull-805
+run_uuid: 764f924583134ef39c4622596a4d3e50
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743248764883
+status: 3
+tags: []
+user_id: pprie

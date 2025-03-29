@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/671780090936601859/3ff2ecd949804c5eb038b9cca802e7bd/artifacts
+end_time: 1743248168310
+entry_point_name: ''
+experiment_id: '671780090936601859'
+lifecycle_stage: active
+run_id: 3ff2ecd949804c5eb038b9cca802e7bd
+run_name: hilarious-crane-695
+run_uuid: 3ff2ecd949804c5eb038b9cca802e7bd
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743248168230
+status: 3
+tags: []
+user_id: pprie

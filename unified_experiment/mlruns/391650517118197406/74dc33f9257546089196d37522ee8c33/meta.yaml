@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/391650517118197406/74dc33f9257546089196d37522ee8c33/artifacts
+end_time: 1743247114271
+entry_point_name: ''
+experiment_id: '391650517118197406'
+lifecycle_stage: active
+run_id: 74dc33f9257546089196d37522ee8c33
+run_name: chill-donkey-231
+run_uuid: 74dc33f9257546089196d37522ee8c33
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743247114156
+status: 3
+tags: []
+user_id: pprie

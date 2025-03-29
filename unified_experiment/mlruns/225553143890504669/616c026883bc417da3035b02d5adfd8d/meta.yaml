@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/225553143890504669/616c026883bc417da3035b02d5adfd8d/artifacts
+end_time: 1743248423569
+entry_point_name: ''
+experiment_id: '225553143890504669'
+lifecycle_stage: active
+run_id: 616c026883bc417da3035b02d5adfd8d
+run_name: beautiful-whale-426
+run_uuid: 616c026883bc417da3035b02d5adfd8d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743248423493
+status: 3
+tags: []
+user_id: pprie

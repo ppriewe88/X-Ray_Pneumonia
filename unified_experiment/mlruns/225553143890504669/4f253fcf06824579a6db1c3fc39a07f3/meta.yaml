@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/225553143890504669/4f253fcf06824579a6db1c3fc39a07f3/artifacts
+end_time: 1743248236891
+entry_point_name: ''
+experiment_id: '225553143890504669'
+lifecycle_stage: active
+run_id: 4f253fcf06824579a6db1c3fc39a07f3
+run_name: loud-fly-652
+run_uuid: 4f253fcf06824579a6db1c3fc39a07f3
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743248236818
+status: 3
+tags: []
+user_id: pprie

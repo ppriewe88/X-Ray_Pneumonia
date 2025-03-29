@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/671780090936601859/843b0eafe1cc4657941b46cb69f19913/artifacts
+end_time: 1743249324666
+entry_point_name: ''
+experiment_id: '671780090936601859'
+lifecycle_stage: active
+run_id: 843b0eafe1cc4657941b46cb69f19913
+run_name: sincere-jay-147
+run_uuid: 843b0eafe1cc4657941b46cb69f19913
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743249324558
+status: 3
+tags: []
+user_id: pprie

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/225553143890504669/c61ea1b437dc498b96d3f3cf72ce53f0/artifacts
+end_time: 1743248652836
+entry_point_name: ''
+experiment_id: '225553143890504669'
+lifecycle_stage: active
+run_id: c61ea1b437dc498b96d3f3cf72ce53f0
+run_name: luxuriant-ray-448
+run_uuid: c61ea1b437dc498b96d3f3cf72ce53f0
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743248652756
+status: 3
+tags: []
+user_id: pprie

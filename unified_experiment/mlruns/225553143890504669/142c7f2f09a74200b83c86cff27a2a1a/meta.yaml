@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/225553143890504669/142c7f2f09a74200b83c86cff27a2a1a/artifacts
+end_time: 1743248342298
+entry_point_name: ''
+experiment_id: '225553143890504669'
+lifecycle_stage: active
+run_id: 142c7f2f09a74200b83c86cff27a2a1a
+run_name: handsome-gull-46
+run_uuid: 142c7f2f09a74200b83c86cff27a2a1a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743248342223
+status: 3
+tags: []
+user_id: pprie

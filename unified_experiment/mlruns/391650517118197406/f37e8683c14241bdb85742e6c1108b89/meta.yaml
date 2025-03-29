@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/391650517118197406/f37e8683c14241bdb85742e6c1108b89/artifacts
+end_time: 1743248811321
+entry_point_name: ''
+experiment_id: '391650517118197406'
+lifecycle_stage: active
+run_id: f37e8683c14241bdb85742e6c1108b89
+run_name: zealous-shrike-836
+run_uuid: f37e8683c14241bdb85742e6c1108b89
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743248811224
+status: 3
+tags: []
+user_id: pprie

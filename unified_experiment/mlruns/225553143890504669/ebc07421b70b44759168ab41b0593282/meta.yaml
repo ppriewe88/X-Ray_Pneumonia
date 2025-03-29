@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/225553143890504669/ebc07421b70b44759168ab41b0593282/artifacts
+end_time: 1743250024792
+entry_point_name: ''
+experiment_id: '225553143890504669'
+lifecycle_stage: active
+run_id: ebc07421b70b44759168ab41b0593282
+run_name: unruly-ape-536
+run_uuid: ebc07421b70b44759168ab41b0593282
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743250024713
+status: 3
+tags: []
+user_id: pprie

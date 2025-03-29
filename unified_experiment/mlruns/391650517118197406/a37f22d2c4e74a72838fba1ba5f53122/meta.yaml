@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/391650517118197406/a37f22d2c4e74a72838fba1ba5f53122/artifacts
+end_time: 1743248382577
+entry_point_name: ''
+experiment_id: '391650517118197406'
+lifecycle_stage: active
+run_id: a37f22d2c4e74a72838fba1ba5f53122
+run_name: resilient-ant-589
+run_uuid: a37f22d2c4e74a72838fba1ba5f53122
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743248382495
+status: 3
+tags: []
+user_id: pprie

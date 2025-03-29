@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/225553143890504669/d65622e9c4624bc4a985e20885eb7040/artifacts
+end_time: 1743246880805
+entry_point_name: ''
+experiment_id: '225553143890504669'
+lifecycle_stage: active
+run_id: d65622e9c4624bc4a985e20885eb7040
+run_name: funny-goose-54
+run_uuid: d65622e9c4624bc4a985e20885eb7040
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743246880727
+status: 3
+tags: []
+user_id: pprie

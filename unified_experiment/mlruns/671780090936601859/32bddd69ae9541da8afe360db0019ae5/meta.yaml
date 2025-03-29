@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/671780090936601859/32bddd69ae9541da8afe360db0019ae5/artifacts
+end_time: 1743248932165
+entry_point_name: ''
+experiment_id: '671780090936601859'
+lifecycle_stage: active
+run_id: 32bddd69ae9541da8afe360db0019ae5
+run_name: persistent-worm-422
+run_uuid: 32bddd69ae9541da8afe360db0019ae5
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743248932075
+status: 3
+tags: []
+user_id: pprie

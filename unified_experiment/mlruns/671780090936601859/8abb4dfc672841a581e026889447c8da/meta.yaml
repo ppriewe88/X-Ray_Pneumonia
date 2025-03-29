@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/671780090936601859/8abb4dfc672841a581e026889447c8da/artifacts
+end_time: 1743249814030
+entry_point_name: ''
+experiment_id: '671780090936601859'
+lifecycle_stage: active
+run_id: 8abb4dfc672841a581e026889447c8da
+run_name: stylish-stoat-972
+run_uuid: 8abb4dfc672841a581e026889447c8da
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743249813933
+status: 3
+tags: []
+user_id: pprie

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/671780090936601859/e9871d336c364119bfd42ed1fc267346/artifacts
+end_time: 1743249553067
+entry_point_name: ''
+experiment_id: '671780090936601859'
+lifecycle_stage: active
+run_id: e9871d336c364119bfd42ed1fc267346
+run_name: judicious-dove-913
+run_uuid: e9871d336c364119bfd42ed1fc267346
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743249552970
+status: 3
+tags: []
+user_id: pprie

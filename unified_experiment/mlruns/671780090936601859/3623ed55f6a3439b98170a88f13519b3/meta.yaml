@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/671780090936601859/3623ed55f6a3439b98170a88f13519b3/artifacts
+end_time: 1743248398292
+entry_point_name: ''
+experiment_id: '671780090936601859'
+lifecycle_stage: active
+run_id: 3623ed55f6a3439b98170a88f13519b3
+run_name: industrious-mare-730
+run_uuid: 3623ed55f6a3439b98170a88f13519b3
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743248398210
+status: 3
+tags: []
+user_id: pprie

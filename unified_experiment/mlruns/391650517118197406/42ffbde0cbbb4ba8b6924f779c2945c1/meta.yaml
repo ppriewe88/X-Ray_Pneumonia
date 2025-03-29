@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/391650517118197406/42ffbde0cbbb4ba8b6924f779c2945c1/artifacts
+end_time: 1743250308546
+entry_point_name: ''
+experiment_id: '391650517118197406'
+lifecycle_stage: active
+run_id: 42ffbde0cbbb4ba8b6924f779c2945c1
+run_name: secretive-swan-314
+run_uuid: 42ffbde0cbbb4ba8b6924f779c2945c1
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743250308453
+status: 3
+tags: []
+user_id: pprie

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/225553143890504669/c4fc39ddc3c245c68e107b796f1b8290/artifacts
+end_time: 1743250130610
+entry_point_name: ''
+experiment_id: '225553143890504669'
+lifecycle_stage: active
+run_id: c4fc39ddc3c245c68e107b796f1b8290
+run_name: shivering-mouse-889
+run_uuid: c4fc39ddc3c245c68e107b796f1b8290
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743250130529
+status: 3
+tags: []
+user_id: pprie

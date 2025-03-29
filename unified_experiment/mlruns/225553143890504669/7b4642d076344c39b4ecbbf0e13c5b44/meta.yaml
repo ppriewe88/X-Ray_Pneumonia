@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/225553143890504669/7b4642d076344c39b4ecbbf0e13c5b44/artifacts
+end_time: 1743249954708
+entry_point_name: ''
+experiment_id: '225553143890504669'
+lifecycle_stage: active
+run_id: 7b4642d076344c39b4ecbbf0e13c5b44
+run_name: likeable-doe-933
+run_uuid: 7b4642d076344c39b4ecbbf0e13c5b44
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743249954628
+status: 3
+tags: []
+user_id: pprie

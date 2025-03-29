@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/225553143890504669/e1961c7123f247b0b0b43bcfa922565d/artifacts
+end_time: 1743248702050
+entry_point_name: ''
+experiment_id: '225553143890504669'
+lifecycle_stage: active
+run_id: e1961c7123f247b0b0b43bcfa922565d
+run_name: nebulous-crab-873
+run_uuid: e1961c7123f247b0b0b43bcfa922565d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743248701974
+status: 3
+tags: []
+user_id: pprie

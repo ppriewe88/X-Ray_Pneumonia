@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/391650517118197406/0ecccbd8567e4478ab0595eef32a68dc/artifacts
+end_time: 1743250189617
+entry_point_name: ''
+experiment_id: '391650517118197406'
+lifecycle_stage: active
+run_id: 0ecccbd8567e4478ab0595eef32a68dc
+run_name: nervous-hen-572
+run_uuid: 0ecccbd8567e4478ab0595eef32a68dc
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743250189522
+status: 3
+tags: []
+user_id: pprie

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/225553143890504669/a57b1ae2c12e4bcb93c014aab597d42e/artifacts
+end_time: 1743246793870
+entry_point_name: ''
+experiment_id: '225553143890504669'
+lifecycle_stage: active
+run_id: a57b1ae2c12e4bcb93c014aab597d42e
+run_name: secretive-worm-96
+run_uuid: a57b1ae2c12e4bcb93c014aab597d42e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743246793777
+status: 3
+tags: []
+user_id: pprie

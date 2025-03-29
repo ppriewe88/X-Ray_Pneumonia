@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/391650517118197406/43cbdeb3fd5648e8a4d3cc79516a351f/artifacts
+end_time: 1743247342369
+entry_point_name: ''
+experiment_id: '391650517118197406'
+lifecycle_stage: active
+run_id: 43cbdeb3fd5648e8a4d3cc79516a351f
+run_name: capricious-moose-489
+run_uuid: 43cbdeb3fd5648e8a4d3cc79516a351f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743247342262
+status: 3
+tags: []
+user_id: pprie

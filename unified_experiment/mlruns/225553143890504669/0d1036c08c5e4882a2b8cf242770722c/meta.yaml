@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/225553143890504669/0d1036c08c5e4882a2b8cf242770722c/artifacts
+end_time: 1743249236860
+entry_point_name: ''
+experiment_id: '225553143890504669'
+lifecycle_stage: active
+run_id: 0d1036c08c5e4882a2b8cf242770722c
+run_name: awesome-jay-900
+run_uuid: 0d1036c08c5e4882a2b8cf242770722c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743249236784
+status: 3
+tags: []
+user_id: pprie

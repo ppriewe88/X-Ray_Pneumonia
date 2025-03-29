@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/225553143890504669/c1905b6749fe40eaa1a3334f113773de/artifacts
+end_time: 1743246787261
+entry_point_name: ''
+experiment_id: '225553143890504669'
+lifecycle_stage: active
+run_id: c1905b6749fe40eaa1a3334f113773de
+run_name: skillful-tern-225
+run_uuid: c1905b6749fe40eaa1a3334f113773de
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743246787190
+status: 3
+tags: []
+user_id: pprie

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/671780090936601859/403f8aec3e9e4c13893721cc65cd2bc4/artifacts
+end_time: 1743250105257
+entry_point_name: ''
+experiment_id: '671780090936601859'
+lifecycle_stage: active
+run_id: 403f8aec3e9e4c13893721cc65cd2bc4
+run_name: aged-cow-865
+run_uuid: 403f8aec3e9e4c13893721cc65cd2bc4
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743250105156
+status: 3
+tags: []
+user_id: pprie

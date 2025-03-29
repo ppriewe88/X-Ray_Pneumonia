@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/391650517118197406/9c0d3e540f7c40088649974a2cfdd52e/artifacts
+end_time: 1743248500867
+entry_point_name: ''
+experiment_id: '391650517118197406'
+lifecycle_stage: active
+run_id: 9c0d3e540f7c40088649974a2cfdd52e
+run_name: capricious-gull-23
+run_uuid: 9c0d3e540f7c40088649974a2cfdd52e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743248500784
+status: 3
+tags: []
+user_id: pprie

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/671780090936601859/fa76d080dd524dcbbe48f4faef1272f7/artifacts
+end_time: 1743249852824
+entry_point_name: ''
+experiment_id: '671780090936601859'
+lifecycle_stage: active
+run_id: fa76d080dd524dcbbe48f4faef1272f7
+run_name: dazzling-grub-240
+run_uuid: fa76d080dd524dcbbe48f4faef1272f7
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743249852725
+status: 3
+tags: []
+user_id: pprie

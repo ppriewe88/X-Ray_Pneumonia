@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/225553143890504669/052b731c221740f3a6756e92c7c3d730/artifacts
+end_time: 1743247296587
+entry_point_name: ''
+experiment_id: '225553143890504669'
+lifecycle_stage: active
+run_id: 052b731c221740f3a6756e92c7c3d730
+run_name: shivering-foal-11
+run_uuid: 052b731c221740f3a6756e92c7c3d730
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743247296492
+status: 3
+tags: []
+user_id: pprie

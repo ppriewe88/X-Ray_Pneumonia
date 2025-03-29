@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/391650517118197406/98c95a34c28a43a1bbc904a473908b20/artifacts
+end_time: 1743249721806
+entry_point_name: ''
+experiment_id: '391650517118197406'
+lifecycle_stage: active
+run_id: 98c95a34c28a43a1bbc904a473908b20
+run_name: dapper-hound-110
+run_uuid: 98c95a34c28a43a1bbc904a473908b20
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743249721722
+status: 3
+tags: []
+user_id: pprie

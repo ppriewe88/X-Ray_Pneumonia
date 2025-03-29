@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/671780090936601859/0b16f55026cc48678c094fdf6c2bc00b/artifacts
+end_time: 1743249738317
+entry_point_name: ''
+experiment_id: '671780090936601859'
+lifecycle_stage: active
+run_id: 0b16f55026cc48678c094fdf6c2bc00b
+run_name: victorious-mole-111
+run_uuid: 0b16f55026cc48678c094fdf6c2bc00b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743249738137
+status: 3
+tags: []
+user_id: pprie

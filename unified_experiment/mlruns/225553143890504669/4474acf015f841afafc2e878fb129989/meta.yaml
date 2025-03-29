@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/225553143890504669/4474acf015f841afafc2e878fb129989/artifacts
+end_time: 1743248485672
+entry_point_name: ''
+experiment_id: '225553143890504669'
+lifecycle_stage: active
+run_id: 4474acf015f841afafc2e878fb129989
+run_name: marvelous-hawk-567
+run_uuid: 4474acf015f841afafc2e878fb129989
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743248485593
+status: 3
+tags: []
+user_id: pprie

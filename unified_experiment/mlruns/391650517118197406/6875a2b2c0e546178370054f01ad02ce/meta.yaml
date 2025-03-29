@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/391650517118197406/6875a2b2c0e546178370054f01ad02ce/artifacts
+end_time: 1743249421416
+entry_point_name: ''
+experiment_id: '391650517118197406'
+lifecycle_stage: active
+run_id: 6875a2b2c0e546178370054f01ad02ce
+run_name: marvelous-hound-186
+run_uuid: 6875a2b2c0e546178370054f01ad02ce
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743249421329
+status: 3
+tags: []
+user_id: pprie

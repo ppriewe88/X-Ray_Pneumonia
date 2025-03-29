@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/391650517118197406/882ec8557f6a4cc4a7e6de8f67222e12/artifacts
+end_time: 1743250158730
+entry_point_name: ''
+experiment_id: '391650517118197406'
+lifecycle_stage: active
+run_id: 882ec8557f6a4cc4a7e6de8f67222e12
+run_name: gaudy-hare-923
+run_uuid: 882ec8557f6a4cc4a7e6de8f67222e12
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743250158639
+status: 3
+tags: []
+user_id: pprie

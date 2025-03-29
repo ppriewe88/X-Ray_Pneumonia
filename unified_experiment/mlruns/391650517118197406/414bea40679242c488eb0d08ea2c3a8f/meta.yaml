@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/391650517118197406/414bea40679242c488eb0d08ea2c3a8f/artifacts
+end_time: 1743249920747
+entry_point_name: ''
+experiment_id: '391650517118197406'
+lifecycle_stage: active
+run_id: 414bea40679242c488eb0d08ea2c3a8f
+run_name: big-doe-691
+run_uuid: 414bea40679242c488eb0d08ea2c3a8f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743249920656
+status: 3
+tags: []
+user_id: pprie

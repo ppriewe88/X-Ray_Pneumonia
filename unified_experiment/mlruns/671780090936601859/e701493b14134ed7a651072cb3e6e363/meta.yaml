@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/671780090936601859/e701493b14134ed7a651072cb3e6e363/artifacts
+end_time: 1743248211611
+entry_point_name: ''
+experiment_id: '671780090936601859'
+lifecycle_stage: active
+run_id: e701493b14134ed7a651072cb3e6e363
+run_name: peaceful-shrimp-27
+run_uuid: e701493b14134ed7a651072cb3e6e363
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743248211530
+status: 3
+tags: []
+user_id: pprie

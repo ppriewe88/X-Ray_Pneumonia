@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/225553143890504669/fd48eb4bc5894c3eabe47d4bd2629bd2/artifacts
+end_time: 1743250211289
+entry_point_name: ''
+experiment_id: '225553143890504669'
+lifecycle_stage: active
+run_id: fd48eb4bc5894c3eabe47d4bd2629bd2
+run_name: thoughtful-wren-578
+run_uuid: fd48eb4bc5894c3eabe47d4bd2629bd2
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743250211207
+status: 3
+tags: []
+user_id: pprie

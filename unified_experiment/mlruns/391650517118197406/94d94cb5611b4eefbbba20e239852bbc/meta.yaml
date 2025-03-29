@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/391650517118197406/94d94cb5611b4eefbbba20e239852bbc/artifacts
+end_time: 1743249646395
+entry_point_name: ''
+experiment_id: '391650517118197406'
+lifecycle_stage: active
+run_id: 94d94cb5611b4eefbbba20e239852bbc
+run_name: thundering-lynx-722
+run_uuid: 94d94cb5611b4eefbbba20e239852bbc
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743249646305
+status: 3
+tags: []
+user_id: pprie

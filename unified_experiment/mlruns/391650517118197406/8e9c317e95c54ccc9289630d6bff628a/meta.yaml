@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/391650517118197406/8e9c317e95c54ccc9289630d6bff628a/artifacts
+end_time: 1743248929781
+entry_point_name: ''
+experiment_id: '391650517118197406'
+lifecycle_stage: active
+run_id: 8e9c317e95c54ccc9289630d6bff628a
+run_name: treasured-kite-508
+run_uuid: 8e9c317e95c54ccc9289630d6bff628a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743248929698
+status: 3
+tags: []
+user_id: pprie

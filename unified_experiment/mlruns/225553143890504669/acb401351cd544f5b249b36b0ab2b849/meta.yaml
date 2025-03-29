@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/225553143890504669/acb401351cd544f5b249b36b0ab2b849/artifacts
+end_time: 1743248200220
+entry_point_name: ''
+experiment_id: '225553143890504669'
+lifecycle_stage: active
+run_id: acb401351cd544f5b249b36b0ab2b849
+run_name: upset-dolphin-47
+run_uuid: acb401351cd544f5b249b36b0ab2b849
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743248200094
+status: 3
+tags: []
+user_id: pprie

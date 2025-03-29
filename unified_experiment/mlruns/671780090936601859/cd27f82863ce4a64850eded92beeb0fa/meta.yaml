@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/671780090936601859/cd27f82863ce4a64850eded92beeb0fa/artifacts
+end_time: 1743250092671
+entry_point_name: ''
+experiment_id: '671780090936601859'
+lifecycle_stage: active
+run_id: cd27f82863ce4a64850eded92beeb0fa
+run_name: exultant-dolphin-169
+run_uuid: cd27f82863ce4a64850eded92beeb0fa
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743250092570
+status: 3
+tags: []
+user_id: pprie

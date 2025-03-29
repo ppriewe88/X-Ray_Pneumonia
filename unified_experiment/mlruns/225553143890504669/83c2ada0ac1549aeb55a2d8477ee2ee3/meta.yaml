@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/225553143890504669/83c2ada0ac1549aeb55a2d8477ee2ee3/artifacts
+end_time: 1743248659396
+entry_point_name: ''
+experiment_id: '225553143890504669'
+lifecycle_stage: active
+run_id: 83c2ada0ac1549aeb55a2d8477ee2ee3
+run_name: rogue-flea-122
+run_uuid: 83c2ada0ac1549aeb55a2d8477ee2ee3
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743248659321
+status: 3
+tags: []
+user_id: pprie

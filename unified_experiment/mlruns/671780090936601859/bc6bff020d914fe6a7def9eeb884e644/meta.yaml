@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/671780090936601859/bc6bff020d914fe6a7def9eeb884e644/artifacts
+end_time: 1743250260920
+entry_point_name: ''
+experiment_id: '671780090936601859'
+lifecycle_stage: active
+run_id: bc6bff020d914fe6a7def9eeb884e644
+run_name: nervous-shark-340
+run_uuid: bc6bff020d914fe6a7def9eeb884e644
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743250260813
+status: 3
+tags: []
+user_id: pprie

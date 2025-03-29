@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/671780090936601859/10336e3be891439eb15150c4bb8d797c/artifacts
+end_time: 1743250198024
+entry_point_name: ''
+experiment_id: '671780090936601859'
+lifecycle_stage: active
+run_id: 10336e3be891439eb15150c4bb8d797c
+run_name: blushing-gull-633
+run_uuid: 10336e3be891439eb15150c4bb8d797c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743250197923
+status: 3
+tags: []
+user_id: pprie

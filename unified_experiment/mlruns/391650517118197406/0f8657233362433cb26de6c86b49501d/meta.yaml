@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/391650517118197406/0f8657233362433cb26de6c86b49501d/artifacts
+end_time: 1743248550992
+entry_point_name: ''
+experiment_id: '391650517118197406'
+lifecycle_stage: active
+run_id: 0f8657233362433cb26de6c86b49501d
+run_name: masked-mouse-580
+run_uuid: 0f8657233362433cb26de6c86b49501d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743248550907
+status: 3
+tags: []
+user_id: pprie

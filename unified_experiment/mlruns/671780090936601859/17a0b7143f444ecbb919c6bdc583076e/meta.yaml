@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/671780090936601859/17a0b7143f444ecbb919c6bdc583076e/artifacts
+end_time: 1743248920019
+entry_point_name: ''
+experiment_id: '671780090936601859'
+lifecycle_stage: active
+run_id: 17a0b7143f444ecbb919c6bdc583076e
+run_name: bustling-duck-131
+run_uuid: 17a0b7143f444ecbb919c6bdc583076e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743248919922
+status: 3
+tags: []
+user_id: pprie

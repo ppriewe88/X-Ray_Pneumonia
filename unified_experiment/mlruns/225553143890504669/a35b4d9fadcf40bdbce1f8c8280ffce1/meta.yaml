@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/225553143890504669/a35b4d9fadcf40bdbce1f8c8280ffce1/artifacts
+end_time: 1743248858400
+entry_point_name: ''
+experiment_id: '225553143890504669'
+lifecycle_stage: active
+run_id: a35b4d9fadcf40bdbce1f8c8280ffce1
+run_name: loud-whale-952
+run_uuid: a35b4d9fadcf40bdbce1f8c8280ffce1
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743248858324
+status: 3
+tags: []
+user_id: pprie

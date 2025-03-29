@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/391650517118197406/28bd53e54ae24ad5a0a1c33b3b26bfa1/artifacts
+end_time: 1743249964045
+entry_point_name: ''
+experiment_id: '391650517118197406'
+lifecycle_stage: active
+run_id: 28bd53e54ae24ad5a0a1c33b3b26bfa1
+run_name: likeable-swan-846
+run_uuid: 28bd53e54ae24ad5a0a1c33b3b26bfa1
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743249963914
+status: 3
+tags: []
+user_id: pprie

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/391650517118197406/5f891c20570043529953db14e8025f3d/artifacts
+end_time: 1743246929040
+entry_point_name: ''
+experiment_id: '391650517118197406'
+lifecycle_stage: active
+run_id: 5f891c20570043529953db14e8025f3d
+run_name: rumbling-sloth-975
+run_uuid: 5f891c20570043529953db14e8025f3d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743246928965
+status: 3
+tags: []
+user_id: pprie

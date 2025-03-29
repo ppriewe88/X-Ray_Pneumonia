@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/225553143890504669/f71c68dafb8e41dca2dd7b40e17c9a6c/artifacts
+end_time: 1743249581431
+entry_point_name: ''
+experiment_id: '225553143890504669'
+lifecycle_stage: active
+run_id: f71c68dafb8e41dca2dd7b40e17c9a6c
+run_name: entertaining-bat-727
+run_uuid: f71c68dafb8e41dca2dd7b40e17c9a6c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743249581343
+status: 3
+tags: []
+user_id: pprie

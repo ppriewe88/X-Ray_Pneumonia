@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/671780090936601859/91418713f1bc46918ebe20d509a6fabd/artifacts
+end_time: 1743250130013
+entry_point_name: ''
+experiment_id: '671780090936601859'
+lifecycle_stage: active
+run_id: 91418713f1bc46918ebe20d509a6fabd
+run_name: delightful-wren-694
+run_uuid: 91418713f1bc46918ebe20d509a6fabd
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743250129912
+status: 3
+tags: []
+user_id: pprie

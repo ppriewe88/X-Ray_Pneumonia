@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/671780090936601859/22d2614979c04250b716c48b45552174/artifacts
+end_time: 1743248180551
+entry_point_name: ''
+experiment_id: '671780090936601859'
+lifecycle_stage: active
+run_id: 22d2614979c04250b716c48b45552174
+run_name: skillful-foal-488
+run_uuid: 22d2614979c04250b716c48b45552174
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743248180471
+status: 3
+tags: []
+user_id: pprie

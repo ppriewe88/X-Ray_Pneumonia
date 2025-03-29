@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/671780090936601859/09fe27f5a80d40b1ae31d0f25eec4d50/artifacts
+end_time: 1743246899980
+entry_point_name: ''
+experiment_id: '671780090936601859'
+lifecycle_stage: active
+run_id: 09fe27f5a80d40b1ae31d0f25eec4d50
+run_name: crawling-fawn-724
+run_uuid: 09fe27f5a80d40b1ae31d0f25eec4d50
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743246899888
+status: 3
+tags: []
+user_id: pprie

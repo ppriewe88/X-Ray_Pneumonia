@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/671780090936601859/e55c431c47ec40c7a5a5239d7b0aab34/artifacts
+end_time: 1743248633621
+entry_point_name: ''
+experiment_id: '671780090936601859'
+lifecycle_stage: active
+run_id: e55c431c47ec40c7a5a5239d7b0aab34
+run_name: big-goose-665
+run_uuid: e55c431c47ec40c7a5a5239d7b0aab34
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743248633522
+status: 3
+tags: []
+user_id: pprie

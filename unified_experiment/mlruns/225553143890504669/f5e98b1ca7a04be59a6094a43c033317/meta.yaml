@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/225553143890504669/f5e98b1ca7a04be59a6094a43c033317/artifacts
+end_time: 1743249776572
+entry_point_name: ''
+experiment_id: '225553143890504669'
+lifecycle_stage: active
+run_id: f5e98b1ca7a04be59a6094a43c033317
+run_name: polite-dove-401
+run_uuid: f5e98b1ca7a04be59a6094a43c033317
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743249776475
+status: 3
+tags: []
+user_id: pprie

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/225553143890504669/bcc5eba42d4348a8bf257b88c0986e3d/artifacts
+end_time: 1743249601463
+entry_point_name: ''
+experiment_id: '225553143890504669'
+lifecycle_stage: active
+run_id: bcc5eba42d4348a8bf257b88c0986e3d
+run_name: handsome-sow-680
+run_uuid: bcc5eba42d4348a8bf257b88c0986e3d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743249601384
+status: 3
+tags: []
+user_id: pprie

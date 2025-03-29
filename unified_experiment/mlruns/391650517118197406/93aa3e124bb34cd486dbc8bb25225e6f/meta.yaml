@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/391650517118197406/93aa3e124bb34cd486dbc8bb25225e6f/artifacts
+end_time: 1743249605943
+entry_point_name: ''
+experiment_id: '391650517118197406'
+lifecycle_stage: active
+run_id: 93aa3e124bb34cd486dbc8bb25225e6f
+run_name: zealous-fowl-223
+run_uuid: 93aa3e124bb34cd486dbc8bb25225e6f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743249605854
+status: 3
+tags: []
+user_id: pprie

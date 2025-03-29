@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/225553143890504669/acc5a71168144d07926f280581c8a7a7/artifacts
+end_time: 1743248398807
+entry_point_name: ''
+experiment_id: '225553143890504669'
+lifecycle_stage: active
+run_id: acc5a71168144d07926f280581c8a7a7
+run_name: unequaled-newt-158
+run_uuid: acc5a71168144d07926f280581c8a7a7
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743248398731
+status: 3
+tags: []
+user_id: pprie

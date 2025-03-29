@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/671780090936601859/90ac868827f44037b8b472f0637294a9/artifacts
+end_time: 1743246880172
+entry_point_name: ''
+experiment_id: '671780090936601859'
+lifecycle_stage: active
+run_id: 90ac868827f44037b8b472f0637294a9
+run_name: valuable-crab-979
+run_uuid: 90ac868827f44037b8b472f0637294a9
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743246880088
+status: 3
+tags: []
+user_id: pprie

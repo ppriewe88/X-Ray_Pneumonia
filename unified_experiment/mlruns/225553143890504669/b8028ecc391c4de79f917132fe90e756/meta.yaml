@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/225553143890504669/b8028ecc391c4de79f917132fe90e756/artifacts
+end_time: 1743248622195
+entry_point_name: ''
+experiment_id: '225553143890504669'
+lifecycle_stage: active
+run_id: b8028ecc391c4de79f917132fe90e756
+run_name: invincible-finch-44
+run_uuid: b8028ecc391c4de79f917132fe90e756
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743248622120
+status: 3
+tags: []
+user_id: pprie

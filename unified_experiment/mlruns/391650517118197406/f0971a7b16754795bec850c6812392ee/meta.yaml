@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/391650517118197406/f0971a7b16754795bec850c6812392ee/artifacts
+end_time: 1743249868370
+entry_point_name: ''
+experiment_id: '391650517118197406'
+lifecycle_stage: active
+run_id: f0971a7b16754795bec850c6812392ee
+run_name: mercurial-seal-864
+run_uuid: f0971a7b16754795bec850c6812392ee
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743249868258
+status: 3
+tags: []
+user_id: pprie

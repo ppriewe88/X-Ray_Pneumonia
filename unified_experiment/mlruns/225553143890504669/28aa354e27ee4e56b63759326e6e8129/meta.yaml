@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/225553143890504669/28aa354e27ee4e56b63759326e6e8129/artifacts
+end_time: 1743249642492
+entry_point_name: ''
+experiment_id: '225553143890504669'
+lifecycle_stage: active
+run_id: 28aa354e27ee4e56b63759326e6e8129
+run_name: sassy-panda-328
+run_uuid: 28aa354e27ee4e56b63759326e6e8129
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743249642411
+status: 3
+tags: []
+user_id: pprie

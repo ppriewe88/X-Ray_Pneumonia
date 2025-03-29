@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/225553143890504669/8b9dc58ae97141f4874c238639c9bcbb/artifacts
+end_time: 1743248329999
+entry_point_name: ''
+experiment_id: '225553143890504669'
+lifecycle_stage: active
+run_id: 8b9dc58ae97141f4874c238639c9bcbb
+run_name: capricious-mule-28
+run_uuid: 8b9dc58ae97141f4874c238639c9bcbb
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743248329904
+status: 3
+tags: []
+user_id: pprie

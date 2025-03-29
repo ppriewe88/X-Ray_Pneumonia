@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/225553143890504669/38641cdb602a46cd8b975324701f7d37/artifacts
+end_time: 1743247255482
+entry_point_name: ''
+experiment_id: '225553143890504669'
+lifecycle_stage: active
+run_id: 38641cdb602a46cd8b975324701f7d37
+run_name: aged-gull-780
+run_uuid: 38641cdb602a46cd8b975324701f7d37
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743247255335
+status: 3
+tags: []
+user_id: pprie

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/671780090936601859/e365fe2eabd84329a873b287ca3d3191/artifacts
+end_time: 1743248591412
+entry_point_name: ''
+experiment_id: '671780090936601859'
+lifecycle_stage: active
+run_id: e365fe2eabd84329a873b287ca3d3191
+run_name: brawny-bee-877
+run_uuid: e365fe2eabd84329a873b287ca3d3191
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743248591318
+status: 3
+tags: []
+user_id: pprie

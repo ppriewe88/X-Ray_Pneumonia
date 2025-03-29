@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/391650517118197406/cb5c4598ad6f45a5977de6974072f269/artifacts
+end_time: 1743248923783
+entry_point_name: ''
+experiment_id: '391650517118197406'
+lifecycle_stage: active
+run_id: cb5c4598ad6f45a5977de6974072f269
+run_name: glamorous-shoat-254
+run_uuid: cb5c4598ad6f45a5977de6974072f269
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743248923697
+status: 3
+tags: []
+user_id: pprie

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/671780090936601859/334f5fc620294226aa721e244dc45072/artifacts
+end_time: 1743248658828
+entry_point_name: ''
+experiment_id: '671780090936601859'
+lifecycle_stage: active
+run_id: 334f5fc620294226aa721e244dc45072
+run_name: fun-yak-586
+run_uuid: 334f5fc620294226aa721e244dc45072
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743248658735
+status: 3
+tags: []
+user_id: pprie

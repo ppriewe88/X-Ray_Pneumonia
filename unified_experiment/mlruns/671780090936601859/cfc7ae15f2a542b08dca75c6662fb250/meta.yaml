@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/671780090936601859/cfc7ae15f2a542b08dca75c6662fb250/artifacts
+end_time: 1743249289901
+entry_point_name: ''
+experiment_id: '671780090936601859'
+lifecycle_stage: active
+run_id: cfc7ae15f2a542b08dca75c6662fb250
+run_name: unruly-lamb-124
+run_uuid: cfc7ae15f2a542b08dca75c6662fb250
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743249289781
+status: 3
+tags: []
+user_id: pprie

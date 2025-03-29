@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/671780090936601859/4152b3e1308a4f6cab98dcf28a19f9e4/artifacts
+end_time: 1743250305048
+entry_point_name: ''
+experiment_id: '671780090936601859'
+lifecycle_stage: active
+run_id: 4152b3e1308a4f6cab98dcf28a19f9e4
+run_name: gentle-mole-168
+run_uuid: 4152b3e1308a4f6cab98dcf28a19f9e4
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743250304941
+status: 3
+tags: []
+user_id: pprie

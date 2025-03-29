@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/391650517118197406/cb1970fafc9b46eba03ed9435ef4540c/artifacts
+end_time: 1743249434735
+entry_point_name: ''
+experiment_id: '391650517118197406'
+lifecycle_stage: active
+run_id: cb1970fafc9b46eba03ed9435ef4540c
+run_name: receptive-ram-576
+run_uuid: cb1970fafc9b46eba03ed9435ef4540c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743249434634
+status: 3
+tags: []
+user_id: pprie

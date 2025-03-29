@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/671780090936601859/c7caf2c929dc415493a9c3af81dcc830/artifacts
+end_time: 1743249503832
+entry_point_name: ''
+experiment_id: '671780090936601859'
+lifecycle_stage: active
+run_id: c7caf2c929dc415493a9c3af81dcc830
+run_name: upset-snake-47
+run_uuid: c7caf2c929dc415493a9c3af81dcc830
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743249503718
+status: 3
+tags: []
+user_id: pprie

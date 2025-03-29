@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/391650517118197406/2bdd233dd69c4cd3a582ed505f5c56f8/artifacts
+end_time: 1743248943200
+entry_point_name: ''
+experiment_id: '391650517118197406'
+lifecycle_stage: active
+run_id: 2bdd233dd69c4cd3a582ed505f5c56f8
+run_name: sassy-gnu-938
+run_uuid: 2bdd233dd69c4cd3a582ed505f5c56f8
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743248943027
+status: 3
+tags: []
+user_id: pprie

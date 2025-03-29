@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/671780090936601859/3bfe46d548dc4e3c80c9ab79819df76f/artifacts
+end_time: 1743249896206
+entry_point_name: ''
+experiment_id: '671780090936601859'
+lifecycle_stage: active
+run_id: 3bfe46d548dc4e3c80c9ab79819df76f
+run_name: bustling-fly-186
+run_uuid: 3bfe46d548dc4e3c80c9ab79819df76f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743249896078
+status: 3
+tags: []
+user_id: pprie

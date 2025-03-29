@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/225553143890504669/2f6b70a74e804a3aa2fa6ada904b81fd/artifacts
+end_time: 1743249796336
+entry_point_name: ''
+experiment_id: '225553143890504669'
+lifecycle_stage: active
+run_id: 2f6b70a74e804a3aa2fa6ada904b81fd
+run_name: resilient-tern-161
+run_uuid: 2f6b70a74e804a3aa2fa6ada904b81fd
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743249796256
+status: 3
+tags: []
+user_id: pprie

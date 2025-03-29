@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/391650517118197406/0a4db63857694bb3a32d3b6af9348dfc/artifacts
+end_time: 1743249577592
+entry_point_name: ''
+experiment_id: '391650517118197406'
+lifecycle_stage: active
+run_id: 0a4db63857694bb3a32d3b6af9348dfc
+run_name: useful-skunk-340
+run_uuid: 0a4db63857694bb3a32d3b6af9348dfc
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743249577497
+status: 3
+tags: []
+user_id: pprie

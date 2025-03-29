@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/225553143890504669/8b1147c66f514fad999d87dc5624fdea/artifacts
+end_time: 1743249198007
+entry_point_name: ''
+experiment_id: '225553143890504669'
+lifecycle_stage: active
+run_id: 8b1147c66f514fad999d87dc5624fdea
+run_name: capable-sow-281
+run_uuid: 8b1147c66f514fad999d87dc5624fdea
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743249197928
+status: 3
+tags: []
+user_id: pprie

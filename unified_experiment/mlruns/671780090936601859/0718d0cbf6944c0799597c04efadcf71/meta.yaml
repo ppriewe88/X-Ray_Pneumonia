@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/671780090936601859/0718d0cbf6944c0799597c04efadcf71/artifacts
+end_time: 1743248485147
+entry_point_name: ''
+experiment_id: '671780090936601859'
+lifecycle_stage: active
+run_id: 0718d0cbf6944c0799597c04efadcf71
+run_name: adventurous-fawn-478
+run_uuid: 0718d0cbf6944c0799597c04efadcf71
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743248485063
+status: 3
+tags: []
+user_id: pprie

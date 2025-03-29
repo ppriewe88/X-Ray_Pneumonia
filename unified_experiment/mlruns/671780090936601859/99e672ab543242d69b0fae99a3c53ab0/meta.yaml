@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/671780090936601859/99e672ab543242d69b0fae99a3c53ab0/artifacts
+end_time: 1743249669934
+entry_point_name: ''
+experiment_id: '671780090936601859'
+lifecycle_stage: active
+run_id: 99e672ab543242d69b0fae99a3c53ab0
+run_name: bemused-bass-375
+run_uuid: 99e672ab543242d69b0fae99a3c53ab0
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743249669834
+status: 3
+tags: []
+user_id: pprie

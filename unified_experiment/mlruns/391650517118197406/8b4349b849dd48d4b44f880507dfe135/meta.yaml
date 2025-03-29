@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/391650517118197406/8b4349b849dd48d4b44f880507dfe135/artifacts
+end_time: 1743247243050
+entry_point_name: ''
+experiment_id: '391650517118197406'
+lifecycle_stage: active
+run_id: 8b4349b849dd48d4b44f880507dfe135
+run_name: classy-kit-532
+run_uuid: 8b4349b849dd48d4b44f880507dfe135
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743247242956
+status: 3
+tags: []
+user_id: pprie

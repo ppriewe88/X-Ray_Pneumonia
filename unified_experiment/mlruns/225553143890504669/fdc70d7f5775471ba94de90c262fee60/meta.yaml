@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/225553143890504669/fdc70d7f5775471ba94de90c262fee60/artifacts
+end_time: 1743246872258
+entry_point_name: ''
+experiment_id: '225553143890504669'
+lifecycle_stage: active
+run_id: fdc70d7f5775471ba94de90c262fee60
+run_name: handsome-trout-528
+run_uuid: fdc70d7f5775471ba94de90c262fee60
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743246872170
+status: 3
+tags: []
+user_id: pprie

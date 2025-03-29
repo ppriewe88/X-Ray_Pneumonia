@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/391650517118197406/2247beb8ea8d47a0ab4de3e469d7998d/artifacts
+end_time: 1743250102699
+entry_point_name: ''
+experiment_id: '391650517118197406'
+lifecycle_stage: active
+run_id: 2247beb8ea8d47a0ab4de3e469d7998d
+run_name: nosy-shark-195
+run_uuid: 2247beb8ea8d47a0ab4de3e469d7998d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743250102606
+status: 3
+tags: []
+user_id: pprie

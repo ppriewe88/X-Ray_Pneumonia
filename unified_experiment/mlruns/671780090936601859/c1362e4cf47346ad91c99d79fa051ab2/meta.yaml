@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/671780090936601859/c1362e4cf47346ad91c99d79fa051ab2/artifacts
+end_time: 1743249197461
+entry_point_name: ''
+experiment_id: '671780090936601859'
+lifecycle_stage: active
+run_id: c1362e4cf47346ad91c99d79fa051ab2
+run_name: spiffy-swan-197
+run_uuid: c1362e4cf47346ad91c99d79fa051ab2
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743249197373
+status: 3
+tags: []
+user_id: pprie

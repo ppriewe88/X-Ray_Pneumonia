@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/671780090936601859/78abf6537e1a4cefadbab99f97ce17c5/artifacts
+end_time: 1743248248594
+entry_point_name: ''
+experiment_id: '671780090936601859'
+lifecycle_stage: active
+run_id: 78abf6537e1a4cefadbab99f97ce17c5
+run_name: unequaled-rook-442
+run_uuid: 78abf6537e1a4cefadbab99f97ce17c5
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743248248420
+status: 3
+tags: []
+user_id: pprie

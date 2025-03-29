@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/671780090936601859/c84765471d0f4ac4a5839208a4a41e18/artifacts
+end_time: 1743248733519
+entry_point_name: ''
+experiment_id: '671780090936601859'
+lifecycle_stage: active
+run_id: c84765471d0f4ac4a5839208a4a41e18
+run_name: overjoyed-sow-295
+run_uuid: c84765471d0f4ac4a5839208a4a41e18
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743248733431
+status: 3
+tags: []
+user_id: pprie

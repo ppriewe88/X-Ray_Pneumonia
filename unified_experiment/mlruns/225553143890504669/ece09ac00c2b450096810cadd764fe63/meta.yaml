@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/225553143890504669/ece09ac00c2b450096810cadd764fe63/artifacts
+end_time: 1743250274704
+entry_point_name: ''
+experiment_id: '225553143890504669'
+lifecycle_stage: active
+run_id: ece09ac00c2b450096810cadd764fe63
+run_name: merciful-asp-678
+run_uuid: ece09ac00c2b450096810cadd764fe63
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743250274617
+status: 3
+tags: []
+user_id: pprie

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/671780090936601859/3d344c151fac48c3bc53179fcb414deb/artifacts
+end_time: 1743246955653
+entry_point_name: ''
+experiment_id: '671780090936601859'
+lifecycle_stage: active
+run_id: 3d344c151fac48c3bc53179fcb414deb
+run_name: incongruous-koi-425
+run_uuid: 3d344c151fac48c3bc53179fcb414deb
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743246955582
+status: 3
+tags: []
+user_id: pprie

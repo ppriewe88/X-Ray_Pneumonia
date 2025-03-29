@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/391650517118197406/2f4f085309d742de8b6fad9d1dedb654/artifacts
+end_time: 1743249585005
+entry_point_name: ''
+experiment_id: '391650517118197406'
+lifecycle_stage: active
+run_id: 2f4f085309d742de8b6fad9d1dedb654
+run_name: traveling-fowl-774
+run_uuid: 2f4f085309d742de8b6fad9d1dedb654
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743249584906
+status: 3
+tags: []
+user_id: pprie

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/671780090936601859/cbbb9a8fd3a247d893704d7bb2272f21/artifacts
+end_time: 1743250111448
+entry_point_name: ''
+experiment_id: '671780090936601859'
+lifecycle_stage: active
+run_id: cbbb9a8fd3a247d893704d7bb2272f21
+run_name: respected-whale-108
+run_uuid: cbbb9a8fd3a247d893704d7bb2272f21
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743250111344
+status: 3
+tags: []
+user_id: pprie

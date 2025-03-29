@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/671780090936601859/9f49b2170a0f45eaa80180507227c757/artifacts
+end_time: 1743249377132
+entry_point_name: ''
+experiment_id: '671780090936601859'
+lifecycle_stage: active
+run_id: 9f49b2170a0f45eaa80180507227c757
+run_name: awesome-ram-896
+run_uuid: 9f49b2170a0f45eaa80180507227c757
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743249377027
+status: 3
+tags: []
+user_id: pprie

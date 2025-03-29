@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/225553143890504669/7e85114a2f6c4d3b82133cc0a1f9d53f/artifacts
+end_time: 1743249896863
+entry_point_name: ''
+experiment_id: '225553143890504669'
+lifecycle_stage: active
+run_id: 7e85114a2f6c4d3b82133cc0a1f9d53f
+run_name: gifted-dolphin-881
+run_uuid: 7e85114a2f6c4d3b82133cc0a1f9d53f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743249896777
+status: 3
+tags: []
+user_id: pprie

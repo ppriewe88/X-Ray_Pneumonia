@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/671780090936601859/4a84d08987e94fa2b87969539f6fd94e/artifacts
+end_time: 1743247117405
+entry_point_name: ''
+experiment_id: '671780090936601859'
+lifecycle_stage: active
+run_id: 4a84d08987e94fa2b87969539f6fd94e
+run_name: caring-rat-95
+run_uuid: 4a84d08987e94fa2b87969539f6fd94e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743247117299
+status: 3
+tags: []
+user_id: pprie

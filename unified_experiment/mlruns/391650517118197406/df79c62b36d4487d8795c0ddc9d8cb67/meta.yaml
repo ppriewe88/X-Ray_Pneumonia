@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/391650517118197406/df79c62b36d4487d8795c0ddc9d8cb67/artifacts
+end_time: 1743249842549
+entry_point_name: ''
+experiment_id: '391650517118197406'
+lifecycle_stage: active
+run_id: df79c62b36d4487d8795c0ddc9d8cb67
+run_name: merciful-colt-52
+run_uuid: df79c62b36d4487d8795c0ddc9d8cb67
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743249842451
+status: 3
+tags: []
+user_id: pprie

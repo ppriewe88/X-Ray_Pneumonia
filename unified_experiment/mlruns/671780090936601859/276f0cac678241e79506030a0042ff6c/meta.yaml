@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/671780090936601859/276f0cac678241e79506030a0042ff6c/artifacts
+end_time: 1743249236320
+entry_point_name: ''
+experiment_id: '671780090936601859'
+lifecycle_stage: active
+run_id: 276f0cac678241e79506030a0042ff6c
+run_name: dazzling-fish-5
+run_uuid: 276f0cac678241e79506030a0042ff6c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743249236232
+status: 3
+tags: []
+user_id: pprie

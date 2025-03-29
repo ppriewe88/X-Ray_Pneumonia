@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/391650517118197406/9475ef952dae4c02b10938a5cf4dba8b/artifacts
+end_time: 1743247079953
+entry_point_name: ''
+experiment_id: '391650517118197406'
+lifecycle_stage: active
+run_id: 9475ef952dae4c02b10938a5cf4dba8b
+run_name: upbeat-foal-362
+run_uuid: 9475ef952dae4c02b10938a5cf4dba8b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743247079879
+status: 3
+tags: []
+user_id: pprie

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/391650517118197406/60695cdf367340c2ab46a053ea750285/artifacts
+end_time: 1743249201285
+entry_point_name: ''
+experiment_id: '391650517118197406'
+lifecycle_stage: active
+run_id: 60695cdf367340c2ab46a053ea750285
+run_name: thoughtful-bass-862
+run_uuid: 60695cdf367340c2ab46a053ea750285
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743249201198
+status: 3
+tags: []
+user_id: pprie

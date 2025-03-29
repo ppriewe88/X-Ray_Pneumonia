@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/225553143890504669/505bd36eafae4df4ae08b62187f447be/artifacts
+end_time: 1743249567426
+entry_point_name: ''
+experiment_id: '225553143890504669'
+lifecycle_stage: active
+run_id: 505bd36eafae4df4ae08b62187f447be
+run_name: traveling-squid-407
+run_uuid: 505bd36eafae4df4ae08b62187f447be
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743249567340
+status: 3
+tags: []
+user_id: pprie

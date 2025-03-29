@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/225553143890504669/a151fb75344a4a0788a8434751a20271/artifacts
+end_time: 1743250074562
+entry_point_name: ''
+experiment_id: '225553143890504669'
+lifecycle_stage: active
+run_id: a151fb75344a4a0788a8434751a20271
+run_name: loud-conch-12
+run_uuid: a151fb75344a4a0788a8434751a20271
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743250074467
+status: 3
+tags: []
+user_id: pprie

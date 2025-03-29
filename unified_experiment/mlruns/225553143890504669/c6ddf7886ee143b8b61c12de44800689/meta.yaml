@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/225553143890504669/c6ddf7886ee143b8b61c12de44800689/artifacts
+end_time: 1743248101333
+entry_point_name: ''
+experiment_id: '225553143890504669'
+lifecycle_stage: active
+run_id: c6ddf7886ee143b8b61c12de44800689
+run_name: abrasive-snail-127
+run_uuid: c6ddf7886ee143b8b61c12de44800689
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743248101265
+status: 3
+tags: []
+user_id: pprie

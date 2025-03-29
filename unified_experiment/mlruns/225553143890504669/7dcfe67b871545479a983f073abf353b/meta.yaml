@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/225553143890504669/7dcfe67b871545479a983f073abf353b/artifacts
+end_time: 1743247083130
+entry_point_name: ''
+experiment_id: '225553143890504669'
+lifecycle_stage: active
+run_id: 7dcfe67b871545479a983f073abf353b
+run_name: gaudy-quail-397
+run_uuid: 7dcfe67b871545479a983f073abf353b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743247083035
+status: 3
+tags: []
+user_id: pprie

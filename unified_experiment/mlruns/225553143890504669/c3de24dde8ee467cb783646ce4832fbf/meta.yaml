@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/225553143890504669/c3de24dde8ee467cb783646ce4832fbf/artifacts
+end_time: 1743248696063
+entry_point_name: ''
+experiment_id: '225553143890504669'
+lifecycle_stage: active
+run_id: c3de24dde8ee467cb783646ce4832fbf
+run_name: intelligent-pig-73
+run_uuid: c3de24dde8ee467cb783646ce4832fbf
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743248695986
+status: 3
+tags: []
+user_id: pprie

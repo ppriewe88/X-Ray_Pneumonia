@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/391650517118197406/fdf917e9ab02440ea1b26fa43757ec90/artifacts
+end_time: 1743249300114
+entry_point_name: ''
+experiment_id: '391650517118197406'
+lifecycle_stage: active
+run_id: fdf917e9ab02440ea1b26fa43757ec90
+run_name: thundering-cod-884
+run_uuid: fdf917e9ab02440ea1b26fa43757ec90
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743249300015
+status: 3
+tags: []
+user_id: pprie

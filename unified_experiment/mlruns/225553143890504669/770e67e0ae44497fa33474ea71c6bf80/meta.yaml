@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/225553143890504669/770e67e0ae44497fa33474ea71c6bf80/artifacts
+end_time: 1743249371291
+entry_point_name: ''
+experiment_id: '225553143890504669'
+lifecycle_stage: active
+run_id: 770e67e0ae44497fa33474ea71c6bf80
+run_name: omniscient-fawn-36
+run_uuid: 770e67e0ae44497fa33474ea71c6bf80
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743249371202
+status: 3
+tags: []
+user_id: pprie

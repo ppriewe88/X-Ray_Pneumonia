@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/671780090936601859/1992219b476649f3bfaabada4e919d66/artifacts
+end_time: 1743249283533
+entry_point_name: ''
+experiment_id: '671780090936601859'
+lifecycle_stage: active
+run_id: 1992219b476649f3bfaabada4e919d66
+run_name: caring-ape-343
+run_uuid: 1992219b476649f3bfaabada4e919d66
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743249283441
+status: 3
+tags: []
+user_id: pprie

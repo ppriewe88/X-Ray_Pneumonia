@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/391650517118197406/886140b1106444379d1669b5bceae367/artifacts
+end_time: 1743250133569
+entry_point_name: ''
+experiment_id: '391650517118197406'
+lifecycle_stage: active
+run_id: 886140b1106444379d1669b5bceae367
+run_name: dazzling-ram-511
+run_uuid: 886140b1106444379d1669b5bceae367
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743250133477
+status: 3
+tags: []
+user_id: pprie

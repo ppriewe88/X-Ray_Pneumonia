@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/225553143890504669/cefd0c4d0f2741ca91524a6b8e96f083/artifacts
+end_time: 1743249277349
+entry_point_name: ''
+experiment_id: '225553143890504669'
+lifecycle_stage: active
+run_id: cefd0c4d0f2741ca91524a6b8e96f083
+run_name: orderly-trout-178
+run_uuid: cefd0c4d0f2741ca91524a6b8e96f083
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743249277262
+status: 3
+tags: []
+user_id: pprie

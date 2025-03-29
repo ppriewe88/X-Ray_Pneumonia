@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/225553143890504669/45404dd2ab454b6bbb771cdcd351c2f5/artifacts
+end_time: 1743249264588
+entry_point_name: ''
+experiment_id: '225553143890504669'
+lifecycle_stage: active
+run_id: 45404dd2ab454b6bbb771cdcd351c2f5
+run_name: unleashed-carp-240
+run_uuid: 45404dd2ab454b6bbb771cdcd351c2f5
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743249264498
+status: 3
+tags: []
+user_id: pprie

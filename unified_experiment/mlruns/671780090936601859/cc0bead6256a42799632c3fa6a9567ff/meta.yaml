@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/671780090936601859/cc0bead6256a42799632c3fa6a9567ff/artifacts
+end_time: 1743248479190
+entry_point_name: ''
+experiment_id: '671780090936601859'
+lifecycle_stage: active
+run_id: cc0bead6256a42799632c3fa6a9567ff
+run_name: bustling-ray-969
+run_uuid: cc0bead6256a42799632c3fa6a9567ff
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743248479106
+status: 3
+tags: []
+user_id: pprie

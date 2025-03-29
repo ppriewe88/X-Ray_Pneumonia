@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/391650517118197406/6245576a2b1140e29d31cca7a2a1299c/artifacts
+end_time: 1743249174914
+entry_point_name: ''
+experiment_id: '391650517118197406'
+lifecycle_stage: active
+run_id: 6245576a2b1140e29d31cca7a2a1299c
+run_name: powerful-frog-479
+run_uuid: 6245576a2b1140e29d31cca7a2a1299c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743249174829
+status: 3
+tags: []
+user_id: pprie

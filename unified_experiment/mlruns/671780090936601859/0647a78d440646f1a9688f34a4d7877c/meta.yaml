@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/671780090936601859/0647a78d440646f1a9688f34a4d7877c/artifacts
+end_time: 1743249443851
+entry_point_name: ''
+experiment_id: '671780090936601859'
+lifecycle_stage: active
+run_id: 0647a78d440646f1a9688f34a4d7877c
+run_name: popular-donkey-757
+run_uuid: 0647a78d440646f1a9688f34a4d7877c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743249443745
+status: 3
+tags: []
+user_id: pprie

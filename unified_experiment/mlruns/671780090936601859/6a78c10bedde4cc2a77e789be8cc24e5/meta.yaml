@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/671780090936601859/6a78c10bedde4cc2a77e789be8cc24e5/artifacts
+end_time: 1743250086741
+entry_point_name: ''
+experiment_id: '671780090936601859'
+lifecycle_stage: active
+run_id: 6a78c10bedde4cc2a77e789be8cc24e5
+run_name: unequaled-newt-814
+run_uuid: 6a78c10bedde4cc2a77e789be8cc24e5
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743250086631
+status: 3
+tags: []
+user_id: pprie

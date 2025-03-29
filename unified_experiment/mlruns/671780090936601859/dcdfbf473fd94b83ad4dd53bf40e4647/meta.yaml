@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/671780090936601859/dcdfbf473fd94b83ad4dd53bf40e4647/artifacts
+end_time: 1743249751223
+entry_point_name: ''
+experiment_id: '671780090936601859'
+lifecycle_stage: active
+run_id: dcdfbf473fd94b83ad4dd53bf40e4647
+run_name: exultant-conch-991
+run_uuid: dcdfbf473fd94b83ad4dd53bf40e4647
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743249751127
+status: 3
+tags: []
+user_id: pprie

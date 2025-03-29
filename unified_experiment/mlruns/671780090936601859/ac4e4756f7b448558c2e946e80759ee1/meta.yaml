@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/671780090936601859/ac4e4756f7b448558c2e946e80759ee1/artifacts
+end_time: 1743246931396
+entry_point_name: ''
+experiment_id: '671780090936601859'
+lifecycle_stage: active
+run_id: ac4e4756f7b448558c2e946e80759ee1
+run_name: ambitious-newt-191
+run_uuid: ac4e4756f7b448558c2e946e80759ee1
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743246931323
+status: 3
+tags: []
+user_id: pprie

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/391650517118197406/4820833008a44ac2a3992c6beb8fd2a3/artifacts
+end_time: 1743250164767
+entry_point_name: ''
+experiment_id: '391650517118197406'
+lifecycle_stage: active
+run_id: 4820833008a44ac2a3992c6beb8fd2a3
+run_name: aged-bat-493
+run_uuid: 4820833008a44ac2a3992c6beb8fd2a3
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743250164676
+status: 3
+tags: []
+user_id: pprie

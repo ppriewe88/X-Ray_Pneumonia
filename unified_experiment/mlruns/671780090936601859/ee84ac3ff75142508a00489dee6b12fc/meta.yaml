@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/671780090936601859/ee84ac3ff75142508a00489dee6b12fc/artifacts
+end_time: 1743248889013
+entry_point_name: ''
+experiment_id: '671780090936601859'
+lifecycle_stage: active
+run_id: ee84ac3ff75142508a00489dee6b12fc
+run_name: painted-gnat-248
+run_uuid: ee84ac3ff75142508a00489dee6b12fc
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743248888924
+status: 3
+tags: []
+user_id: pprie

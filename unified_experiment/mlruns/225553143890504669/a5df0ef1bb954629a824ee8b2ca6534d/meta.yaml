@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/225553143890504669/a5df0ef1bb954629a824ee8b2ca6534d/artifacts
+end_time: 1743247110018
+entry_point_name: ''
+experiment_id: '225553143890504669'
+lifecycle_stage: active
+run_id: a5df0ef1bb954629a824ee8b2ca6534d
+run_name: shivering-ant-278
+run_uuid: a5df0ef1bb954629a824ee8b2ca6534d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743247109937
+status: 3
+tags: []
+user_id: pprie

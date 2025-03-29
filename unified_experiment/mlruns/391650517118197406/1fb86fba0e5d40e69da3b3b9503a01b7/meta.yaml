@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/391650517118197406/1fb86fba0e5d40e69da3b3b9503a01b7/artifacts
+end_time: 1743248190752
+entry_point_name: ''
+experiment_id: '391650517118197406'
+lifecycle_stage: active
+run_id: 1fb86fba0e5d40e69da3b3b9503a01b7
+run_name: dazzling-stag-141
+run_uuid: 1fb86fba0e5d40e69da3b3b9503a01b7
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743248190672
+status: 3
+tags: []
+user_id: pprie

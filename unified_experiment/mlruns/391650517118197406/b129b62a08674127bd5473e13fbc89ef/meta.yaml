@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/391650517118197406/b129b62a08674127bd5473e13fbc89ef/artifacts
+end_time: 1743248178133
+entry_point_name: ''
+experiment_id: '391650517118197406'
+lifecycle_stage: active
+run_id: b129b62a08674127bd5473e13fbc89ef
+run_name: angry-yak-843
+run_uuid: b129b62a08674127bd5473e13fbc89ef
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743248178055
+status: 3
+tags: []
+user_id: pprie

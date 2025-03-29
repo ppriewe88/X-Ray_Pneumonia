@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/391650517118197406/7f264a21a7f0426299d51f740a458c63/artifacts
+end_time: 1743249550250
+entry_point_name: ''
+experiment_id: '391650517118197406'
+lifecycle_stage: active
+run_id: 7f264a21a7f0426299d51f740a458c63
+run_name: treasured-crab-122
+run_uuid: 7f264a21a7f0426299d51f740a458c63
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743249550145
+status: 3
+tags: []
+user_id: pprie

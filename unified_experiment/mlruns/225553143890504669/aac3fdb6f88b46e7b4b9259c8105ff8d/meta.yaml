@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/225553143890504669/aac3fdb6f88b46e7b4b9259c8105ff8d/artifacts
+end_time: 1743248107262
+entry_point_name: ''
+experiment_id: '225553143890504669'
+lifecycle_stage: active
+run_id: aac3fdb6f88b46e7b4b9259c8105ff8d
+run_name: rogue-dove-234
+run_uuid: aac3fdb6f88b46e7b4b9259c8105ff8d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743248107193
+status: 3
+tags: []
+user_id: pprie

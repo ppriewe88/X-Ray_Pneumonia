@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/225553143890504669/ccf167e2b6ff422ca3d8259bc9141238/artifacts
+end_time: 1743246841936
+entry_point_name: ''
+experiment_id: '225553143890504669'
+lifecycle_stage: active
+run_id: ccf167e2b6ff422ca3d8259bc9141238
+run_name: dapper-conch-717
+run_uuid: ccf167e2b6ff422ca3d8259bc9141238
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743246841817
+status: 3
+tags: []
+user_id: pprie

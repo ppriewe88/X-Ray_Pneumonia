@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/391650517118197406/dfba70712ddd42fc951d4412272ea30f/artifacts
+end_time: 1743249274419
+entry_point_name: ''
+experiment_id: '391650517118197406'
+lifecycle_stage: active
+run_id: dfba70712ddd42fc951d4412272ea30f
+run_name: serious-mink-855
+run_uuid: dfba70712ddd42fc951d4412272ea30f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743249274296
+status: 3
+tags: []
+user_id: pprie

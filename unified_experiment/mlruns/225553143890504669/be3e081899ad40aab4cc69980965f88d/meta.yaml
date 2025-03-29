@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/225553143890504669/be3e081899ad40aab4cc69980965f88d/artifacts
+end_time: 1743249878033
+entry_point_name: ''
+experiment_id: '225553143890504669'
+lifecycle_stage: active
+run_id: be3e081899ad40aab4cc69980965f88d
+run_name: youthful-shad-806
+run_uuid: be3e081899ad40aab4cc69980965f88d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743249877952
+status: 3
+tags: []
+user_id: pprie

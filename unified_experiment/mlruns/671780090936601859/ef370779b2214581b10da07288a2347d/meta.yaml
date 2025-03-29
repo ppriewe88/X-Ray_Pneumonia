@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/671780090936601859/ef370779b2214581b10da07288a2347d/artifacts
+end_time: 1743250286422
+entry_point_name: ''
+experiment_id: '671780090936601859'
+lifecycle_stage: active
+run_id: ef370779b2214581b10da07288a2347d
+run_name: wistful-bee-409
+run_uuid: ef370779b2214581b10da07288a2347d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743250286315
+status: 3
+tags: []
+user_id: pprie

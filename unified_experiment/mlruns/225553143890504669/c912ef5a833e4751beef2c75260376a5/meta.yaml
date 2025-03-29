@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/225553143890504669/c912ef5a833e4751beef2c75260376a5/artifacts
+end_time: 1743250068656
+entry_point_name: ''
+experiment_id: '225553143890504669'
+lifecycle_stage: active
+run_id: c912ef5a833e4751beef2c75260376a5
+run_name: clean-conch-635
+run_uuid: c912ef5a833e4751beef2c75260376a5
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743250068576
+status: 3
+tags: []
+user_id: pprie

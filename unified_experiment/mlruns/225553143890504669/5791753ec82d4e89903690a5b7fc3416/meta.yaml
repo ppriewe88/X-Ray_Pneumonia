@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/225553143890504669/5791753ec82d4e89903690a5b7fc3416/artifacts
+end_time: 1743247103127
+entry_point_name: ''
+experiment_id: '225553143890504669'
+lifecycle_stage: active
+run_id: 5791753ec82d4e89903690a5b7fc3416
+run_name: bright-panda-481
+run_uuid: 5791753ec82d4e89903690a5b7fc3416
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743247102978
+status: 3
+tags: []
+user_id: pprie

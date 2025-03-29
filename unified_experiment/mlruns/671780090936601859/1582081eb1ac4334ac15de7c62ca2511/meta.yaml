@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/671780090936601859/1582081eb1ac4334ac15de7c62ca2511/artifacts
+end_time: 1743248553492
+entry_point_name: ''
+experiment_id: '671780090936601859'
+lifecycle_stage: active
+run_id: 1582081eb1ac4334ac15de7c62ca2511
+run_name: unleashed-ray-106
+run_uuid: 1582081eb1ac4334ac15de7c62ca2511
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743248553407
+status: 3
+tags: []
+user_id: pprie

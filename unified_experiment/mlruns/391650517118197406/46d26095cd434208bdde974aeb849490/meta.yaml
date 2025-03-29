@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/391650517118197406/46d26095cd434208bdde974aeb849490/artifacts
+end_time: 1743249474721
+entry_point_name: ''
+experiment_id: '391650517118197406'
+lifecycle_stage: active
+run_id: 46d26095cd434208bdde974aeb849490
+run_name: adaptable-duck-515
+run_uuid: 46d26095cd434208bdde974aeb849490
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743249474598
+status: 3
+tags: []
+user_id: pprie

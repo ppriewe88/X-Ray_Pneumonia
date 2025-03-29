@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/671780090936601859/bd871d696b9241ea83b9ef311dc65f30/artifacts
+end_time: 1743250042954
+entry_point_name: ''
+experiment_id: '671780090936601859'
+lifecycle_stage: active
+run_id: bd871d696b9241ea83b9ef311dc65f30
+run_name: resilient-mole-554
+run_uuid: bd871d696b9241ea83b9ef311dc65f30
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743250042852
+status: 3
+tags: []
+user_id: pprie

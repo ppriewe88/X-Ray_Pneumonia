@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/225553143890504669/9772fb24ba2f4987bf8b2f55a15d0063/artifacts
+end_time: 1743248634157
+entry_point_name: ''
+experiment_id: '225553143890504669'
+lifecycle_stage: active
+run_id: 9772fb24ba2f4987bf8b2f55a15d0063
+run_name: peaceful-hare-953
+run_uuid: 9772fb24ba2f4987bf8b2f55a15d0063
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743248634079
+status: 3
+tags: []
+user_id: pprie

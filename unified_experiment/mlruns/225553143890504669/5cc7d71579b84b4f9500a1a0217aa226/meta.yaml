@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/225553143890504669/5cc7d71579b84b4f9500a1a0217aa226/artifacts
+end_time: 1743246919687
+entry_point_name: ''
+experiment_id: '225553143890504669'
+lifecycle_stage: active
+run_id: 5cc7d71579b84b4f9500a1a0217aa226
+run_name: unique-kite-55
+run_uuid: 5cc7d71579b84b4f9500a1a0217aa226
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743246919606
+status: 3
+tags: []
+user_id: pprie

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/225553143890504669/3005f3e5d27a49e1828208397186585b/artifacts
+end_time: 1743249629329
+entry_point_name: ''
+experiment_id: '225553143890504669'
+lifecycle_stage: active
+run_id: 3005f3e5d27a49e1828208397186585b
+run_name: abundant-calf-780
+run_uuid: 3005f3e5d27a49e1828208397186585b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743249629249
+status: 3
+tags: []
+user_id: pprie

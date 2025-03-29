@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/391650517118197406/34f101ffded34ea38b6eee9831967848/artifacts
+end_time: 1743248197273
+entry_point_name: ''
+experiment_id: '391650517118197406'
+lifecycle_stage: active
+run_id: 34f101ffded34ea38b6eee9831967848
+run_name: upset-auk-220
+run_uuid: 34f101ffded34ea38b6eee9831967848
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743248197169
+status: 3
+tags: []
+user_id: pprie

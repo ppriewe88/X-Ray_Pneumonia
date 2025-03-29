@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/391650517118197406/1092555b4b774f7eac753cf9ad2fdc34/artifacts
+end_time: 1743249829976
+entry_point_name: ''
+experiment_id: '391650517118197406'
+lifecycle_stage: active
+run_id: 1092555b4b774f7eac753cf9ad2fdc34
+run_name: placid-bug-880
+run_uuid: 1092555b4b774f7eac753cf9ad2fdc34
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743249829884
+status: 3
+tags: []
+user_id: pprie

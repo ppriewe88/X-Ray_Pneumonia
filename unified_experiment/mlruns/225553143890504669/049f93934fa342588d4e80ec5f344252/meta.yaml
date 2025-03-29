@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/225553143890504669/049f93934fa342588d4e80ec5f344252/artifacts
+end_time: 1743249757938
+entry_point_name: ''
+experiment_id: '225553143890504669'
+lifecycle_stage: active
+run_id: 049f93934fa342588d4e80ec5f344252
+run_name: enchanting-seal-726
+run_uuid: 049f93934fa342588d4e80ec5f344252
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743249757854
+status: 3
+tags: []
+user_id: pprie

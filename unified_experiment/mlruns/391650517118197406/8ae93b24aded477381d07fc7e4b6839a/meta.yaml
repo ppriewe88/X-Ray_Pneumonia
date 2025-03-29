@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/391650517118197406/8ae93b24aded477381d07fc7e4b6839a/artifacts
+end_time: 1743249887010
+entry_point_name: ''
+experiment_id: '391650517118197406'
+lifecycle_stage: active
+run_id: 8ae93b24aded477381d07fc7e4b6839a
+run_name: funny-swan-971
+run_uuid: 8ae93b24aded477381d07fc7e4b6839a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743249886918
+status: 3
+tags: []
+user_id: pprie

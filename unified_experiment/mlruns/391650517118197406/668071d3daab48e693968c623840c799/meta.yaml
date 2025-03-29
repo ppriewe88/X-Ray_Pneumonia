@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/391650517118197406/668071d3daab48e693968c623840c799/artifacts
+end_time: 1743249220497
+entry_point_name: ''
+experiment_id: '391650517118197406'
+lifecycle_stage: active
+run_id: 668071d3daab48e693968c623840c799
+run_name: flawless-lark-748
+run_uuid: 668071d3daab48e693968c623840c799
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743249220412
+status: 3
+tags: []
+user_id: pprie

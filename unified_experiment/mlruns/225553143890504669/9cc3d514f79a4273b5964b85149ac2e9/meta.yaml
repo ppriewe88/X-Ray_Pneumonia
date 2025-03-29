@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/225553143890504669/9cc3d514f79a4273b5964b85149ac2e9/artifacts
+end_time: 1743248150772
+entry_point_name: ''
+experiment_id: '225553143890504669'
+lifecycle_stage: active
+run_id: 9cc3d514f79a4273b5964b85149ac2e9
+run_name: smiling-boar-645
+run_uuid: 9cc3d514f79a4273b5964b85149ac2e9
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743248150691
+status: 3
+tags: []
+user_id: pprie

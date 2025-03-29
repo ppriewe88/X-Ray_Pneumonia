@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/671780090936601859/2d51b8686f8b48d0b752a60a723c71ce/artifacts
+end_time: 1743246827436
+entry_point_name: ''
+experiment_id: '671780090936601859'
+lifecycle_stage: active
+run_id: 2d51b8686f8b48d0b752a60a723c71ce
+run_name: blushing-mule-162
+run_uuid: 2d51b8686f8b48d0b752a60a723c71ce
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743246827363
+status: 3
+tags: []
+user_id: pprie

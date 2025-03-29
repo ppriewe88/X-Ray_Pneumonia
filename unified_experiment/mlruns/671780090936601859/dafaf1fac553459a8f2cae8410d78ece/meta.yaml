@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/671780090936601859/dafaf1fac553459a8f2cae8410d78ece/artifacts
+end_time: 1743249210419
+entry_point_name: ''
+experiment_id: '671780090936601859'
+lifecycle_stage: active
+run_id: dafaf1fac553459a8f2cae8410d78ece
+run_name: salty-fox-815
+run_uuid: dafaf1fac553459a8f2cae8410d78ece
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743249210295
+status: 3
+tags: []
+user_id: pprie

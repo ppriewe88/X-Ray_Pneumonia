@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/225553143890504669/303e9df43e2a4c5a95e77ae22a823bac/artifacts
+end_time: 1743249539920
+entry_point_name: ''
+experiment_id: '225553143890504669'
+lifecycle_stage: active
+run_id: 303e9df43e2a4c5a95e77ae22a823bac
+run_name: auspicious-tern-979
+run_uuid: 303e9df43e2a4c5a95e77ae22a823bac
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743249539835
+status: 3
+tags: []
+user_id: pprie

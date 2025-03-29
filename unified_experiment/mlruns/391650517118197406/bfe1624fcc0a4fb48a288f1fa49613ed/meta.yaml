@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/391650517118197406/bfe1624fcc0a4fb48a288f1fa49613ed/artifacts
+end_time: 1743249388316
+entry_point_name: ''
+experiment_id: '391650517118197406'
+lifecycle_stage: active
+run_id: bfe1624fcc0a4fb48a288f1fa49613ed
+run_name: nebulous-shrimp-340
+run_uuid: bfe1624fcc0a4fb48a288f1fa49613ed
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743249388220
+status: 3
+tags: []
+user_id: pprie

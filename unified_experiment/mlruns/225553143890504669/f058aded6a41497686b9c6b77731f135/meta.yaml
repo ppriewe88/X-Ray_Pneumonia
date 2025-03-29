@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/225553143890504669/f058aded6a41497686b9c6b77731f135/artifacts
+end_time: 1743249994125
+entry_point_name: ''
+experiment_id: '225553143890504669'
+lifecycle_stage: active
+run_id: f058aded6a41497686b9c6b77731f135
+run_name: sedate-crane-868
+run_uuid: f058aded6a41497686b9c6b77731f135
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743249994032
+status: 3
+tags: []
+user_id: pprie

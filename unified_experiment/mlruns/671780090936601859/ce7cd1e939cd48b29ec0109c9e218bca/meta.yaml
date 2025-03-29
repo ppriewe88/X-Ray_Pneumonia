@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/671780090936601859/ce7cd1e939cd48b29ec0109c9e218bca/artifacts
+end_time: 1743249600898
+entry_point_name: ''
+experiment_id: '671780090936601859'
+lifecycle_stage: active
+run_id: ce7cd1e939cd48b29ec0109c9e218bca
+run_name: upbeat-cub-558
+run_uuid: ce7cd1e939cd48b29ec0109c9e218bca
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743249600798
+status: 3
+tags: []
+user_id: pprie

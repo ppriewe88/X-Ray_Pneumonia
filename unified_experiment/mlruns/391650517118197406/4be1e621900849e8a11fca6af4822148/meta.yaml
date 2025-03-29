@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/391650517118197406/4be1e621900849e8a11fca6af4822148/artifacts
+end_time: 1743249591780
+entry_point_name: ''
+experiment_id: '391650517118197406'
+lifecycle_stage: active
+run_id: 4be1e621900849e8a11fca6af4822148
+run_name: exultant-koi-229
+run_uuid: 4be1e621900849e8a11fca6af4822148
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743249591680
+status: 3
+tags: []
+user_id: pprie

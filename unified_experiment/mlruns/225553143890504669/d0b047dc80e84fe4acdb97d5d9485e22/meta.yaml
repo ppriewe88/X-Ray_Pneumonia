@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/225553143890504669/d0b047dc80e84fe4acdb97d5d9485e22/artifacts
+end_time: 1743249553983
+entry_point_name: ''
+experiment_id: '225553143890504669'
+lifecycle_stage: active
+run_id: d0b047dc80e84fe4acdb97d5d9485e22
+run_name: traveling-bass-946
+run_uuid: d0b047dc80e84fe4acdb97d5d9485e22
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743249553903
+status: 3
+tags: []
+user_id: pprie

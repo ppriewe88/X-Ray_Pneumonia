@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/671780090936601859/72f2304c5ede41dc840d7e61997d7c3a/artifacts
+end_time: 1743248913337
+entry_point_name: ''
+experiment_id: '671780090936601859'
+lifecycle_stage: active
+run_id: 72f2304c5ede41dc840d7e61997d7c3a
+run_name: capable-bird-449
+run_uuid: 72f2304c5ede41dc840d7e61997d7c3a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743248913250
+status: 3
+tags: []
+user_id: pprie

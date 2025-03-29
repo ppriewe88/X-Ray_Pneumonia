@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/671780090936601859/6969865748bf44759a891951aaf6e31d/artifacts
+end_time: 1743250061483
+entry_point_name: ''
+experiment_id: '671780090936601859'
+lifecycle_stage: active
+run_id: 6969865748bf44759a891951aaf6e31d
+run_name: overjoyed-kite-762
+run_uuid: 6969865748bf44759a891951aaf6e31d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743250061378
+status: 3
+tags: []
+user_id: pprie

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/391650517118197406/1d258c85049947b896a7649464317fec/artifacts
+end_time: 1743250183652
+entry_point_name: ''
+experiment_id: '391650517118197406'
+lifecycle_stage: active
+run_id: 1d258c85049947b896a7649464317fec
+run_name: puzzled-jay-512
+run_uuid: 1d258c85049947b896a7649464317fec
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743250183555
+status: 3
+tags: []
+user_id: pprie

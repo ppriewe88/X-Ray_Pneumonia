@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/671780090936601859/2bcefe2612d043b5bb0be75e99d49095/artifacts
+end_time: 1743248410559
+entry_point_name: ''
+experiment_id: '671780090936601859'
+lifecycle_stage: active
+run_id: 2bcefe2612d043b5bb0be75e99d49095
+run_name: illustrious-mink-133
+run_uuid: 2bcefe2612d043b5bb0be75e99d49095
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743248410475
+status: 3
+tags: []
+user_id: pprie

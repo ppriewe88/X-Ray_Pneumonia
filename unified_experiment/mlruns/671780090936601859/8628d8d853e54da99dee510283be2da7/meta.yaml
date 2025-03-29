@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/671780090936601859/8628d8d853e54da99dee510283be2da7/artifacts
+end_time: 1743247022201
+entry_point_name: ''
+experiment_id: '671780090936601859'
+lifecycle_stage: active
+run_id: 8628d8d853e54da99dee510283be2da7
+run_name: gregarious-goose-729
+run_uuid: 8628d8d853e54da99dee510283be2da7
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743247022128
+status: 3
+tags: []
+user_id: pprie

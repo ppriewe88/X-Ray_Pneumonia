@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/391650517118197406/40474b1d3d31499e9b70e0203524ec45/artifacts
+end_time: 1743249761004
+entry_point_name: ''
+experiment_id: '391650517118197406'
+lifecycle_stage: active
+run_id: 40474b1d3d31499e9b70e0203524ec45
+run_name: amazing-doe-669
+run_uuid: 40474b1d3d31499e9b70e0203524ec45
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743249760912
+status: 3
+tags: []
+user_id: pprie

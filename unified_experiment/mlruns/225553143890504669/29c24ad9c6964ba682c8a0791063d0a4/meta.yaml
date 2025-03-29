@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/225553143890504669/29c24ad9c6964ba682c8a0791063d0a4/artifacts
+end_time: 1743248442256
+entry_point_name: ''
+experiment_id: '225553143890504669'
+lifecycle_stage: active
+run_id: 29c24ad9c6964ba682c8a0791063d0a4
+run_name: melodic-dolphin-636
+run_uuid: 29c24ad9c6964ba682c8a0791063d0a4
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743248441814
+status: 3
+tags: []
+user_id: pprie

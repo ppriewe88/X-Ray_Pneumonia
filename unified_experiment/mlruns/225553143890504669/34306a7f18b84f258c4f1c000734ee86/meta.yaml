@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/225553143890504669/34306a7f18b84f258c4f1c000734ee86/artifacts
+end_time: 1743250080762
+entry_point_name: ''
+experiment_id: '225553143890504669'
+lifecycle_stage: active
+run_id: 34306a7f18b84f258c4f1c000734ee86
+run_name: fearless-jay-750
+run_uuid: 34306a7f18b84f258c4f1c000734ee86
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743250080680
+status: 3
+tags: []
+user_id: pprie

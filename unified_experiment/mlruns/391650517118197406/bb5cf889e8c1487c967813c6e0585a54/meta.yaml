@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/391650517118197406/bb5cf889e8c1487c967813c6e0585a54/artifacts
+end_time: 1743246837958
+entry_point_name: ''
+experiment_id: '391650517118197406'
+lifecycle_stage: active
+run_id: bb5cf889e8c1487c967813c6e0585a54
+run_name: awesome-fly-801
+run_uuid: bb5cf889e8c1487c967813c6e0585a54
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743246837883
+status: 3
+tags: []
+user_id: pprie

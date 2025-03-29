@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/671780090936601859/4ae8b65a12cc4285b212ff76c2c17264/artifacts
+end_time: 1743249910246
+entry_point_name: ''
+experiment_id: '671780090936601859'
+lifecycle_stage: active
+run_id: 4ae8b65a12cc4285b212ff76c2c17264
+run_name: crawling-quail-797
+run_uuid: 4ae8b65a12cc4285b212ff76c2c17264
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743249910147
+status: 3
+tags: []
+user_id: pprie

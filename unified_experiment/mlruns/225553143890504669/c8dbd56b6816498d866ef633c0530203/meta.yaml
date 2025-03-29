@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/225553143890504669/c8dbd56b6816498d866ef633c0530203/artifacts
+end_time: 1743249504479
+entry_point_name: ''
+experiment_id: '225553143890504669'
+lifecycle_stage: active
+run_id: c8dbd56b6816498d866ef633c0530203
+run_name: likeable-owl-375
+run_uuid: c8dbd56b6816498d866ef633c0530203
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743249504355
+status: 3
+tags: []
+user_id: pprie

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/225553143890504669/9d834ec3769442c1b623bdd550e1a5c2/artifacts
+end_time: 1743249385044
+entry_point_name: ''
+experiment_id: '225553143890504669'
+lifecycle_stage: active
+run_id: 9d834ec3769442c1b623bdd550e1a5c2
+run_name: nervous-fish-550
+run_uuid: 9d834ec3769442c1b623bdd550e1a5c2
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743249384954
+status: 3
+tags: []
+user_id: pprie

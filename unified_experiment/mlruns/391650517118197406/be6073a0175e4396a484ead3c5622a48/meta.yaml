@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/391650517118197406/be6073a0175e4396a484ead3c5622a48/artifacts
+end_time: 1743247268221
+entry_point_name: ''
+experiment_id: '391650517118197406'
+lifecycle_stage: active
+run_id: be6073a0175e4396a484ead3c5622a48
+run_name: polite-fly-525
+run_uuid: be6073a0175e4396a484ead3c5622a48
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743247268125
+status: 3
+tags: []
+user_id: pprie

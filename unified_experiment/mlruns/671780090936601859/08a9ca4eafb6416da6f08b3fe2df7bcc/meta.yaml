@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/671780090936601859/08a9ca4eafb6416da6f08b3fe2df7bcc/artifacts
+end_time: 1743249838647
+entry_point_name: ''
+experiment_id: '671780090936601859'
+lifecycle_stage: active
+run_id: 08a9ca4eafb6416da6f08b3fe2df7bcc
+run_name: useful-mare-466
+run_uuid: 08a9ca4eafb6416da6f08b3fe2df7bcc
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743249838548
+status: 3
+tags: []
+user_id: pprie

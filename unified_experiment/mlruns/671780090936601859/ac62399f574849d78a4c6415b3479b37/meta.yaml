@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/671780090936601859/ac62399f574849d78a4c6415b3479b37/artifacts
+end_time: 1743246871502
+entry_point_name: ''
+experiment_id: '671780090936601859'
+lifecycle_stage: active
+run_id: ac62399f574849d78a4c6415b3479b37
+run_name: serious-robin-996
+run_uuid: ac62399f574849d78a4c6415b3479b37
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743246871396
+status: 3
+tags: []
+user_id: pprie

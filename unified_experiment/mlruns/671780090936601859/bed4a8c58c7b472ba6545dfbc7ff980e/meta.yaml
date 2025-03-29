@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/671780090936601859/bed4a8c58c7b472ba6545dfbc7ff980e/artifacts
+end_time: 1743250229374
+entry_point_name: ''
+experiment_id: '671780090936601859'
+lifecycle_stage: active
+run_id: bed4a8c58c7b472ba6545dfbc7ff980e
+run_name: fun-elk-753
+run_uuid: bed4a8c58c7b472ba6545dfbc7ff980e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743250229273
+status: 3
+tags: []
+user_id: pprie

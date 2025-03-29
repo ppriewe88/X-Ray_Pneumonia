@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/225553143890504669/3894239bfe6f41d892260a4cd1902927/artifacts
+end_time: 1743246991918
+entry_point_name: ''
+experiment_id: '225553143890504669'
+lifecycle_stage: active
+run_id: 3894239bfe6f41d892260a4cd1902927
+run_name: adaptable-bass-147
+run_uuid: 3894239bfe6f41d892260a4cd1902927
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743246991848
+status: 3
+tags: []
+user_id: pprie

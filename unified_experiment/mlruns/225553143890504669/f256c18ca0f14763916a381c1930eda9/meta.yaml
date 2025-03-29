@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/225553143890504669/f256c18ca0f14763916a381c1930eda9/artifacts
+end_time: 1743247132317
+entry_point_name: ''
+experiment_id: '225553143890504669'
+lifecycle_stage: active
+run_id: f256c18ca0f14763916a381c1930eda9
+run_name: merciful-goose-159
+run_uuid: f256c18ca0f14763916a381c1930eda9
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743247132145
+status: 3
+tags: []
+user_id: pprie

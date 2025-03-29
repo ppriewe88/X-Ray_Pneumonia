@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/391650517118197406/57e8694ee2ea41ea8a5cdd3d1eefa2d7/artifacts
+end_time: 1743247333495
+entry_point_name: ''
+experiment_id: '391650517118197406'
+lifecycle_stage: active
+run_id: 57e8694ee2ea41ea8a5cdd3d1eefa2d7
+run_name: defiant-stag-329
+run_uuid: 57e8694ee2ea41ea8a5cdd3d1eefa2d7
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743247333380
+status: 3
+tags: []
+user_id: pprie

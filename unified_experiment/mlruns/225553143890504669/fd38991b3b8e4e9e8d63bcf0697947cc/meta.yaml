@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/225553143890504669/fd38991b3b8e4e9e8d63bcf0697947cc/artifacts
+end_time: 1743250261499
+entry_point_name: ''
+experiment_id: '225553143890504669'
+lifecycle_stage: active
+run_id: fd38991b3b8e4e9e8d63bcf0697947cc
+run_name: peaceful-vole-376
+run_uuid: fd38991b3b8e4e9e8d63bcf0697947cc
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743250261416
+status: 3
+tags: []
+user_id: pprie

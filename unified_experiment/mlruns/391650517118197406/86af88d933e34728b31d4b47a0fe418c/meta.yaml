@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/391650517118197406/86af88d933e34728b31d4b47a0fe418c/artifacts
+end_time: 1743249823817
+entry_point_name: ''
+experiment_id: '391650517118197406'
+lifecycle_stage: active
+run_id: 86af88d933e34728b31d4b47a0fe418c
+run_name: able-calf-487
+run_uuid: 86af88d933e34728b31d4b47a0fe418c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743249823727
+status: 3
+tags: []
+user_id: pprie

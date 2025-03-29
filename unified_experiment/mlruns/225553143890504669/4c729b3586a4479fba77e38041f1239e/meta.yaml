@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/225553143890504669/4c729b3586a4479fba77e38041f1239e/artifacts
+end_time: 1743250012457
+entry_point_name: ''
+experiment_id: '225553143890504669'
+lifecycle_stage: active
+run_id: 4c729b3586a4479fba77e38041f1239e
+run_name: intelligent-cat-611
+run_uuid: 4c729b3586a4479fba77e38041f1239e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743250012372
+status: 3
+tags: []
+user_id: pprie

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/225553143890504669/fe9542c80e8e4449b86d6ef07bce578d/artifacts
+end_time: 1743247329325
+entry_point_name: ''
+experiment_id: '225553143890504669'
+lifecycle_stage: active
+run_id: fe9542c80e8e4449b86d6ef07bce578d
+run_name: exultant-midge-410
+run_uuid: fe9542c80e8e4449b86d6ef07bce578d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743247329218
+status: 3
+tags: []
+user_id: pprie

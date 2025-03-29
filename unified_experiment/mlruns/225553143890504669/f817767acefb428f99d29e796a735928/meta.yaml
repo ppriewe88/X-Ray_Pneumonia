@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/225553143890504669/f817767acefb428f99d29e796a735928/artifacts
+end_time: 1743248523455
+entry_point_name: ''
+experiment_id: '225553143890504669'
+lifecycle_stage: active
+run_id: f817767acefb428f99d29e796a735928
+run_name: adaptable-conch-566
+run_uuid: f817767acefb428f99d29e796a735928
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743248523356
+status: 3
+tags: []
+user_id: pprie

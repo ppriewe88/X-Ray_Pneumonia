@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/671780090936601859/50aab58a47be492f8a4cff13e1b125f0/artifacts
+end_time: 1743248782611
+entry_point_name: ''
+experiment_id: '671780090936601859'
+lifecycle_stage: active
+run_id: 50aab58a47be492f8a4cff13e1b125f0
+run_name: melodic-mink-483
+run_uuid: 50aab58a47be492f8a4cff13e1b125f0
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743248782522
+status: 3
+tags: []
+user_id: pprie

@@ -11,7 +11,7 @@ base_url = "http://127.0.0.1:8000"
 endpoint = "/upload_image"
 url_with_endpoint = base_url + endpoint
 
-samples = 40  # Gesamtanzahl der Samples (10 pro Klasse)
+samples = 180  # Gesamtanzahl der Samples (10 pro Klasse)
 
 # Pfade zu den Bilderordnern
 normal_folder = Path(r"C:\Users\pprie\OneDrive\Dokumente\Python_Projekte\95_Xray\data\test\NORMAL")
@@ -46,4 +46,4 @@ for i, image_file in enumerate(all_selected_images):
             print(f"Error during sending. status code: {status_code}")
             print("Error details:", response.text)
 
-    print(f"Call no. {i+1} with class {data_class} done.")
+    print(f"Call no. {i+1} of {samples} with class {data_class} done.")

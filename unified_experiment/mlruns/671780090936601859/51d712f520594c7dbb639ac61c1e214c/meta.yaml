@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/671780090936601859/51d712f520594c7dbb639ac61c1e214c/artifacts
+end_time: 1743247184504
+entry_point_name: ''
+experiment_id: '671780090936601859'
+lifecycle_stage: active
+run_id: 51d712f520594c7dbb639ac61c1e214c
+run_name: bemused-bee-977
+run_uuid: 51d712f520594c7dbb639ac61c1e214c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743247184376
+status: 3
+tags: []
+user_id: pprie

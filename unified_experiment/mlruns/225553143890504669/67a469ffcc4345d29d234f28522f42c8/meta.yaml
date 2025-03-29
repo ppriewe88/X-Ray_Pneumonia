@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/225553143890504669/67a469ffcc4345d29d234f28522f42c8/artifacts
+end_time: 1743249967294
+entry_point_name: ''
+experiment_id: '225553143890504669'
+lifecycle_stage: active
+run_id: 67a469ffcc4345d29d234f28522f42c8
+run_name: caring-turtle-787
+run_uuid: 67a469ffcc4345d29d234f28522f42c8
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743249967144
+status: 3
+tags: []
+user_id: pprie

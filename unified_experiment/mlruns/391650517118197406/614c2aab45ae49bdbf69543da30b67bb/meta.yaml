@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/391650517118197406/614c2aab45ae49bdbf69543da30b67bb/artifacts
+end_time: 1743248755508
+entry_point_name: ''
+experiment_id: '391650517118197406'
+lifecycle_stage: active
+run_id: 614c2aab45ae49bdbf69543da30b67bb
+run_name: sassy-duck-853
+run_uuid: 614c2aab45ae49bdbf69543da30b67bb
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743248755427
+status: 3
+tags: []
+user_id: pprie

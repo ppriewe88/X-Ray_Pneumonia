@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/225553143890504669/569473e584b6419cb996fde2728a295b/artifacts
+end_time: 1743249338629
+entry_point_name: ''
+experiment_id: '225553143890504669'
+lifecycle_stage: active
+run_id: 569473e584b6419cb996fde2728a295b
+run_name: lyrical-colt-881
+run_uuid: 569473e584b6419cb996fde2728a295b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743249338551
+status: 3
+tags: []
+user_id: pprie

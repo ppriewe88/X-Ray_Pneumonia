@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/225553143890504669/5b1582a29c14432d99b583023cdb9aaf/artifacts
+end_time: 1743246862360
+entry_point_name: ''
+experiment_id: '225553143890504669'
+lifecycle_stage: active
+run_id: 5b1582a29c14432d99b583023cdb9aaf
+run_name: nervous-koi-237
+run_uuid: 5b1582a29c14432d99b583023cdb9aaf
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743246862239
+status: 3
+tags: []
+user_id: pprie

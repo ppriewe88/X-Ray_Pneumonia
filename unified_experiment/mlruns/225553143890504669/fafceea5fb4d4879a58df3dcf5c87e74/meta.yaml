@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/225553143890504669/fafceea5fb4d4879a58df3dcf5c87e74/artifacts
+end_time: 1743248746444
+entry_point_name: ''
+experiment_id: '225553143890504669'
+lifecycle_stage: active
+run_id: fafceea5fb4d4879a58df3dcf5c87e74
+run_name: capable-ray-152
+run_uuid: fafceea5fb4d4879a58df3dcf5c87e74
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743248746366
+status: 3
+tags: []
+user_id: pprie

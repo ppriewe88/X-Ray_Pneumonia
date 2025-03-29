@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/225553143890504669/ae988dad470c425fa1ae09427add9834/artifacts
+end_time: 1743249284132
+entry_point_name: ''
+experiment_id: '225553143890504669'
+lifecycle_stage: active
+run_id: ae988dad470c425fa1ae09427add9834
+run_name: bouncy-dolphin-741
+run_uuid: ae988dad470c425fa1ae09427add9834
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743249283993
+status: 3
+tags: []
+user_id: pprie

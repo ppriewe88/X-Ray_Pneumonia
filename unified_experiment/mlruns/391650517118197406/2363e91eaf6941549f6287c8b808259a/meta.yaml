@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/391650517118197406/2363e91eaf6941549f6287c8b808259a/artifacts
+end_time: 1743246964848
+entry_point_name: ''
+experiment_id: '391650517118197406'
+lifecycle_stage: active
+run_id: 2363e91eaf6941549f6287c8b808259a
+run_name: invincible-robin-968
+run_uuid: 2363e91eaf6941549f6287c8b808259a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743246964777
+status: 3
+tags: []
+user_id: pprie

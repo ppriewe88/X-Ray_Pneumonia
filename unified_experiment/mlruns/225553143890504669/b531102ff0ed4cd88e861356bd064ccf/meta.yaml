@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/225553143890504669/b531102ff0ed4cd88e861356bd064ccf/artifacts
+end_time: 1743249814589
+entry_point_name: ''
+experiment_id: '225553143890504669'
+lifecycle_stage: active
+run_id: b531102ff0ed4cd88e861356bd064ccf
+run_name: bald-jay-817
+run_uuid: b531102ff0ed4cd88e861356bd064ccf
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743249814508
+status: 3
+tags: []
+user_id: pprie

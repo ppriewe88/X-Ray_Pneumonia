@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/671780090936601859/cdc3d8e0bb374a588d4ac24a56fabde7/artifacts
+end_time: 1743246961353
+entry_point_name: ''
+experiment_id: '671780090936601859'
+lifecycle_stage: active
+run_id: cdc3d8e0bb374a588d4ac24a56fabde7
+run_name: nosy-mole-567
+run_uuid: cdc3d8e0bb374a588d4ac24a56fabde7
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743246961280
+status: 3
+tags: []
+user_id: pprie

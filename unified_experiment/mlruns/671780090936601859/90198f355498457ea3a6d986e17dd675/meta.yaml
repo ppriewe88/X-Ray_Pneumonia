@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/671780090936601859/90198f355498457ea3a6d986e17dd675/artifacts
+end_time: 1743249916926
+entry_point_name: ''
+experiment_id: '671780090936601859'
+lifecycle_stage: active
+run_id: 90198f355498457ea3a6d986e17dd675
+run_name: big-chimp-945
+run_uuid: 90198f355498457ea3a6d986e17dd675
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743249916816
+status: 3
+tags: []
+user_id: pprie

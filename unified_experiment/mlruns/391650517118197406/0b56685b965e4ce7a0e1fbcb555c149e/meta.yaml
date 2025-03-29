@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/391650517118197406/0b56685b965e4ce7a0e1fbcb555c149e/artifacts
+end_time: 1743249461663
+entry_point_name: ''
+experiment_id: '391650517118197406'
+lifecycle_stage: active
+run_id: 0b56685b965e4ce7a0e1fbcb555c149e
+run_name: chill-stag-409
+run_uuid: 0b56685b965e4ce7a0e1fbcb555c149e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743249461579
+status: 3
+tags: []
+user_id: pprie

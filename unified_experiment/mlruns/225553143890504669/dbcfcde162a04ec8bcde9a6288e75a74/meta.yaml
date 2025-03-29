@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/225553143890504669/dbcfcde162a04ec8bcde9a6288e75a74/artifacts
+end_time: 1743249853421
+entry_point_name: ''
+experiment_id: '225553143890504669'
+lifecycle_stage: active
+run_id: dbcfcde162a04ec8bcde9a6288e75a74
+run_name: brawny-lynx-888
+run_uuid: dbcfcde162a04ec8bcde9a6288e75a74
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743249853338
+status: 3
+tags: []
+user_id: pprie

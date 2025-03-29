@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/391650517118197406/bd37ebf8a0214bc18b1a37d2f9a9c4d9/artifacts
+end_time: 1743248165923
+entry_point_name: ''
+experiment_id: '391650517118197406'
+lifecycle_stage: active
+run_id: bd37ebf8a0214bc18b1a37d2f9a9c4d9
+run_name: angry-mule-810
+run_uuid: bd37ebf8a0214bc18b1a37d2f9a9c4d9
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743248165817
+status: 3
+tags: []
+user_id: pprie

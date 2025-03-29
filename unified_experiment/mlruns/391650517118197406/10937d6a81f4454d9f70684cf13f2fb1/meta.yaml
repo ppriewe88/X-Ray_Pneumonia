@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/391650517118197406/10937d6a81f4454d9f70684cf13f2fb1/artifacts
+end_time: 1743250065739
+entry_point_name: ''
+experiment_id: '391650517118197406'
+lifecycle_stage: active
+run_id: 10937d6a81f4454d9f70684cf13f2fb1
+run_name: smiling-shad-777
+run_uuid: 10937d6a81f4454d9f70684cf13f2fb1
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743250065648
+status: 3
+tags: []
+user_id: pprie

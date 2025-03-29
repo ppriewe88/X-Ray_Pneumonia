@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/225553143890504669/d750b7dbb2594cf68c2f505e3edcb017/artifacts
+end_time: 1743249704069
+entry_point_name: ''
+experiment_id: '225553143890504669'
+lifecycle_stage: active
+run_id: d750b7dbb2594cf68c2f505e3edcb017
+run_name: salty-seal-807
+run_uuid: d750b7dbb2594cf68c2f505e3edcb017
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743249703993
+status: 3
+tags: []
+user_id: pprie

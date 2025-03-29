@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/225553143890504669/dce005b25fba4cafa2cb12ac75cb50ef/artifacts
+end_time: 1743249511334
+entry_point_name: ''
+experiment_id: '225553143890504669'
+lifecycle_stage: active
+run_id: dce005b25fba4cafa2cb12ac75cb50ef
+run_name: monumental-ray-382
+run_uuid: dce005b25fba4cafa2cb12ac75cb50ef
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743249511235
+status: 3
+tags: []
+user_id: pprie

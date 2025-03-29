@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/391650517118197406/2b7c67a2840f472ea0069324260cd18c/artifacts
+end_time: 1743248295604
+entry_point_name: ''
+experiment_id: '391650517118197406'
+lifecycle_stage: active
+run_id: 2b7c67a2840f472ea0069324260cd18c
+run_name: gifted-jay-398
+run_uuid: 2b7c67a2840f472ea0069324260cd18c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743248295516
+status: 3
+tags: []
+user_id: pprie

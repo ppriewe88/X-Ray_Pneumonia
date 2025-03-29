@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/225553143890504669/1ebe03c6907c45bd926c15a3e6d6b492/artifacts
+end_time: 1743248181115
+entry_point_name: ''
+experiment_id: '225553143890504669'
+lifecycle_stage: active
+run_id: 1ebe03c6907c45bd926c15a3e6d6b492
+run_name: valuable-lynx-344
+run_uuid: 1ebe03c6907c45bd926c15a3e6d6b492
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743248181040
+status: 3
+tags: []
+user_id: pprie

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/391650517118197406/d95701f61402469f88c0bb7b5507ac89/artifacts
+end_time: 1743248320328
+entry_point_name: ''
+experiment_id: '391650517118197406'
+lifecycle_stage: active
+run_id: d95701f61402469f88c0bb7b5507ac89
+run_name: tasteful-crab-967
+run_uuid: d95701f61402469f88c0bb7b5507ac89
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743248320247
+status: 3
+tags: []
+user_id: pprie

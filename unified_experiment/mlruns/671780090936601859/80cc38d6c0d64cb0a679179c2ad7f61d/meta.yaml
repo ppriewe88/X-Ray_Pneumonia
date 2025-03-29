@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/671780090936601859/80cc38d6c0d64cb0a679179c2ad7f61d/artifacts
+end_time: 1743249846106
+entry_point_name: ''
+experiment_id: '671780090936601859'
+lifecycle_stage: active
+run_id: 80cc38d6c0d64cb0a679179c2ad7f61d
+run_name: victorious-cat-638
+run_uuid: 80cc38d6c0d64cb0a679179c2ad7f61d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743249846006
+status: 3
+tags: []
+user_id: pprie

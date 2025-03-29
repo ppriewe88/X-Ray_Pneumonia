@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/225553143890504669/d888bd3a778345798e99470038b338ed/artifacts
+end_time: 1743248280187
+entry_point_name: ''
+experiment_id: '225553143890504669'
+lifecycle_stage: active
+run_id: d888bd3a778345798e99470038b338ed
+run_name: secretive-hound-498
+run_uuid: d888bd3a778345798e99470038b338ed
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743248280113
+status: 3
+tags: []
+user_id: pprie

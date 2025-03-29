@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/671780090936601859/5d6a06e803b3422aba369b4d1864b5eb/artifacts
+end_time: 1743247015898
+entry_point_name: ''
+experiment_id: '671780090936601859'
+lifecycle_stage: active
+run_id: 5d6a06e803b3422aba369b4d1864b5eb
+run_name: silent-gnu-191
+run_uuid: 5d6a06e803b3422aba369b4d1864b5eb
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743247015828
+status: 3
+tags: []
+user_id: pprie

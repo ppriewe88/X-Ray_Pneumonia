@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/671780090936601859/9a3d608687624a6d850b670a1436328a/artifacts
+end_time: 1743248304232
+entry_point_name: ''
+experiment_id: '671780090936601859'
+lifecycle_stage: active
+run_id: 9a3d608687624a6d850b670a1436328a
+run_name: smiling-worm-222
+run_uuid: 9a3d608687624a6d850b670a1436328a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743248304142
+status: 3
+tags: []
+user_id: pprie

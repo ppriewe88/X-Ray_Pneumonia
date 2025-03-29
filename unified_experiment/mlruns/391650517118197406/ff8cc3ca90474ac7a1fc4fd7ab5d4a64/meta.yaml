@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/391650517118197406/ff8cc3ca90474ac7a1fc4fd7ab5d4a64/artifacts
+end_time: 1743248098161
+entry_point_name: ''
+experiment_id: '391650517118197406'
+lifecycle_stage: active
+run_id: ff8cc3ca90474ac7a1fc4fd7ab5d4a64
+run_name: shivering-hare-872
+run_uuid: ff8cc3ca90474ac7a1fc4fd7ab5d4a64
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743248098078
+status: 3
+tags: []
+user_id: pprie

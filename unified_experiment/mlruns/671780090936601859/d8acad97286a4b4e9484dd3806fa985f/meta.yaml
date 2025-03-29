@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/671780090936601859/d8acad97286a4b4e9484dd3806fa985f/artifacts
+end_time: 1743248267649
+entry_point_name: ''
+experiment_id: '671780090936601859'
+lifecycle_stage: active
+run_id: d8acad97286a4b4e9484dd3806fa985f
+run_name: stately-kit-514
+run_uuid: d8acad97286a4b4e9484dd3806fa985f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743248267572
+status: 3
+tags: []
+user_id: pprie

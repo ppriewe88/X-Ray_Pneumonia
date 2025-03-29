@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/671780090936601859/9f190eacaa6f4663ab7dd3e0e3563617/artifacts
+end_time: 1743248106744
+entry_point_name: ''
+experiment_id: '671780090936601859'
+lifecycle_stage: active
+run_id: 9f190eacaa6f4663ab7dd3e0e3563617
+run_name: mercurial-sponge-13
+run_uuid: 9f190eacaa6f4663ab7dd3e0e3563617
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743248106677
+status: 3
+tags: []
+user_id: pprie

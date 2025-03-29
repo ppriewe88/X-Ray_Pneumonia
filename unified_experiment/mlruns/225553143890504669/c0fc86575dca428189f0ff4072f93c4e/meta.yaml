@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/225553143890504669/c0fc86575dca428189f0ff4072f93c4e/artifacts
+end_time: 1743248926761
+entry_point_name: ''
+experiment_id: '225553143890504669'
+lifecycle_stage: active
+run_id: c0fc86575dca428189f0ff4072f93c4e
+run_name: bemused-auk-763
+run_uuid: c0fc86575dca428189f0ff4072f93c4e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743248926681
+status: 3
+tags: []
+user_id: pprie

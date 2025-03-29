@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/391650517118197406/61e85f954aa44a3f9057ef4e137a4679/artifacts
+end_time: 1743248743529
+entry_point_name: ''
+experiment_id: '391650517118197406'
+lifecycle_stage: active
+run_id: 61e85f954aa44a3f9057ef4e137a4679
+run_name: big-lark-374
+run_uuid: 61e85f954aa44a3f9057ef4e137a4679
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743248743441
+status: 3
+tags: []
+user_id: pprie

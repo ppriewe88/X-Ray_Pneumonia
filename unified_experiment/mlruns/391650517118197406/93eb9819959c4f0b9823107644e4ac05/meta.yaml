@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/391650517118197406/93eb9819959c4f0b9823107644e4ac05/artifacts
+end_time: 1743249381134
+entry_point_name: ''
+experiment_id: '391650517118197406'
+lifecycle_stage: active
+run_id: 93eb9819959c4f0b9823107644e4ac05
+run_name: sneaky-shrike-166
+run_uuid: 93eb9819959c4f0b9823107644e4ac05
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743249381049
+status: 3
+tags: []
+user_id: pprie

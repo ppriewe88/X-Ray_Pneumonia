@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/225553143890504669/72fff935671249ae95e2cf17ed15dbfb/artifacts
+end_time: 1743248554039
+entry_point_name: ''
+experiment_id: '225553143890504669'
+lifecycle_stage: active
+run_id: 72fff935671249ae95e2cf17ed15dbfb
+run_name: upbeat-perch-289
+run_uuid: 72fff935671249ae95e2cf17ed15dbfb
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743248553965
+status: 3
+tags: []
+user_id: pprie

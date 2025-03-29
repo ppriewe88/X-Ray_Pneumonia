@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/671780090936601859/ebd41b7767174173b01490de238c1a27/artifacts
+end_time: 1743247354892
+entry_point_name: ''
+experiment_id: '671780090936601859'
+lifecycle_stage: active
+run_id: ebd41b7767174173b01490de238c1a27
+run_name: sassy-colt-382
+run_uuid: ebd41b7767174173b01490de238c1a27
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743247354792
+status: 3
+tags: []
+user_id: pprie

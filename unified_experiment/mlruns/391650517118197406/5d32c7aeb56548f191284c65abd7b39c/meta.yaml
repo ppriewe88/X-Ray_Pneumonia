@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/391650517118197406/5d32c7aeb56548f191284c65abd7b39c/artifacts
+end_time: 1743247073977
+entry_point_name: ''
+experiment_id: '391650517118197406'
+lifecycle_stage: active
+run_id: 5d32c7aeb56548f191284c65abd7b39c
+run_name: omniscient-horse-219
+run_uuid: 5d32c7aeb56548f191284c65abd7b39c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743247073901
+status: 3
+tags: []
+user_id: pprie

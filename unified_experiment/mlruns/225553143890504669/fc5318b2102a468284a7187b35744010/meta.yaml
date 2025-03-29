@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/225553143890504669/fc5318b2102a468284a7187b35744010/artifacts
+end_time: 1743248591960
+entry_point_name: ''
+experiment_id: '225553143890504669'
+lifecycle_stage: active
+run_id: fc5318b2102a468284a7187b35744010
+run_name: abundant-penguin-90
+run_uuid: fc5318b2102a468284a7187b35744010
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743248591886
+status: 3
+tags: []
+user_id: pprie

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/391650517118197406/62365ea8f0754c57912846e9d7e175bd/artifacts
+end_time: 1743246953315
+entry_point_name: ''
+experiment_id: '391650517118197406'
+lifecycle_stage: active
+run_id: 62365ea8f0754c57912846e9d7e175bd
+run_name: gentle-moose-68
+run_uuid: 62365ea8f0754c57912846e9d7e175bd
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743246953244
+status: 3
+tags: []
+user_id: pprie

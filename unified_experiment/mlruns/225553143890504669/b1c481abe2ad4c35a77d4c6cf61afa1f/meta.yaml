@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/225553143890504669/b1c481abe2ad4c35a77d4c6cf61afa1f/artifacts
+end_time: 1743248119014
+entry_point_name: ''
+experiment_id: '225553143890504669'
+lifecycle_stage: active
+run_id: b1c481abe2ad4c35a77d4c6cf61afa1f
+run_name: bedecked-zebra-354
+run_uuid: b1c481abe2ad4c35a77d4c6cf61afa1f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743248118895
+status: 3
+tags: []
+user_id: pprie

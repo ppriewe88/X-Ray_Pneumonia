@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/671780090936601859/2bfe305731ad469289c5efa99002bbee/artifacts
+end_time: 1743246907464
+entry_point_name: ''
+experiment_id: '671780090936601859'
+lifecycle_stage: active
+run_id: 2bfe305731ad469289c5efa99002bbee
+run_name: fearless-mule-508
+run_uuid: 2bfe305731ad469289c5efa99002bbee
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743246907393
+status: 3
+tags: []
+user_id: pprie

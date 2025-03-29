@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/671780090936601859/379efa49a846448f97d36ee30503efe8/artifacts
+end_time: 1743249384428
+entry_point_name: ''
+experiment_id: '671780090936601859'
+lifecycle_stage: active
+run_id: 379efa49a846448f97d36ee30503efe8
+run_name: adorable-sloth-807
+run_uuid: 379efa49a846448f97d36ee30503efe8
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743249384331
+status: 3
+tags: []
+user_id: pprie

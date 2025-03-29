@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/671780090936601859/53173b301b654e5b8f428e7d75763121/artifacts
+end_time: 1743248143945
+entry_point_name: ''
+experiment_id: '671780090936601859'
+lifecycle_stage: active
+run_id: 53173b301b654e5b8f428e7d75763121
+run_name: wise-steed-363
+run_uuid: 53173b301b654e5b8f428e7d75763121
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743248143866
+status: 3
+tags: []
+user_id: pprie

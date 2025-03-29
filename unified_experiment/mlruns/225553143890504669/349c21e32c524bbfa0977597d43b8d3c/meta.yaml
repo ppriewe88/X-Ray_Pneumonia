@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/225553143890504669/349c21e32c524bbfa0977597d43b8d3c/artifacts
+end_time: 1743247040393
+entry_point_name: ''
+experiment_id: '225553143890504669'
+lifecycle_stage: active
+run_id: 349c21e32c524bbfa0977597d43b8d3c
+run_name: valuable-fly-941
+run_uuid: 349c21e32c524bbfa0977597d43b8d3c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743247040322
+status: 3
+tags: []
+user_id: pprie

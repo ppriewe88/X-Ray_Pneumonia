@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/391650517118197406/e14531faeba845f08f1774817b45d222/artifacts
+end_time: 1743249767015
+entry_point_name: ''
+experiment_id: '391650517118197406'
+lifecycle_stage: active
+run_id: e14531faeba845f08f1774817b45d222
+run_name: bold-stoat-403
+run_uuid: e14531faeba845f08f1774817b45d222
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743249766926
+status: 3
+tags: []
+user_id: pprie

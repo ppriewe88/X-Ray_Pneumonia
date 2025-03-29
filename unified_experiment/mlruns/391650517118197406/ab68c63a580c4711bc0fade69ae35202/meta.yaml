@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/391650517118197406/ab68c63a580c4711bc0fade69ae35202/artifacts
+end_time: 1743249557643
+entry_point_name: ''
+experiment_id: '391650517118197406'
+lifecycle_stage: active
+run_id: ab68c63a580c4711bc0fade69ae35202
+run_name: loud-ray-316
+run_uuid: ab68c63a580c4711bc0fade69ae35202
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743249557488
+status: 3
+tags: []
+user_id: pprie
