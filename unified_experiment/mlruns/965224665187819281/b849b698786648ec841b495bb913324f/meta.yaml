@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/965224665187819281/b849b698786648ec841b495bb913324f/artifacts
+end_time: 1743235500061
+entry_point_name: ''
+experiment_id: '965224665187819281'
+lifecycle_stage: active
+run_id: b849b698786648ec841b495bb913324f
+run_name: placid-hare-745
+run_uuid: b849b698786648ec841b495bb913324f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743235499985
+status: 3
+tags: []
+user_id: pprie

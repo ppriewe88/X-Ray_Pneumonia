@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/791804789027766870/fe56c6e95a7f4df891a1a1f1281c0161/artifacts
+end_time: 1743236948148
+entry_point_name: ''
+experiment_id: '791804789027766870'
+lifecycle_stage: active
+run_id: fe56c6e95a7f4df891a1a1f1281c0161
+run_name: handsome-kite-245
+run_uuid: fe56c6e95a7f4df891a1a1f1281c0161
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743236948098
+status: 3
+tags: []
+user_id: pprie

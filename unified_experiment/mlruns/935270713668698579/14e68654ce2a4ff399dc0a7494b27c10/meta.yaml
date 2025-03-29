@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/14e68654ce2a4ff399dc0a7494b27c10/artifacts
+end_time: 1743235901536
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: 14e68654ce2a4ff399dc0a7494b27c10
+run_name: enthused-jay-966
+run_uuid: 14e68654ce2a4ff399dc0a7494b27c10
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743235901460
+status: 3
+tags: []
+user_id: pprie

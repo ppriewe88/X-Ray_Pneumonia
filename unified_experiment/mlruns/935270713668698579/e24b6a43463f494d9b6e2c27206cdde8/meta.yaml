@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/935270713668698579/e24b6a43463f494d9b6e2c27206cdde8/artifacts
+end_time: 1743235878155
+entry_point_name: ''
+experiment_id: '935270713668698579'
+lifecycle_stage: active
+run_id: e24b6a43463f494d9b6e2c27206cdde8
+run_name: nimble-foal-737
+run_uuid: e24b6a43463f494d9b6e2c27206cdde8
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743235878090
+status: 3
+tags: []
+user_id: pprie

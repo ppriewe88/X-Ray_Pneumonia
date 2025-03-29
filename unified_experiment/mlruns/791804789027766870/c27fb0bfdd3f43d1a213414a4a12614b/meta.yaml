@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/791804789027766870/c27fb0bfdd3f43d1a213414a4a12614b/artifacts
+end_time: 1743234832948
+entry_point_name: ''
+experiment_id: '791804789027766870'
+lifecycle_stage: active
+run_id: c27fb0bfdd3f43d1a213414a4a12614b
+run_name: enchanting-goose-217
+run_uuid: c27fb0bfdd3f43d1a213414a4a12614b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743234832895
+status: 3
+tags: []
+user_id: pprie

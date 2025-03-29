@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/791804789027766870/a7010f86194f474c8eef1ae5a9ca9d10/artifacts
+end_time: 1743235899042
+entry_point_name: ''
+experiment_id: '791804789027766870'
+lifecycle_stage: active
+run_id: a7010f86194f474c8eef1ae5a9ca9d10
+run_name: sneaky-shark-950
+run_uuid: a7010f86194f474c8eef1ae5a9ca9d10
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743235898993
+status: 3
+tags: []
+user_id: pprie

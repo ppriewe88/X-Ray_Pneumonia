@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/791804789027766870/a96d1ec20ea04adb8e163b84d076f7d9/artifacts
+end_time: 1743235249494
+entry_point_name: ''
+experiment_id: '791804789027766870'
+lifecycle_stage: active
+run_id: a96d1ec20ea04adb8e163b84d076f7d9
+run_name: bedecked-pug-343
+run_uuid: a96d1ec20ea04adb8e163b84d076f7d9
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743235249441
+status: 3
+tags: []
+user_id: pprie
