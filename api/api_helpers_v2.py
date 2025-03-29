@@ -181,8 +181,12 @@ def get_performance_indicators(num_steps_short_term = 1):
 import csv
 import os
 from datetime import datetime
+import time
+from collections import deque
 
 def save_performance_data(alias, y_true, y_pred, accuracy, filename, model_version, model_tag):
+    # take time
+    start_time = time.time()
     # get absolute path of the project dir
     project_folder = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
 
@@ -196,7 +200,8 @@ def save_performance_data(alias, y_true, y_pred, accuracy, filename, model_versi
     # initializing standard values for cumulative and global values
     log_counter = 1
     cumulative_accuracy = accuracy
-    global_average = accuracy
+    global_accuracy = accuracy
+    last_25_accuracy = accuracy
     
     # Count existing rows to calculate log_counter
     if os.path.exists(file_path):
@@ -206,9 +211,15 @@ def save_performance_data(alias, y_true, y_pred, accuracy, filename, model_versi
             
             if rows:
                 last_row = rows[-1]
+                # get values of last row to determine cumulations and global accuracy
                 log_counter = int(last_row['log_counter']) + 1
                 cumulative_accuracy = float(last_row['cumulative_accuracy']) + accuracy
-                global_average = cumulative_accuracy / log_counter
+                global_accuracy = cumulative_accuracy / log_counter
+                # get last 24 values (or less, if not enough rows available)
+                num_previous = min(24, log_counter - 1)
+                relevant_rows = rows[-num_previous:]
+                relevant_accuracies = [float(row['accuracy']) for row in relevant_rows] + [accuracy]
+                last_25_accuracy = sum(relevant_accuracies) / len(relevant_accuracies)
 
     # prepare data
     data = {
@@ -218,7 +229,8 @@ def save_performance_data(alias, y_true, y_pred, accuracy, filename, model_versi
         'y_pred': y_pred,
         'accuracy': accuracy,
         'cumulative_accuracy': cumulative_accuracy,
-        'global_average': global_average,
+        'global_accuracy': global_accuracy,
+        'accuracy last 25 predictions': last_25_accuracy,
         'filename': filename,
         'model_version': model_version,
         'model_tag': model_tag
@@ -236,17 +248,11 @@ def save_performance_data(alias, y_true, y_pred, accuracy, filename, model_versi
         # Append new row
         writer.writerow(data)
     
-    print(f"Daten wurden in {file_path} gespeichert.")
+    end_time = time.time()
+    print("runtime performance logging: ", end_time-start_time)
+    print(f"Data has been saved in {file_path}.")
 
 ' XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
-
-
-
-
-
-
-
-
 
 
 
