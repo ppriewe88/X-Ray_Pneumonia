@@ -79,14 +79,14 @@ async def upload_image_and_integer(
                 "y_pred": y_pred,
                 "accuracy": int(label == np.around(y_pred))
                 }
-            #mlflow.log_metrics(metrics_dict)
+            mlflow.log_metrics(metrics_dict)
 
             # log model version and tag
             params = {
                 "model version": model_version,
                 "model tag": model_tag
                 }
-            #mlflow.log_params(params)
+            mlflow.log_params(params)
 
         # logging in csv-files
         save_performance_data(alias = alias, y_true = label.value, y_pred = y_pred, accuracy=int(label == np.around(y_pred)), filename="123.jpeg", model_version=model_version, model_tag=model_tag)
