@@ -210,8 +210,6 @@ def save_performance_data(alias, y_true, y_pred, accuracy, filename, model_versi
                 cumulative_accuracy = float(last_row['cumulative_accuracy']) + accuracy
                 global_average = cumulative_accuracy / log_counter
 
-    
-
     # prepare data
     data = {
         'log_counter': log_counter,

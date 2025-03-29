@@ -15,7 +15,7 @@ endpoint = "/upload_image"
 url_with_endpoint = base_url + endpoint
 
 ' ################# make n=samples calls for each class  #########################'
-samples = 300
+samples = 5
 
 for data_class in ["NORMAL", "PNEUMONIA"]:
     ' ################### folder to data (images) #################################'
