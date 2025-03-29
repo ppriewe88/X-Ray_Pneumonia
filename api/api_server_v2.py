@@ -3,7 +3,7 @@ import numpy as np
 from fastapi import FastAPI, UploadFile, File
 from enum import Enum
 import mlflow
-from api_helpers import resize_image, load_model_from_registry, make_prediction, return_verified_image_as_numpy_arr, get_modelversion_and_tag, get_performance_indicators
+from api_helpers_v2 import resize_image, load_model_from_registry, make_prediction, return_verified_image_as_numpy_arr, get_modelversion_and_tag, get_performance_indicators, save_performance_data
 
 
 """ 
@@ -70,23 +70,26 @@ async def upload_image_and_integer(
         # set experiment name for model (logging performance for each model in separate experiment)
         mlflow.set_experiment(f"performance {alias}")
         
-        # logging of metrics
-        with mlflow.start_run():
+        # # logging of metrics
+        # with mlflow.start_run():
             
-            # log the metrics
-            metrics_dict = {
-                "y_true": label,
-                "y_pred": y_pred,
-                "accuracy": int(label == np.around(y_pred))
-                }
-            mlflow.log_metrics(metrics_dict)
+        #     # log the metrics
+        #     metrics_dict = {
+        #         "y_true": label,
+        #         "y_pred": y_pred,
+        #         "accuracy": int(label == np.around(y_pred))
+        #         }
+        #     #mlflow.log_metrics(metrics_dict)
 
-            # log model version and tag
-            params = {
-                "model version": model_version,
-                "model tag": model_tag
-                }
-            mlflow.log_params(params)
+        #     # log model version and tag
+        #     params = {
+        #         "model version": model_version,
+        #         "model tag": model_tag
+        #         }
+        #     #mlflow.log_params(params)
+
+        # logging in csv-files
+        save_performance_data(alias = alias, y_true = label.value, y_pred = y_pred, accuracy=int(label == np.around(y_pred)), filename="123.jpeg", model_version=model_version, model_tag=model_tag)
 
         # update dictionary for API-output
         y_pred_as_str.update({f"prediction {alias}": str(y_pred)})
