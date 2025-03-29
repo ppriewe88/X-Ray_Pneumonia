@@ -3,8 +3,8 @@ import numpy as np
 from fastapi import FastAPI, UploadFile, File
 from enum import Enum
 import mlflow
-from api_helpers_v2 import resize_image, load_model_from_registry, make_prediction, return_verified_image_as_numpy_arr, get_modelversion_and_tag, get_performance_indicators, save_performance_data
-
+from api_helpers_v2 import resize_image, load_model_from_registry, make_prediction, return_verified_image_as_numpy_arr, get_modelversion_and_tag, get_performance_indicators, save_performance_data, generate_performance_summary
+import time
 
 """ 
 run app by running "fastapi run FastAPIserver.py" in terminal.
@@ -103,10 +103,62 @@ async def upload_image_and_integer(
 async def get_performance(
     last_n_predictions: int,
     ):
-    # gets the dictionary for all three model
-    perf_dict = get_performance_indicators(num_steps_short_term = last_n_predictions)
     
-    return perf_dict
+
+    # gets the dictionary for all three model
+    start_time1 = time.time()
+    perf_dict = get_performance_indicators(num_steps_short_term = last_n_predictions)
+    end_time1 = time.time()
+    time_old_review = end_time1 - start_time1
+
+
+    # in addition, show results generated from csv
+    start_time2 = time.time()
+    csv_perf_dict_champion = generate_performance_summary("champion")
+    csv_perf_dict_challenger = generate_performance_summary("challenger")
+    csv_perf_dict_baseline = generate_performance_summary("baseline")
+    merged_csv_dict = {
+    **csv_perf_dict_baseline,
+    **csv_perf_dict_challenger,
+    **csv_perf_dict_champion,
+    }
+    end_time2 = time.time()
+    time_new_review = end_time2 - start_time2
+
+    # generate response
+    response = {
+    "old_review": perf_dict,
+    "runtime old review": str(time_old_review),
+    "new_review": merged_csv_dict,
+    "runtime new review": time_new_review
+    }
+
+    return response
+
+
+' ############################### performance review endpoint CSV ###############################'
+# endpoint for uploading image
+@app.post("/get_performance_review_from_csv")
+async def get_performance():
+
+    # get results generated from csv
+    start_time2 = time.time()
+    csv_perf_dict_champion = generate_performance_summary("champion")
+    csv_perf_dict_challenger = generate_performance_summary("challenger")
+    csv_perf_dict_baseline = generate_performance_summary("baseline")
+    merged_csv_dict = {
+    **csv_perf_dict_baseline,
+    **csv_perf_dict_challenger,
+    **csv_perf_dict_champion,
+    }
+    end_time2 = time.time()
+    time_new_review = end_time2 - start_time2
+
+    response = {
+    "new_review": merged_csv_dict,
+    "runtime new review": time_new_review
+    }
+    return response
 
 
 ' ################################ host specification ################# '

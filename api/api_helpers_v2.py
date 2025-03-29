@@ -110,7 +110,7 @@ def get_modelversion_and_tag(model_name, model_alias):
     return version_number, tag_files[0].strip()
 
 def get_performance_indicators(num_steps_short_term = 1):
-    
+
     # setting the uri 
     client = MlflowClient(tracking_uri="http://127.0.0.1:8080")
         
@@ -182,7 +182,6 @@ import csv
 import os
 from datetime import datetime
 import time
-from collections import deque
 
 def save_performance_data(alias, y_true, y_pred, accuracy, filename, model_version, model_tag):
     # take time
@@ -230,7 +229,7 @@ def save_performance_data(alias, y_true, y_pred, accuracy, filename, model_versi
         'accuracy': accuracy,
         'cumulative_accuracy': cumulative_accuracy,
         'global_accuracy': global_accuracy,
-        'accuracy last 25 predictions': last_25_accuracy,
+        'accuracy_last_25_predictions': last_25_accuracy,
         'filename': filename,
         'model_version': model_version,
         'model_tag': model_tag
@@ -254,15 +253,63 @@ def save_performance_data(alias, y_true, y_pred, accuracy, filename, model_versi
 
 ' XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
 
+import json
 
+def generate_performance_summary(alias):
+    
+    # get path of csv-files
+    project_folder = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
+    tracking_path = os.path.join(project_folder, "unified_experiment/performance_tracking")
+    file_path = os.path.join(tracking_path, f'performance_data_{alias}.csv')
 
+    if not os.path.exists(file_path):
+        return "Error: CSV file not found."
 
+    # read
+    with open(file_path, 'r') as csvfile:
+        reader = csv.DictReader(csvfile)
+        rows = list(reader)
 
+    if not rows:
+        return "Error: CSV file is empty."
 
+    # get values of last prediction (cumulations, averages)
+    last_row = rows[-1]
+    total_predictions = int(last_row['log_counter'])
+    all_time_average = float(last_row['global_accuracy'])
+    last_25_average = float(last_row['accuracy_last_25_predictions'])
 
+    # initialize confusion matrix
+    true_positives = 0
+    true_negatives = 0
+    false_positives = 0
+    false_negatives = 0
+    
+    # convert to numpy
+    y_true = np.array([float(row['y_true']) for row in rows])
+    accuracy = np.array([float(row['accuracy']) for row in rows])
+    # calc confusion matrix
+    true_positives = np.sum((y_true == 1) & (accuracy == 1))
+    true_negatives = np.sum((y_true == 0) & (accuracy == 1))
+    false_positives = np.sum((y_true == 0) & (accuracy == 0))
+    false_negatives = np.sum((y_true == 1) & (accuracy == 0))
 
+    # generate result dict
+    summary = {
+        f"performance csv {alias}": {
+            "all-time average accuracy": f"{all_time_average:.4f}",
+            "total number of predictions": str(total_predictions),
+            "average accuracy last 25 predictions": f"{last_25_average:.4f}",
+            "pneumonia true positives": str(true_positives),
+            "pneumonia true negatives": str(true_negatives),
+            "pneumonia false positives": str(false_positives),
+            "pneumonia false negatives": str(false_negatives)
+        }
+    }
 
+    return summary
 
+' XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
 
 
 
