@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/391650517118197406/ec4138c79e244cf0a49e864313bd1428/artifacts
+end_time: 1743356452664
+entry_point_name: ''
+experiment_id: '391650517118197406'
+lifecycle_stage: active
+run_id: ec4138c79e244cf0a49e864313bd1428
+run_name: big-sloth-215
+run_uuid: ec4138c79e244cf0a49e864313bd1428
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743356452560
+status: 3
+tags: []
+user_id: pprie

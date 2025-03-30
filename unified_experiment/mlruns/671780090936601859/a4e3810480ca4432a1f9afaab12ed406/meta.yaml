@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/671780090936601859/a4e3810480ca4432a1f9afaab12ed406/artifacts
+end_time: 1743348483569
+entry_point_name: ''
+experiment_id: '671780090936601859'
+lifecycle_stage: active
+run_id: a4e3810480ca4432a1f9afaab12ed406
+run_name: kindly-zebra-450
+run_uuid: a4e3810480ca4432a1f9afaab12ed406
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743348483461
+status: 3
+tags: []
+user_id: pprie

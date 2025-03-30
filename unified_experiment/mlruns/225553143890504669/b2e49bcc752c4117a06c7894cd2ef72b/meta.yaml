@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/225553143890504669/b2e49bcc752c4117a06c7894cd2ef72b/artifacts
+end_time: 1743345075065
+entry_point_name: ''
+experiment_id: '225553143890504669'
+lifecycle_stage: active
+run_id: b2e49bcc752c4117a06c7894cd2ef72b
+run_name: skittish-mare-544
+run_uuid: b2e49bcc752c4117a06c7894cd2ef72b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743345074975
+status: 3
+tags: []
+user_id: pprie

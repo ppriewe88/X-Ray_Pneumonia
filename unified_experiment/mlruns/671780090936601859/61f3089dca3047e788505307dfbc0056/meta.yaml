@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/671780090936601859/61f3089dca3047e788505307dfbc0056/artifacts
+end_time: 1743349465750
+entry_point_name: ''
+experiment_id: '671780090936601859'
+lifecycle_stage: active
+run_id: 61f3089dca3047e788505307dfbc0056
+run_name: unique-skink-370
+run_uuid: 61f3089dca3047e788505307dfbc0056
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743349465633
+status: 3
+tags: []
+user_id: pprie

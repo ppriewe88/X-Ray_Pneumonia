@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/671780090936601859/4601f6a03d4343d985813f6151a91cce/artifacts
+end_time: 1743348281433
+entry_point_name: ''
+experiment_id: '671780090936601859'
+lifecycle_stage: active
+run_id: 4601f6a03d4343d985813f6151a91cce
+run_name: handsome-hen-669
+run_uuid: 4601f6a03d4343d985813f6151a91cce
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743348281318
+status: 3
+tags: []
+user_id: pprie

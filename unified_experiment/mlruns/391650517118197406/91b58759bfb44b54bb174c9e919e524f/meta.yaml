@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/391650517118197406/91b58759bfb44b54bb174c9e919e524f/artifacts
+end_time: 1743343849565
+entry_point_name: ''
+experiment_id: '391650517118197406'
+lifecycle_stage: active
+run_id: 91b58759bfb44b54bb174c9e919e524f
+run_name: bouncy-squid-418
+run_uuid: 91b58759bfb44b54bb174c9e919e524f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743343849464
+status: 3
+tags: []
+user_id: pprie

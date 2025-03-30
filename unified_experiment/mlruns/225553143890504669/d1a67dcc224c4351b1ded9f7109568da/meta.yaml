@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/225553143890504669/d1a67dcc224c4351b1ded9f7109568da/artifacts
+end_time: 1743347431703
+entry_point_name: ''
+experiment_id: '225553143890504669'
+lifecycle_stage: active
+run_id: d1a67dcc224c4351b1ded9f7109568da
+run_name: grandiose-grouse-552
+run_uuid: d1a67dcc224c4351b1ded9f7109568da
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743347431618
+status: 3
+tags: []
+user_id: pprie

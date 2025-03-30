@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/671780090936601859/dabb6b6608ca423c9cfdcbe89e806ef8/artifacts
+end_time: 1743343852492
+entry_point_name: ''
+experiment_id: '671780090936601859'
+lifecycle_stage: active
+run_id: dabb6b6608ca423c9cfdcbe89e806ef8
+run_name: rumbling-whale-193
+run_uuid: dabb6b6608ca423c9cfdcbe89e806ef8
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743343852375
+status: 3
+tags: []
+user_id: pprie

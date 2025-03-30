@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/391650517118197406/5fe4f283947e4277b2def11d2dc61d51/artifacts
+end_time: 1743346739982
+entry_point_name: ''
+experiment_id: '391650517118197406'
+lifecycle_stage: active
+run_id: 5fe4f283947e4277b2def11d2dc61d51
+run_name: amazing-penguin-194
+run_uuid: 5fe4f283947e4277b2def11d2dc61d51
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743346739884
+status: 3
+tags: []
+user_id: pprie

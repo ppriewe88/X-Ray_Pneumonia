@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/671780090936601859/a8a88ba8d66d4e9c9516d79a06810c3c/artifacts
+end_time: 1743349352719
+entry_point_name: ''
+experiment_id: '671780090936601859'
+lifecycle_stage: active
+run_id: a8a88ba8d66d4e9c9516d79a06810c3c
+run_name: merciful-ox-58
+run_uuid: a8a88ba8d66d4e9c9516d79a06810c3c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743349352612
+status: 3
+tags: []
+user_id: pprie

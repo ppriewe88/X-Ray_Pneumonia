@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/391650517118197406/b4ba0d5c2ef443d89462353722ccf560/artifacts
+end_time: 1743356259815
+entry_point_name: ''
+experiment_id: '391650517118197406'
+lifecycle_stage: active
+run_id: b4ba0d5c2ef443d89462353722ccf560
+run_name: stately-snake-786
+run_uuid: b4ba0d5c2ef443d89462353722ccf560
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743356259711
+status: 3
+tags: []
+user_id: pprie

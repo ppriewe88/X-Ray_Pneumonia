@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/225553143890504669/edb9f0612d9845a4ad4e7bab49f19640/artifacts
+end_time: 1743351244345
+entry_point_name: ''
+experiment_id: '225553143890504669'
+lifecycle_stage: active
+run_id: edb9f0612d9845a4ad4e7bab49f19640
+run_name: capricious-newt-125
+run_uuid: edb9f0612d9845a4ad4e7bab49f19640
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743351244219
+status: 3
+tags: []
+user_id: pprie

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/225553143890504669/ca48443a8bb24a83852da4e5b42265d6/artifacts
+end_time: 1743356224182
+entry_point_name: ''
+experiment_id: '225553143890504669'
+lifecycle_stage: active
+run_id: ca48443a8bb24a83852da4e5b42265d6
+run_name: rumbling-wasp-305
+run_uuid: ca48443a8bb24a83852da4e5b42265d6
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743356224089
+status: 3
+tags: []
+user_id: pprie

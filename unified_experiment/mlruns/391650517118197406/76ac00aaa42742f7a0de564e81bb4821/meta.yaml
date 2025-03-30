@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/391650517118197406/76ac00aaa42742f7a0de564e81bb4821/artifacts
+end_time: 1743354674209
+entry_point_name: ''
+experiment_id: '391650517118197406'
+lifecycle_stage: active
+run_id: 76ac00aaa42742f7a0de564e81bb4821
+run_name: rare-elk-860
+run_uuid: 76ac00aaa42742f7a0de564e81bb4821
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743354674094
+status: 3
+tags: []
+user_id: pprie

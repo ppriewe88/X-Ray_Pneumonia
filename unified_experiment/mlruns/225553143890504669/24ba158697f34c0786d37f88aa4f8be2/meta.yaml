@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/225553143890504669/24ba158697f34c0786d37f88aa4f8be2/artifacts
+end_time: 1743349353284
+entry_point_name: ''
+experiment_id: '225553143890504669'
+lifecycle_stage: active
+run_id: 24ba158697f34c0786d37f88aa4f8be2
+run_name: exultant-rat-508
+run_uuid: 24ba158697f34c0786d37f88aa4f8be2
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743349353198
+status: 3
+tags: []
+user_id: pprie

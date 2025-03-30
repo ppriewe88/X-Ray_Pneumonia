@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/671780090936601859/adf9a41ab78e4d538bea05f7c8b26766/artifacts
+end_time: 1743354676981
+entry_point_name: ''
+experiment_id: '671780090936601859'
+lifecycle_stage: active
+run_id: adf9a41ab78e4d538bea05f7c8b26766
+run_name: bright-fowl-923
+run_uuid: adf9a41ab78e4d538bea05f7c8b26766
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743354676869
+status: 3
+tags: []
+user_id: pprie

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/391650517118197406/fbc3ffe7e4ca4b57b40c515e59055c8e/artifacts
+end_time: 1743349453677
+entry_point_name: ''
+experiment_id: '391650517118197406'
+lifecycle_stage: active
+run_id: fbc3ffe7e4ca4b57b40c515e59055c8e
+run_name: exultant-worm-121
+run_uuid: fbc3ffe7e4ca4b57b40c515e59055c8e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743349453541
+status: 3
+tags: []
+user_id: pprie

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/225553143890504669/c84aec569a764d70919c4553aee96827/artifacts
+end_time: 1743346254463
+entry_point_name: ''
+experiment_id: '225553143890504669'
+lifecycle_stage: active
+run_id: c84aec569a764d70919c4553aee96827
+run_name: languid-snipe-650
+run_uuid: c84aec569a764d70919c4553aee96827
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743346254372
+status: 3
+tags: []
+user_id: pprie

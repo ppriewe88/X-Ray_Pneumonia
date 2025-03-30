@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/391650517118197406/e9ebff48163847fcb70e53ccec9cec63/artifacts
+end_time: 1743345071379
+entry_point_name: ''
+experiment_id: '391650517118197406'
+lifecycle_stage: active
+run_id: e9ebff48163847fcb70e53ccec9cec63
+run_name: smiling-rook-238
+run_uuid: e9ebff48163847fcb70e53ccec9cec63
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743345071258
+status: 3
+tags: []
+user_id: pprie

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/391650517118197406/53b9b03402e3418f95e7947868d99998/artifacts
+end_time: 1743349350302
+entry_point_name: ''
+experiment_id: '391650517118197406'
+lifecycle_stage: active
+run_id: 53b9b03402e3418f95e7947868d99998
+run_name: kindly-mole-536
+run_uuid: 53b9b03402e3418f95e7947868d99998
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743349350205
+status: 3
+tags: []
+user_id: pprie

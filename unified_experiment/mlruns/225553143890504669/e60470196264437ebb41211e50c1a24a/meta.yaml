@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/225553143890504669/e60470196264437ebb41211e50c1a24a/artifacts
+end_time: 1743348484136
+entry_point_name: ''
+experiment_id: '225553143890504669'
+lifecycle_stage: active
+run_id: e60470196264437ebb41211e50c1a24a
+run_name: lyrical-sow-962
+run_uuid: e60470196264437ebb41211e50c1a24a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743348484048
+status: 3
+tags: []
+user_id: pprie

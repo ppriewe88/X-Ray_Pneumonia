@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/671780090936601859/dea58d67bcfa42b386f676ed0f39ee91/artifacts
+end_time: 1743348236804
+entry_point_name: ''
+experiment_id: '671780090936601859'
+lifecycle_stage: active
+run_id: dea58d67bcfa42b386f676ed0f39ee91
+run_name: placid-penguin-275
+run_uuid: dea58d67bcfa42b386f676ed0f39ee91
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743348236697
+status: 3
+tags: []
+user_id: pprie

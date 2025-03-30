@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/671780090936601859/4f5ac130e9484171b2e72176b9f5cc79/artifacts
+end_time: 1743349641198
+entry_point_name: ''
+experiment_id: '671780090936601859'
+lifecycle_stage: active
+run_id: 4f5ac130e9484171b2e72176b9f5cc79
+run_name: grandiose-carp-570
+run_uuid: 4f5ac130e9484171b2e72176b9f5cc79
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743349641082
+status: 3
+tags: []
+user_id: pprie

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/225553143890504669/61788cee85e341098f878dddb46b798a/artifacts
+end_time: 1743347307100
+entry_point_name: ''
+experiment_id: '225553143890504669'
+lifecycle_stage: active
+run_id: 61788cee85e341098f878dddb46b798a
+run_name: colorful-steed-255
+run_uuid: 61788cee85e341098f878dddb46b798a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743347307001
+status: 3
+tags: []
+user_id: pprie
