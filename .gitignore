@@ -13,5 +13,7 @@ own_model_training/
 fine_tuning/
 
 unified_experiment/merge_experiments.py
+unified_experiment/mlartifacts
+unified_experiment/mlruns
 
 *.keras
