@@ -234,7 +234,8 @@ def save_performance_data_csv(alias, timestamp, y_true, y_pred, accuracy, filena
         'accuracy_last_25_predictions': last_25_accuracy,
         'filename': filename,
         'model_version': model_version,
-        'model_tag': model_tag
+        'model_tag': model_tag,
+        "model_alias": alias
     }
     
     # Check if file exists
