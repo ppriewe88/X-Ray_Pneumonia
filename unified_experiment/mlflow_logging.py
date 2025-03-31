@@ -6,34 +6,77 @@ import tensorflow as tf
 from tensorflow import keras
 import numpy as np
 
-
+# set the data path -> it's used later as a way to log the dataset 
+# alternative way to log the dataset: mlflow.log_input(...)
 DATA_PATH = os.path.join("..","data/train/")
 DATA_PATH = os.path.abspath(DATA_PATH)
 
 
 def log_mlflow_run(
-    model, # keras model to be logged
-    run_name, # string that will be displayed as the run title in mlflow GUI
+    model,
+    run_name,
     epochs,
 	batch_size,
 	loss_function,
-	optimizer, # string -> AA: or object, in my case
+	optimizer,
 	learning_rate,
 	top_dropout_rate,
-	model_summary_string, # string for model summary (comes from a helper function)
-    run_tag, # string explaining what this run was for
-    signature_batch, # needed for infer_signature
+	model_summary_string,
+    run_tag,
+    signature_batch,
     val_accuracy,
     test_accuracy,
-	custom_params, # must be a dictionary (eg for momentum, activation functions in the top layer)
-    fig # in case there are more figs
+	custom_params,
+    fig
 ):
     
+    '''
+    Function that takes as arguments all the parameters/artifacts to be logged in mlflow
+    and handles all the mlflow-related logging. Does not return anything.
+    
+    Parameters
+    ----------
+    model : keras.Model
+        Keras model to be logged.
+    run_name : str
+        String that will be displayed as the run title in the mlflow UI.
+    epochs : non-negative int
+        Number of epochs used for training.
+	batch_size : non-negative int
+        Batch size used in training.
+	loss_function : 
+        Loss function used in training.
+	optimizer : str/object
+        Optimizer used in training.
+	learning_rate : non-negative float
+        Learning rate used in training.
+	top_dropout_rate : float between 0 and 1
+        Dropout rate used in the dropout layer.
+	model_summary_string : str
+        String for model summary (comes from a helper function).
+    run_tag : str
+        String explaining what this run was for
+    signature_batch : tensorflow.python.data.ops.take_op._TakeDataset object
+        Needed for infer the signature of the model in mlflow.
+        Obtained from train_data.take(1).
+    val_accuracy : float between 0 and 1
+        Validation accuracy to be logged.
+    test_accuracy : float between 0 and 1
+        Test accuracy to be logged.
+	custom_params : dict
+        Dictionary for additional parameteres to be logged.
+    fig : matplotlib figure object
+        Figure to be logged.
+    
+    '''
+    
+    # Check if model is a keras model
     if not isinstance(model, keras.Model):
         raise TypeError(
-            f"Invalid model object. Expected tf.keras.Model or keras.Model, but got {type(model).__name__} instead."
+            f"Invalid model object. Expected keras.Model, but got {type(model).__name__} instead."
         )
     
+    # Save standard parameters in the dictionary
     params_dict = {
         "epochs": epochs,
         "batch size": batch_size,
@@ -44,6 +87,7 @@ def log_mlflow_run(
         "dataset": DATA_PATH
         }
     
+    # Add custom parameters to the parameter dict
     try:
         params_dict.update(custom_params)
     except:
@@ -83,14 +127,14 @@ def log_mlflow_run(
         # Set a tag that we can use to remind ourselves what this run was for
         mlflow.set_tag("Training Info", run_tag)
         
-        # Infer the model signature
-        
+        # Get input and output examples to help infer the signature of the model
         batch_as_nparray = list(signature_batch)[0][0].numpy()
         input_example = batch_as_nparray[0]
         input_example = np.expand_dims(input_example, axis=0)
         
         prediction_example = model(input_example).numpy()
-                
+        
+        # Infer the model signature                
         signature = mlflow.models.infer_signature(input_example, prediction_example)
 
         # Log the model
