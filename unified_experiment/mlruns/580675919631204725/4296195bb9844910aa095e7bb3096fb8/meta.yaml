@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/580675919631204725/4296195bb9844910aa095e7bb3096fb8/artifacts
+end_time: 1743429278662
+entry_point_name: ''
+experiment_id: '580675919631204725'
+lifecycle_stage: active
+run_id: 4296195bb9844910aa095e7bb3096fb8
+run_name: aged-goose-88
+run_uuid: 4296195bb9844910aa095e7bb3096fb8
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743429278573
+status: 3
+tags: []
+user_id: pprie

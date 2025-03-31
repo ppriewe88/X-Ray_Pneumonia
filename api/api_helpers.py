@@ -184,7 +184,7 @@ def get_performance_indicators(num_steps_short_term = 1):
     return performance_dictionary
 
 
-def save_performance_data_csv(alias, y_true, y_pred, accuracy, filename, model_version, model_tag):
+def save_performance_data_csv(alias, timestamp, y_true, y_pred, accuracy, filename, model_version, model_tag):
     
     # take time
     start_time = time.time()
@@ -226,7 +226,7 @@ def save_performance_data_csv(alias, y_true, y_pred, accuracy, filename, model_v
     # prepare data
     data = {
         'log_counter': log_counter,
-        'timestamp': datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+        'timestamp': timestamp,
         'y_true': y_true,
         'y_pred': y_pred,
         'accuracy': accuracy,

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/580675919631204725/dace299a39a944d5b67d909ebd84c6f7/artifacts
+end_time: 1743428926081
+entry_point_name: ''
+experiment_id: '580675919631204725'
+lifecycle_stage: active
+run_id: dace299a39a944d5b67d909ebd84c6f7
+run_name: enchanting-wren-230
+run_uuid: dace299a39a944d5b67d909ebd84c6f7
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743428925995
+status: 3
+tags: []
+user_id: pprie

@@ -5,6 +5,7 @@ from enum import Enum
 import mlflow
 from api_helpers import resize_image, load_model_from_registry, make_prediction, return_verified_image_as_numpy_arr, get_modelversion_and_tag, get_performance_indicators, save_performance_data_csv, generate_performance_summary
 import time
+from datetime import datetime
 from fastapi.middleware.cors import CORSMiddleware # middleware. requirement for frontend-suitable endpoint
 
 """ 
@@ -63,7 +64,7 @@ async def upload_image_and_integer(
     y_pred_as_str = {}
     
     model_name = "Xray_classifier"
-
+    api_timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     # ########################### load, predict, log metric for champion and challenger ################'
     for  alias in ["champion", "challenger", "baseline"]:
         
@@ -81,7 +82,7 @@ async def upload_image_and_integer(
         accuracy_pred = int(label == np.around(y_pred))
 
         # logging and precalculations in csv-file
-        logged_csv_data = save_performance_data_csv(alias = alias, y_true = label.value, y_pred = y_pred, accuracy=accuracy_pred, filename="123.jpeg", model_version=model_version, model_tag=model_tag)
+        logged_csv_data = save_performance_data_csv(alias = alias, timestamp = api_timestamp, y_true = label.value, y_pred = y_pred, accuracy=accuracy_pred, filename="123.jpeg", model_version=model_version, model_tag=model_tag)
 
         # set experiment name for model (logging performance for each model in separate experiment)
         mlflow.set_experiment(f"performance {alias}")
@@ -139,7 +140,7 @@ async def upload_image_and_integer(
     y_pred_as_str = {}
     
     model_name = "Xray_classifier"
-
+    api_timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     # ########################### load, predict, log metric for champion and challenger ################'
     for  alias in ["champion", "challenger", "baseline"]:
         
@@ -157,7 +158,7 @@ async def upload_image_and_integer(
         accuracy_pred = int(label == np.around(y_pred))
 
         # logging and precalculations in csv-file
-        logged_csv_data = save_performance_data_csv(alias = alias, y_true = label.value, y_pred = y_pred, accuracy=accuracy_pred, filename="123.jpeg", model_version=model_version, model_tag=model_tag)
+        logged_csv_data = save_performance_data_csv(alias = alias, timestamp = api_timestamp, y_true = label.value, y_pred = y_pred, accuracy=accuracy_pred, filename="123.jpeg", model_version=model_version, model_tag=model_tag)
 
         # set experiment name for model (logging performance for each model in separate experiment)
         mlflow.set_experiment(f"performance {alias}")
