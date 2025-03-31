@@ -97,7 +97,7 @@ async def upload_image_and_integer(
                 "y_pred": y_pred,
                 "accuracy": accuracy_pred,
                 'global accuracy': logged_csv_data["global_accuracy"],
-                'floating avg accuracy 25 runs': logged_csv_data["accuracy_last_25_predictions"]
+                'floating avg accuracy 50 runs': logged_csv_data["accuracy_last_50_predictions"]
                 }
             mlflow.log_metrics(metrics_dict)
 
@@ -173,7 +173,7 @@ async def upload_image_and_integer(
                 "y_pred": y_pred,
                 "accuracy": accuracy_pred,
                 'global accuracy': logged_csv_data["global_accuracy"],
-                'floating avg accuracy 25 runs': logged_csv_data["accuracy_last_25_predictions"]
+                'floating avg accuracy 50 runs': logged_csv_data["accuracy_last_50_predictions"]
                 }
             mlflow.log_metrics(metrics_dict)
 

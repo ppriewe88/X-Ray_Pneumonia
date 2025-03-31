@@ -204,7 +204,7 @@ def save_performance_data_csv(alias, timestamp, y_true, y_pred, accuracy, filena
     global_accuracy = accuracy
     last_25_accuracy = accuracy
     
-    # Count existing rows to calculate log_counter
+    # Calculate values
     if os.path.exists(file_path):
         with open(file_path, 'r') as csvfile:
             reader = csv.DictReader(csvfile)
@@ -217,10 +217,10 @@ def save_performance_data_csv(alias, timestamp, y_true, y_pred, accuracy, filena
                 cumulative_accuracy = float(last_row['cumulative_accuracy']) + accuracy
                 global_accuracy = cumulative_accuracy / log_counter
                 # get last 24 values (or less, if not enough rows available)
-                num_previous = min(24, log_counter - 1)
+                num_previous = min(49, log_counter - 1)
                 relevant_rows = rows[-num_previous:]
                 relevant_accuracies = [float(row['accuracy']) for row in relevant_rows] + [accuracy]
-                last_25_accuracy = sum(relevant_accuracies) / len(relevant_accuracies)
+                last_50_accuracy = sum(relevant_accuracies) / len(relevant_accuracies)
 
     # prepare data
     data = {
@@ -231,7 +231,7 @@ def save_performance_data_csv(alias, timestamp, y_true, y_pred, accuracy, filena
         'accuracy': accuracy,
         'cumulative_accuracy': cumulative_accuracy,
         'global_accuracy': global_accuracy,
-        'accuracy_last_25_predictions': last_25_accuracy,
+        'accuracy_last_50_predictions': last_50_accuracy,
         'filename': filename,
         'model_version': model_version,
         'model_tag': model_tag,
@@ -280,7 +280,7 @@ def generate_performance_summary(alias):
     last_row = rows[-1]
     total_predictions = int(last_row['log_counter'])
     all_time_average = float(last_row['global_accuracy'])
-    last_25_average = float(last_row['accuracy_last_25_predictions'])
+    last_25_average = float(last_row['accuracy_last_50_predictions'])
 
     # initialize confusion matrix
     true_positives = 0
@@ -302,7 +302,7 @@ def generate_performance_summary(alias):
         f"performance csv {alias}": {
             "all-time average accuracy": f"{all_time_average:.4f}",
             "total number of predictions": str(total_predictions),
-            "average accuracy last 25 predictions": f"{last_25_average:.4f}",
+            "average accuracy last 50 predictions": f"{last_25_average:.4f}",
             "pneumonia true positives": str(true_positives),
             "pneumonia true negatives": str(true_negatives),
             "pneumonia false positives": str(false_positives),
