@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/794896239834989588/55fe4091573443aeb1278045f1edcc2c/artifacts
+end_time: 1743428236130
+entry_point_name: ''
+experiment_id: '794896239834989588'
+lifecycle_stage: active
+run_id: 55fe4091573443aeb1278045f1edcc2c
+run_name: secretive-cat-118
+run_uuid: 55fe4091573443aeb1278045f1edcc2c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743428235995
+status: 3
+tags: []
+user_id: pprie

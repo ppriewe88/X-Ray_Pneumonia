@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/640990970734742975/e8196ceb488546dbb90097a6148ffe3e/artifacts
+end_time: 1743428032189
+entry_point_name: ''
+experiment_id: '640990970734742975'
+lifecycle_stage: active
+run_id: e8196ceb488546dbb90097a6148ffe3e
+run_name: caring-trout-108
+run_uuid: e8196ceb488546dbb90097a6148ffe3e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743428032073
+status: 3
+tags: []
+user_id: pprie

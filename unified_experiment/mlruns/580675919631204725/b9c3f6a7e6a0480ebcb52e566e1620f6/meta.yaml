@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/580675919631204725/b9c3f6a7e6a0480ebcb52e566e1620f6/artifacts
+end_time: 1743428035957
+entry_point_name: ''
+experiment_id: '580675919631204725'
+lifecycle_stage: active
+run_id: b9c3f6a7e6a0480ebcb52e566e1620f6
+run_name: bedecked-rat-345
+run_uuid: b9c3f6a7e6a0480ebcb52e566e1620f6
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743428035842
+status: 3
+tags: []
+user_id: pprie

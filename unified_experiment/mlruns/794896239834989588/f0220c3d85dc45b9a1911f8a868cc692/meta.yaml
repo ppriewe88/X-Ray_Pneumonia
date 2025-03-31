@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/794896239834989588/f0220c3d85dc45b9a1911f8a868cc692/artifacts
+end_time: 1743428037112
+entry_point_name: ''
+experiment_id: '794896239834989588'
+lifecycle_stage: active
+run_id: f0220c3d85dc45b9a1911f8a868cc692
+run_name: upset-lark-358
+run_uuid: f0220c3d85dc45b9a1911f8a868cc692
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743428036986
+status: 3
+tags: []
+user_id: pprie
