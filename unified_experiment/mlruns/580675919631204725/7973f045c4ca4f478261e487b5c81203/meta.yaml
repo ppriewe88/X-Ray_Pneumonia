@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/580675919631204725/7973f045c4ca4f478261e487b5c81203/artifacts
+end_time: 1743415764904
+entry_point_name: ''
+experiment_id: '580675919631204725'
+lifecycle_stage: active
+run_id: 7973f045c4ca4f478261e487b5c81203
+run_name: mysterious-fly-357
+run_uuid: 7973f045c4ca4f478261e487b5c81203
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743415764824
+status: 3
+tags: []
+user_id: pprie

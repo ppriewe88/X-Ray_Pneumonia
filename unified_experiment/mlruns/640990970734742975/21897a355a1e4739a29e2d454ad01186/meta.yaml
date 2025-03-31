@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/640990970734742975/21897a355a1e4739a29e2d454ad01186/artifacts
+end_time: 1743415869958
+entry_point_name: ''
+experiment_id: '640990970734742975'
+lifecycle_stage: active
+run_id: 21897a355a1e4739a29e2d454ad01186
+run_name: angry-dog-79
+run_uuid: 21897a355a1e4739a29e2d454ad01186
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743415869844
+status: 3
+tags: []
+user_id: pprie

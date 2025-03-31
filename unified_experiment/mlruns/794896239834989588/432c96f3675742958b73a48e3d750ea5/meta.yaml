@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/794896239834989588/432c96f3675742958b73a48e3d750ea5/artifacts
+end_time: 1743415680469
+entry_point_name: ''
+experiment_id: '794896239834989588'
+lifecycle_stage: active
+run_id: 432c96f3675742958b73a48e3d750ea5
+run_name: wistful-mouse-38
+run_uuid: 432c96f3675742958b73a48e3d750ea5
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743415680383
+status: 3
+tags: []
+user_id: pprie

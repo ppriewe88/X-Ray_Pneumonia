@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/794896239834989588/486f39392e62464896a46cfd14bb5947/artifacts
+end_time: 1743415759370
+entry_point_name: ''
+experiment_id: '794896239834989588'
+lifecycle_stage: active
+run_id: 486f39392e62464896a46cfd14bb5947
+run_name: defiant-crow-720
+run_uuid: 486f39392e62464896a46cfd14bb5947
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743415759288
+status: 3
+tags: []
+user_id: pprie

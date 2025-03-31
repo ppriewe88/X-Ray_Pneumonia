@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/580675919631204725/8079c9bed5b54f328ff814470277252a/artifacts
+end_time: 1743415840933
+entry_point_name: ''
+experiment_id: '580675919631204725'
+lifecycle_stage: active
+run_id: 8079c9bed5b54f328ff814470277252a
+run_name: adventurous-elk-363
+run_uuid: 8079c9bed5b54f328ff814470277252a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743415840852
+status: 3
+tags: []
+user_id: pprie

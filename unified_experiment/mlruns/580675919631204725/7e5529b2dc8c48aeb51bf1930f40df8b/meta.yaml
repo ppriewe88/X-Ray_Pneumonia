@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/580675919631204725/7e5529b2dc8c48aeb51bf1930f40df8b/artifacts
+end_time: 1743415654304
+entry_point_name: ''
+experiment_id: '580675919631204725'
+lifecycle_stage: active
+run_id: 7e5529b2dc8c48aeb51bf1930f40df8b
+run_name: placid-flea-10
+run_uuid: 7e5529b2dc8c48aeb51bf1930f40df8b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743415654212
+status: 3
+tags: []
+user_id: pprie

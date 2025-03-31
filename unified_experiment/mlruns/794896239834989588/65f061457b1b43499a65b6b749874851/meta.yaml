@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/794896239834989588/65f061457b1b43499a65b6b749874851/artifacts
+end_time: 1743415686983
+entry_point_name: ''
+experiment_id: '794896239834989588'
+lifecycle_stage: active
+run_id: 65f061457b1b43499a65b6b749874851
+run_name: indecisive-wolf-393
+run_uuid: 65f061457b1b43499a65b6b749874851
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743415686889
+status: 3
+tags: []
+user_id: pprie

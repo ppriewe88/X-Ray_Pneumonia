@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/580675919631204725/6c3bb41225f2410b97aa72c6f02abefb/artifacts
+end_time: 1743415095449
+entry_point_name: ''
+experiment_id: '580675919631204725'
+lifecycle_stage: active
+run_id: 6c3bb41225f2410b97aa72c6f02abefb
+run_name: useful-ray-482
+run_uuid: 6c3bb41225f2410b97aa72c6f02abefb
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743415095369
+status: 3
+tags: []
+user_id: pprie

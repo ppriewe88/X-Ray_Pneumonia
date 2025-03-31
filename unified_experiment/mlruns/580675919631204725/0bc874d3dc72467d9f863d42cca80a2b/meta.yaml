@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/580675919631204725/0bc874d3dc72467d9f863d42cca80a2b/artifacts
+end_time: 1743415922288
+entry_point_name: ''
+experiment_id: '580675919631204725'
+lifecycle_stage: active
+run_id: 0bc874d3dc72467d9f863d42cca80a2b
+run_name: youthful-roo-402
+run_uuid: 0bc874d3dc72467d9f863d42cca80a2b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743415922206
+status: 3
+tags: []
+user_id: pprie

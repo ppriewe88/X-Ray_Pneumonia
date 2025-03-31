@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/794896239834989588/b4c501d189e0470b9a7ae3782e103558/artifacts
+end_time: 1743415854489
+entry_point_name: ''
+experiment_id: '794896239834989588'
+lifecycle_stage: active
+run_id: b4c501d189e0470b9a7ae3782e103558
+run_name: calm-sow-954
+run_uuid: b4c501d189e0470b9a7ae3782e103558
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743415854397
+status: 3
+tags: []
+user_id: pprie

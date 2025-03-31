@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/580675919631204725/b2605c970a6e431798e27b50caead1bb/artifacts
+end_time: 1743415828705
+entry_point_name: ''
+experiment_id: '580675919631204725'
+lifecycle_stage: active
+run_id: b2605c970a6e431798e27b50caead1bb
+run_name: able-zebra-948
+run_uuid: b2605c970a6e431798e27b50caead1bb
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743415828621
+status: 3
+tags: []
+user_id: pprie

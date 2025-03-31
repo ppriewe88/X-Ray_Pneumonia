@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/794896239834989588/9e6172b14972454999ecd639f71e4c3f/artifacts
+end_time: 1743415829301
+entry_point_name: ''
+experiment_id: '794896239834989588'
+lifecycle_stage: active
+run_id: 9e6172b14972454999ecd639f71e4c3f
+run_name: smiling-donkey-351
+run_uuid: 9e6172b14972454999ecd639f71e4c3f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743415829214
+status: 3
+tags: []
+user_id: pprie

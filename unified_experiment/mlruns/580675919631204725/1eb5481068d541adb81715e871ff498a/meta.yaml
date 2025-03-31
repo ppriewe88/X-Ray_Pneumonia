@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/580675919631204725/1eb5481068d541adb81715e871ff498a/artifacts
+end_time: 1743415076226
+entry_point_name: ''
+experiment_id: '580675919631204725'
+lifecycle_stage: active
+run_id: 1eb5481068d541adb81715e871ff498a
+run_name: languid-grub-402
+run_uuid: 1eb5481068d541adb81715e871ff498a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743415076121
+status: 3
+tags: []
+user_id: pprie

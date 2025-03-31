@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/640990970734742975/e7b5242a501d46319c20b011767b7e37/artifacts
+end_time: 1743415716527
+entry_point_name: ''
+experiment_id: '640990970734742975'
+lifecycle_stage: active
+run_id: e7b5242a501d46319c20b011767b7e37
+run_name: upset-koi-664
+run_uuid: e7b5242a501d46319c20b011767b7e37
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743415716444
+status: 3
+tags: []
+user_id: pprie

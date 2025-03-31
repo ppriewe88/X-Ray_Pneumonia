@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/794896239834989588/81726754fd444c999fcdebfc255f88b1/artifacts
+end_time: 1743415885514
+entry_point_name: ''
+experiment_id: '794896239834989588'
+lifecycle_stage: active
+run_id: 81726754fd444c999fcdebfc255f88b1
+run_name: sincere-perch-213
+run_uuid: 81726754fd444c999fcdebfc255f88b1
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743415885425
+status: 3
+tags: []
+user_id: pprie

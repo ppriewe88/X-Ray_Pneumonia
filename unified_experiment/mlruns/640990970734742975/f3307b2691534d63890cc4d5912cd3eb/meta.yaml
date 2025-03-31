@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/640990970734742975/f3307b2691534d63890cc4d5912cd3eb/artifacts
+end_time: 1743415851384
+entry_point_name: ''
+experiment_id: '640990970734742975'
+lifecycle_stage: active
+run_id: f3307b2691534d63890cc4d5912cd3eb
+run_name: monumental-shoat-301
+run_uuid: f3307b2691534d63890cc4d5912cd3eb
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743415851304
+status: 3
+tags: []
+user_id: pprie

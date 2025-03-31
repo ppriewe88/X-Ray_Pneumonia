@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/794896239834989588/8e86dc291bf84642ac2ee5f046c7ae7a/artifacts
+end_time: 1743415955636
+entry_point_name: ''
+experiment_id: '794896239834989588'
+lifecycle_stage: active
+run_id: 8e86dc291bf84642ac2ee5f046c7ae7a
+run_name: sneaky-finch-260
+run_uuid: 8e86dc291bf84642ac2ee5f046c7ae7a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743415955514
+status: 3
+tags: []
+user_id: pprie

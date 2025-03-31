@@ -6,6 +6,11 @@ import io
 import os
 from fastapi import HTTPException
 from mlflow import MlflowClient
+import csv
+import os
+from datetime import datetime
+import time
+import json
 
 
 def resize_image(
@@ -82,8 +87,10 @@ def get_modelversion_and_tag(model_name, model_alias):
 
     # get absolute path of the project dir
     project_folder = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
+    
     # get path of model folder and aliases subfolder (both are used later)
     aliases_path = os.path.join(project_folder ,f"unified_experiment/mlruns/models/{model_name}/aliases")
+    
     # aliases_path = os.path.abspath(os.path.join("..",f"unified_experiment/mlruns/models/{model_name}/aliases"))
     model_path = os.path.dirname(aliases_path)
     
@@ -111,14 +118,16 @@ def get_modelversion_and_tag(model_name, model_alias):
     return version_number, tag_files[0].strip()
 
 def get_performance_indicators(num_steps_short_term = 1):
-    
+
     # setting the uri 
     client = MlflowClient(tracking_uri="http://127.0.0.1:8080")
         
     # get the three experiments: performance + (baseline, challenger, champion)
+    print("getting experiment list")
     experiments = list(client.search_experiments())[:3]
     
     # get experiment names and ids
+    print("getting experiment names and ids")
     exp_names = [exp.name for exp in experiments]
     exp_ids = [exp.experiment_id for exp in experiments]
     
@@ -127,7 +136,7 @@ def get_performance_indicators(num_steps_short_term = 1):
     
     # for loop to calculate perfomance indicators for each experiment/model
     for exp_name, exp_id in zip(exp_names, exp_ids):
-        
+        print(f"{exp_name}: getting runs")
         # all runs in the experiment with exp_id, i.e. number of predictions made
         runs = list(client.search_runs(experiment_ids = exp_id))
         
@@ -136,8 +145,11 @@ def get_performance_indicators(num_steps_short_term = 1):
         
         # extract lists of accuracies, timestamps, and correct prediction labels
         # within the given experiment (0 = no pneumonia, 1 = pneumonia)
+        print(f"{exp_name}: starting extraction of accuracies")
         accuracies = [list(client.get_metric_history(run_id = run_id, key = 'accuracy'))[0].value for run_id in run_ids]
+        print(f"{exp_name}: starting extraction of time stamps")
         timestamps = [list(client.get_metric_history(run_id = run_id, key = 'accuracy'))[0].timestamp for run_id in run_ids]
+        print(f"{exp_name}: starting extraction of input_labels")
         y_true = [list(client.get_metric_history(run_id = run_id, key = 'y_true'))[0].value for run_id in run_ids]
         
         # 1st row is timestamps, 2nd is accuracies and so on
@@ -147,28 +159,160 @@ def get_performance_indicators(num_steps_short_term = 1):
         # get rid of the timestamps row
         values_array = values_array[1:]
         
+        print(f"{exp_name}: calc confusion matrix")
         # calculate confusion matrix elements
         true_positives = np.sum((values_array[0] == 1) & (values_array[1] == 1))
         true_negatives = np.sum((values_array[0] == 1) & (values_array[1] == 0))
-        false_positives = np.sum((values_array[0] == 0) & (values_array[1] == 1))
-        false_negatives = np.sum((values_array[0] == 0) & (values_array[1] == 0))
-        
+        false_negatives = np.sum((values_array[0] == 0) & (values_array[1] == 1))
+        false_positives = np.sum((values_array[0] == 0) & (values_array[1] == 0))
         
         # save the experiment information in a dictionary
         exp_dictionary ={
-            'all-time average accuracy': np.mean(values_array[0]),
-            'total number of predictions': len(accuracies),
-            f'average accuracy for the last {num_steps_short_term} predictions': np.mean(values_array[0,-num_steps_short_term:]),
-            'pneumonia true positives': true_positives,
-            'pneumonia false positives': false_positives, 
-            'pneumonia false negatives': false_negatives,
-            'pneumonia true negatives': true_negatives, 
+            'all-time average accuracy': str(np.mean(values_array[0])),
+            'total number of predictions': str(len(accuracies)),
+            f'average accuracy for the last {num_steps_short_term} predictions': str(np.mean(values_array[0,-num_steps_short_term:])),
+            'pneumonia true positives': str(true_positives),
+            'pneumonia true negatives': str(true_negatives),
+            'pneumonia false positives': str(false_positives), 
+            'pneumonia false negatives': str(false_negatives),
+             
         }
         
         # update the dictionary containing the information from the other experiments
         performance_dictionary.update({exp_name: exp_dictionary})
           
     return performance_dictionary
+
+
+def save_performance_data_csv(alias, y_true, y_pred, accuracy, filename, model_version, model_tag):
+    
+    # take time
+    start_time = time.time()
+
+    # get absolute path of the project dir
+    project_folder = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
+
+    # get path of folder for performance tracking
+    tracking_path = os.path.join(project_folder ,f"unified_experiment/performance_tracking")
+    
+    # make folder, if not existing yet
+    os.makedirs(tracking_path, exist_ok=True)
+    file_path = os.path.join(tracking_path, f'performance_data_{alias}.csv')
+    
+    # initializing standard values for cumulative and global values
+    log_counter = 1
+    cumulative_accuracy = accuracy
+    global_accuracy = accuracy
+    last_25_accuracy = accuracy
+    
+    # Count existing rows to calculate log_counter
+    if os.path.exists(file_path):
+        with open(file_path, 'r') as csvfile:
+            reader = csv.DictReader(csvfile)
+            rows = list(reader)
+            
+            if rows:
+                last_row = rows[-1]
+                # get values of last row to determine cumulations and global accuracy
+                log_counter = int(last_row['log_counter']) + 1
+                cumulative_accuracy = float(last_row['cumulative_accuracy']) + accuracy
+                global_accuracy = cumulative_accuracy / log_counter
+                # get last 24 values (or less, if not enough rows available)
+                num_previous = min(24, log_counter - 1)
+                relevant_rows = rows[-num_previous:]
+                relevant_accuracies = [float(row['accuracy']) for row in relevant_rows] + [accuracy]
+                last_25_accuracy = sum(relevant_accuracies) / len(relevant_accuracies)
+
+    # prepare data
+    data = {
+        'log_counter': log_counter,
+        'timestamp': datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+        'y_true': y_true,
+        'y_pred': y_pred,
+        'accuracy': accuracy,
+        'cumulative_accuracy': cumulative_accuracy,
+        'global_accuracy': global_accuracy,
+        'accuracy_last_25_predictions': last_25_accuracy,
+        'filename': filename,
+        'model_version': model_version,
+        'model_tag': model_tag
+    }
+    
+    # Check if file exists
+    file_exists = os.path.isfile(file_path)
+    
+    # Open file in append mode
+    with open(file_path, 'a', newline='') as csvfile:
+        writer = csv.DictWriter(csvfile, fieldnames=data.keys())
+        # Write header only if file is newly created
+        if not file_exists:
+            writer.writeheader()
+        # Append new row
+        writer.writerow(data)
+    
+    end_time = time.time()
+    print("runtime performance logging: ", end_time-start_time)
+    print(f"Data has been saved in {file_path}.")
+
+    return data
+
+
+
+def generate_performance_summary(alias):
+    
+    # get path of csv-files
+    project_folder = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
+    tracking_path = os.path.join(project_folder, "unified_experiment/performance_tracking")
+    file_path = os.path.join(tracking_path, f'performance_data_{alias}.csv')
+
+    if not os.path.exists(file_path):
+        return "Error: CSV file not found."
+
+    # read
+    with open(file_path, 'r') as csvfile:
+        reader = csv.DictReader(csvfile)
+        rows = list(reader)
+
+    if not rows:
+        return "Error: CSV file is empty."
+
+    # get values of last prediction (cumulations, averages)
+    last_row = rows[-1]
+    total_predictions = int(last_row['log_counter'])
+    all_time_average = float(last_row['global_accuracy'])
+    last_25_average = float(last_row['accuracy_last_25_predictions'])
+
+    # initialize confusion matrix
+    true_positives = 0
+    true_negatives = 0
+    false_positives = 0
+    false_negatives = 0
+    
+    # convert to numpy
+    y_true = np.array([float(row['y_true']) for row in rows])
+    accuracy = np.array([float(row['accuracy']) for row in rows])
+    # calc confusion matrix
+    true_positives = np.sum((y_true == 1) & (accuracy == 1))
+    true_negatives = np.sum((y_true == 0) & (accuracy == 1))
+    false_positives = np.sum((y_true == 0) & (accuracy == 0))
+    false_negatives = np.sum((y_true == 1) & (accuracy == 0))
+
+    # generate result dict
+    summary = {
+        f"performance csv {alias}": {
+            "all-time average accuracy": f"{all_time_average:.4f}",
+            "total number of predictions": str(total_predictions),
+            "average accuracy last 25 predictions": f"{last_25_average:.4f}",
+            "pneumonia true positives": str(true_positives),
+            "pneumonia true negatives": str(true_negatives),
+            "pneumonia false positives": str(false_positives),
+            "pneumonia false negatives": str(false_negatives)
+        }
+    }
+
+    return summary
+
+
 
 # if run locally (for tests)
 if __name__ == "__main__":

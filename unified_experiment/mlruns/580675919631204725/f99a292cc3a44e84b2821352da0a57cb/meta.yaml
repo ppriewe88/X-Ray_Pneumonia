@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/580675919631204725/f99a292cc3a44e84b2821352da0a57cb/artifacts
+end_time: 1743415822406
+entry_point_name: ''
+experiment_id: '580675919631204725'
+lifecycle_stage: active
+run_id: f99a292cc3a44e84b2821352da0a57cb
+run_name: handsome-tern-584
+run_uuid: f99a292cc3a44e84b2821352da0a57cb
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743415822322
+status: 3
+tags: []
+user_id: pprie

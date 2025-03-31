@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/580675919631204725/efa88801bd7b46adafecd65fe8cc77df/artifacts
+end_time: 1743415815859
+entry_point_name: ''
+experiment_id: '580675919631204725'
+lifecycle_stage: active
+run_id: efa88801bd7b46adafecd65fe8cc77df
+run_name: treasured-boar-155
+run_uuid: efa88801bd7b46adafecd65fe8cc77df
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743415815770
+status: 3
+tags: []
+user_id: pprie

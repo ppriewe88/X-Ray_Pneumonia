@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/794896239834989588/740af715d7d74957b458a2c132c0c633/artifacts
+end_time: 1743415064575
+entry_point_name: ''
+experiment_id: '794896239834989588'
+lifecycle_stage: active
+run_id: 740af715d7d74957b458a2c132c0c633
+run_name: funny-frog-594
+run_uuid: 740af715d7d74957b458a2c132c0c633
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743415064490
+status: 3
+tags: []
+user_id: pprie

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/640990970734742975/ab01abbecfe840599e0cc175ad37d8cc/artifacts
+end_time: 1743415703439
+entry_point_name: ''
+experiment_id: '640990970734742975'
+lifecycle_stage: active
+run_id: ab01abbecfe840599e0cc175ad37d8cc
+run_name: painted-yak-648
+run_uuid: ab01abbecfe840599e0cc175ad37d8cc
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743415703350
+status: 3
+tags: []
+user_id: pprie

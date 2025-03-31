@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/794896239834989588/537e0bea6cae476ab4044601ec229492/artifacts
+end_time: 1743415778025
+entry_point_name: ''
+experiment_id: '794896239834989588'
+lifecycle_stage: active
+run_id: 537e0bea6cae476ab4044601ec229492
+run_name: righteous-grub-98
+run_uuid: 537e0bea6cae476ab4044601ec229492
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743415777896
+status: 3
+tags: []
+user_id: pprie

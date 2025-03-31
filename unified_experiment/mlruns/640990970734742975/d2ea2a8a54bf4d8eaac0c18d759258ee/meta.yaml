@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/640990970734742975/d2ea2a8a54bf4d8eaac0c18d759258ee/artifacts
+end_time: 1743415844858
+entry_point_name: ''
+experiment_id: '640990970734742975'
+lifecycle_stage: active
+run_id: d2ea2a8a54bf4d8eaac0c18d759258ee
+run_name: stylish-robin-251
+run_uuid: d2ea2a8a54bf4d8eaac0c18d759258ee
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743415844776
+status: 3
+tags: []
+user_id: pprie

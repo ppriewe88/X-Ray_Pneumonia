@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/794896239834989588/e0be9f82c7464c5792272f6ac911792e/artifacts
+end_time: 1743415949275
+entry_point_name: ''
+experiment_id: '794896239834989588'
+lifecycle_stage: active
+run_id: e0be9f82c7464c5792272f6ac911792e
+run_name: enchanting-cub-532
+run_uuid: e0be9f82c7464c5792272f6ac911792e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743415949191
+status: 3
+tags: []
+user_id: pprie

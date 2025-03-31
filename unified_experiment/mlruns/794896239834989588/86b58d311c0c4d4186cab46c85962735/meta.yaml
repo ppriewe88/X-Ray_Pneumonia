@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/794896239834989588/86b58d311c0c4d4186cab46c85962735/artifacts
+end_time: 1743415929171
+entry_point_name: ''
+experiment_id: '794896239834989588'
+lifecycle_stage: active
+run_id: 86b58d311c0c4d4186cab46c85962735
+run_name: rogue-cow-133
+run_uuid: 86b58d311c0c4d4186cab46c85962735
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743415929076
+status: 3
+tags: []
+user_id: pprie
