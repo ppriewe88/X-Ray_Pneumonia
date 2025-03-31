@@ -85,13 +85,16 @@ def return_verified_image_as_numpy_arr(image_bytes):
 
 def get_modelversion_and_tag(model_name, model_alias):
 
-   # get absolute path of the project dir
+    # get absolute path of the project dir
     project_folder = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
+    
     # get path of model folder and aliases subfolder (both are used later)
     aliases_path = os.path.join(project_folder ,f"unified_experiment/mlruns/models/{model_name}/aliases")
+    
     # aliases_path = os.path.abspath(os.path.join("..",f"unified_experiment/mlruns/models/{model_name}/aliases"))
     model_path = os.path.dirname(aliases_path)
-
+    
+    
     # find alias (containing version number) in aliases subfolder, read version number from found file
     alias_file = os.path.join(aliases_path, model_alias)
     with open(alias_file, 'r') as file:
