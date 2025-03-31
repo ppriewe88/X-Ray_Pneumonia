@@ -8,9 +8,8 @@ from fastapi import HTTPException
 from mlflow import MlflowClient
 import csv
 import os
-from datetime import datetime
+import datetime
 import time
-import json
 
 
 def resize_image(
@@ -311,6 +310,7 @@ def generate_performance_summary(alias):
     }
 
     return summary
+
 
 
 

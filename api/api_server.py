@@ -26,7 +26,7 @@ class Label(int, Enum):
 # make app
 app = FastAPI(title = "Deploying an ML Model for Pneumonia Detection")
 
-" ################################ new middleware block for frontend-suitable endpoint ###############"
+" ################################ middleware block for frontend-suitable endpoint ###############"
 # CORS-Middleware hfor communication with frontend
 app.add_middleware(
     CORSMiddleware,
@@ -115,7 +115,7 @@ async def upload_image_and_integer(
     
     return y_pred_as_str
 
-' ############################### frontend-suitable endpoint ###############################'
+' ############################### frontend-suitable model serving/prediction endpoint ###############################'
 # endpoint for uploading image
 @app.post("/upload_image_from_frontend")
 async def upload_image_and_integer( 
