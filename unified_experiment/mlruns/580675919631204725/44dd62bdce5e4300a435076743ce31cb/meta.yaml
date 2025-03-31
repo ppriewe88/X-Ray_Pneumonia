@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/580675919631204725/44dd62bdce5e4300a435076743ce31cb/artifacts
+end_time: 1743415784083
+entry_point_name: ''
+experiment_id: '580675919631204725'
+lifecycle_stage: active
+run_id: 44dd62bdce5e4300a435076743ce31cb
+run_name: traveling-shoat-854
+run_uuid: 44dd62bdce5e4300a435076743ce31cb
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743415784002
+status: 3
+tags: []
+user_id: pprie

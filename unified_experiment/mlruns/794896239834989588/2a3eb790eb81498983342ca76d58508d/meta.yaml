@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/794896239834989588/2a3eb790eb81498983342ca76d58508d/artifacts
+end_time: 1743415848287
+entry_point_name: ''
+experiment_id: '794896239834989588'
+lifecycle_stage: active
+run_id: 2a3eb790eb81498983342ca76d58508d
+run_name: clumsy-shrike-39
+run_uuid: 2a3eb790eb81498983342ca76d58508d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743415848180
+status: 3
+tags: []
+user_id: pprie

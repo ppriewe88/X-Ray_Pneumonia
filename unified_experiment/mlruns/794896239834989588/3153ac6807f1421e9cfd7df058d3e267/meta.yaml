@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/794896239834989588/3153ac6807f1421e9cfd7df058d3e267/artifacts
+end_time: 1743415790722
+entry_point_name: ''
+experiment_id: '794896239834989588'
+lifecycle_stage: active
+run_id: 3153ac6807f1421e9cfd7df058d3e267
+run_name: zealous-snake-766
+run_uuid: 3153ac6807f1421e9cfd7df058d3e267
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743415790638
+status: 3
+tags: []
+user_id: pprie

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/640990970734742975/a4320ef9e9594d11aaf06def4ea5595e/artifacts
+end_time: 1743415658157
+entry_point_name: ''
+experiment_id: '640990970734742975'
+lifecycle_stage: active
+run_id: a4320ef9e9594d11aaf06def4ea5595e
+run_name: wistful-robin-676
+run_uuid: a4320ef9e9594d11aaf06def4ea5595e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743415658077
+status: 3
+tags: []
+user_id: pprie

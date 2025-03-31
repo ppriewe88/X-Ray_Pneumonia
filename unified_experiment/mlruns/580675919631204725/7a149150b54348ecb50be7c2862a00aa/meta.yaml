@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/580675919631204725/7a149150b54348ecb50be7c2862a00aa/artifacts
+end_time: 1743415758798
+entry_point_name: ''
+experiment_id: '580675919631204725'
+lifecycle_stage: active
+run_id: 7a149150b54348ecb50be7c2862a00aa
+run_name: nosy-turtle-626
+run_uuid: 7a149150b54348ecb50be7c2862a00aa
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743415758720
+status: 3
+tags: []
+user_id: pprie

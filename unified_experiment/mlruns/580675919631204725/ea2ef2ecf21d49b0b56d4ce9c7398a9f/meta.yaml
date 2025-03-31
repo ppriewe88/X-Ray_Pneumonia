@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/580675919631204725/ea2ef2ecf21d49b0b56d4ce9c7398a9f/artifacts
+end_time: 1743415872822
+entry_point_name: ''
+experiment_id: '580675919631204725'
+lifecycle_stage: active
+run_id: ea2ef2ecf21d49b0b56d4ce9c7398a9f
+run_name: beautiful-yak-199
+run_uuid: ea2ef2ecf21d49b0b56d4ce9c7398a9f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743415872742
+status: 3
+tags: []
+user_id: pprie

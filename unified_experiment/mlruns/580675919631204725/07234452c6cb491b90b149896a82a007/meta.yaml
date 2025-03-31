@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/580675919631204725/07234452c6cb491b90b149896a82a007/artifacts
+end_time: 1743415667382
+entry_point_name: ''
+experiment_id: '580675919631204725'
+lifecycle_stage: active
+run_id: 07234452c6cb491b90b149896a82a007
+run_name: unequaled-perch-561
+run_uuid: 07234452c6cb491b90b149896a82a007
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743415667299
+status: 3
+tags: []
+user_id: pprie

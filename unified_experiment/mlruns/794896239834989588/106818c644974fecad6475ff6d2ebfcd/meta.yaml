@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/794896239834989588/106818c644974fecad6475ff6d2ebfcd/artifacts
+end_time: 1743415648535
+entry_point_name: ''
+experiment_id: '794896239834989588'
+lifecycle_stage: active
+run_id: 106818c644974fecad6475ff6d2ebfcd
+run_name: loud-robin-498
+run_uuid: 106818c644974fecad6475ff6d2ebfcd
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743415648451
+status: 3
+tags: []
+user_id: pprie

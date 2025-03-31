@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/640990970734742975/6d3b28174a5c45d8a081022aaa669c2e/artifacts
+end_time: 1743415876579
+entry_point_name: ''
+experiment_id: '640990970734742975'
+lifecycle_stage: active
+run_id: 6d3b28174a5c45d8a081022aaa669c2e
+run_name: learned-mink-388
+run_uuid: 6d3b28174a5c45d8a081022aaa669c2e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743415876495
+status: 3
+tags: []
+user_id: pprie

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/580675919631204725/b38e267010a14aa6acaec841787b1e9b/artifacts
+end_time: 1743415738670
+entry_point_name: ''
+experiment_id: '580675919631204725'
+lifecycle_stage: active
+run_id: b38e267010a14aa6acaec841787b1e9b
+run_name: treasured-sponge-275
+run_uuid: b38e267010a14aa6acaec841787b1e9b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743415738589
+status: 3
+tags: []
+user_id: pprie

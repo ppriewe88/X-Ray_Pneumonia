@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/580675919631204725/de77376e48f144e88b92ebc454b4fcdc/artifacts
+end_time: 1743415641726
+entry_point_name: ''
+experiment_id: '580675919631204725'
+lifecycle_stage: active
+run_id: de77376e48f144e88b92ebc454b4fcdc
+run_name: likeable-fawn-102
+run_uuid: de77376e48f144e88b92ebc454b4fcdc
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743415641636
+status: 3
+tags: []
+user_id: pprie

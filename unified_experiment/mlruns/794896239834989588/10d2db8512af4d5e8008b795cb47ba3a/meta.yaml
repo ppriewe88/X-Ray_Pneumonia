@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/794896239834989588/10d2db8512af4d5e8008b795cb47ba3a/artifacts
+end_time: 1743415942634
+entry_point_name: ''
+experiment_id: '794896239834989588'
+lifecycle_stage: active
+run_id: 10d2db8512af4d5e8008b795cb47ba3a
+run_name: gentle-shark-65
+run_uuid: 10d2db8512af4d5e8008b795cb47ba3a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743415942543
+status: 3
+tags: []
+user_id: pprie

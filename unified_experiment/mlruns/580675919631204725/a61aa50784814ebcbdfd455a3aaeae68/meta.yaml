@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/580675919631204725/a61aa50784814ebcbdfd455a3aaeae68/artifacts
+end_time: 1743415771297
+entry_point_name: ''
+experiment_id: '580675919631204725'
+lifecycle_stage: active
+run_id: a61aa50784814ebcbdfd455a3aaeae68
+run_name: charming-shrew-453
+run_uuid: a61aa50784814ebcbdfd455a3aaeae68
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743415771220
+status: 3
+tags: []
+user_id: pprie

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/640990970734742975/a4806182a2b443449928d7e1c9c0f2f8/artifacts
+end_time: 1743415756214
+entry_point_name: ''
+experiment_id: '640990970734742975'
+lifecycle_stage: active
+run_id: a4806182a2b443449928d7e1c9c0f2f8
+run_name: serious-cub-772
+run_uuid: a4806182a2b443449928d7e1c9c0f2f8
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743415756126
+status: 3
+tags: []
+user_id: pprie

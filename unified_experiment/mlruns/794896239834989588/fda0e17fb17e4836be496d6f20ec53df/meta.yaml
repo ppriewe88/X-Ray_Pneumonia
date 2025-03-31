@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/794896239834989588/fda0e17fb17e4836be496d6f20ec53df/artifacts
+end_time: 1743415707174
+entry_point_name: ''
+experiment_id: '794896239834989588'
+lifecycle_stage: active
+run_id: fda0e17fb17e4836be496d6f20ec53df
+run_name: nimble-conch-13
+run_uuid: fda0e17fb17e4836be496d6f20ec53df
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743415707078
+status: 3
+tags: []
+user_id: pprie

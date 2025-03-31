@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/794896239834989588/c8a5467802c144bcbbe41b8f9bbe24d6/artifacts
+end_time: 1743415089042
+entry_point_name: ''
+experiment_id: '794896239834989588'
+lifecycle_stage: active
+run_id: c8a5467802c144bcbbe41b8f9bbe24d6
+run_name: invincible-shrew-426
+run_uuid: c8a5467802c144bcbbe41b8f9bbe24d6
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743415088950
+status: 3
+tags: []
+user_id: pprie

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/794896239834989588/32b2b998c9aa41d5b88a00182b5dc5fa/artifacts
+end_time: 1743415797150
+entry_point_name: ''
+experiment_id: '794896239834989588'
+lifecycle_stage: active
+run_id: 32b2b998c9aa41d5b88a00182b5dc5fa
+run_name: brawny-lark-411
+run_uuid: 32b2b998c9aa41d5b88a00182b5dc5fa
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743415797065
+status: 3
+tags: []
+user_id: pprie

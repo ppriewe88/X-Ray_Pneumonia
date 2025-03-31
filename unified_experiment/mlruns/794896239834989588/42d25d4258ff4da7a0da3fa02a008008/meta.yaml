@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/794896239834989588/42d25d4258ff4da7a0da3fa02a008008/artifacts
+end_time: 1743415916480
+entry_point_name: ''
+experiment_id: '794896239834989588'
+lifecycle_stage: active
+run_id: 42d25d4258ff4da7a0da3fa02a008008
+run_name: efficient-frog-387
+run_uuid: 42d25d4258ff4da7a0da3fa02a008008
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743415916395
+status: 3
+tags: []
+user_id: pprie

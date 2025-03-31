@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/580675919631204725/d9ca210f4c664aaf993ce749d8111b6f/artifacts
+end_time: 1743415057889
+entry_point_name: ''
+experiment_id: '580675919631204725'
+lifecycle_stage: active
+run_id: d9ca210f4c664aaf993ce749d8111b6f
+run_name: invincible-hawk-919
+run_uuid: d9ca210f4c664aaf993ce749d8111b6f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743415057810
+status: 3
+tags: []
+user_id: pprie

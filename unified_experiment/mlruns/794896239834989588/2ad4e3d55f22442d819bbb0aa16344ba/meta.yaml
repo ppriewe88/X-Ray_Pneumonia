@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/794896239834989588/2ad4e3d55f22442d819bbb0aa16344ba/artifacts
+end_time: 1743415668026
+entry_point_name: ''
+experiment_id: '794896239834989588'
+lifecycle_stage: active
+run_id: 2ad4e3d55f22442d819bbb0aa16344ba
+run_name: abundant-snipe-930
+run_uuid: 2ad4e3d55f22442d819bbb0aa16344ba
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743415667886
+status: 3
+tags: []
+user_id: pprie

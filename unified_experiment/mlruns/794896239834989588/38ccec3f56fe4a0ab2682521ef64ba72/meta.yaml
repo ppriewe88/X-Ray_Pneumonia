@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/794896239834989588/38ccec3f56fe4a0ab2682521ef64ba72/artifacts
+end_time: 1743415904355
+entry_point_name: ''
+experiment_id: '794896239834989588'
+lifecycle_stage: active
+run_id: 38ccec3f56fe4a0ab2682521ef64ba72
+run_name: welcoming-snake-11
+run_uuid: 38ccec3f56fe4a0ab2682521ef64ba72
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743415904264
+status: 3
+tags: []
+user_id: pprie

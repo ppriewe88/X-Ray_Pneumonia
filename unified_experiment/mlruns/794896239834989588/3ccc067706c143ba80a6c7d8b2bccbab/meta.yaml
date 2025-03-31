@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/794896239834989588/3ccc067706c143ba80a6c7d8b2bccbab/artifacts
+end_time: 1743415803448
+entry_point_name: ''
+experiment_id: '794896239834989588'
+lifecycle_stage: active
+run_id: 3ccc067706c143ba80a6c7d8b2bccbab
+run_name: unique-sow-99
+run_uuid: 3ccc067706c143ba80a6c7d8b2bccbab
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743415803364
+status: 3
+tags: []
+user_id: pprie

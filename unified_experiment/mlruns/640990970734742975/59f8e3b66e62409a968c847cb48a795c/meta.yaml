@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/640990970734742975/59f8e3b66e62409a968c847cb48a795c/artifacts
+end_time: 1743418934626
+entry_point_name: ''
+experiment_id: '640990970734742975'
+lifecycle_stage: active
+run_id: 59f8e3b66e62409a968c847cb48a795c
+run_name: bald-frog-198
+run_uuid: 59f8e3b66e62409a968c847cb48a795c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743418934478
+status: 3
+tags: []
+user_id: pprie

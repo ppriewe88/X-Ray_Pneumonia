@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/640990970734742975/4bd2536be3ab4529b8c371254d58b84a/artifacts
+end_time: 1743415742617
+entry_point_name: ''
+experiment_id: '640990970734742975'
+lifecycle_stage: active
+run_id: 4bd2536be3ab4529b8c371254d58b84a
+run_name: bustling-dog-902
+run_uuid: 4bd2536be3ab4529b8c371254d58b84a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743415742489
+status: 3
+tags: []
+user_id: pprie

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/794896239834989588/75f7145fc8804ddab7a12f41b72eb1af/artifacts
+end_time: 1743415873423
+entry_point_name: ''
+experiment_id: '794896239834989588'
+lifecycle_stage: active
+run_id: 75f7145fc8804ddab7a12f41b72eb1af
+run_name: mysterious-dove-367
+run_uuid: 75f7145fc8804ddab7a12f41b72eb1af
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743415873323
+status: 3
+tags: []
+user_id: pprie

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/580675919631204725/7f640edfdc9f455da0e1063df3349abf/artifacts
+end_time: 1743415884955
+entry_point_name: ''
+experiment_id: '580675919631204725'
+lifecycle_stage: active
+run_id: 7f640edfdc9f455da0e1063df3349abf
+run_name: adorable-bug-191
+run_uuid: 7f640edfdc9f455da0e1063df3349abf
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743415884873
+status: 3
+tags: []
+user_id: pprie
