@@ -18,31 +18,32 @@ def resize_image(
     signature_shape,
     signature_dtype
     ):
-    """
-    This function recieves images (as numpy array) and an mlflow model signature (shape and type) and reformats the array according to the signature.
+
+    '''
+    Function that resizes a grayscale image such that it agrees 
+    with the signature and data type of the ML classifier's input.
     
     Parameters
     ----------
-    image : numpy array
-        image representation as numpy array.
-    signature_shape : tuple ( , , , )
-        Required to reshape the numpy array according to this tuple shape.
-    signature_dtype : python type specification
-        Required to specify the datatype of the numpy array elements of the output.
+    
+    image: PIL image/numpy array
+        Image to be resized. Can only be in grayscale.
+    signature_shape: tuple
+        Shape of the ML classifier input.
+    signature_dtype: data type
+        Data type of the ML classifier input.
         
     Returns
     -------
     image_array: numpy array
-        Reshaped and retyped numpy array
-    """
-
+        Reshaped numpy array with signature_dtype entries. 
+    '''
     # convert image to numpy array
     image_array = np.asarray(image)
     image_array = image_array.reshape((*image_array.shape,1))
 
-    # shape according to signature
+    # if ML model input has more than one channel, populate each channel with the same pixel values
     if signature_shape[-1] > 1:
-        # populate each channel with the same pixel values
         img_array_tuple = tuple([image_array for i in range(signature_shape[-1])])
         image_array = np.concatenate(img_array_tuple, axis = -1)
 
@@ -116,21 +117,22 @@ def make_prediction(model, image_as_array):
     return pred_reshaped
 
 def return_verified_image_as_numpy_arr(image_bytes):
-    """
+
+    
+    '''
     Verification and reformatting function.
     Verifies image type of input. Returns formatted numpy array.
-
+    
     Parameters
     ----------
-    image_bytes : byte object 
-        Retrieved from API-endpoint.
+    
+    image_bytes: image as binary stream
+        Input Image, converted to bytes.
         
     Returns
     -------
-    validated_image_as_numpy: numpy array
-        Image type has been validated, return as numpy array.
-    """        
-        
+    Validated image in numpy array format. 
+    '''   
     try: 
         
         # convert bytes to a PIL image, then ensure its integrity
@@ -139,7 +141,7 @@ def return_verified_image_as_numpy_arr(image_bytes):
     
     except Exception:
         raise HTTPException(status_code=400, detail="Uploaded file is not a valid image.")
-    
+
     # load image again (as it has been deconstructed by .verify())
     validated_image = Image.open(io.BytesIO(image_bytes))
 
@@ -201,6 +203,28 @@ def get_modelversion_and_tag(model_name, model_alias):
 
 def get_performance_indicators(num_steps_short_term = 1):
 
+    '''
+    Function that fetches data from the mlflow client and 
+    returns a dictionary summarizing the to-date performance 
+    of the three pneumonia x-ray classification models.
+    
+    Parameters
+    ----------
+    num_steps_short_term : positive int
+        Size of the window used for calculating the sliding average
+        of accuracy.  
+        
+    Returns
+    -------
+    performance_dictionary: dict 
+        Dictionary with three keys corresponding to the three tracked
+        ML classifiers. The corresponding values are also dictionaries
+        with the following keys: total number of predictions, 
+        average accuracy for the last {num_steps_short_term} predictions,
+        pneumonia true positives, pneumonia true negatives, pneumonia 
+        false positives, and pneumonia false negatives.
+    
+    '''
 
     # setting the uri 
     client = MlflowClient(tracking_uri="http://127.0.0.1:8080")
