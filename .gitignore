@@ -4,7 +4,7 @@ __pycache__/
 *.pyo
 *.pyd
 
-.gitignore
+# .gitignore
 
 data/train
 
@@ -13,5 +13,8 @@ own_model_training/
 fine_tuning/
 
 unified_experiment/merge_experiments.py
+unified_experiment/mlartifacts
+unified_experiment/mlruns
+unified_experiment/performance_tracking
 
 *.keras

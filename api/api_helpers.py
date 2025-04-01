@@ -7,10 +7,10 @@ import os
 from fastapi import HTTPException
 from mlflow import MlflowClient
 import csv
-import os
-from datetime import datetime
 import time
-import json
+import matplotlib.pyplot as plt
+import matplotlib.dates as mdates
+import pandas as pd
 
 
 def resize_image(
@@ -184,7 +184,7 @@ def get_performance_indicators(num_steps_short_term = 1):
     return performance_dictionary
 
 
-def save_performance_data_csv(alias, y_true, y_pred, accuracy, filename, model_version, model_tag):
+def save_performance_data_csv(alias, timestamp, y_true, y_pred, accuracy, filename, model_version, model_tag):
     
     # take time
     start_time = time.time()
@@ -203,9 +203,9 @@ def save_performance_data_csv(alias, y_true, y_pred, accuracy, filename, model_v
     log_counter = 1
     cumulative_accuracy = accuracy
     global_accuracy = accuracy
-    last_25_accuracy = accuracy
+    last_50_accuracy = accuracy
     
-    # Count existing rows to calculate log_counter
+    # Calculate values
     if os.path.exists(file_path):
         with open(file_path, 'r') as csvfile:
             reader = csv.DictReader(csvfile)
@@ -218,24 +218,25 @@ def save_performance_data_csv(alias, y_true, y_pred, accuracy, filename, model_v
                 cumulative_accuracy = float(last_row['cumulative_accuracy']) + accuracy
                 global_accuracy = cumulative_accuracy / log_counter
                 # get last 24 values (or less, if not enough rows available)
-                num_previous = min(24, log_counter - 1)
+                num_previous = min(49, log_counter - 1)
                 relevant_rows = rows[-num_previous:]
                 relevant_accuracies = [float(row['accuracy']) for row in relevant_rows] + [accuracy]
-                last_25_accuracy = sum(relevant_accuracies) / len(relevant_accuracies)
+                last_50_accuracy = sum(relevant_accuracies) / len(relevant_accuracies)
 
     # prepare data
     data = {
         'log_counter': log_counter,
-        'timestamp': datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+        'timestamp': timestamp,
         'y_true': y_true,
         'y_pred': y_pred,
         'accuracy': accuracy,
         'cumulative_accuracy': cumulative_accuracy,
         'global_accuracy': global_accuracy,
-        'accuracy_last_25_predictions': last_25_accuracy,
+        'accuracy_last_50_predictions': last_50_accuracy,
         'filename': filename,
         'model_version': model_version,
-        'model_tag': model_tag
+        'model_tag': model_tag,
+        "model_alias": alias
     }
     
     # Check if file exists
@@ -280,7 +281,7 @@ def generate_performance_summary(alias):
     last_row = rows[-1]
     total_predictions = int(last_row['log_counter'])
     all_time_average = float(last_row['global_accuracy'])
-    last_25_average = float(last_row['accuracy_last_25_predictions'])
+    last_50_average = float(last_row['accuracy_last_50_predictions'])
 
     # initialize confusion matrix
     true_positives = 0
@@ -302,7 +303,7 @@ def generate_performance_summary(alias):
         f"performance csv {alias}": {
             "all-time average accuracy": f"{all_time_average:.4f}",
             "total number of predictions": str(total_predictions),
-            "average accuracy last 25 predictions": f"{last_25_average:.4f}",
+            "average accuracy last 50 predictions": f"{last_50_average:.4f}",
             "pneumonia true positives": str(true_positives),
             "pneumonia true negatives": str(true_negatives),
             "pneumonia false positives": str(false_positives),
@@ -312,6 +313,64 @@ def generate_performance_summary(alias):
 
     return summary
 
+def generate_model_comparison_plot(target = "accuracy_last_50_predictions", scaling =  "log_counter"):
+
+    # get absolute path of the project dir
+    project_folder = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
+
+    # get path performance tracking subfolder
+    tracking_path = os.path.join(project_folder ,"unified_experiment/performance_tracking")
+
+    # get file paths of model (alias) tracking
+    path_champion = os.path.join(tracking_path ,"performance_data_champion.csv")
+    path_challenger = os.path.join(tracking_path ,"performance_data_challenger.csv")
+    path_baseline = os.path.join(tracking_path ,"performance_data_baseline.csv")
+
+    # open files as dataframes
+    df_champion = pd.read_csv(path_champion)
+    df_challenger = pd.read_csv(path_challenger)
+    df_baseline = pd.read_csv(path_baseline)
+
+    # convert timestamp to datetime
+    df_champion['timestamp'] = pd.to_datetime(df_champion['timestamp'])
+    df_challenger['timestamp'] = pd.to_datetime(df_challenger['timestamp'])
+    df_baseline['timestamp'] = pd.to_datetime(df_baseline['timestamp'])
+
+    # create fig and axes
+    fig, ax = plt.subplots(figsize=(12, 6))
+
+    x_axis = scaling
+    # plot thre dataframes as traces
+    ax.plot(df_champion[x_axis], df_champion[target], label='Champion', color='green', linestyle='-', linewidth=2)
+    # ax.plot(df_challenger[x_axis], df_challenger[target], label='Challenger', color='blue', linestyle='--', linewidth=2)
+    ax.plot(df_baseline[x_axis], df_baseline[target], label='Baseline', color='red', linestyle=':', linewidth=2)
+
+    # set common axis labels and titles
+    ax.set_ylabel(target, fontsize=12)
+    ax.set_title(f'Model comparison over time ({target})', fontsize=14)
+
+    # legend
+    ax.legend(fontsize=10)
+
+    # set custom axis and title formatting according to scaling
+    if scaling == "timestamp":
+        ax.xaxis.set_major_formatter(mdates.DateFormatter('%Y-%m-%d %H:%M'))
+        ax.xaxis.set_major_locator(mdates.AutoDateLocator())
+        plt.gcf().autofmt_xdate()
+        ax.set_xlabel("Time of run", fontsize=12)
+
+    else:
+        ax.xaxis.set_major_formatter(plt.ScalarFormatter())
+        ax.xaxis.set_major_locator(plt.AutoLocator())
+        ax.set_xlabel("Run number", fontsize=12)
+
+    # add grid
+    ax.grid(True, linestyle='--', alpha=0.7)
+
+    # show plot
+    plt.tight_layout()
+
+    return fig
 
 
 # if run locally (for tests)
