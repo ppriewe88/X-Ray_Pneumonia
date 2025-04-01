@@ -471,8 +471,8 @@ def generate_model_comparison_plot(target = "accuracy_last_50_predictions", scal
     x_axis = scaling
     # plot thre dataframes as traces
     ax.plot(df_champion[x_axis], df_champion[target], label='Champion', color='green', linestyle='-', linewidth=2)
-    # ax.plot(df_challenger[x_axis], df_challenger[target], label='Challenger', color='blue', linestyle='--', linewidth=2)
-    ax.plot(df_baseline[x_axis], df_baseline[target], label='Baseline', color='red', linestyle=':', linewidth=2)
+    ax.plot(df_challenger[x_axis], df_challenger[target], label='Challenger', color='blue', linestyle='--', linewidth=2)
+    # ax.plot(df_baseline[x_axis], df_baseline[target], label='Baseline', color='red', linestyle=':', linewidth=2)
 
     # set common axis labels and titles
     ax.set_ylabel(target, fontsize=12)
@@ -500,6 +500,59 @@ def generate_model_comparison_plot(target = "accuracy_last_50_predictions", scal
     plt.tight_layout()
 
     return fig
+
+def check_challenger_takeover(last_n_predictions = 20):
+
+    project_folder = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
+    tracking_path = os.path.join(project_folder, "unified_experiment/performance_tracking")
+
+    file_path_champ = os.path.join(tracking_path, f'performance_data_champion.csv')
+    file_path_chall = os.path.join(tracking_path, f'performance_data_challenger.csv')
+
+    # read csv files
+    with open(file_path_champ, 'r') as csvfile:
+        reader = csv.DictReader(csvfile)
+        rows = list(reader)
+    last_rows_champ = rows[-last_n_predictions:]
+    last_values_champ = [row['accuracy_last_50_predictions'] for row in last_rows_champ]
+
+    # read csv files
+    with open(file_path_chall, 'r') as csvfile:
+        reader = csv.DictReader(csvfile)
+        rows = list(reader)
+    last_rows_chall = rows[-last_n_predictions:]
+    last_values_chall = [row['accuracy_last_50_predictions'] for row in last_rows_chall]
+
+    # converting to numpy
+    np_champ = np.array(last_values_champ, dtype=float)
+    np_chall = np.array(last_values_chall, dtype=float)
+
+    # compare by calculating difference
+    diff = np_champ - np_chall
+
+    # check if all entries negative
+    check_if_chall_is_better = np.all(diff < 0)
+    print(check_if_chall_is_better)
+
+    return check_if_chall_is_better
+
+def switch_champion_and_challenger():
+    # get paths of alias files
+    project_folder = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
+    aliases_path = os.path.join(project_folder, r"unified_experiment\mlruns\models\Xray_classifier\aliases")
+    path_challenger = os.path.join(aliases_path, "challenger")
+    path_champion = os.path.join(aliases_path, "champion")
+
+    # read csv files
+    with open(path_champion, 'r') as file:
+        version_number_champion = file.read()
+    with open(path_challenger, 'r') as file:
+        version_number_challenger = file.read()
+    # swap content (i.e. version numbers)
+    with open(path_champion, 'w') as file:
+        file.write(version_number_challenger)
+    with open(path_challenger, 'w') as file:
+        file.write(version_number_champion)
 
 
 # if run locally (for tests)
