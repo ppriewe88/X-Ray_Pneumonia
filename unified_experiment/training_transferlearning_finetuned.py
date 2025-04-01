@@ -2,13 +2,13 @@
 This script contains the training routine for fine_tuning of artifacts that were generated during transfer learning.
 It also contains the setup for experiment tracking via mlflow.
 If you run this script to train, and you want to log with mlflow, you have to start the tracking server of mlflow. 
-To do so, in the directory of this script (i.e. folder transfer_learning), run the following command in terminal to start mlflow server for tracking experiments:
-mlflow server --host 127.0.0.1 --port 8080
-Then check the localhost port to access the MLFlow GUI for tracking!
-Run this script to conduct training experiments (runs). If mlflow server is running, the experiment will be tracked as a run.
+To do so, in the directory of this script (i.e. folder unified_experiment), run the following command in terminal to start mlflow server for tracking experiments:
 
-IMPORTANT NOTICE: Resulting mlflow-runs will be logged into the transfer learning mlflow-directory!
-Check the folder "transfer_learning" to find resulting runs and artifacts!
+mlflow server --host 127.0.0.1 --port 8080
+
+Then check the localhost port 8080 to access the MLFlow GUI for tracking!
+Run this script to conduct training experiments (runs). If mlflow server is running, the experiment will be tracked as a run.
+You will find the result in the mlflow tracking server ("backend-store"), i.e. unified_experiment/mlartifacts/[...newly generated run id...]
 """
 
 

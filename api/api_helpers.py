@@ -268,7 +268,7 @@ def get_performance_indicators(num_steps_short_term = 1):
 
 def save_performance_data_csv(alias, timestamp, y_true, y_pred, accuracy, filename, model_version, model_tag):
     """
-    Recieves data from a model's prediction. 
+    Recieves data from a model's prediction to generate performance review. 
     Saves the retrieved data and some additional calculations in a csv-file under a specified path.
     Also returns the data for further processing (i.e. mlflow-logging).
 
@@ -300,10 +300,10 @@ def save_performance_data_csv(alias, timestamp, y_true, y_pred, accuracy, filena
     # take time
     start_time = time.time()
 
-    # get absolute path of the project dir
+    # get absolute path of the project dir to later find required csv-files
     project_folder = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
 
-    # get path of folder for performance tracking
+    # get path of folder for performance tracking (where csv files are located)
     tracking_path = os.path.join(project_folder ,f"unified_experiment/performance_tracking")
     
     # make folder, if not existing yet
@@ -316,7 +316,7 @@ def save_performance_data_csv(alias, timestamp, y_true, y_pred, accuracy, filena
     global_accuracy = accuracy
     last_50_accuracy = accuracy
     
-    # Calculate values
+    # Calculate consecutive values from last row's values and current values
     if os.path.exists(file_path):
         with open(file_path, 'r') as csvfile:
             reader = csv.DictReader(csvfile)
@@ -328,13 +328,13 @@ def save_performance_data_csv(alias, timestamp, y_true, y_pred, accuracy, filena
                 log_counter = int(last_row['log_counter']) + 1
                 cumulative_accuracy = float(last_row['cumulative_accuracy']) + accuracy
                 global_accuracy = cumulative_accuracy / log_counter
-                # get last 24 values (or less, if not enough rows available)
+                # get last values (or less, if not enough rows available)
                 num_previous = min(49, log_counter - 1)
                 relevant_rows = rows[-num_previous:]
                 relevant_accuracies = [float(row['accuracy']) for row in relevant_rows] + [accuracy]
                 last_50_accuracy = sum(relevant_accuracies) / len(relevant_accuracies)
 
-    # prepare data
+    # prepare data for output (formatting)
     data = {
         'log_counter': log_counter,
         'timestamp': timestamp,
@@ -350,10 +350,10 @@ def save_performance_data_csv(alias, timestamp, y_true, y_pred, accuracy, filena
         "model_alias": alias
     }
     
-    # Check if file exists
+    # Check if file exists already
     file_exists = os.path.isfile(file_path)
     
-    # Open file in append mode
+    # Open file in append mode 
     with open(file_path, 'a', newline='') as csvfile:
         writer = csv.DictWriter(csvfile, fieldnames=data.keys())
         # Write header only if file is newly created
@@ -363,12 +363,14 @@ def save_performance_data_csv(alias, timestamp, y_true, y_pred, accuracy, filena
         writer.writerow(data)
     
     end_time = time.time()
+
+    # print runtime and execution confirmation
     print("runtime performance logging: ", end_time-start_time)
     print(f"Data has been saved in {file_path}.")
 
     return data
 
-def generate_performance_summary(alias):
+def generate_performance_summary_csv(alias, last_n_predictions = 100):
     """
     Fetches logged performance data of model with given alias from corresponding csv-file.
     Fetches global accuracy, number of predictions, and floating average. 
@@ -378,6 +380,8 @@ def generate_performance_summary(alias):
     ----------
     alias : string
         Alias of mlflow registry model version.
+    last_n_predictions: int
+        Controls timeframe of confusion matrix. Only last n predictions will be used to calculate confusion matrix.
         
     Returns
     -------
@@ -393,7 +397,7 @@ def generate_performance_summary(alias):
     if not os.path.exists(file_path):
         return "Error: CSV file not found."
 
-    # read
+    # read csv files
     with open(file_path, 'r') as csvfile:
         reader = csv.DictReader(csvfile)
         rows = list(reader)
@@ -401,7 +405,7 @@ def generate_performance_summary(alias):
     if not rows:
         return "Error: CSV file is empty."
 
-    # get values of last prediction (cumulations, averages)
+    # get values of last prediction (cumulations, averages) to calculate consecutive values
     last_row = rows[-1]
     total_predictions = int(last_row['log_counter'])
     all_time_average = float(last_row['global_accuracy'])
@@ -413,9 +417,10 @@ def generate_performance_summary(alias):
     false_positives = 0
     false_negatives = 0
     
-    # convert to numpy
-    y_true = np.array([float(row['y_true']) for row in rows])
-    accuracy = np.array([float(row['accuracy']) for row in rows])
+    # convert to numpy, restricted to last_n_predictions
+    y_true = np.array([float(row['y_true']) for row in rows[-last_n_predictions:]])
+    accuracy = np.array([float(row['accuracy']) for row in rows[-last_n_predictions:]])
+
     # calc confusion matrix
     true_positives = np.sum((y_true == 1) & (accuracy == 1))
     true_negatives = np.sum((y_true == 0) & (accuracy == 1))
