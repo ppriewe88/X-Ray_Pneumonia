@@ -1,11 +1,16 @@
 """
 This script contains the training routine for transfer learning with MobileNet and/or ResNet.
 It also contains the setup for experiment tracking via mlflow.
+
 If you run this script to train, and you want to log with mlflow, you have to start the tracking server of mlflow. 
 To do so, in the directory of this script (i.e. folder transfer_learning), run the following command in terminal to start mlflow server for tracking experiments:
+
 mlflow server --host 127.0.0.1 --port 8080
+
 Then check the localhost port to access the MLFlow GUI for tracking!
-Run this script to conduct training experiments (runs). If mlflow server is running, the experiment will be tracked as a run"""
+Run this script to conduct training experiments (runs). If mlflow server is running, the experiment will be tracked as a run.
+You will find the result in the mlflow tracking server ("backend-store"), i.e. unified_experiment/mlartifacts/[...newly generated run id...]
+"""
 
 
 import tensorflow as tf

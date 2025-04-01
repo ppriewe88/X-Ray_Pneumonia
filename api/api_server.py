@@ -3,11 +3,10 @@ import numpy as np
 from fastapi import FastAPI, UploadFile, File, Form, Query, Response
 from enum import Enum
 import mlflow
-from api_helpers import resize_image, load_model_from_registry, make_prediction, return_verified_image_as_numpy_arr, get_modelversion_and_tag, get_performance_indicators, save_performance_data_csv, generate_performance_summary, generate_model_comparison_plot
+from api_helpers import resize_image, load_model_from_registry, make_prediction, return_verified_image_as_numpy_arr, get_modelversion_and_tag, get_performance_indicators, save_performance_data_csv, generate_performance_summary_csv, generate_model_comparison_plot
 import time
 from datetime import datetime
 from fastapi.middleware.cors import CORSMiddleware # middleware. requirement for frontend-suitable endpoint
-
 import matplotlib.pyplot as plt
 import io
 
@@ -19,18 +18,18 @@ Here the explicit call to be run from terminal: uvicorn api_server:app --host 0.
 """
 
 
-' ############################### helper class for label input #################'
+' ######################### helper class for label input in prediction endpoint #################'
 # class for input in uploading-endpoint
 class Label(int, Enum):
     NEGATIVE = 0
     POSITIVE = 1
 
-' ############################### creating app  ################################'
+' ################################################ creating app  ################################'
 # make app
 app = FastAPI(title = "Deploying an ML Model for Pneumonia Detection")
 
 " ################################ middleware block for frontend-suitable endpoint ###############"
-# CORS-Middleware hfor communication with frontend
+# CORS-Middleware. Required for communication with frontend
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["http://localhost:3000"],  # allow requests from frontend
@@ -39,10 +38,13 @@ app.add_middleware(
     allow_headers=["*"],  # allow all headers
 )
 
-' ############################### root endpoint ###############################'
+' ################################################## root endpoint ###############################'
 # root
 @app.get("/")
 def home():
+    """
+    Serves as root for API.
+    """
     return "root of this API"
 
 ' ############################### model serving/prediction endpoint ###############################'
@@ -52,6 +54,30 @@ async def upload_image_and_integer(
     label: Label,
     file: UploadFile = File(...)
 ):
+    """
+    Lets the user upload an image file (no directory restricions, but type validation included) 
+    and insert the label of the image (0=normal or 1=pneumonia).
+
+    Image file will be passed through preprocessing and then to a classifier model.
+    User will get back classications of up to three models 
+    (floats between 0 and 1, represents class 1 probability) with the aliases champion, challenger, and baseline.
+
+    Results (i.e. performance) of the classifiers will as well be logged into csv-files, and into mlflow-logged runs.
+    Hence, all information of the given predictions is returned to the user and tracked in the file system.
+
+    Parameters
+    ----------
+    label : object of class Label, see definition on top of this script
+        Hold as human level prediction of the image
+    file : UploadFile (FastAPI-form)
+        Serves byte object of input file.
+        
+    Returns
+    -------
+    y_pred_as_str : string containing dictionaries
+        Contains three nested dictionaries with prediction values and logging parameters. 
+        One for each model alias, i.e. champion, challenger, baseline.
+    """
 
     print("label: ", label, "type label: ", type(label))
     # read the uploaded file into memory as bytes
@@ -121,11 +147,27 @@ async def upload_image_and_integer(
 ' ############################### frontend-suitable model serving/prediction endpoint ###############################'
 # endpoint for uploading image
 @app.post("/upload_image_from_frontend")
-async def upload_image_and_integer( 
+async def upload_image_and_integer_from_frontend( 
     label: int = Form(...),
     file: UploadFile = File(...)
 ):
+    """
+    Functionality is copied from endpoint "upload/image". 
+    Differs only in input structure due to frontend requirements. 
 
+    Parameters
+    ----------
+    label : object of class Label, see definition on top of this script
+        Hold as human level prediction of the image
+    file : UploadFile (FastAPI-form)
+        Serves byte object of input file.
+        
+    Returns
+    -------
+    y_pred_as_str : string containing dictionaries
+        Contains three nested dictionaries with prediction values and logging parameters. 
+        One for each model alias, i.e. champion, challenger, baseline.
+    """
     print("label: ", label, "type label: ", type(label))
     label = Label(label)
     print("label: ", label, "type label: ", type(label))
@@ -200,62 +242,63 @@ async def upload_image_and_integer(
 async def get_performance(
     last_n_predictions: int,
     ):
+    """
+    Endpoint to provide performance report, based on existing mlflow tracking experiments.
+
+    Returns global average values, statistics of last_n_predictions, and confusion matrix (via function call).
+
+    Parameters
+    ----------
+    last_n_predictions : int
+        Serves for function call to get report. Specifically needed for calculation of average value of last n runs.
     
+    Returns
+    -------
+    performance_dict : dictionary
+        Contains three dictionaries with performance tracking values of champion, challenger, baseline.
+    """
 
     # gets the dictionary for all three model
-    start_time1 = time.time()
-    perf_dict = get_performance_indicators(num_steps_short_term = last_n_predictions)
-    end_time1 = time.time()
-    time_old_review = end_time1 - start_time1
+    start_time = time.time()
+    performance_dict = get_performance_indicators(num_steps_short_term = last_n_predictions)
+    end_time = time.time()
+    runtime = end_time - start_time
 
-
-    # in addition, show results generated from csv
-    start_time2 = time.time()
-    csv_perf_dict_champion = generate_performance_summary("champion")
-    csv_perf_dict_challenger = generate_performance_summary("challenger")
-    csv_perf_dict_baseline = generate_performance_summary("baseline")
-    merged_csv_dict = {
-    **csv_perf_dict_baseline,
-    **csv_perf_dict_challenger,
-    **csv_perf_dict_champion,
-    }
-    end_time2 = time.time()
-    time_new_review = end_time2 - start_time2
-
-    # generate response
-    response = {
-    "old_review": perf_dict,
-    "runtime old review": str(time_old_review),
-    "new_review": merged_csv_dict,
-    "runtime new review": time_new_review
-    }
-
-    return response
+    return performance_dict
 
 
 ' ############################### performance review endpoint CSV ###############################'
 # endpoint for uploading image
 @app.post("/get_performance_review_from_csv")
-async def get_performance():
+async def get_performance_csv():
+    """
+    Endpoint to provide performance report, based on csv-loggings of tracked predictions.
 
+    Returns global average values, statistics of last_n_predictions, and confusion matrix (via function call).
+
+    Parameters
+    ----------
+    No parameters
+    
+    Returns
+    -------
+    merged_csv_dict : dictionary
+        Contains three dictionaries with performance tracking values of champion, challenger, baseline.
+    """
     # get results generated from csv
-    start_time2 = time.time()
-    csv_perf_dict_champion = generate_performance_summary("champion")
-    csv_perf_dict_challenger = generate_performance_summary("challenger")
-    csv_perf_dict_baseline = generate_performance_summary("baseline")
+    start_time = time.time()
+    csv_perf_dict_champion = generate_performance_summary_csv(alias = "champion", last_n_predictions=100)
+    csv_perf_dict_challenger = generate_performance_summary_csv(alias = "challenger",last_n_predictions=100)
+    csv_perf_dict_baseline = generate_performance_summary_csv(alias = "baseline", last_n_predictions=100)
     merged_csv_dict = {
     **csv_perf_dict_baseline,
     **csv_perf_dict_challenger,
     **csv_perf_dict_champion,
     }
-    end_time2 = time.time()
-    time_new_review = end_time2 - start_time2
+    end_time = time.time()
+    time_new_review = end_time - start_time
 
-    response = {
-    "new_review": merged_csv_dict,
-    "runtime new review": time_new_review
-    }
-    return response
+    return merged_csv_dict
 
 
 #####################################################
