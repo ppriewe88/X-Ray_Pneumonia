@@ -1,12 +1,15 @@
 import uvicorn
 import numpy as np
-from fastapi import FastAPI, UploadFile, File, Form, Query
+from fastapi import FastAPI, UploadFile, File, Form, Query, Response
 from enum import Enum
 import mlflow
-from api_helpers import resize_image, load_model_from_registry, make_prediction, return_verified_image_as_numpy_arr, get_modelversion_and_tag, get_performance_indicators, save_performance_data_csv, generate_performance_summary
+from api_helpers import resize_image, load_model_from_registry, make_prediction, return_verified_image_as_numpy_arr, get_modelversion_and_tag, get_performance_indicators, save_performance_data_csv, generate_performance_summary, generate_model_comparison_plot
 import time
 from datetime import datetime
 from fastapi.middleware.cors import CORSMiddleware # middleware. requirement for frontend-suitable endpoint
+
+import matplotlib.pyplot as plt
+import io
 
 """ 
 run app by running "fastapi run FastAPIserver.py" in terminal.
@@ -255,6 +258,40 @@ async def get_performance():
     return response
 
 
+#####################################################
+# endpoint for plot generation
+@app.post("/get_comparsion_plot")
+async def plot_model_comparison(target = "accuracy_last_50_predictions"):
+    
+    '''
+    Endpoint that displays a plot showing the moving average accuracy
+    of the champion and challenger models. 
+    '''
+    
+    # TODO: need to change this to reflect the (potential) updates in the 
+    # generate_model_comparison_plot() function
+    
+    # create the figure
+    figure = generate_model_comparison_plot(target, scaling =  "log_counter")
+    
+    
+    # create an in-memory buffer to hold the figure
+    buffer = io.BytesIO()
+    # save the plot in the buffer as a png
+    plt.savefig(buffer, format="png")
+    # close the fig
+    plt.close(figure)
+    # move the file pointer back to the start of the buffer so it can be read
+    buffer.seek(0)
+    
+    # extract the binary image from the buffer
+    binary_image = buffer.getvalue()
+    
+    # send the binary image as a png response to the client
+    return Response(binary_image, media_type="image/png")
+
+
+
 ' ################################ host specification ################# '
 
 # my localhost adress
@@ -262,7 +299,7 @@ host = "127.0.0.1"
 
 # run server
 if __name__ == "__main__":
-    uvicorn.run(app, host=host, port=8000, root_path="/") 
+    uvicorn.run(app, host=host, port=8000, root_path="/")
 # GUI at http://127.0.0.1:8000/docs
 
 

@@ -18,14 +18,32 @@ def resize_image(
     signature_shape,
     signature_dtype
     ):
-
+    '''
+    Function that resizes a grayscale image such that it agrees 
+    with the signature and data type of the ML classifier's input.
+    
+    Parameters
+    ----------
+    
+    image: PIL image
+        Image to be resized. Can only be in grayscale.
+    signature_shape: tuple
+        Shape of the ML classifier input.
+    signature_dtype: data type
+        Data type of the ML classifier input.
+        
+    Returns
+    -------
+    image_array: numpy array
+        Resized image in numpy array format. 
+    '''
+    
     # convert image to numpy array
     image_array = np.asarray(image)
     image_array = image_array.reshape((*image_array.shape,1))
 
-    # shape according to signature
+    # if ML model input has more than one channel, populate each channel with the same pixel values
     if signature_shape[-1] > 1:
-        # populate each channel with the same pixel values
         img_array_tuple = tuple([image_array for i in range(signature_shape[-1])])
         image_array = np.concatenate(img_array_tuple, axis = -1)
 
@@ -67,21 +85,39 @@ def make_prediction(model, image_as_array):
 
 
 def return_verified_image_as_numpy_arr(image_bytes):
-        try: 
+    
+    '''
+    Function that checks the integrity of an image and
+    transforms it to numpy array format.
+    
+    Parameters
+    ----------
+    
+    image_bytes: image as binary stream
+        Input Image, converted to bytes.
+        
+    Returns
+    -------
+    validated_image_as_numpy: numpy array
+        Validated image in numpy array format. 
+    '''
+    
+    try: 
             
-            # convert bytes to a PIL image, then ensure its integrity
-            image = Image.open(io.BytesIO(image_bytes))
-            image.verify() # can't be used if i want to process the image
+        # convert bytes to a PIL image, then ensure its integrity
+        image = Image.open(io.BytesIO(image_bytes))
+        image.verify() # can't be used if i want to process the image
         
-        except Exception:
-            raise HTTPException(status_code=400, detail="Uploaded file is not a valid image.")
+    except Exception:
+        raise HTTPException(status_code=400, detail="Uploaded file is not a valid image.")
         
-        # load image again (as it has been deconstructed by .verify())
-        validated_image = Image.open(io.BytesIO(image_bytes))
+    # load image again (as it has been deconstructed by .verify())
+    validated_image = Image.open(io.BytesIO(image_bytes))
 
-        # convert the PIL image to np.array
-        validated_image_as_numpy = np.asarray(validated_image)
-        return validated_image_as_numpy
+    # convert the PIL image to np.array
+    validated_image_as_numpy = np.asarray(validated_image)
+    
+    return validated_image_as_numpy
 
 def get_modelversion_and_tag(model_name, model_alias):
 
@@ -118,7 +154,28 @@ def get_modelversion_and_tag(model_name, model_alias):
     return version_number, tag_files[0].strip()
 
 def get_performance_indicators(num_steps_short_term = 1):
-
+    '''
+    Function that fetches data from the mlflow client and 
+    returns a dictionary summarizing the to-date performance 
+    of the three pneumonia x-ray classification models.
+    
+    Parameters
+    ----------
+    num_steps_short_term : positive int
+        Size of the window used for calculating the sliding average
+        of accuracy.  
+        
+    Returns
+    -------
+    performance_dictionary: dict 
+        Dictionary with three keys corresponding to the three tracked
+        ML classifiers. The corresponding values are also dictionaries
+        with the following keys: total number of predictions, 
+        average accuracy for the last {num_steps_short_term} predictions,
+        pneumonia true positives, pneumonia true negatives, pneumonia 
+        false positives, and pneumonia false negatives.
+    
+    '''
     # setting the uri 
     client = MlflowClient(tracking_uri="http://127.0.0.1:8080")
         
