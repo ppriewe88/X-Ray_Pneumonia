@@ -3,6 +3,27 @@ from pathlib import Path
 from enum import Enum
 import random
 
+
+"""
+This script serves to simulate frontend-backend interactions. 
+-> It calls the API and posts data
+-> the backend generates response data.
+More specific:
+- this script randomly takes images from data/test (the test data images) 
+- and delivers them to the prediction endpoint of the API (api_server.py). 
+- During the call of the endpoint, the specified models are fetched and yield their predictions.
+- Specified loggings are stored in the file system.
+- Thus, this script both serves as a test of the endpoint, AND is used to (locally) generate larger piles of data.
+- It perfectly serves to simulate power usage of the endpoints / the whole application
+
+USER MANUAL: 
+- simply specify the amount of samples (test images) that should be sent to the API
+- Do so by specifying the samples variable in the block "configure nr. of samples to generate".
+HINT:
+- the mlflow server AND the FastAPI server have to be running during the execution of this script here!
+"""
+
+
 ' ################ configuration of API info (= given API endpoint requirements) ###########'
 class Label(int, Enum):
     NEGATIVE = 0

@@ -18,6 +18,23 @@ def resize_image(
     signature_shape,
     signature_dtype
     ):
+    """
+    This function recieves images (as numpy array) and an mlflow model signature (shape and type) and reformats the array according to the signature.
+    
+    Parameters
+    ----------
+    image : numpy array
+        image representation as numpy array.
+    signature_shape : tuple ( , , , )
+        Required to reshape the numpy array according to this tuple shape.
+    signature_dtype : python type specification
+        Required to specify the datatype of the numpy array elements of the output.
+        
+    Returns
+    -------
+    image_array: numpy array
+        Reshaped and retyped numpy array
+    """
 
     # convert image to numpy array
     image_array = np.asarray(image)
@@ -29,7 +46,7 @@ def resize_image(
         img_array_tuple = tuple([image_array for i in range(signature_shape[-1])])
         image_array = np.concatenate(img_array_tuple, axis = -1)
 
-    # resizing according to signature_shape
+    # resizing according to signature_shape. Using helper function from keras
     resized_image = keras.ops.image.resize(
         image_array,
         size = (signature_shape[1], signature_shape[2]),
@@ -42,9 +59,27 @@ def resize_image(
 
     return image_array
 
-
 def load_model_from_registry(model_name, alias):
-    
+    """
+    Is used to load an mlflow model from its registry (i.e., to fetch the corresponding artifact).
+    Model is fetched according to given model name and alias. The model and its signature data are returned.
+
+    Parameters
+    ----------
+    model_name : string
+        The registered model's name.
+    alias : string
+        The registered model's alias.
+        
+    Returns
+    -------
+    model: mlflow model
+    input_shape: tuple
+        Reflects the models required signature shape (specification of data structure for the model input during predictions)
+    input_type:
+        The models required input data type in element level.
+    """
+
     # start_loading = time.time()
     print("start loading model")
     model = mlflow.pyfunc.load_model(model_uri=f"models:/{model_name}@{alias}")
@@ -59,31 +94,76 @@ def load_model_from_registry(model_name, alias):
     return model, input_shape, input_type
 
 def make_prediction(model, image_as_array):
-    
+    """
+    Simple function to return a prediction of a given model on a given input array.
+
+    Parameters
+    ----------
+    model : mlflow model
+        Mlflow model object. Has to be retrieved earlier by pufunc loading (mlflow)
+    image_as_array : numpy array
+        Image representation.
+        
+    Returns
+    -------
+    pred_reshaped: numpy array
+        Model prediction as numpy array.
+    """
+
     prediction = model.predict(image_as_array)
     pred_reshaped = float(prediction.flatten())
 
     return pred_reshaped
 
-
 def return_verified_image_as_numpy_arr(image_bytes):
-        try: 
-            
-            # convert bytes to a PIL image, then ensure its integrity
-            image = Image.open(io.BytesIO(image_bytes))
-            image.verify() # can't be used if i want to process the image
-        
-        except Exception:
-            raise HTTPException(status_code=400, detail="Uploaded file is not a valid image.")
-        
-        # load image again (as it has been deconstructed by .verify())
-        validated_image = Image.open(io.BytesIO(image_bytes))
+    """
+    Verification and reformatting function.
+    Verifies image type of input. Returns formatted numpy array.
 
-        # convert the PIL image to np.array
-        validated_image_as_numpy = np.asarray(validated_image)
-        return validated_image_as_numpy
+    Parameters
+    ----------
+    image_bytes : byte object 
+        Retrieved from API-endpoint.
+        
+    Returns
+    -------
+    validated_image_as_numpy: numpy array
+        Image type has been validated, return as numpy array.
+    """        
+        
+    try: 
+        
+        # convert bytes to a PIL image, then ensure its integrity
+        image = Image.open(io.BytesIO(image_bytes))
+        image.verify() # can't be used if i want to process the image
+    
+    except Exception:
+        raise HTTPException(status_code=400, detail="Uploaded file is not a valid image.")
+    
+    # load image again (as it has been deconstructed by .verify())
+    validated_image = Image.open(io.BytesIO(image_bytes))
+
+    # convert the PIL image to np.array
+    validated_image_as_numpy = np.asarray(validated_image)
+    return validated_image_as_numpy
 
 def get_modelversion_and_tag(model_name, model_alias):
+    """
+    Fetches modelversion and tag by given model name and alias.
+    Both infos are retrieved from the file system of the mlflow registry of the project.
+
+    Parameters
+    ----------
+    model_name : string
+    model_alias : string
+        
+    Returns
+    -------
+    version_number : string
+        Version number of registered mlflow model (registry model)
+    tag : string
+        Tag of registered model's version (registry model)
+    """ 
 
     # get absolute path of the project dir
     project_folder = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
@@ -115,9 +195,12 @@ def get_modelversion_and_tag(model_name, model_alias):
     if not tag_files:
         raise FileNotFoundError(f"No tags found in {tags_dir}")
     
-    return version_number, tag_files[0].strip()
+    tag = tag_files[0].strip()
+
+    return version_number, tag
 
 def get_performance_indicators(num_steps_short_term = 1):
+
 
     # setting the uri 
     client = MlflowClient(tracking_uri="http://127.0.0.1:8080")
@@ -183,9 +266,37 @@ def get_performance_indicators(num_steps_short_term = 1):
           
     return performance_dictionary
 
-
 def save_performance_data_csv(alias, timestamp, y_true, y_pred, accuracy, filename, model_version, model_tag):
-    
+    """
+    Recieves data from a model's prediction. 
+    Saves the retrieved data and some additional calculations in a csv-file under a specified path.
+    Also returns the data for further processing (i.e. mlflow-logging).
+
+    Parameters
+    ----------
+    alias : string
+        Alias of mlflow registry model version
+    timestamp : string
+        Contains time of API call.
+    y_true : integer (0 or 1)
+        True label of image
+    y_pred : float (0 <= y_pred <=1)
+        Predicted label of image
+    accuracy : int (0 or 1)
+        accuracy of prediction
+    filename: string
+        name of predicted file
+    model_version : int
+        Version number of mlflow registry model version
+    model_tag : string
+        Tag of mlflow registry model version
+
+    Returns
+    -------
+    data : dictionary
+        Dictionary of data to be logged into csv-file
+    """ 
+
     # take time
     start_time = time.time()
 
@@ -257,10 +368,23 @@ def save_performance_data_csv(alias, timestamp, y_true, y_pred, accuracy, filena
 
     return data
 
-
-
 def generate_performance_summary(alias):
-    
+    """
+    Fetches logged performance data of model with given alias from corresponding csv-file.
+    Fetches global accuracy, number of predictions, and floating average. 
+    Additionally calculates confusion matrix of entire history.
+
+    Parameters
+    ----------
+    alias : string
+        Alias of mlflow registry model version.
+        
+    Returns
+    -------
+    summary: dictionary
+        Contains performance info of model runs. Dictionary values are strings.
+    """     
+
     # get path of csv-files
     project_folder = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
     tracking_path = os.path.join(project_folder, "unified_experiment/performance_tracking")
