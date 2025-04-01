@@ -578,6 +578,12 @@ def switch_champion_and_challenger():
     with open(path_challenger, 'w') as file:
         file.write(version_number_champion)
 
+def moving_average_column(column, window):
+    
+    column = np.array(column)
+    averaged_col = [np.sum(column[max(0,i-window):i])/min(i, window) for i in range(1,len(column)+1)]
+    
+    return np.array(averaged_col)
 
 # if run locally (for tests)
 if __name__ == "__main__":
