@@ -39,7 +39,7 @@ def generate_model_comparison_plot(target = "global_accuracy", scaling =  "log_c
     x_axis = scaling
     # plot thre dataframes as traces
     ax.plot(df_champion[x_axis], df_champion[target], label='Champion', color='green', linestyle='-', linewidth=2)
-    ax.plot(df_challenger[x_axis], df_challenger[target], label='Challenger', color='blue', linestyle='--', linewidth=2)
+    # ax.plot(df_challenger[x_axis], df_challenger[target], label='Challenger', color='blue', linestyle='--', linewidth=2)
     ax.plot(df_baseline[x_axis], df_baseline[target], label='Baseline', color='red', linestyle=':', linewidth=2)
 
     # set common axis labels and titles

@@ -202,7 +202,7 @@ def save_performance_data_csv(alias, timestamp, y_true, y_pred, accuracy, filena
     log_counter = 1
     cumulative_accuracy = accuracy
     global_accuracy = accuracy
-    last_25_accuracy = accuracy
+    last_50_accuracy = accuracy
     
     # Calculate values
     if os.path.exists(file_path):
@@ -280,7 +280,7 @@ def generate_performance_summary(alias):
     last_row = rows[-1]
     total_predictions = int(last_row['log_counter'])
     all_time_average = float(last_row['global_accuracy'])
-    last_25_average = float(last_row['accuracy_last_50_predictions'])
+    last_50_average = float(last_row['accuracy_last_50_predictions'])
 
     # initialize confusion matrix
     true_positives = 0
@@ -302,7 +302,7 @@ def generate_performance_summary(alias):
         f"performance csv {alias}": {
             "all-time average accuracy": f"{all_time_average:.4f}",
             "total number of predictions": str(total_predictions),
-            "average accuracy last 50 predictions": f"{last_25_average:.4f}",
+            "average accuracy last 50 predictions": f"{last_50_average:.4f}",
             "pneumonia true positives": str(true_positives),
             "pneumonia true negatives": str(true_negatives),
             "pneumonia false positives": str(false_positives),
