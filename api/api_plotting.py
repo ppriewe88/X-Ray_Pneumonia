@@ -4,34 +4,29 @@ import pandas as pd
 import os
 import time
 
-' ############################ get paths #############################'
-# get absolute path of the project dir
-project_folder = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
 
-# get path performance tracking subfolder
-tracking_path = os.path.join(project_folder ,"unified_experiment/performance_tracking")
+def generate_model_comparison_plot(target = "accuracy_last_50_predictions", scaling =  "log_counter"):
 
-# get file paths of model (alias) tracking
-path_champion = os.path.join(tracking_path ,"performance_data_champion.csv")
-path_challenger = os.path.join(tracking_path ,"performance_data_challenger.csv")
-path_baseline = os.path.join(tracking_path ,"performance_data_baseline.csv")
+    # get absolute path of the project dir
+    project_folder = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
 
-' ########################## load data from files ######################'
-# open files as dataframes
-df_champion = pd.read_csv(path_champion)
-df_challenger = pd.read_csv(path_challenger)
-df_baseline = pd.read_csv(path_baseline)
+    # get path performance tracking subfolder
+    tracking_path = os.path.join(project_folder ,"unified_experiment/performance_tracking")
 
-# convert timestamp to datetime
-df_champion['timestamp'] = pd.to_datetime(df_champion['timestamp'])
-df_challenger['timestamp'] = pd.to_datetime(df_challenger['timestamp'])
-df_baseline['timestamp'] = pd.to_datetime(df_baseline['timestamp'])
+    # get file paths of model (alias) tracking
+    path_champion = os.path.join(tracking_path ,"performance_data_champion.csv")
+    path_challenger = os.path.join(tracking_path ,"performance_data_challenger.csv")
+    path_baseline = os.path.join(tracking_path ,"performance_data_baseline.csv")
 
-print(df_champion)
+    # open files as dataframes
+    df_champion = pd.read_csv(path_champion)
+    df_challenger = pd.read_csv(path_challenger)
+    df_baseline = pd.read_csv(path_baseline)
 
-
-' ############################### function to generate simple plot ##################'
-def generate_model_comparison_plot(target = "global_accuracy", scaling =  "log_counter"):
+    # convert timestamp to datetime
+    df_champion['timestamp'] = pd.to_datetime(df_champion['timestamp'])
+    df_challenger['timestamp'] = pd.to_datetime(df_challenger['timestamp'])
+    df_baseline['timestamp'] = pd.to_datetime(df_baseline['timestamp'])
 
     # create fig and axes
     fig, ax = plt.subplots(figsize=(12, 6))
@@ -66,7 +61,8 @@ def generate_model_comparison_plot(target = "global_accuracy", scaling =  "log_c
 
     # show plot
     plt.tight_layout()
-    plt.show()
+
+    return fig
 
 
 # keys: ['log_counter', 'timestamp', 'y_true', 'y_pred', 'accuracy',
@@ -75,10 +71,10 @@ def generate_model_comparison_plot(target = "global_accuracy", scaling =  "log_c
 #           'model_tag', 'model_alias']
 
 # scaling: timestamp, log_counter
-start = time.time()
-generate_model_comparison_plot(target="global_accuracy", scaling = "log_counter")
-end = time.time()
-print("plot generation runtime: ", end-start)
-generate_model_comparison_plot(target="accuracy_last_50_predictions", scaling = "log_counter")
+# start = time.time()
+# generate_model_comparison_plot(target="global_accuracy", scaling = "log_counter")
+# end = time.time()
+# print("plot generation runtime: ", end-start)
+# generate_model_comparison_plot(target="accuracy_last_50_predictions", scaling = "log_counter")
 # generate_model_comparison_plot(target="global_accuracy", scaling = "timestamp")
 # generate_model_comparison_plot(target="accuracy_last_25_predictions", scaling = "timestamp")
