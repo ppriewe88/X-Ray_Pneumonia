@@ -338,7 +338,7 @@ def save_performance_data_csv(alias, timestamp, y_true, y_pred, accuracy, filena
     log_counter = 1
     cumulative_accuracy = accuracy
     global_accuracy = accuracy
-    last_50_accuracy = accuracy
+    # last_50_accuracy = accuracy ########## removed! left as comment for historical checks. TODO: final remove!
     
     # Calculate consecutive values from last row's values and current values
     if os.path.exists(file_path):
@@ -352,11 +352,13 @@ def save_performance_data_csv(alias, timestamp, y_true, y_pred, accuracy, filena
                 log_counter = int(last_row['log_counter']) + 1
                 cumulative_accuracy = float(last_row['cumulative_accuracy']) + accuracy
                 global_accuracy = cumulative_accuracy / log_counter
-                # get last values (or less, if not enough rows available)
-                num_previous = min(49, log_counter - 1)
-                relevant_rows = rows[-num_previous:]
-                relevant_accuracies = [float(row['accuracy']) for row in relevant_rows] + [accuracy]
-                last_50_accuracy = sum(relevant_accuracies) / len(relevant_accuracies)
+                
+                # # get last values (or less, if not enough rows available)
+                # num_previous = min(49, log_counter - 1)
+                # relevant_rows = rows[-num_previous:]
+                # relevant_accuracies = [float(row['accuracy']) for row in relevant_rows] + [accuracy]
+                # last_50_accuracy = sum(relevant_accuracies) / len(relevant_accuracies)
+                ########## removed! left as comment for historical checks. TODO: final remove!
 
     # prepare data for output (formatting)
     data = {
@@ -367,7 +369,8 @@ def save_performance_data_csv(alias, timestamp, y_true, y_pred, accuracy, filena
         'accuracy': accuracy,
         'cumulative_accuracy': cumulative_accuracy,
         'global_accuracy': global_accuracy,
-        'accuracy_last_50_predictions': last_50_accuracy,
+        # 'accuracy_last_50_predictions': last_50_accuracy, 
+        ########## removed! left as comment for historical checks. TODO: final remove!
         'filename': filename,
         'model_version': model_version,
         'model_tag': model_tag,
@@ -433,7 +436,6 @@ def generate_performance_summary_csv(alias, last_n_predictions = 100):
     last_row = rows[-1]
     total_predictions = int(last_row['log_counter'])
     all_time_average = float(last_row['global_accuracy'])
-    last_50_average = float(last_row['accuracy_last_50_predictions'])
 
     # initialize confusion matrix
     true_positives = 0
@@ -441,7 +443,7 @@ def generate_performance_summary_csv(alias, last_n_predictions = 100):
     false_positives = 0
     false_negatives = 0
     
-    # convert to numpy, restricted to last_n_predictions
+    # convert to numpy and get accuracies and true labels, restricted to last_n_predictions
     y_true = np.array([float(row['y_true']) for row in rows[-last_n_predictions:]])
     accuracy = np.array([float(row['accuracy']) for row in rows[-last_n_predictions:]])
 
@@ -451,12 +453,20 @@ def generate_performance_summary_csv(alias, last_n_predictions = 100):
     false_positives = np.sum((y_true == 0) & (accuracy == 0))
     false_negatives = np.sum((y_true == 1) & (accuracy == 0))
 
+    # calc avg of last n predictions
+    avg_last_n_predictions = np.mean(accuracy)
+    # historical countercheck
+    # last_50_average = float(last_row['accuracy_last_50_predictions'])
+    ########## removed! left as comment for historical checks. TODO: final remove!
+
     # generate result dict
     summary = {
         f"performance csv {alias}": {
             "all-time average accuracy": f"{all_time_average:.4f}",
             "total number of predictions": str(total_predictions),
-            "average accuracy last 50 predictions": f"{last_50_average:.4f}",
+            # "average accuracy last 50 predictions": f"{last_50_average:.4f}",
+            ########## removed! left as comment for historical checks. TODO: final remove!
+            f"average accuracy last {last_n_predictions} predictions": f"{avg_last_n_predictions}",
             "pneumonia true positives": str(true_positives),
             "pneumonia true negatives": str(true_negatives),
             "pneumonia false positives": str(false_positives),
@@ -493,10 +503,19 @@ def generate_model_comparison_plot(target = "accuracy_last_50_predictions", scal
     fig, ax = plt.subplots(figsize=(12, 6))
 
     x_axis = scaling
+    # TODO: Remove "old logic" once tests are done. 
+    # Means: Remove old two line plots; include n_las_preds param, pass to mov_avg func beloc
     # plot thre dataframes as traces
-    ax.plot(df_champion[x_axis], df_champion[target], label='Champion', color='green', linestyle='-', linewidth=2)
-    ax.plot(df_challenger[x_axis], df_challenger[target], label='Challenger', color='blue', linestyle='--', linewidth=2)
+    ax.plot(df_champion[x_axis], df_champion[target], label='Champion', color='green', linestyle='-', linewidth=5)
+    ax.plot(df_challenger[x_axis], df_challenger[target], label='Challenger', color='blue', linestyle='--', linewidth=5)
     # ax.plot(df_baseline[x_axis], df_baseline[target], label='Baseline', color='red', linestyle=':', linewidth=2)
+
+    ' XXXXXXXXXXXXXXXXX block for new logic of moving average #############'
+    moving_avg_challenger = moving_average_column(df_challenger["accuracy"], window = 50)
+    moving_avg_champion = moving_average_column(df_champion["accuracy"], window = 50)
+    ax.plot(df_champion[x_axis], moving_avg_champion, label='Champion', color='red', linestyle=':', linewidth=2)
+    ax.plot(df_challenger[x_axis], moving_avg_challenger, label='Challenger', color='orange', linestyle='-.', linewidth=2)
+    ' XXXXXXXXXXXXXXXXX block for new logic of moving average #############'
 
     # set common axis labels and titles
     ax.set_ylabel(target, fontsize=12)
@@ -525,7 +544,18 @@ def generate_model_comparison_plot(target = "accuracy_last_50_predictions", scal
 
     return fig
 
-def check_challenger_takeover(last_n_predictions = 20):
+def moving_average_column(column, window):
+    """"
+    TODO: DOCUMENTATION! hier müssen wir auf jeden fall reinschreiben, dass das window am unteren ende der column 
+    abgeschnitten wird!!! 
+    
+    """
+    column = np.array(column)
+    averaged_col = [np.sum(column[max(0,i-window):i])/min(i, window) for i in range(1,len(column)+1)]
+    
+    return np.array(averaged_col)
+
+def check_challenger_takeover(last_n_predictions = 20, window=50):
 
     project_folder = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
     tracking_path = os.path.join(project_folder, "unified_experiment/performance_tracking")
@@ -533,30 +563,39 @@ def check_challenger_takeover(last_n_predictions = 20):
     file_path_champ = os.path.join(tracking_path, f'performance_data_champion.csv')
     file_path_chall = os.path.join(tracking_path, f'performance_data_challenger.csv')
 
-    # read csv files
+    # read csv file champion
     with open(file_path_champ, 'r') as csvfile:
         reader = csv.DictReader(csvfile)
         rows = list(reader)
-    last_rows_champ = rows[-last_n_predictions:]
-    last_values_champ = [row['accuracy_last_50_predictions'] for row in last_rows_champ]
+    # get last last_n_predictions, extract accuracy as integers
+    last_rows_champ = rows[-(last_n_predictions + window):]
+    last_acc_values_champ = [int(row['accuracy']) for row in last_rows_champ]
+    # get moving average. Careful: correct calculation by extended window and capping! 
+    # moving_average_column cuts window at the lower end of the column, thus the lower end has to be extended!
+    moving_averages_champ = moving_average_column(last_acc_values_champ, window)[-last_n_predictions:]
 
-    # read csv files
+    # read csv file challenger
     with open(file_path_chall, 'r') as csvfile:
         reader = csv.DictReader(csvfile)
         rows = list(reader)
-    last_rows_chall = rows[-last_n_predictions:]
-    last_values_chall = [row['accuracy_last_50_predictions'] for row in last_rows_chall]
-
-    # converting to numpy
-    np_champ = np.array(last_values_champ, dtype=float)
-    np_chall = np.array(last_values_chall, dtype=float)
-
+    # get last last_n_predictions, extract accuracy as integers
+    last_rows_chall = rows[-(last_n_predictions + window):]
+    last_acc_values_chall = [int(row['accuracy']) for row in last_rows_chall]
+    # get moving average. Careful: correct calculation by extended window and capping!
+    # moving_average_column cuts window at the lower end of the column, thus the lower end has to be extended!
+    moving_averages_chall = moving_average_column(last_acc_values_chall, window)[-last_n_predictions:]
+    
+    print(moving_averages_chall.shape)
     # compare by calculating difference
-    diff = np_champ - np_chall
-
+    diff = moving_averages_champ - moving_averages_chall
+    print("challenger: ", moving_averages_chall)
+    print("champion: ", moving_averages_champ)
+    print("differenz: ", diff)
     # check if all entries negative
-    check_if_chall_is_better = np.all(diff < 0)
-    print(check_if_chall_is_better)
+    check_if_chall_is_better = np.all(diff <= 0)
+    print("challenger better: ", check_if_chall_is_better)
+    check_if_chall_is_worse = np.all(diff >= 0)
+    print("challenger worse: ", check_if_chall_is_worse)
 
     return check_if_chall_is_better
 
@@ -578,37 +617,35 @@ def switch_champion_and_challenger():
     with open(path_challenger, 'w') as file:
         file.write(version_number_champion)
 
-def moving_average_column(column, window):
-    
-    column = np.array(column)
-    averaged_col = [np.sum(column[max(0,i-window):i])/min(i, window) for i in range(1,len(column)+1)]
-    
-    return np.array(averaged_col)
-
 # if run locally (for tests)
 if __name__ == "__main__":
-    # modell laden
-    model_name_test = "Xray_classifier"  # Small_CNN, MobileNet_transfer_learning, MobileNet_transfer_learning_finetuned
-    model_alias = "baseline"
+    pass
+    # # modell laden
+    # model_name_test = "Xray_classifier"  # Small_CNN, MobileNet_transfer_learning, MobileNet_transfer_learning_finetuned
+    # model_alias = "baseline"
     
-    ' ###################### test: extract version via alias ########### '
-    print(get_modelversion_and_tag(model_name=model_name_test, model_alias=model_alias))
+    # ' ###################### test: extract version via alias ########### '
+    # print(get_modelversion_and_tag(model_name=model_name_test, model_alias=model_alias))
 
-    ' #################### test: extract tag of model version #############'
+    # ' #################### test: extract tag of model version #############'
     
-    # Bild laden
-    img = Image.open(r"C:\Users\pprie\OneDrive\Dokumente\Python_Projekte\95_Xray\data\test\NORMAL\IM-0001-0001.jpeg")
+    # # Bild laden
+    # img = Image.open(r"C:\Users\pprie\OneDrive\Dokumente\Python_Projekte\95_Xray\data\test\NORMAL\IM-0001-0001.jpeg")
 
-    # mlflow setting
-    "    mlflow server --host 127.0.0.1 --port 8080     "
-    mlflow.set_tracking_uri("http://127.0.0.1:8080")
+    # # mlflow setting
+    # "    mlflow server --host 127.0.0.1 --port 8080     "
+    # mlflow.set_tracking_uri("http://127.0.0.1:8080")
 
-    model, input_shape, input_type = load_model_from_registry(model_name = model_name_test, alias=model_alias)
+    # model, input_shape, input_type = load_model_from_registry(model_name = model_name_test, alias=model_alias)
 
-    formatted_image = resize_image(image=img, signature_shape = input_shape, signature_dtype=input_type)
+    # formatted_image = resize_image(image=img, signature_shape = input_shape, signature_dtype=input_type)
 
-    y_pred = make_prediction(model, image_as_array=formatted_image)
+    # y_pred = make_prediction(model, image_as_array=formatted_image)
 
-    print(y_pred)
+    # print(y_pred)
     
-    print(get_performance_indicators())
+    # print(get_performance_indicators())
+    # check_challenger_takeover(last_n_predictions = 74)
+    # generate_model_comparison_plot()
+    # print(moving_average_column(np.array([1,2,3,4,5]), 10))
+    # print(moving_average_column([1,2,3,4,5], 10))

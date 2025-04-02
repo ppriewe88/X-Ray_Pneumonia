@@ -270,7 +270,9 @@ async def get_performance(
 ' ############################### performance review endpoint CSV ###############################'
 # endpoint for uploading image
 @app.post("/get_performance_review_from_csv")
-async def get_performance_csv():
+async def get_performance_csv(
+    last_n_predictions: int,
+    ):
     """
     Endpoint to provide performance report, based on csv-loggings of tracked predictions.
 
@@ -287,9 +289,9 @@ async def get_performance_csv():
     """
     # get results generated from csv
     start_time = time.time()
-    csv_perf_dict_champion = generate_performance_summary_csv(alias = "champion", last_n_predictions=100)
-    csv_perf_dict_challenger = generate_performance_summary_csv(alias = "challenger",last_n_predictions=100)
-    csv_perf_dict_baseline = generate_performance_summary_csv(alias = "baseline", last_n_predictions=100)
+    csv_perf_dict_champion = generate_performance_summary_csv(alias = "champion", last_n_predictions=last_n_predictions)
+    csv_perf_dict_challenger = generate_performance_summary_csv(alias = "challenger",last_n_predictions=last_n_predictions)
+    csv_perf_dict_baseline = generate_performance_summary_csv(alias = "baseline", last_n_predictions=last_n_predictions)
     merged_csv_dict = {
     **csv_perf_dict_baseline,
     **csv_perf_dict_challenger,
