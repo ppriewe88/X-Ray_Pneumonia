@@ -3,7 +3,7 @@ import numpy as np
 from fastapi import FastAPI, UploadFile, File, Form, Query, Response
 from enum import Enum
 import mlflow
-from api_helpers import resize_image, load_model_from_registry, make_prediction, return_verified_image_as_numpy_arr, get_modelversion_and_tag, get_performance_indicators, save_performance_data_csv, generate_performance_summary_csv, generate_model_comparison_plot
+import api_helpers as ah
 import time
 from datetime import datetime
 from fastapi.middleware.cors import CORSMiddleware # middleware. requirement for frontend-suitable endpoint
@@ -84,7 +84,7 @@ async def upload_image_and_integer(
     image_bytes = await file.read()
 
     # validate image and return as numpy
-    img = return_verified_image_as_numpy_arr(image_bytes)
+    img = ah.return_verified_image_as_numpy_arr(image_bytes)
 
     # set tracking uri for mlflow
     mlflow.set_tracking_uri("http://127.0.0.1:8080")
@@ -98,20 +98,20 @@ async def upload_image_and_integer(
     for  alias in ["champion", "challenger", "baseline"]:
         
         # get model and signature
-        model, input_shape, input_type  = load_model_from_registry(model_name = model_name, alias = alias)
+        model, input_shape, input_type  = ah.load_model_from_registry(model_name = model_name, alias = alias)
         
         # get model version and tag for logging
-        model_version, model_tag = get_modelversion_and_tag(model_name=model_name, model_alias=alias)
+        model_version, model_tag = ah.get_modelversion_and_tag(model_name=model_name, model_alias=alias)
 
         # resize image according to signature
-        formatted_image = resize_image(image=img, signature_shape = input_shape, signature_dtype=input_type)
+        formatted_image = ah.resize_image(image=img, signature_shape = input_shape, signature_dtype=input_type)
         
         # make prediction
-        y_pred = make_prediction(model, image_as_array=formatted_image)
+        y_pred = ah.make_prediction(model, image_as_array=formatted_image)
         accuracy_pred = int(label == np.around(y_pred))
 
         # logging and precalculations in csv-file
-        logged_csv_data = save_performance_data_csv(alias = alias, timestamp = api_timestamp, y_true = label.value, y_pred = y_pred, accuracy=accuracy_pred, filename="123.jpeg", model_version=model_version, model_tag=model_tag)
+        logged_csv_data = ah.save_performance_data_csv(alias = alias, timestamp = api_timestamp, y_true = label.value, y_pred = y_pred, accuracy=accuracy_pred, filename="123.jpeg", model_version=model_version, model_tag=model_tag)
 
         # set experiment name for model (logging performance for each model in separate experiment)
         mlflow.set_experiment(f"performance {alias}")
@@ -141,6 +141,10 @@ async def upload_image_and_integer(
 
         # update dictionary for API-output
         y_pred_as_str.update({f"prediction {alias}": str(y_pred)})
+    
+    # check if switch is made
+    if ah.check_challenger_takeover(last_n_predictions = 20, window = 50):
+        ah.switch_champion_and_challenger()
     
     return y_pred_as_str
 
@@ -176,7 +180,7 @@ async def upload_image_and_integer_from_frontend(
     image_bytes = await file.read()
 
     # validate image and return as numpy
-    img = return_verified_image_as_numpy_arr(image_bytes)
+    img = ah.return_verified_image_as_numpy_arr(image_bytes)
 
     # set tracking uri for mlflow
     mlflow.set_tracking_uri("http://127.0.0.1:8080")
@@ -190,20 +194,20 @@ async def upload_image_and_integer_from_frontend(
     for  alias in ["champion", "challenger", "baseline"]:
         
         # get model and signature
-        model, input_shape, input_type  = load_model_from_registry(model_name = model_name, alias = alias)
+        model, input_shape, input_type  = ah.load_model_from_registry(model_name = model_name, alias = alias)
         
         # get model version and tag for logging
-        model_version, model_tag = get_modelversion_and_tag(model_name=model_name, model_alias=alias)
+        model_version, model_tag = ah.get_modelversion_and_tag(model_name=model_name, model_alias=alias)
 
         # resize image according to signature
-        formatted_image = resize_image(image=img, signature_shape = input_shape, signature_dtype=input_type)
+        formatted_image = ah.resize_image(image=img, signature_shape = input_shape, signature_dtype=input_type)
         
                 # make prediction
-        y_pred = make_prediction(model, image_as_array=formatted_image)
+        y_pred = ah.make_prediction(model, image_as_array=formatted_image)
         accuracy_pred = int(label == np.around(y_pred))
 
         # logging and precalculations in csv-file
-        logged_csv_data = save_performance_data_csv(alias = alias, timestamp = api_timestamp, y_true = label.value, y_pred = y_pred, accuracy=accuracy_pred, filename="123.jpeg", model_version=model_version, model_tag=model_tag)
+        logged_csv_data = ah.save_performance_data_csv(alias = alias, timestamp = api_timestamp, y_true = label.value, y_pred = y_pred, accuracy=accuracy_pred, filename="123.jpeg", model_version=model_version, model_tag=model_tag)
 
         # set experiment name for model (logging performance for each model in separate experiment)
         mlflow.set_experiment(f"performance {alias}")
@@ -260,7 +264,7 @@ async def get_performance(
 
     # gets the dictionary for all three model
     start_time = time.time()
-    performance_dict = get_performance_indicators(num_steps_short_term = last_n_predictions)
+    performance_dict = ah.get_performance_indicators(num_steps_short_term = last_n_predictions)
     end_time = time.time()
     runtime = end_time - start_time
 
@@ -289,9 +293,9 @@ async def get_performance_csv(
     """
     # get results generated from csv
     start_time = time.time()
-    csv_perf_dict_champion = generate_performance_summary_csv(alias = "champion", last_n_predictions=last_n_predictions)
-    csv_perf_dict_challenger = generate_performance_summary_csv(alias = "challenger",last_n_predictions=last_n_predictions)
-    csv_perf_dict_baseline = generate_performance_summary_csv(alias = "baseline", last_n_predictions=last_n_predictions)
+    csv_perf_dict_champion = ah.generate_performance_summary_csv(alias = "champion", last_n_predictions=last_n_predictions)
+    csv_perf_dict_challenger = ah.generate_performance_summary_csv(alias = "challenger",last_n_predictions=last_n_predictions)
+    csv_perf_dict_baseline = ah.generate_performance_summary_csv(alias = "baseline", last_n_predictions=last_n_predictions)
     merged_csv_dict = {
     **csv_perf_dict_baseline,
     **csv_perf_dict_challenger,
@@ -317,7 +321,7 @@ async def plot_model_comparison(target = "accuracy_last_50_predictions"):
     # generate_model_comparison_plot() function
     
     # create the figure
-    figure = generate_model_comparison_plot(target, scaling =  "log_counter")
+    figure = ah.generate_model_comparison_plot(target, scaling =  "log_counter")
     
     
     # create an in-memory buffer to hold the figure
