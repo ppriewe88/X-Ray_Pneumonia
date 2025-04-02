@@ -338,7 +338,7 @@ def save_performance_data_csv(alias, timestamp, y_true, y_pred, accuracy, filena
     log_counter = 1
     cumulative_accuracy = accuracy
     global_accuracy = accuracy
-    # last_50_accuracy = accuracy ########## removed! left as comment for historical checks. TODO: final remove!
+    last_50_accuracy = accuracy ########## removed! left as comment for historical checks. TODO: final remove!
     
     # Calculate consecutive values from last row's values and current values
     if os.path.exists(file_path):
@@ -354,10 +354,10 @@ def save_performance_data_csv(alias, timestamp, y_true, y_pred, accuracy, filena
                 global_accuracy = cumulative_accuracy / log_counter
                 
                 # # get last values (or less, if not enough rows available)
-                # num_previous = min(49, log_counter - 1)
-                # relevant_rows = rows[-num_previous:]
-                # relevant_accuracies = [float(row['accuracy']) for row in relevant_rows] + [accuracy]
-                # last_50_accuracy = sum(relevant_accuracies) / len(relevant_accuracies)
+                num_previous = min(49, log_counter - 1)
+                relevant_rows = rows[-num_previous:]
+                relevant_accuracies = [float(row['accuracy']) for row in relevant_rows] + [accuracy]
+                last_50_accuracy = sum(relevant_accuracies) / len(relevant_accuracies)
                 ########## removed! left as comment for historical checks. TODO: final remove!
 
     # prepare data for output (formatting)
@@ -369,7 +369,7 @@ def save_performance_data_csv(alias, timestamp, y_true, y_pred, accuracy, filena
         'accuracy': accuracy,
         'cumulative_accuracy': cumulative_accuracy,
         'global_accuracy': global_accuracy,
-        # 'accuracy_last_50_predictions': last_50_accuracy, 
+        'accuracy_last_50_predictions': last_50_accuracy, 
         ########## removed! left as comment for historical checks. TODO: final remove!
         'filename': filename,
         'model_version': model_version,

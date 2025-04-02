@@ -107,8 +107,18 @@ async def upload_image_and_integer(
         formatted_image = ah.resize_image(image=img, signature_shape = input_shape, signature_dtype=input_type)
         
         # make prediction
+        # y_pred = ah.make_prediction(model, image_as_array=formatted_image)
+        # accuracy_pred = int(label == np.around(y_pred))
+        
+        # make prediction
+        ' ###################### SIMPLE TEST TO TEST TAKEOVER BEHAVIOUR ##############'
+        # TODO: remove after successfull test!!!
         y_pred = ah.make_prediction(model, image_as_array=formatted_image)
-        accuracy_pred = int(label == np.around(y_pred))
+        if alias == "champion":
+            accuracy_pred = int(label == 1 - np.around(y_pred))
+        else:
+            accuracy_pred = int(label == np.around(y_pred))
+        ' ###################### SIMPLE TEST TO TEST TAKEOVER BEHAVIOUR ##############'
 
         # logging and precalculations in csv-file
         logged_csv_data = ah.save_performance_data_csv(alias = alias, timestamp = api_timestamp, y_true = label.value, y_pred = y_pred, accuracy=accuracy_pred, filename="123.jpeg", model_version=model_version, model_tag=model_tag)
