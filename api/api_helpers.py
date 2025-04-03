@@ -497,8 +497,8 @@ def generate_model_comparison_plot(window = 50, scaling =  "log_counter"):
     ax.plot(df_challenger[x_axis], df_challenger["model_switch"], label='model switch', color='blue', linestyle='--', linewidth=2)
 
     # set common axis labels and titles
-    ax.set_ylabel(target, fontsize=12)
-    ax.set_title(f'Model comparison over time ({target})', fontsize=14)
+    ax.set_ylabel(f"moving avg accuracy for the last {window} predictions", fontsize=9)
+    ax.set_title(f'Model comparison over time', fontsize=14)
 
     # legend
     ax.legend(fontsize=10)
