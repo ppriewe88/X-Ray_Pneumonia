@@ -600,22 +600,46 @@ def check_challenger_takeover(last_n_predictions = 20, window=50):
     return check_if_chall_is_better
 
 def switch_champion_and_challenger():
+    
     # get paths of alias files
     project_folder = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
-    aliases_path = os.path.join(project_folder, r"unified_experiment/mlruns/models/Xray_classifier/aliases")
-    path_challenger = os.path.join(aliases_path, "challenger")
-    path_champion = os.path.join(aliases_path, "champion")
+    unif_exp_path = os.path.join(project_folder, r"unified_experiment")
+    path_challenger_alias = os.path.join(unif_exp_path, r"mlruns/models/Xray_classifier/aliases/challenger")
+    path_champion_alias = os.path.join(unif_exp_path, r"mlruns/models/Xray_classifier/aliases/champion")
+    path_challenger_csv = os.path.join(unif_exp_path, r"performance_tracking/performance_data_challenger.csv")
+    path_champion_csv = os.path.join(unif_exp_path, r"performance_tracking/performance_data_champion.csv")
 
-    # read csv files
-    with open(path_champion, 'r') as file:
+    # read alias files 
+    with open(path_champion_alias, 'r') as file:
         version_number_champion = file.read()
-    with open(path_challenger, 'r') as file:
+    with open(path_challenger_alias, 'r') as file:
         version_number_challenger = file.read()
+
     # swap content (i.e. version numbers)
-    with open(path_champion, 'w') as file:
+    with open(path_champion_alias, 'w') as file:
         file.write(version_number_challenger)
-    with open(path_challenger, 'w') as file:
+    with open(path_challenger_alias, 'w') as file:
         file.write(version_number_champion)
+        
+    # update challenger csv-files of predictions: mark model_switch
+    with open(path_challenger_csv, 'r') as csvfile:
+        reader = csv.DictReader(csvfile)
+        rows_chall = list(reader)
+        rows_chall[-1]["model_switch"]="True"
+    with open(path_challenger_csv, 'w', newline='') as f:
+        writer = csv.DictWriter(f, fieldnames=rows_chall[0].keys())
+        writer.writeheader()
+        writer.writerows(rows_chall)
+    # update champion csv-files of predictions: mark model switch
+    with open(path_champion_csv, 'r') as csvfile:
+        reader = csv.DictReader(csvfile)
+        rows_champ = list(reader)
+        rows_champ[-1]["model_switch"]="True"
+    with open(path_champion_csv, 'w', newline='') as f:
+        writer = csv.DictWriter(f, fieldnames=rows_champ[0].keys())
+        writer.writeheader()
+        writer.writerows(rows_champ)
+    print("challenger and champion have been switched")
 
 # if run locally (for tests)
 if __name__ == "__main__":
