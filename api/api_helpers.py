@@ -589,7 +589,7 @@ def check_challenger_takeover(last_n_predictions = 20, window=50):
     
     # check if all entries negative
     check_if_chall_is_better = np.all(diff <= 0)
-    print("challenger better: ", check_if_chall_is_better)
+    print(f"challenger's moving average better during last {last_n_predictions} runs: ", check_if_chall_is_better)
     
     return check_if_chall_is_better
 
