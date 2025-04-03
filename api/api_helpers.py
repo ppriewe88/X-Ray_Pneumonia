@@ -336,9 +336,6 @@ def save_performance_data_csv(alias, timestamp, y_true, y_pred, accuracy, filena
     
     # initializing standard values for cumulative and global values
     log_counter = 1
-    cumulative_accuracy = accuracy
-    global_accuracy = accuracy
-    last_50_accuracy = accuracy ########## removed! left as comment for historical checks. TODO: final remove!
     
     # Calculate consecutive values from last row's values and current values
     if os.path.exists(file_path):
@@ -350,15 +347,6 @@ def save_performance_data_csv(alias, timestamp, y_true, y_pred, accuracy, filena
                 last_row = rows[-1]
                 # get values of last row to determine cumulations and global accuracy
                 log_counter = int(last_row['log_counter']) + 1
-                cumulative_accuracy = float(last_row['cumulative_accuracy']) + accuracy
-                global_accuracy = cumulative_accuracy / log_counter
-                
-                # # get last values (or less, if not enough rows available)
-                num_previous = min(49, log_counter - 1)
-                relevant_rows = rows[-num_previous:]
-                relevant_accuracies = [float(row['accuracy']) for row in relevant_rows] + [accuracy]
-                last_50_accuracy = sum(relevant_accuracies) / len(relevant_accuracies)
-                ########## removed! left as comment for historical checks. TODO: final remove!
 
     # prepare data for output (formatting)
     data = {
@@ -367,14 +355,11 @@ def save_performance_data_csv(alias, timestamp, y_true, y_pred, accuracy, filena
         'y_true': y_true,
         'y_pred': y_pred,
         'accuracy': accuracy,
-        'cumulative_accuracy': cumulative_accuracy,
-        'global_accuracy': global_accuracy,
-        'accuracy_last_50_predictions': last_50_accuracy, 
-        ########## removed! left as comment for historical checks. TODO: final remove!
         'filename': filename,
         'model_version': model_version,
         'model_tag': model_tag,
-        "model_alias": alias
+        "model_alias": alias,
+        "model_switch": False
     }
     
     # Check if file exists already
