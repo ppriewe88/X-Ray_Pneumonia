@@ -581,15 +581,12 @@ def check_challenger_takeover(last_n_predictions = 20, window=50):
     # moving_average_column cuts window at the lower end of the column, thus the lower end has to be extended!
     moving_averages_chall = moving_average_column(last_acc_values_chall, window)[-last_n_predictions:]
     
-    
-    
-    print(moving_averages_chall.shape)
     # compare by calculating difference
     diff = moving_averages_champ - moving_averages_chall
     
     # check if all entries negative
     check_if_chall_is_better = np.all(diff <= 0)
-    print(f"challenger's moving average better during last {last_n_predictions} runs: ", check_if_chall_is_better)
+    print(f"Performance comparison between challenger and champion has been made. Challenger's moving average better during last {last_n_predictions} runs: ", check_if_chall_is_better)
     
     return check_if_chall_is_better
 
