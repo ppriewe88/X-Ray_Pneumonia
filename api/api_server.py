@@ -321,7 +321,7 @@ async def get_performance_csv(
 #####################################################
 # endpoint for plot generation
 @app.post("/get_comparsion_plot")
-async def plot_model_comparison(target = "accuracy_last_50_predictions"):
+async def plot_model_comparison(window: int = 50):
     
     '''
     Endpoint that displays a plot showing the moving average accuracy
@@ -332,7 +332,7 @@ async def plot_model_comparison(target = "accuracy_last_50_predictions"):
     # generate_model_comparison_plot() function
     
     # create the figure
-    figure = ah.generate_model_comparison_plot(target, scaling =  "log_counter")
+    figure = ah.generate_model_comparison_plot(window, scaling =  "log_counter")
     
     
     # create an in-memory buffer to hold the figure

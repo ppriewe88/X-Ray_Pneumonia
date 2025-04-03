@@ -461,7 +461,7 @@ def generate_performance_summary_csv(alias, last_n_predictions = 100):
 
     return summary
 
-def generate_model_comparison_plot(target = "accuracy_last_50_predictions", scaling =  "log_counter"):
+def generate_model_comparison_plot(window = 50, scaling =  "log_counter"):
 
     # get absolute path of the project dir
     project_folder = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
@@ -488,19 +488,13 @@ def generate_model_comparison_plot(target = "accuracy_last_50_predictions", scal
     fig, ax = plt.subplots(figsize=(12, 6))
 
     x_axis = scaling
-    # TODO: Remove "old logic" once tests are done. 
-    # Means: Remove old two line plots; include n_las_preds param, pass to mov_avg func beloc
-    # plot thre dataframes as traces
-    ax.plot(df_champion[x_axis], df_champion[target], label='Champion', color='green', linestyle='-', linewidth=5)
-    ax.plot(df_challenger[x_axis], df_challenger[target], label='Challenger', color='blue', linestyle='--', linewidth=5)
-    # ax.plot(df_baseline[x_axis], df_baseline[target], label='Baseline', color='red', linestyle=':', linewidth=2)
 
-    ' XXXXXXXXXXXXXXXXX block for new logic of moving average #############'
-    moving_avg_challenger = moving_average_column(df_challenger["accuracy"], window = 50)
-    moving_avg_champion = moving_average_column(df_champion["accuracy"], window = 50)
-    ax.plot(df_champion[x_axis], moving_avg_champion, label='Champion', color='red', linestyle=':', linewidth=2)
-    ax.plot(df_challenger[x_axis], moving_avg_challenger, label='Challenger', color='orange', linestyle='-.', linewidth=2)
-    ' XXXXXXXXXXXXXXXXX block for new logic of moving average #############'
+    # generate plot lines
+    moving_avg_challenger = moving_average_column(df_challenger["accuracy"], window = window)
+    moving_avg_champion = moving_average_column(df_champion["accuracy"], window = window)
+    ax.plot(df_champion[x_axis], moving_avg_champion, label='Champion', color='red', linestyle=':', linewidth=5)
+    ax.plot(df_challenger[x_axis], moving_avg_challenger, label='Challenger', color='orange', linestyle='-.', linewidth=5)
+    ax.plot(df_challenger[x_axis], df_challenger["model_switch"], label='model switch', color='blue', linestyle='--', linewidth=2)
 
     # set common axis labels and titles
     ax.set_ylabel(target, fontsize=12)
