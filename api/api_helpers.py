@@ -555,6 +555,18 @@ def check_challenger_takeover(last_n_predictions = 20, window=50):
         
     # check if there are at least {last_n_predictions + window} runs
     if len(rows) < last_n_predictions + window:
+        print(f"Initial protection phase (less than {last_n_predictions + window} runs available). No switch allowed yet.")
+        return False
+    
+    # check if switch was done in the previous {last_n_predictions} runs
+    # organize the last {last_n_predictions} model tag in a list,
+    # then get the unique items using set()
+    last_model_tags_unique = set([row['model_tag'] for row in rows[-(last_n_predictions+window):]])
+    # check is switch was performed
+    switch_done = len(last_model_tags_unique) > 1
+    # quit the function if the switch was done in the last {last_n_predictions + window} runs
+    if switch_done:
+        print(f"A switch happend during the last {last_n_predictions+window} runs. No switch allowed yet.")
         return False
         
     # get last last_n_predictions, extract accuracy as integers
@@ -575,29 +587,17 @@ def check_challenger_takeover(last_n_predictions = 20, window=50):
     # moving_average_column cuts window at the lower end of the column, thus the lower end has to be extended!
     moving_averages_chall = moving_average_column(last_acc_values_chall, window)[-last_n_predictions:]
     
-    # check if switch was done in the previous {last_n_predictions} runs
-    # organize the last {last_n_predictions} model tag in a list,
-    # then get the unique items using set()
-    last_model_tags_unique = set([row['model_tag'] for row in last_rows_chall[-last_n_predictions:]])
-    # check is switch was performed
-    switch_done = len(last_model_tags_unique) > 1
     
     
     print(moving_averages_chall.shape)
     # compare by calculating difference
     diff = moving_averages_champ - moving_averages_chall
-    print("challenger: ", moving_averages_chall)
-    print("champion: ", moving_averages_champ)
-    print("differenz: ", diff)
+    
     # check if all entries negative
     check_if_chall_is_better = np.all(diff <= 0)
     print("challenger better: ", check_if_chall_is_better)
-    check_if_chall_is_worse = np.all(diff >= 0)
-    print("challenger worse: ", check_if_chall_is_worse)
- 
-    do_switch = check_if_chall_is_better and not switch_done
     
-    return do_switch
+    return check_if_chall_is_better
 
 def switch_champion_and_challenger():
     # get paths of alias files
