@@ -456,7 +456,7 @@ def generate_performance_summary_csv(alias, last_n_predictions = 100):
     # calc avg of last n predictions
     avg_last_n_predictions = np.mean(accuracy)
     # historical countercheck
-    # last_50_average = float(last_row['accuracy_last_50_predictions'])
+    last_50_average = float(last_row['accuracy_last_50_predictions'])
     ########## removed! left as comment for historical checks. TODO: final remove!
 
     # generate result dict
@@ -464,7 +464,7 @@ def generate_performance_summary_csv(alias, last_n_predictions = 100):
         f"performance csv {alias}": {
             "all-time average accuracy": f"{all_time_average:.4f}",
             "total number of predictions": str(total_predictions),
-            # "average accuracy last 50 predictions": f"{last_50_average:.4f}",
+            "average accuracy last 50 predictions": f"{last_50_average:.4f}",
             ########## removed! left as comment for historical checks. TODO: final remove!
             f"average accuracy last {last_n_predictions} predictions": f"{avg_last_n_predictions}",
             "pneumonia true positives": str(true_positives),
@@ -567,6 +567,11 @@ def check_challenger_takeover(last_n_predictions = 20, window=50):
     with open(file_path_champ, 'r') as csvfile:
         reader = csv.DictReader(csvfile)
         rows = list(reader)
+        
+    # check if there are at least {last_n_predictions + window} runs
+    if len(rows) < last_n_predictions + window:
+        return False
+        
     # get last last_n_predictions, extract accuracy as integers
     last_rows_champ = rows[-(last_n_predictions + window):]
     last_acc_values_champ = [int(row['accuracy']) for row in last_rows_champ]
@@ -585,6 +590,14 @@ def check_challenger_takeover(last_n_predictions = 20, window=50):
     # moving_average_column cuts window at the lower end of the column, thus the lower end has to be extended!
     moving_averages_chall = moving_average_column(last_acc_values_chall, window)[-last_n_predictions:]
     
+    # check if switch was done in the previous {last_n_predictions} runs
+    # organize the last {last_n_predictions} model tag in a list,
+    # then get the unique items using set()
+    last_model_tags_unique = set([row['model_tag'] for row in last_rows_chall[-last_n_predictions:]])
+    # check is switch was performed
+    switch_done = len(last_model_tags_unique) > 1
+    
+    
     print(moving_averages_chall.shape)
     # compare by calculating difference
     diff = moving_averages_champ - moving_averages_chall
@@ -596,13 +609,15 @@ def check_challenger_takeover(last_n_predictions = 20, window=50):
     print("challenger better: ", check_if_chall_is_better)
     check_if_chall_is_worse = np.all(diff >= 0)
     print("challenger worse: ", check_if_chall_is_worse)
-
-    return check_if_chall_is_better
+ 
+    do_switch = check_if_chall_is_better and not switch_done
+    
+    return do_switch
 
 def switch_champion_and_challenger():
     # get paths of alias files
     project_folder = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
-    aliases_path = os.path.join(project_folder, r"unified_experiment\mlruns\models\Xray_classifier\aliases")
+    aliases_path = os.path.join(project_folder, r"unified_experiment/mlruns/models/Xray_classifier/aliases")
     path_challenger = os.path.join(aliases_path, "challenger")
     path_champion = os.path.join(aliases_path, "champion")
 

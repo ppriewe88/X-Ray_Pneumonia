@@ -107,17 +107,18 @@ async def upload_image_and_integer(
         formatted_image = ah.resize_image(image=img, signature_shape = input_shape, signature_dtype=input_type)
         
         # make prediction
-        # y_pred = ah.make_prediction(model, image_as_array=formatted_image)
-        # accuracy_pred = int(label == np.around(y_pred))
+        y_pred = ah.make_prediction(model, image_as_array=formatted_image)
+        accuracy_pred = int(label == np.around(y_pred))
         
         # make prediction
         ' ###################### SIMPLE TEST TO TEST TAKEOVER BEHAVIOUR ##############'
         # TODO: remove after successfull test!!!
-        y_pred = ah.make_prediction(model, image_as_array=formatted_image)
-        if alias == "champion":
-            accuracy_pred = int(label == 1 - np.around(y_pred))
-        else:
-            accuracy_pred = int(label == np.around(y_pred))
+        # y_pred = ah.make_prediction(model, image_as_array=formatted_image)
+        # if alias == "champion":
+            #accuracy_pred = int(label == 1 - np.around(y_pred))
+        #    accuracy_pred = -2
+        # else:
+        #    accuracy_pred = int(label == np.around(y_pred))
         ' ###################### SIMPLE TEST TO TEST TAKEOVER BEHAVIOUR ##############'
 
         # logging and precalculations in csv-file
@@ -152,7 +153,7 @@ async def upload_image_and_integer(
         # update dictionary for API-output
         y_pred_as_str.update({f"prediction {alias}": str(y_pred)})
     
-    # check if switch is made
+    # check if switch should be made
     if ah.check_challenger_takeover(last_n_predictions = 20, window = 50):
         ah.switch_champion_and_challenger()
     
