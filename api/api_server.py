@@ -266,7 +266,7 @@ async def get_performance_csv(
     return merged_csv_dict
 
 
-' ############################### plotting endpoint ###############################'
+' ######################## plotting endpoint: performance curve and aliases #####################'
 # endpoint for plot generation
 @app.post("/get_comparsion_plot")
 async def plot_model_comparison(window: int = 50):
@@ -299,7 +299,35 @@ async def plot_model_comparison(window: int = 50):
     # send the binary image as a png response to the client
     return Response(binary_image, media_type="image/png")
 
+' ######################## plotting endpoint: confusion matrix #####################'
+# endpoint for plot generation
+@app.post("/get_confusion_matrix_plot")
+async def plot_confusion_matrix(window: int = 50):
+    
+    '''
+    Endpoint that displays a plot showing the confusion matrix of the champion model for the last n predictions.  
+    '''
 
+    # create the figure
+    figure = ah.generate_confusion_matrix_plot(window)
+    
+    # create an in-memory buffer to hold the figure
+    buffer = io.BytesIO()
+    
+    # save the plot in the buffer as a png
+    plt.savefig(buffer, format="png")
+    
+    # close the fig
+    plt.close(figure)
+    
+    # move the file pointer back to the start of the buffer so it can be read
+    buffer.seek(0)
+    
+    # extract the binary image from the buffer
+    binary_image = buffer.getvalue()
+    
+    # send the binary image as a png response to the client
+    return Response(binary_image, media_type="image/png")
 
 ' ################################ host specification ################# '
 
