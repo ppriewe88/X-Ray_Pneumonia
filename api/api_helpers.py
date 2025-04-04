@@ -307,9 +307,9 @@ def save_performance_data_csv(alias, timestamp, y_true, y_pred, accuracy, file_n
     y_pred : float (0 <= y_pred <=1)
         Predicted label of image
     accuracy : int (0 or 1)
-        accuracy of prediction
-    filename: string
-        name of predicted file
+        Accuracy of prediction
+    file_name: string
+        Name of image file used for prediction
     model_version : int
         Version number of mlflow registry model version
     model_tag : string
@@ -377,29 +377,58 @@ def save_performance_data_csv(alias, timestamp, y_true, y_pred, accuracy, file_n
     return data
 
 def save_performance_data_mlflow(log_counter, alias, timestamp, y_true, y_pred, accuracy, file_name, model_version, model_tag):
-     # set experiment name for model (logging performance for each model in separate experiment)
-            mlflow.set_experiment(f"performance {alias}")
-        
-            # logging of metrics
-            with mlflow.start_run():
-                
-                # log the metrics
-                metrics_dict = {
-                    'log counter': log_counter,
-                    "y_true": y_true,
-                    "y_pred": y_pred,
-                    "accuracy": accuracy,
-                    }
-                mlflow.log_metrics(metrics_dict)
+    """
+    For a given alias, it stores the received logging data from model predicitons (runs) in a unique mlflow run of the corresponding experiment.
+    
+    Parameters
+    ----------
+    log_counter: int
+        Run number of (csv-logged) run that is to be stored (note: unique mlflow run number usually differs!)
+    alias : string
+        Alias of mlflow registry model version
+    timestamp : string
+        Contains time of API call.
+    y_true : integer (0 or 1)
+        True label of image
+    y_pred : float (0 <= y_pred <=1)
+        Predicted label of image
+    accuracy : int (0 or 1)
+        Accuracy of prediction
+    file_name: string
+        Name of image file used for prediction
+    model_version : int
+        Version number of mlflow registry model version
+    model_tag : string
+        Tag of mlflow registry model version
 
-                # log model version and tag
-                params = {
-                    'timestamp': timestamp,
-                    "model version": model_version,
-                    "model tag": model_tag,
-                    'image file name': file_name,
-                    }
-                mlflow.log_params(params)
+    Returns
+    -------
+    None
+    """ 
+    
+    # set experiment name for model (logging performance for each model in separate experiment)
+    mlflow.set_experiment(f"performance {alias}")
+
+    # logging of metrics
+    with mlflow.start_run():
+        
+        # log the metrics
+        metrics_dict = {
+            'log counter': log_counter,
+            "y_true": y_true,
+            "y_pred": y_pred,
+            "accuracy": accuracy,
+            }
+        mlflow.log_metrics(metrics_dict)
+
+        # log model version and tag
+        params = {
+            'timestamp': timestamp,
+            "model version": model_version,
+            "model tag": model_tag,
+            'image file name': file_name,
+            }
+        mlflow.log_params(params)
 
 def generate_performance_summary_csv(alias, last_n_predictions = 100):
     """
