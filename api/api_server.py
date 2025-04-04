@@ -111,7 +111,7 @@ async def upload_image_and_integer(
         accuracy_pred = int(label == np.around(y_pred))
 
         # logging and precalculations in csv-file
-        logged_csv_data = ah.save_performance_data_csv(alias = alias, timestamp = api_timestamp, y_true = label.value, y_pred = y_pred, accuracy=accuracy_pred, file_name="123.jpeg", model_version=model_version, model_tag=model_tag)
+        logged_csv_data = ah.save_performance_data_csv(alias = alias, timestamp = api_timestamp, y_true = label.value, y_pred = y_pred, accuracy=accuracy_pred, file_name=file.filename, model_version=model_version, model_tag=model_tag)
 
         # switch off mlflow tracking (if needed)
         mlflow_tracking = True 

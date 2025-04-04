@@ -13,52 +13,41 @@ import matplotlib.dates as mdates
 import pandas as pd
 
 
-def resize_image(
-    image,
-    signature_shape,
-    signature_dtype
-    ):
+' ##############################################################################################'
+' ######################### image preprocessing, model loading, prediction #####################'
 
+def return_verified_image_as_numpy_arr(image_bytes):
+
+    
     '''
-    Function that resizes a grayscale image such that it agrees 
-    with the signature and data type of the ML classifier's input.
+    Verification and reformatting function.
+    Verifies image type of input. Returns formatted numpy array.
     
     Parameters
     ----------
     
-    image: PIL image/numpy array
-        Image to be resized. Can only be in grayscale.
-    signature_shape: tuple
-        Shape of the ML classifier input.
-    signature_dtype: data type
-        Data type of the ML classifier input.
+    image_bytes: image as binary stream
+        Input Image, converted to bytes.
         
     Returns
     -------
-    image_array: numpy array
-        Reshaped numpy array with signature_dtype entries. 
-    '''
-    # convert image to numpy array
-    image_array = np.asarray(image)
-    image_array = image_array.reshape((*image_array.shape,1))
-
-    # if ML model input has more than one channel, populate each channel with the same pixel values
-    if signature_shape[-1] > 1:
-        img_array_tuple = tuple([image_array for i in range(signature_shape[-1])])
-        image_array = np.concatenate(img_array_tuple, axis = -1)
-
-    # resizing according to signature_shape. Using helper function from keras
-    resized_image = keras.ops.image.resize(
-        image_array,
-        size = (signature_shape[1], signature_shape[2]),
-        interpolation="bilinear",
-        )
+    Validated image in numpy array format. 
+    '''   
+    try: 
+        
+        # convert bytes to a PIL image, then ensure its integrity
+        image = Image.open(io.BytesIO(image_bytes))
+        image.verify() # can't be used if i want to process the image
     
-    # converting to numpy and retyping according to signature_type
-    image_array = resized_image.numpy().reshape(signature_shape)
-    image_array = image_array.astype(signature_dtype)
+    except Exception:
+        raise HTTPException(status_code=400, detail="Uploaded file is not a valid image.")
 
-    return image_array
+    # load image again (as it has been deconstructed by .verify())
+    validated_image = Image.open(io.BytesIO(image_bytes))
+
+    # convert the PIL image to np.array
+    validated_image_as_numpy = np.asarray(validated_image)
+    return validated_image_as_numpy
 
 def load_model_from_registry(model_name, alias):
     """
@@ -93,61 +82,6 @@ def load_model_from_registry(model_name, alias):
     input_type = signature.inputs.to_dict()[0]['tensor-spec']['dtype']
     
     return model, input_shape, input_type
-
-def make_prediction(model, image_as_array):
-    """
-    Simple function to return a prediction of a given model on a given input array.
-
-    Parameters
-    ----------
-    model : mlflow model
-        Mlflow model object. Has to be retrieved earlier by pufunc loading (mlflow)
-    image_as_array : numpy array
-        Image representation.
-        
-    Returns
-    -------
-    pred_reshaped: numpy array
-        Model prediction as numpy array.
-    """
-
-    prediction = model.predict(image_as_array)
-    pred_reshaped = float(prediction.flatten())
-
-    return pred_reshaped
-
-def return_verified_image_as_numpy_arr(image_bytes):
-
-    
-    '''
-    Verification and reformatting function.
-    Verifies image type of input. Returns formatted numpy array.
-    
-    Parameters
-    ----------
-    
-    image_bytes: image as binary stream
-        Input Image, converted to bytes.
-        
-    Returns
-    -------
-    Validated image in numpy array format. 
-    '''   
-    try: 
-        
-        # convert bytes to a PIL image, then ensure its integrity
-        image = Image.open(io.BytesIO(image_bytes))
-        image.verify() # can't be used if i want to process the image
-    
-    except Exception:
-        raise HTTPException(status_code=400, detail="Uploaded file is not a valid image.")
-
-    # load image again (as it has been deconstructed by .verify())
-    validated_image = Image.open(io.BytesIO(image_bytes))
-
-    # convert the PIL image to np.array
-    validated_image_as_numpy = np.asarray(validated_image)
-    return validated_image_as_numpy
 
 def get_modelversion_and_tag(model_name, model_alias):
     """
@@ -201,94 +135,79 @@ def get_modelversion_and_tag(model_name, model_alias):
 
     return version_number, tag
 
-def get_performance_indicators_mlflow(num_steps_short_term):
+def resize_image(
+    image,
+    signature_shape,
+    signature_dtype
+    ):
+
     '''
-    Function that fetches data from the mlflow client and 
-    returns a dictionary summarizing the to-date performance 
-    of the three pneumonia x-ray classification (aliased) models.
+    Function that resizes a grayscale image such that it agrees 
+    with the signature and data type of the ML classifier's input.
     
     Parameters
     ----------
-    num_steps_short_term : positive int
-        Size of the window used for calculating the sliding average
-        of accuracy.  
+    
+    image: PIL image/numpy array
+        Image to be resized. Can only be in grayscale.
+    signature_shape: tuple
+        Shape of the ML classifier input.
+    signature_dtype: data type
+        Data type of the ML classifier input.
         
     Returns
     -------
-    performance_dictionary: dict 
-        Dictionary with three keys corresponding to the three tracked
-        ML classifiers. The corresponding values are also dictionaries
-        with the following keys: total number of predictions, 
-        average accuracy for the last {num_steps_short_term} predictions,
-        pneumonia true positives, pneumonia true negatives, pneumonia 
-        false positives, and pneumonia false negatives.
-    
+    image_array: numpy array
+        Reshaped numpy array with signature_dtype entries. 
     '''
+    # convert image to numpy array
+    image_array = np.asarray(image)
+    image_array = image_array.reshape((*image_array.shape,1))
 
-    # setting the uri 
-    client = MlflowClient(tracking_uri="http://127.0.0.1:8080")
-        
-    # get the three experiments: performance + (baseline, challenger, champion)
-    print("getting experiment list")
-    experiments = list(client.search_experiments())[:3]
-    
-    # get experiment names and ids
-    print("getting experiment names and ids")
-    exp_names = [exp.name for exp in experiments]
-    exp_ids = [exp.experiment_id for exp in experiments]
-    
-    # define an empty dictionary to hold the performance indicators for each experiment
-    performance_dictionary = {}
-    
-    # for loop to calculate perfomance indicators for each experiment/model
-    for exp_name, exp_id in zip(exp_names, exp_ids):
-        print(f"{exp_name}: getting runs")
-        # all runs in the experiment with exp_id, i.e. number of predictions made
-        runs = list(client.search_runs(experiment_ids = exp_id))
-        
-        # run_ids
-        run_ids = [run.info.run_id for run in runs]
-        
-        # extract lists of accuracies, timestamps, and correct prediction labels
-        # within the given experiment (0 = no pneumonia, 1 = pneumonia)
-        print(f"{exp_name}: starting extraction of accuracies")
-        accuracies = [list(client.get_metric_history(run_id = run_id, key = 'accuracy'))[0].value for run_id in run_ids]
-        print(f"{exp_name}: starting extraction of time stamps")
-        timestamps = [list(client.get_metric_history(run_id = run_id, key = 'accuracy'))[0].timestamp for run_id in run_ids]
-        print(f"{exp_name}: starting extraction of input_labels")
-        y_true = [list(client.get_metric_history(run_id = run_id, key = 'y_true'))[0].value for run_id in run_ids]
-        
-        # 1st row is timestamps, 2nd is accuracies and so on
-        values_array = np.array([timestamps, accuracies, y_true])
-        # sorting according to the timestamps
-        values_array = values_array[:, values_array[0].argsort()]
-        # get rid of the timestamps row
-        values_array = values_array[1:]
-        # restrict array to latest {num_steps_short_term} runs
-        values_array_short_term = values_array[:,-num_steps_short_term:]
-        print(values_array_short_term.shape)
+    # if ML model input has more than one channel, populate each channel with the same pixel values
+    if signature_shape[-1] > 1:
+        img_array_tuple = tuple([image_array for i in range(signature_shape[-1])])
+        image_array = np.concatenate(img_array_tuple, axis = -1)
 
-        print(f"{exp_name}: calc confusion matrix")
-        # calculate confusion matrix elements
-        true_positives = np.sum((values_array_short_term[0] == 1) & (values_array_short_term[1] == 1))
-        true_negatives = np.sum((values_array_short_term[0] == 1) & (values_array_short_term[1] == 0))
-        false_negatives = np.sum((values_array_short_term[0] == 0) & (values_array_short_term[1] == 1))
-        false_positives = np.sum((values_array_short_term[0] == 0) & (values_array_short_term[1] == 0))
+    # resizing according to signature_shape. Using helper function from keras
+    resized_image = keras.ops.image.resize(
+        image_array,
+        size = (signature_shape[1], signature_shape[2]),
+        interpolation="bilinear",
+        )
+    
+    # converting to numpy and retyping according to signature_type
+    image_array = resized_image.numpy().reshape(signature_shape)
+    image_array = image_array.astype(signature_dtype)
+
+    return image_array
+
+def make_prediction(model, image_as_array):
+    """
+    Simple function to return a prediction of a given model on a given input array.
+
+    Parameters
+    ----------
+    model : mlflow model
+        Mlflow model object. Has to be retrieved earlier by pufunc loading (mlflow)
+    image_as_array : numpy array
+        Image representation.
         
-        # save the experiment information in a dictionary
-        exp_dictionary ={
-            'total number of predictions': str(len(accuracies)),
-            f'average accuracy for the last {num_steps_short_term} predictions': str(np.mean(values_array_short_term[0])),
-            'pneumonia true positives': str(true_positives),
-            'pneumonia true negatives': str(true_negatives),
-            'pneumonia false positives': str(false_positives), 
-            'pneumonia false negatives': str(false_negatives),   
-        }
-        
-        # update the dictionary containing the information from the other experiments
-        performance_dictionary.update({exp_name: exp_dictionary})
-          
-    return performance_dictionary
+    Returns
+    -------
+    pred_reshaped: numpy array
+        Model prediction as numpy array.
+    """
+
+    prediction = model.predict(image_as_array)
+    pred_reshaped = float(prediction.flatten())
+
+    return pred_reshaped
+
+
+
+' ##############################################################################################'
+' ######################### logging of prediction data #########################################'
 
 def save_performance_data_csv(alias, timestamp, y_true, y_pred, accuracy, file_name, model_version, model_tag):
     """
@@ -429,6 +348,100 @@ def save_performance_data_mlflow(log_counter, alias, timestamp, y_true, y_pred, 
             'image file name': file_name,
             }
         mlflow.log_params(params)
+
+
+
+' ##############################################################################################'
+' ######################### performance reporting and plotting functions #######################'
+
+def get_performance_indicators_mlflow(num_steps_short_term):
+    '''
+    Function that fetches data from the mlflow client and 
+    returns a dictionary summarizing the to-date performance 
+    of the three pneumonia x-ray classification (aliased) models.
+    
+    Parameters
+    ----------
+    num_steps_short_term : positive int
+        Size of the window used for calculating the sliding average
+        of accuracy.  
+        
+    Returns
+    -------
+    performance_dictionary: dict 
+        Dictionary with three keys corresponding to the three tracked
+        ML classifiers. The corresponding values are also dictionaries
+        with the following keys: total number of predictions, 
+        average accuracy for the last {num_steps_short_term} predictions,
+        pneumonia true positives, pneumonia true negatives, pneumonia 
+        false positives, and pneumonia false negatives.
+    
+    '''
+
+    # setting the uri 
+    client = MlflowClient(tracking_uri="http://127.0.0.1:8080")
+        
+    # get the three experiments: performance + (baseline, challenger, champion)
+    print("getting experiment list")
+    experiments = list(client.search_experiments())[:3]
+    
+    # get experiment names and ids
+    print("getting experiment names and ids")
+    exp_names = [exp.name for exp in experiments]
+    exp_ids = [exp.experiment_id for exp in experiments]
+    
+    # define an empty dictionary to hold the performance indicators for each experiment
+    performance_dictionary = {}
+    
+    # for loop to calculate perfomance indicators for each experiment/model
+    for exp_name, exp_id in zip(exp_names, exp_ids):
+        print(f"{exp_name}: getting runs")
+        # all runs in the experiment with exp_id, i.e. number of predictions made
+        runs = list(client.search_runs(experiment_ids = exp_id))
+        
+        # run_ids
+        run_ids = [run.info.run_id for run in runs]
+        
+        # extract lists of accuracies, timestamps, and correct prediction labels
+        # within the given experiment (0 = no pneumonia, 1 = pneumonia)
+        print(f"{exp_name}: starting extraction of accuracies")
+        accuracies = [list(client.get_metric_history(run_id = run_id, key = 'accuracy'))[0].value for run_id in run_ids]
+        print(f"{exp_name}: starting extraction of time stamps")
+        timestamps = [list(client.get_metric_history(run_id = run_id, key = 'accuracy'))[0].timestamp for run_id in run_ids]
+        print(f"{exp_name}: starting extraction of input_labels")
+        y_true = [list(client.get_metric_history(run_id = run_id, key = 'y_true'))[0].value for run_id in run_ids]
+        
+        # 1st row is timestamps, 2nd is accuracies and so on
+        values_array = np.array([timestamps, accuracies, y_true])
+        # sorting according to the timestamps
+        values_array = values_array[:, values_array[0].argsort()]
+        # get rid of the timestamps row
+        values_array = values_array[1:]
+        # restrict array to latest {num_steps_short_term} runs
+        values_array_short_term = values_array[:,-num_steps_short_term:]
+        print(values_array_short_term.shape)
+
+        print(f"{exp_name}: calc confusion matrix")
+        # calculate confusion matrix elements
+        true_positives = np.sum((values_array_short_term[0] == 1) & (values_array_short_term[1] == 1))
+        true_negatives = np.sum((values_array_short_term[0] == 1) & (values_array_short_term[1] == 0))
+        false_negatives = np.sum((values_array_short_term[0] == 0) & (values_array_short_term[1] == 1))
+        false_positives = np.sum((values_array_short_term[0] == 0) & (values_array_short_term[1] == 0))
+        
+        # save the experiment information in a dictionary
+        exp_dictionary ={
+            'total number of predictions': str(len(accuracies)),
+            f'average accuracy for the last {num_steps_short_term} predictions': str(np.mean(values_array_short_term[0])),
+            'pneumonia true positives': str(true_positives),
+            'pneumonia true negatives': str(true_negatives),
+            'pneumonia false positives': str(false_positives), 
+            'pneumonia false negatives': str(false_negatives),   
+        }
+        
+        # update the dictionary containing the information from the other experiments
+        performance_dictionary.update({exp_name: exp_dictionary})
+          
+    return performance_dictionary
 
 def get_performance_indicators_csv(alias, last_n_predictions = 100):
     """
@@ -577,11 +590,31 @@ def generate_model_comparison_plot(window = 50, scaling =  "log_counter"):
 
     return fig
 
+
+
+' ##############################################################################################'
+' ######################## model comparison and takeover (switch) functions ####################'
+
 def moving_average_column(column, window):
     """"
-    TODO: DOCUMENTATION! hier müssen wir auf jeden fall reinschreiben, dass das window am unteren ende der column 
-    abgeschnitten wird!!! 
-    
+    For a given input column, the moving average of column values is calculated. 
+    The window parameter (input) controls, how many consecutive values are uses for the moving average calculation.
+    I.e.: 
+    - For a column element's index, the last {window} predecessor values are used to calculate the moving average.
+    - If there are not enough predecessors available (e.g. at low column indexes), only the avalílable values are taken.
+    - This means: For low column indexes (lower than {window}), the window is shortened by definition!
+
+    Parameters
+    ----------
+    column : array-like
+        array-like integer containing numeric values
+    window: int
+        Controls how many predecessing values of a column element are used to calculate the moving average at that column element's index.
+        
+    Returns
+    -------
+    np.array: numpy array
+        Numpy array containing moving averages for the input column.
     """
     column = np.array(column)
     averaged_col = [np.sum(column[max(0,i-window):i])/min(i, window) for i in range(1,len(column)+1)]
@@ -589,7 +622,26 @@ def moving_average_column(column, window):
     return np.array(averaged_col)
 
 def check_challenger_takeover(last_n_predictions = 20, window=50):
+    """"
+    Fetches data from performance logs (csv-files) of challenger and champion registry model versions. 
+    Checks if the challenger's moving average accuracy has been better than the champion's moving average accuracy during last_n_predictions.
+    Check is done by using accuracy column from csv-files. Moving average calculation is done with {window}.
+    
+    Parameters
+    ----------
+    last_n_predictions : integer
+        Input for takeover condition (model switch). 
+        Challenger has to have better moving average accuracy than champion during {last_n_predictions} to take over. 
+    window: int
+        Window parameter for moving average calculation. Will be passed to helper function moving_average_column.
+        
+    Returns
+    -------
+    check_if_chall_is_better: boolean
+        True if challenger satisfies takeover condition (model switch).
+    """
 
+    # get relevant paths
     project_folder = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
     tracking_path = os.path.join(project_folder, "unified_experiment/performance_tracking")
 
@@ -601,22 +653,23 @@ def check_challenger_takeover(last_n_predictions = 20, window=50):
         reader = csv.DictReader(csvfile)
         rows = list(reader)
         
-    # check if there are at least {last_n_predictions + window} runs
+    # Breaking condition nr. 1: check if there are at least {last_n_predictions + window} runs. If so, break
     if len(rows) < last_n_predictions + window:
         print(f"Initial protection phase (less than {last_n_predictions + window} runs available). No switch allowed yet.")
         return False
     
-    # check if switch was done in the previous {last_n_predictions} runs
-    # organize the last {last_n_predictions} model tag in a list,
-    # then get the unique items using set()
+    
+    # # Breaking condition nr. 2: check if switch was done in the previous {last_n_predictions} runs. If so, break
+    # organize the last {last_n_predictions} model tag in a list, get unique tags (set)
     last_model_tags_unique = set([row['model_tag'] for row in rows[-(last_n_predictions+window):]])
-    # check is switch was performed
+    # check is switch was performed, i.e. more than one model tags in history
     switch_done = len(last_model_tags_unique) > 1
     # quit the function if the switch was done in the last {last_n_predictions + window} runs
     if switch_done:
         print(f"A switch happend during the last {last_n_predictions+window} runs. No switch allowed yet.")
         return False
         
+    # If continuing here, start model comparison.
     # get last last_n_predictions, extract accuracy as integers
     last_rows_champ = rows[-(last_n_predictions + window):]
     last_acc_values_champ = [int(row['accuracy']) for row in last_rows_champ]
@@ -645,7 +698,20 @@ def check_challenger_takeover(last_n_predictions = 20, window=50):
     return check_if_chall_is_better
 
 def switch_champion_and_challenger():
+    """"
+    Swaps mlflow registry model versions that are associated with champion and challenger model aliases.
+    Swap is achieved by swapping content of alias files. 
+    After swapping, function updates the "model_switch" column of the last run in the champion's and challenger's csv files (new column value = "True") 
     
+    Parameters
+    ----------
+    No parameters
+        
+    Returns
+    -------
+    No returns
+    """
+
     # get paths of alias files
     project_folder = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
     unif_exp_path = os.path.join(project_folder, r"unified_experiment")
@@ -685,6 +751,8 @@ def switch_champion_and_challenger():
         writer.writeheader()
         writer.writerows(rows_champ)
     print("challenger and champion have been switched")
+
+
 
 # if run locally (for tests)
 if __name__ == "__main__":
