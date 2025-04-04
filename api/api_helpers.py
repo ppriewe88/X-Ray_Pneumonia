@@ -318,11 +318,8 @@ def save_performance_data_csv(alias, timestamp, y_true, y_pred, accuracy, filena
     Returns
     -------
     data : dictionary
-        Dictionary of data to be logged into csv-file
+        Dictionary of data to be logged into csv-file.
     """ 
-
-    # take time
-    start_time = time.time()
 
     # get absolute path of the project dir to later find required csv-files
     project_folder = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
@@ -373,11 +370,8 @@ def save_performance_data_csv(alias, timestamp, y_true, y_pred, accuracy, filena
             writer.writeheader()
         # Append new row
         writer.writerow(data)
-    
-    end_time = time.time()
 
     # print runtime and execution confirmation
-    print("runtime performance logging: ", end_time-start_time)
     print(f"Data has been saved in {file_path}.")
 
     return data
