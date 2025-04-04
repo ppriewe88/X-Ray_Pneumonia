@@ -266,7 +266,7 @@ async def get_performance_csv(
     return merged_csv_dict
 
 
-#####################################################
+' ############################### plotting endpoint ###############################'
 # endpoint for plot generation
 @app.post("/get_comparsion_plot")
 async def plot_model_comparison(window: int = 50):
@@ -277,7 +277,7 @@ async def plot_model_comparison(window: int = 50):
     
     Plot also indicates, which underlying model is champion or challenger at which run number.
     '''
-    
+
     # create the figure
     figure = ah.generate_model_comparison_plot(window, scaling =  "log_counter")
     
