@@ -290,7 +290,7 @@ def get_performance_indicators(num_steps_short_term = 1):
           
     return performance_dictionary
 
-def save_performance_data_csv(alias, timestamp, y_true, y_pred, accuracy, filename, model_version, model_tag):
+def save_performance_data_csv(alias, timestamp, y_true, y_pred, accuracy, file_name, model_version, model_tag):
     """
     Recieves data from a model's prediction to generate performance review. 
     Saves the retrieved data and some additional calculations in a csv-file under a specified path.
@@ -352,7 +352,7 @@ def save_performance_data_csv(alias, timestamp, y_true, y_pred, accuracy, filena
         'y_true': y_true,
         'y_pred': y_pred,
         'accuracy': accuracy,
-        'filename': filename,
+        'filename': file_name,
         'model_version': model_version,
         'model_tag': model_tag,
         "model_alias": alias,
@@ -375,6 +375,8 @@ def save_performance_data_csv(alias, timestamp, y_true, y_pred, accuracy, filena
     print(f"Data has been saved in {file_path}.")
 
     return data
+
+# def save_performance_data_mlflow(log_counter, alias, timestamp, y_true, y_pred, accuracy, file_name, model_version, model_tag):
 
 def generate_performance_summary_csv(alias, last_n_predictions = 100):
     """
