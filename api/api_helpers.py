@@ -517,6 +517,32 @@ def get_performance_indicators_csv(alias, last_n_predictions = 100):
 
 def generate_model_comparison_plot(window = 50, scaling =  "log_counter"):
 
+    '''
+    Function that generates a plot comparing the performance of
+    models over time. The upper part of the plot shows the accuracy 
+    of the champion and challenger models, averaged over a window
+    whose lenght is specified by the {window} parameter. The lower
+    part of the plot shows which of the trained ML models is the 
+    challenger and the champion at a given time.
+    
+    Parameters
+    ----------
+    window : positive int
+        Size of the window (= number of consecutive runs) used for 
+        calculating the sliding average of the accuracy.
+    scaling : "log_counter" or "timestamp"
+        Controls what is shown on the x-axis of the plot. If
+        scaling = "timestamp", then the x-axis shows the timestamps
+        at which the api was used. Otherwise the x-axis shows the 
+        run number (= number of times the api was used). 
+        
+    Returns
+    -------
+    fig: figure object 
+        Figure comparing the performance of models.
+    
+    '''
+    
     # get absolute path of the project dir
     project_folder = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
 
@@ -538,23 +564,26 @@ def generate_model_comparison_plot(window = 50, scaling =  "log_counter"):
     df_challenger['timestamp'] = pd.to_datetime(df_challenger['timestamp'])
     df_baseline['timestamp'] = pd.to_datetime(df_baseline['timestamp'])
 
-    # create fig and axes
-    fig, ax = plt.subplots(figsize=(12, 6))
-
-    x_axis = scaling
+    # get switching points from challenger csv aka. df_challenger dataframe. 
+    # Result will be a pandas series containing the log_counters of the switches. 
+    # The resetted index enumerates the switches.
+    switch_points_log_counter = df_challenger[df_challenger["model_switch"]==True].reset_index(drop=True)["log_counter"]
+    
+    # define the figure and its subplots
+    fig, axs = plt.subplots(2, 1, sharex=True, figsize = (16,8), height_ratios= [3,1])
+    # remove horizontal space between axes
+    fig.subplots_adjust(hspace=0)
 
     # generate plot lines
     moving_avg_challenger = moving_average_column(df_challenger["accuracy"], window = window)
     moving_avg_champion = moving_average_column(df_champion["accuracy"], window = window)
-    ax.plot(df_champion[x_axis], moving_avg_champion, label='Champion', color='red', linestyle=':', linewidth=5)
-    ax.plot(df_challenger[x_axis], moving_avg_challenger, label='Challenger', color='orange', linestyle='-.', linewidth=5)
-    
-    
-    # get switching points from challenger csv aka. df_challenger dataframe. 
-    # Result will be a pandas series containing the log_counters of the switches. The resetted index enumerates the switches!
-    switch_points_log_counter = df_challenger[df_challenger["model_switch"]==True].reset_index(drop=True)["log_counter"]
+    axs[0].plot(df_champion[scaling], moving_avg_champion, label='Champion', color='blue', linestyle='-', linewidth=3)
+    axs[0].plot(df_challenger[scaling], moving_avg_challenger, label='Challenger', color='orange', linestyle='--', linewidth=3)
+
+
+    # vertical lines showing when the automated switches happened
     for log_counter in switch_points_log_counter:
-        ax.axvline(
+        axs[0].axvline(
             x=log_counter,
             color='black',
             linestyle='-',
@@ -564,31 +593,68 @@ def generate_model_comparison_plot(window = 50, scaling =  "log_counter"):
         )
 
     # set common axis labels and titles
-    ax.set_ylabel(f"moving avg accuracy for the last {window} predictions", fontsize=9)
-    ax.set_title(f'Model comparison over time', fontsize=14)
+    axs[0].set_ylabel(f"moving avg accuracy for the last {window} predictions", fontsize=12)
+    axs[0].set_title(f'Model comparison over time', fontsize=20)
 
     # legend
-    ax.legend(fontsize=10)
+    axs[0].legend(fontsize=15)
+
+
+    # add grid
+    axs[0].grid(True, linestyle='--', alpha=0.7)
+
+
+
+    # organize all the models in a set
+    models_champion = list(df_champion["model_tag"].unique())
+    models_challenger = list(df_challenger["model_tag"].unique())
+    models = set(models_champion + models_challenger)
+
+    # dict for creating a new column in the df's
+    # makes the y-axis ticks of lower plot easier to code
+    model_mapping = {model: idx + 1 for idx, model in enumerate(models)}
+
+    # generate plot lines
+    for color, df in zip(["blue", "orange"], [df_champion, df_challenger]):
+        df["plot"] = df["model_tag"].map(model_mapping)
+        axs[1].plot(df["log_counter"], 
+                    df["plot"], 
+                    marker = "|",
+                    markersize = 10, 
+                    linestyle = '', 
+                    color = color,
+                    )
+
+    # vertical lines showing when the automated switches happened
+    for log_counter in switch_points_log_counter:
+        axs[1].axvline(
+            x=log_counter,
+            color='black',
+            linestyle='-',
+            linewidth=2,
+        )
+
 
     # set custom axis and title formatting according to scaling
     if scaling == "timestamp":
-        ax.xaxis.set_major_formatter(mdates.DateFormatter('%Y-%m-%d %H:%M'))
-        ax.xaxis.set_major_locator(mdates.AutoDateLocator())
+        axs[1].xaxis.set_major_formatter(mdates.DateFormatter('%Y-%m-%d %H:%M'))
+        axs[1].xaxis.set_major_locator(mdates.AutoDateLocator())
         plt.gcf().autofmt_xdate()
-        ax.set_xlabel("Time of run", fontsize=12)
+        axs[1].set_xlabel("Time of run", fontsize=12)
 
     else:
-        ax.xaxis.set_major_formatter(plt.ScalarFormatter())
-        ax.xaxis.set_major_locator(plt.AutoLocator())
-        ax.set_xlabel("Run number", fontsize=12)
+        axs[1].xaxis.set_major_formatter(plt.ScalarFormatter())
+        axs[1].xaxis.set_major_locator(plt.AutoLocator())
+        axs[1].set_xlabel("Run number", fontsize=12)
 
-    # add grid
-    ax.grid(True, linestyle='--', alpha=0.7)
+    # set limits on y-axis
+    axs[1].set_ylim(bottom=0.5, top=max(model_mapping.values()) + 0.5)
+    # set ticks on y-axis
+    axs[1].set_yticks(tuple(model_mapping.values()), labels = models)
+    # make the ticks disappear from the y-axis
+    axs[1].tick_params(axis='y', which='both', length=0)
 
-    # show plot
-    plt.tight_layout()
-
-    return fig
+    return fig    
 
 
 

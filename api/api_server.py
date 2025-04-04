@@ -110,13 +110,28 @@ async def upload_image_with_label(
         accuracy_pred = int(label == np.around(y_pred))
 
         # logging and precalculations in csv-file
-        logged_csv_data = ah.save_performance_data_csv(alias = alias, timestamp = api_timestamp, y_true = label.value, y_pred = y_pred, accuracy=accuracy_pred, file_name=file.filename, model_version=model_version, model_tag=model_tag)
+        logged_csv_data = ah.save_performance_data_csv(alias = alias, 
+                                                       timestamp = api_timestamp, 
+                                                       y_true = label.value, 
+                                                       y_pred = y_pred, 
+                                                       accuracy=accuracy_pred, 
+                                                       file_name=file.filename, 
+                                                       model_version=model_version, 
+                                                       model_tag=model_tag)
 
         # switch off mlflow tracking (if needed)
         mlflow_tracking = False 
         if mlflow_tracking:
             # logging in mlflow performance runs, if switched on
-            ah.save_performance_data_mlflow(log_counter = logged_csv_data["log_counter"], alias = alias, timestamp = logged_csv_data["timestamp"], y_true = label, y_pred = y_pred, accuracy = accuracy_pred, file_name = logged_csv_data["filename"], model_version = model_version, model_tag = model_tag)
+            ah.save_performance_data_mlflow(log_counter = logged_csv_data["log_counter"], 
+                                            alias = alias, 
+                                            timestamp = logged_csv_data["timestamp"], 
+                                            y_true = label, 
+                                            y_pred = y_pred, 
+                                            accuracy = accuracy_pred, 
+                                            file_name = logged_csv_data["filename"], 
+                                            model_version = model_version, 
+                                            model_tag = model_tag)
 
         # update dictionary for API-output
         y_pred_as_str.update({f"prediction {alias}": str(y_pred)})
@@ -280,7 +295,7 @@ async def plot_model_comparison(window: int = 50):
 
     # create the figure
     figure = ah.generate_model_comparison_plot(window, scaling =  "log_counter")
-    
+
     # create an in-memory buffer to hold the figure
     buffer = io.BytesIO()
     
