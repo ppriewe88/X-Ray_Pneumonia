@@ -202,7 +202,6 @@ def get_modelversion_and_tag(model_name, model_alias):
     return version_number, tag
 
 def get_performance_indicators(num_steps_short_term = 1):
-
     '''
     Function that fetches data from the mlflow client and 
     returns a dictionary summarizing the to-date performance 
@@ -275,7 +274,6 @@ def get_performance_indicators(num_steps_short_term = 1):
         
         # save the experiment information in a dictionary
         exp_dictionary ={
-            'all-time average accuracy': str(np.mean(values_array[0])),
             'total number of predictions': str(len(accuracies)),
             f'average accuracy for the last {num_steps_short_term} predictions': str(np.mean(values_array[0,-num_steps_short_term:])),
             'pneumonia true positives': str(true_positives),
@@ -468,7 +466,6 @@ def generate_performance_summary_csv(alias, last_n_predictions = 100):
     # get values of last prediction (cumulations, averages) to calculate consecutive values
     last_row = rows[-1]
     total_predictions = int(last_row['log_counter'])
-    all_time_average = float(last_row['global_accuracy'])
 
     # initialize confusion matrix
     true_positives = 0
@@ -488,17 +485,11 @@ def generate_performance_summary_csv(alias, last_n_predictions = 100):
 
     # calc avg of last n predictions
     avg_last_n_predictions = np.mean(accuracy)
-    # historical countercheck
-    last_50_average = float(last_row['accuracy_last_50_predictions'])
-    ########## removed! left as comment for historical checks. TODO: final remove!
 
     # generate result dict
     summary = {
         f"performance csv {alias}": {
-            "all-time average accuracy": f"{all_time_average:.4f}",
             "total number of predictions": str(total_predictions),
-            "average accuracy last 50 predictions": f"{last_50_average:.4f}",
-            ########## removed! left as comment for historical checks. TODO: final remove!
             f"average accuracy last {last_n_predictions} predictions": f"{avg_last_n_predictions}",
             "pneumonia true positives": str(true_positives),
             "pneumonia true negatives": str(true_negatives),
