@@ -376,7 +376,30 @@ def save_performance_data_csv(alias, timestamp, y_true, y_pred, accuracy, file_n
 
     return data
 
-# def save_performance_data_mlflow(log_counter, alias, timestamp, y_true, y_pred, accuracy, file_name, model_version, model_tag):
+def save_performance_data_mlflow(log_counter, alias, timestamp, y_true, y_pred, accuracy, file_name, model_version, model_tag):
+     # set experiment name for model (logging performance for each model in separate experiment)
+            mlflow.set_experiment(f"performance {alias}")
+        
+            # logging of metrics
+            with mlflow.start_run():
+                
+                # log the metrics
+                metrics_dict = {
+                    'log counter': log_counter,
+                    "y_true": y_true,
+                    "y_pred": y_pred,
+                    "accuracy": accuracy,
+                    }
+                mlflow.log_metrics(metrics_dict)
+
+                # log model version and tag
+                params = {
+                    'timestamp': timestamp,
+                    "model version": model_version,
+                    "model tag": model_tag,
+                    'image file name': file_name,
+                    }
+                mlflow.log_params(params)
 
 def generate_performance_summary_csv(alias, last_n_predictions = 100):
     """

@@ -116,31 +116,8 @@ async def upload_image_and_integer(
         # switch off mlflow tracking (if needed)
         mlflow_tracking = False 
         if mlflow_tracking:
-            # set experiment name for model (logging performance for each model in separate experiment)
-            mlflow.set_experiment(f"performance {alias}")
-        
-            # logging of metrics
-            with mlflow.start_run():
-                
-                # log the metrics
-                metrics_dict = {
-                    'log counter': logged_csv_data["log_counter"],
-                    "y_true": label,
-                    "y_pred": y_pred,
-                    "accuracy": accuracy_pred,
-                    'global accuracy': logged_csv_data["global_accuracy"],
-                    'floating avg accuracy 50 runs': logged_csv_data["accuracy_last_50_predictions"]
-                    }
-                mlflow.log_metrics(metrics_dict)
-
-                # log model version and tag
-                params = {
-                    'timestamp': logged_csv_data["timestamp"],
-                    "model version": model_version,
-                    "model tag": model_tag,
-                    'image file name': logged_csv_data["filename"],
-                    }
-                mlflow.log_params(params)
+            # logging in mlflow performance runs, if switched on
+            ah.save_performance_data_mlflow(log_counter = logged_csv_data["log_counter"], alias = alias, timestamp = logged_csv_data["timestamp"], y_true = label, y_pred = y_pred, accuracy = accuracy_pred, file_name = logged_csv_data["filename"], model_version = model_version, model_tag = model_tag)
 
         # update dictionary for API-output
         y_pred_as_str.update({f"prediction {alias}": str(y_pred)})
