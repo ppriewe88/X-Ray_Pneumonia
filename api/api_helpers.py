@@ -494,7 +494,20 @@ def generate_model_comparison_plot(window = 50, scaling =  "log_counter"):
     moving_avg_champion = moving_average_column(df_champion["accuracy"], window = window)
     ax.plot(df_champion[x_axis], moving_avg_champion, label='Champion', color='red', linestyle=':', linewidth=5)
     ax.plot(df_challenger[x_axis], moving_avg_challenger, label='Challenger', color='orange', linestyle='-.', linewidth=5)
-    ax.plot(df_challenger[x_axis], df_challenger["model_switch"], label='model switch', color='blue', linestyle='--', linewidth=2)
+    
+    
+    # get switching points from challenger csv aka. df_challenger dataframe. 
+    # Result will be a pandas series containing the log_counters of the switches. The resetted index enumerates the switches!
+    switch_points_log_counter = df_challenger[df_challenger["model_switch"]==True].reset_index(drop=True)["log_counter"]
+    for log_counter in switch_points_log_counter:
+        ax.axvline(
+            x=log_counter,
+            color='black',
+            linestyle='-',
+            linewidth=2,
+            # generate label (legend) only for first element to avoid redundancy in legend
+            label='automated model switch' if log_counter == switch_points_log_counter[0] else None
+        )
 
     # set common axis labels and titles
     ax.set_ylabel(f"moving avg accuracy for the last {window} predictions", fontsize=9)
