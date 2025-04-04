@@ -113,36 +113,40 @@ async def upload_image_and_integer(
         # logging and precalculations in csv-file
         logged_csv_data = ah.save_performance_data_csv(alias = alias, timestamp = api_timestamp, y_true = label.value, y_pred = y_pred, accuracy=accuracy_pred, filename="123.jpeg", model_version=model_version, model_tag=model_tag)
 
-        # set experiment name for model (logging performance for each model in separate experiment)
-        mlflow.set_experiment(f"performance {alias}")
-    
-        # logging of metrics
-        with mlflow.start_run():
-            
-            # log the metrics
-            metrics_dict = {
-                'log counter': logged_csv_data["log_counter"],
-                "y_true": label,
-                "y_pred": y_pred,
-                "accuracy": accuracy_pred,
-                'global accuracy': logged_csv_data["global_accuracy"],
-                'floating avg accuracy 50 runs': logged_csv_data["accuracy_last_50_predictions"]
-                }
-            mlflow.log_metrics(metrics_dict)
+        # switch off mlflow tracking (if needed)
+        mlflow_tracking = False 
+        if mlflow_tracking:
+            # set experiment name for model (logging performance for each model in separate experiment)
+            mlflow.set_experiment(f"performance {alias}")
+        
+            # logging of metrics
+            with mlflow.start_run():
+                
+                # log the metrics
+                metrics_dict = {
+                    'log counter': logged_csv_data["log_counter"],
+                    "y_true": label,
+                    "y_pred": y_pred,
+                    "accuracy": accuracy_pred,
+                    'global accuracy': logged_csv_data["global_accuracy"],
+                    'floating avg accuracy 50 runs': logged_csv_data["accuracy_last_50_predictions"]
+                    }
+                mlflow.log_metrics(metrics_dict)
 
-            # log model version and tag
-            params = {
-                'timestamp': logged_csv_data["timestamp"],
-                "model version": model_version,
-                "model tag": model_tag,
-                'image file name': logged_csv_data["filename"],
-                }
-            mlflow.log_params(params)
+                # log model version and tag
+                params = {
+                    'timestamp': logged_csv_data["timestamp"],
+                    "model version": model_version,
+                    "model tag": model_tag,
+                    'image file name': logged_csv_data["filename"],
+                    }
+                mlflow.log_params(params)
 
         # update dictionary for API-output
         y_pred_as_str.update({f"prediction {alias}": str(y_pred)})
     
-    # check if switch is made
+    print(f"Currently at run with log_counter number {logged_csv_data['log_counter']}.")
+    # check if switch should be made
     if ah.check_challenger_takeover(last_n_predictions = 20, window = 50):
         ah.switch_champion_and_challenger()
     
@@ -310,7 +314,7 @@ async def get_performance_csv(
 #####################################################
 # endpoint for plot generation
 @app.post("/get_comparsion_plot")
-async def plot_model_comparison(target = "accuracy_last_50_predictions"):
+async def plot_model_comparison(window: int = 50):
     
     '''
     Endpoint that displays a plot showing the moving average accuracy
@@ -321,7 +325,7 @@ async def plot_model_comparison(target = "accuracy_last_50_predictions"):
     # generate_model_comparison_plot() function
     
     # create the figure
-    figure = ah.generate_model_comparison_plot(target, scaling =  "log_counter")
+    figure = ah.generate_model_comparison_plot(window, scaling =  "log_counter")
     
     
     # create an in-memory buffer to hold the figure

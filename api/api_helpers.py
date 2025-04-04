@@ -336,9 +336,6 @@ def save_performance_data_csv(alias, timestamp, y_true, y_pred, accuracy, filena
     
     # initializing standard values for cumulative and global values
     log_counter = 1
-    cumulative_accuracy = accuracy
-    global_accuracy = accuracy
-    # last_50_accuracy = accuracy ########## removed! left as comment for historical checks. TODO: final remove!
     
     # Calculate consecutive values from last row's values and current values
     if os.path.exists(file_path):
@@ -350,15 +347,6 @@ def save_performance_data_csv(alias, timestamp, y_true, y_pred, accuracy, filena
                 last_row = rows[-1]
                 # get values of last row to determine cumulations and global accuracy
                 log_counter = int(last_row['log_counter']) + 1
-                cumulative_accuracy = float(last_row['cumulative_accuracy']) + accuracy
-                global_accuracy = cumulative_accuracy / log_counter
-                
-                # # get last values (or less, if not enough rows available)
-                # num_previous = min(49, log_counter - 1)
-                # relevant_rows = rows[-num_previous:]
-                # relevant_accuracies = [float(row['accuracy']) for row in relevant_rows] + [accuracy]
-                # last_50_accuracy = sum(relevant_accuracies) / len(relevant_accuracies)
-                ########## removed! left as comment for historical checks. TODO: final remove!
 
     # prepare data for output (formatting)
     data = {
@@ -367,14 +355,11 @@ def save_performance_data_csv(alias, timestamp, y_true, y_pred, accuracy, filena
         'y_true': y_true,
         'y_pred': y_pred,
         'accuracy': accuracy,
-        'cumulative_accuracy': cumulative_accuracy,
-        'global_accuracy': global_accuracy,
-        # 'accuracy_last_50_predictions': last_50_accuracy, 
-        ########## removed! left as comment for historical checks. TODO: final remove!
         'filename': filename,
         'model_version': model_version,
         'model_tag': model_tag,
-        "model_alias": alias
+        "model_alias": alias,
+        "model_switch": False
     }
     
     # Check if file exists already
@@ -456,7 +441,7 @@ def generate_performance_summary_csv(alias, last_n_predictions = 100):
     # calc avg of last n predictions
     avg_last_n_predictions = np.mean(accuracy)
     # historical countercheck
-    # last_50_average = float(last_row['accuracy_last_50_predictions'])
+    last_50_average = float(last_row['accuracy_last_50_predictions'])
     ########## removed! left as comment for historical checks. TODO: final remove!
 
     # generate result dict
@@ -464,7 +449,7 @@ def generate_performance_summary_csv(alias, last_n_predictions = 100):
         f"performance csv {alias}": {
             "all-time average accuracy": f"{all_time_average:.4f}",
             "total number of predictions": str(total_predictions),
-            # "average accuracy last 50 predictions": f"{last_50_average:.4f}",
+            "average accuracy last 50 predictions": f"{last_50_average:.4f}",
             ########## removed! left as comment for historical checks. TODO: final remove!
             f"average accuracy last {last_n_predictions} predictions": f"{avg_last_n_predictions}",
             "pneumonia true positives": str(true_positives),
@@ -476,7 +461,7 @@ def generate_performance_summary_csv(alias, last_n_predictions = 100):
 
     return summary
 
-def generate_model_comparison_plot(target = "accuracy_last_50_predictions", scaling =  "log_counter"):
+def generate_model_comparison_plot(window = 50, scaling =  "log_counter"):
 
     # get absolute path of the project dir
     project_folder = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
@@ -503,23 +488,30 @@ def generate_model_comparison_plot(target = "accuracy_last_50_predictions", scal
     fig, ax = plt.subplots(figsize=(12, 6))
 
     x_axis = scaling
-    # TODO: Remove "old logic" once tests are done. 
-    # Means: Remove old two line plots; include n_las_preds param, pass to mov_avg func beloc
-    # plot thre dataframes as traces
-    ax.plot(df_champion[x_axis], df_champion[target], label='Champion', color='green', linestyle='-', linewidth=5)
-    ax.plot(df_challenger[x_axis], df_challenger[target], label='Challenger', color='blue', linestyle='--', linewidth=5)
-    # ax.plot(df_baseline[x_axis], df_baseline[target], label='Baseline', color='red', linestyle=':', linewidth=2)
 
-    ' XXXXXXXXXXXXXXXXX block for new logic of moving average #############'
-    moving_avg_challenger = moving_average_column(df_challenger["accuracy"], window = 50)
-    moving_avg_champion = moving_average_column(df_champion["accuracy"], window = 50)
-    ax.plot(df_champion[x_axis], moving_avg_champion, label='Champion', color='red', linestyle=':', linewidth=2)
-    ax.plot(df_challenger[x_axis], moving_avg_challenger, label='Challenger', color='orange', linestyle='-.', linewidth=2)
-    ' XXXXXXXXXXXXXXXXX block for new logic of moving average #############'
+    # generate plot lines
+    moving_avg_challenger = moving_average_column(df_challenger["accuracy"], window = window)
+    moving_avg_champion = moving_average_column(df_champion["accuracy"], window = window)
+    ax.plot(df_champion[x_axis], moving_avg_champion, label='Champion', color='red', linestyle=':', linewidth=5)
+    ax.plot(df_challenger[x_axis], moving_avg_challenger, label='Challenger', color='orange', linestyle='-.', linewidth=5)
+    
+    
+    # get switching points from challenger csv aka. df_challenger dataframe. 
+    # Result will be a pandas series containing the log_counters of the switches. The resetted index enumerates the switches!
+    switch_points_log_counter = df_challenger[df_challenger["model_switch"]==True].reset_index(drop=True)["log_counter"]
+    for log_counter in switch_points_log_counter:
+        ax.axvline(
+            x=log_counter,
+            color='black',
+            linestyle='-',
+            linewidth=2,
+            # generate label (legend) only for first element to avoid redundancy in legend
+            label='automated model switch' if log_counter == switch_points_log_counter[0] else None
+        )
 
     # set common axis labels and titles
-    ax.set_ylabel(target, fontsize=12)
-    ax.set_title(f'Model comparison over time ({target})', fontsize=14)
+    ax.set_ylabel(f"moving avg accuracy for the last {window} predictions", fontsize=9)
+    ax.set_title(f'Model comparison over time', fontsize=14)
 
     # legend
     ax.legend(fontsize=10)
@@ -567,6 +559,23 @@ def check_challenger_takeover(last_n_predictions = 20, window=50):
     with open(file_path_champ, 'r') as csvfile:
         reader = csv.DictReader(csvfile)
         rows = list(reader)
+        
+    # check if there are at least {last_n_predictions + window} runs
+    if len(rows) < last_n_predictions + window:
+        print(f"Initial protection phase (less than {last_n_predictions + window} runs available). No switch allowed yet.")
+        return False
+    
+    # check if switch was done in the previous {last_n_predictions} runs
+    # organize the last {last_n_predictions} model tag in a list,
+    # then get the unique items using set()
+    last_model_tags_unique = set([row['model_tag'] for row in rows[-(last_n_predictions+window):]])
+    # check is switch was performed
+    switch_done = len(last_model_tags_unique) > 1
+    # quit the function if the switch was done in the last {last_n_predictions + window} runs
+    if switch_done:
+        print(f"A switch happend during the last {last_n_predictions+window} runs. No switch allowed yet.")
+        return False
+        
     # get last last_n_predictions, extract accuracy as integers
     last_rows_champ = rows[-(last_n_predictions + window):]
     last_acc_values_champ = [int(row['accuracy']) for row in last_rows_champ]
@@ -585,37 +594,56 @@ def check_challenger_takeover(last_n_predictions = 20, window=50):
     # moving_average_column cuts window at the lower end of the column, thus the lower end has to be extended!
     moving_averages_chall = moving_average_column(last_acc_values_chall, window)[-last_n_predictions:]
     
-    print(moving_averages_chall.shape)
     # compare by calculating difference
     diff = moving_averages_champ - moving_averages_chall
-    print("challenger: ", moving_averages_chall)
-    print("champion: ", moving_averages_champ)
-    print("differenz: ", diff)
+    
     # check if all entries negative
     check_if_chall_is_better = np.all(diff <= 0)
-    print("challenger better: ", check_if_chall_is_better)
-    check_if_chall_is_worse = np.all(diff >= 0)
-    print("challenger worse: ", check_if_chall_is_worse)
-
+    print(f"Performance comparison between challenger and champion has been made. Challenger's moving average better during last {last_n_predictions} runs: ", check_if_chall_is_better)
+    
     return check_if_chall_is_better
 
 def switch_champion_and_challenger():
+    
     # get paths of alias files
     project_folder = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
-    aliases_path = os.path.join(project_folder, r"unified_experiment\mlruns\models\Xray_classifier\aliases")
-    path_challenger = os.path.join(aliases_path, "challenger")
-    path_champion = os.path.join(aliases_path, "champion")
+    unif_exp_path = os.path.join(project_folder, r"unified_experiment")
+    path_challenger_alias = os.path.join(unif_exp_path, r"mlruns/models/Xray_classifier/aliases/challenger")
+    path_champion_alias = os.path.join(unif_exp_path, r"mlruns/models/Xray_classifier/aliases/champion")
+    path_challenger_csv = os.path.join(unif_exp_path, r"performance_tracking/performance_data_challenger.csv")
+    path_champion_csv = os.path.join(unif_exp_path, r"performance_tracking/performance_data_champion.csv")
 
-    # read csv files
-    with open(path_champion, 'r') as file:
+    # read alias files 
+    with open(path_champion_alias, 'r') as file:
         version_number_champion = file.read()
-    with open(path_challenger, 'r') as file:
+    with open(path_challenger_alias, 'r') as file:
         version_number_challenger = file.read()
+
     # swap content (i.e. version numbers)
-    with open(path_champion, 'w') as file:
+    with open(path_champion_alias, 'w') as file:
         file.write(version_number_challenger)
-    with open(path_challenger, 'w') as file:
+    with open(path_challenger_alias, 'w') as file:
         file.write(version_number_champion)
+        
+    # update challenger csv-files of predictions: mark model_switch
+    with open(path_challenger_csv, 'r') as csvfile:
+        reader = csv.DictReader(csvfile)
+        rows_chall = list(reader)
+        rows_chall[-1]["model_switch"]="True"
+    with open(path_challenger_csv, 'w', newline='') as f:
+        writer = csv.DictWriter(f, fieldnames=rows_chall[0].keys())
+        writer.writeheader()
+        writer.writerows(rows_chall)
+    # update champion csv-files of predictions: mark model switch
+    with open(path_champion_csv, 'r') as csvfile:
+        reader = csv.DictReader(csvfile)
+        rows_champ = list(reader)
+        rows_champ[-1]["model_switch"]="True"
+    with open(path_champion_csv, 'w', newline='') as f:
+        writer = csv.DictWriter(f, fieldnames=rows_champ[0].keys())
+        writer.writeheader()
+        writer.writerows(rows_champ)
+    print("challenger and champion have been switched")
 
 # if run locally (for tests)
 if __name__ == "__main__":
