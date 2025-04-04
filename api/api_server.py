@@ -50,7 +50,7 @@ def home():
 ' ############################### model serving/prediction endpoint ###############################'
 # endpoint for uploading image
 @app.post("/upload_image")
-async def upload_image_and_integer( 
+async def upload_image_with_label( 
     label: Label,
     file: UploadFile = File(...)
 ):
@@ -79,7 +79,6 @@ async def upload_image_and_integer(
         One for each model alias, i.e. champion, challenger, baseline.
     """
 
-    print("label: ", label, "type label: ", type(label))
     # read the uploaded file into memory as bytes
     image_bytes = await file.read()
 
@@ -116,38 +115,23 @@ async def upload_image_and_integer(
                                                        y_true = label.value, 
                                                        y_pred = y_pred, 
                                                        accuracy=accuracy_pred, 
-                                                       filename= file.filename, 
+                                                       file_name=file.filename, 
                                                        model_version=model_version, 
                                                        model_tag=model_tag)
 
         # switch off mlflow tracking (if needed)
         mlflow_tracking = False 
         if mlflow_tracking:
-            # set experiment name for model (logging performance for each model in separate experiment)
-            mlflow.set_experiment(f"performance {alias}")
-        
-            # logging of metrics
-            with mlflow.start_run():
-                
-                # log the metrics
-                metrics_dict = {
-                    'log counter': logged_csv_data["log_counter"],
-                    "y_true": label,
-                    "y_pred": y_pred,
-                    "accuracy": accuracy_pred,
-                    'global accuracy': logged_csv_data["global_accuracy"],
-                    'floating avg accuracy 50 runs': logged_csv_data["accuracy_last_50_predictions"]
-                    }
-                mlflow.log_metrics(metrics_dict)
-
-                # log model version and tag
-                params = {
-                    'timestamp': logged_csv_data["timestamp"],
-                    "model version": model_version,
-                    "model tag": model_tag,
-                    'image file name': logged_csv_data["filename"],
-                    }
-                mlflow.log_params(params)
+            # logging in mlflow performance runs, if switched on
+            ah.save_performance_data_mlflow(log_counter = logged_csv_data["log_counter"], 
+                                            alias = alias, 
+                                            timestamp = logged_csv_data["timestamp"], 
+                                            y_true = label, 
+                                            y_pred = y_pred, 
+                                            accuracy = accuracy_pred, 
+                                            file_name = logged_csv_data["filename"], 
+                                            model_version = model_version, 
+                                            model_tag = model_tag)
 
         # update dictionary for API-output
         y_pred_as_str.update({f"prediction {alias}": str(y_pred)})
@@ -220,41 +204,26 @@ async def upload_image_and_integer_from_frontend(
         # logging and precalculations in csv-file
         logged_csv_data = ah.save_performance_data_csv(alias = alias, timestamp = api_timestamp, y_true = label.value, y_pred = y_pred, accuracy=accuracy_pred, filename="123.jpeg", model_version=model_version, model_tag=model_tag)
 
-        # set experiment name for model (logging performance for each model in separate experiment)
-        mlflow.set_experiment(f"performance {alias}")
-    
-        # logging of metrics
-        with mlflow.start_run():
-            
-            # log the metrics
-            metrics_dict = {
-                'log counter': logged_csv_data["log_counter"],
-                "y_true": label,
-                "y_pred": y_pred,
-                "accuracy": accuracy_pred,
-                'global accuracy': logged_csv_data["global_accuracy"],
-                'floating avg accuracy 50 runs': logged_csv_data["accuracy_last_50_predictions"]
-                }
-            mlflow.log_metrics(metrics_dict)
-
-            # log model version and tag
-            params = {
-                'timestamp': logged_csv_data["timestamp"],
-                "model version": model_version,
-                "model tag": model_tag,
-                'image file name': logged_csv_data["filename"],
-                }
-            mlflow.log_params(params)
+        # switch off mlflow tracking (if needed)
+        mlflow_tracking = False 
+        if mlflow_tracking:
+            # logging in mlflow performance runs, if switched on
+            ah.save_performance_data_mlflow(log_counter = logged_csv_data["log_counter"], alias = alias, timestamp = logged_csv_data["timestamp"], y_true = label, y_pred = y_pred, accuracy = accuracy_pred, file_name = logged_csv_data["filename"], model_version = model_version, model_tag = model_tag)
 
         # update dictionary for API-output
         y_pred_as_str.update({f"prediction {alias}": str(y_pred)})
     
+    print(f"Currently at run with log_counter number {logged_csv_data['log_counter']}.")
+    # check if switch should be made
+    if ah.check_challenger_takeover(last_n_predictions = 20, window = 50):
+        ah.switch_champion_and_challenger()
+
     return y_pred_as_str
 
 ' ############################### performance review endpoint ###############################'
 # endpoint for uploading image
-@app.post("/get_performance_review")
-async def get_performance(
+@app.post("/get_performance_review_from_mlflow")
+async def get_performance_mlflow(
     last_n_predictions: int,
     ):
     """
@@ -273,11 +242,8 @@ async def get_performance(
         Contains three dictionaries with performance tracking values of champion, challenger, baseline.
     """
 
-    # gets the dictionary for all three model
-    start_time = time.time()
-    performance_dict = ah.get_performance_indicators(num_steps_short_term = last_n_predictions)
-    end_time = time.time()
-    runtime = end_time - start_time
+    # gets the dictionary for all three models
+    performance_dict = ah.get_performance_indicators_mlflow(num_steps_short_term = last_n_predictions)
 
     return performance_dict
 
@@ -303,45 +269,42 @@ async def get_performance_csv(
         Contains three dictionaries with performance tracking values of champion, challenger, baseline.
     """
     # get results generated from csv
-    start_time = time.time()
-    csv_perf_dict_champion = ah.generate_performance_summary_csv(alias = "champion", last_n_predictions=last_n_predictions)
-    csv_perf_dict_challenger = ah.generate_performance_summary_csv(alias = "challenger",last_n_predictions=last_n_predictions)
-    csv_perf_dict_baseline = ah.generate_performance_summary_csv(alias = "baseline", last_n_predictions=last_n_predictions)
+    csv_perf_dict_champion = ah.get_performance_indicators_csv(alias = "champion", last_n_predictions=last_n_predictions)
+    csv_perf_dict_challenger = ah.get_performance_indicators_csv(alias = "challenger",last_n_predictions=last_n_predictions)
+    csv_perf_dict_baseline = ah.get_performance_indicators_csv(alias = "baseline", last_n_predictions=last_n_predictions)
     merged_csv_dict = {
     **csv_perf_dict_baseline,
     **csv_perf_dict_challenger,
     **csv_perf_dict_champion,
     }
-    end_time = time.time()
-    time_new_review = end_time - start_time
 
     return merged_csv_dict
 
 
-#####################################################
+' ############################### plotting endpoint ###############################'
 # endpoint for plot generation
 @app.post("/get_comparsion_plot")
 async def plot_model_comparison(window: int = 50):
     
     '''
     Endpoint that displays a plot showing the moving average accuracy
-    of the champion and challenger models. 
+    of the champion and challenger models.  
+    
+    Plot also indicates, which underlying model is champion or challenger at which run number.
     '''
-    
-    # TODO: need to change this to reflect the (potential) updates in the 
-    # generate_model_comparison_plot() function
-    
+
     # create the figure
     figure = ah.generate_model_comparison_plot(window, scaling =  "log_counter")
-    
-    
-    
+
     # create an in-memory buffer to hold the figure
     buffer = io.BytesIO()
+    
     # save the plot in the buffer as a png
     plt.savefig(buffer, format="png")
+    
     # close the fig
     plt.close(figure)
+    
     # move the file pointer back to the start of the buffer so it can be read
     buffer.seek(0)
     

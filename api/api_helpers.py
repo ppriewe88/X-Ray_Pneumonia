@@ -13,52 +13,41 @@ import matplotlib.dates as mdates
 import pandas as pd
 
 
-def resize_image(
-    image,
-    signature_shape,
-    signature_dtype
-    ):
+' ##############################################################################################'
+' ######################### image preprocessing, model loading, prediction #####################'
 
+def return_verified_image_as_numpy_arr(image_bytes):
+
+    
     '''
-    Function that resizes a grayscale image such that it agrees 
-    with the signature and data type of the ML classifier's input.
+    Verification and reformatting function.
+    Verifies image type of input. Returns formatted numpy array.
     
     Parameters
     ----------
     
-    image: PIL image/numpy array
-        Image to be resized. Can only be in grayscale.
-    signature_shape: tuple
-        Shape of the ML classifier input.
-    signature_dtype: data type
-        Data type of the ML classifier input.
+    image_bytes: image as binary stream
+        Input Image, converted to bytes.
         
     Returns
     -------
-    image_array: numpy array
-        Reshaped numpy array with signature_dtype entries. 
-    '''
-    # convert image to numpy array
-    image_array = np.asarray(image)
-    image_array = image_array.reshape((*image_array.shape,1))
-
-    # if ML model input has more than one channel, populate each channel with the same pixel values
-    if signature_shape[-1] > 1:
-        img_array_tuple = tuple([image_array for i in range(signature_shape[-1])])
-        image_array = np.concatenate(img_array_tuple, axis = -1)
-
-    # resizing according to signature_shape. Using helper function from keras
-    resized_image = keras.ops.image.resize(
-        image_array,
-        size = (signature_shape[1], signature_shape[2]),
-        interpolation="bilinear",
-        )
+    Validated image in numpy array format. 
+    '''   
+    try: 
+        
+        # convert bytes to a PIL image, then ensure its integrity
+        image = Image.open(io.BytesIO(image_bytes))
+        image.verify() # can't be used if i want to process the image
     
-    # converting to numpy and retyping according to signature_type
-    image_array = resized_image.numpy().reshape(signature_shape)
-    image_array = image_array.astype(signature_dtype)
+    except Exception:
+        raise HTTPException(status_code=400, detail="Uploaded file is not a valid image.")
 
-    return image_array
+    # load image again (as it has been deconstructed by .verify())
+    validated_image = Image.open(io.BytesIO(image_bytes))
+
+    # convert the PIL image to np.array
+    validated_image_as_numpy = np.asarray(validated_image)
+    return validated_image_as_numpy
 
 def load_model_from_registry(model_name, alias):
     """
@@ -93,61 +82,6 @@ def load_model_from_registry(model_name, alias):
     input_type = signature.inputs.to_dict()[0]['tensor-spec']['dtype']
     
     return model, input_shape, input_type
-
-def make_prediction(model, image_as_array):
-    """
-    Simple function to return a prediction of a given model on a given input array.
-
-    Parameters
-    ----------
-    model : mlflow model
-        Mlflow model object. Has to be retrieved earlier by pufunc loading (mlflow)
-    image_as_array : numpy array
-        Image representation.
-        
-    Returns
-    -------
-    pred_reshaped: numpy array
-        Model prediction as numpy array.
-    """
-
-    prediction = model.predict(image_as_array)
-    pred_reshaped = float(prediction.flatten())
-
-    return pred_reshaped
-
-def return_verified_image_as_numpy_arr(image_bytes):
-
-    
-    '''
-    Verification and reformatting function.
-    Verifies image type of input. Returns formatted numpy array.
-    
-    Parameters
-    ----------
-    
-    image_bytes: image as binary stream
-        Input Image, converted to bytes.
-        
-    Returns
-    -------
-    Validated image in numpy array format. 
-    '''   
-    try: 
-        
-        # convert bytes to a PIL image, then ensure its integrity
-        image = Image.open(io.BytesIO(image_bytes))
-        image.verify() # can't be used if i want to process the image
-    
-    except Exception:
-        raise HTTPException(status_code=400, detail="Uploaded file is not a valid image.")
-
-    # load image again (as it has been deconstructed by .verify())
-    validated_image = Image.open(io.BytesIO(image_bytes))
-
-    # convert the PIL image to np.array
-    validated_image_as_numpy = np.asarray(validated_image)
-    return validated_image_as_numpy
 
 def get_modelversion_and_tag(model_name, model_alias):
     """
@@ -201,12 +135,230 @@ def get_modelversion_and_tag(model_name, model_alias):
 
     return version_number, tag
 
-def get_performance_indicators(num_steps_short_term = 1):
+def resize_image(
+    image,
+    signature_shape,
+    signature_dtype
+    ):
 
+    '''
+    Function that resizes a grayscale image such that it agrees 
+    with the signature and data type of the ML classifier's input.
+    
+    Parameters
+    ----------
+    
+    image: PIL image/numpy array
+        Image to be resized. Can only be in grayscale.
+    signature_shape: tuple
+        Shape of the ML classifier input.
+    signature_dtype: data type
+        Data type of the ML classifier input.
+        
+    Returns
+    -------
+    image_array: numpy array
+        Reshaped numpy array with signature_dtype entries. 
+    '''
+    # convert image to numpy array
+    image_array = np.asarray(image)
+    image_array = image_array.reshape((*image_array.shape,1))
+
+    # if ML model input has more than one channel, populate each channel with the same pixel values
+    if signature_shape[-1] > 1:
+        img_array_tuple = tuple([image_array for i in range(signature_shape[-1])])
+        image_array = np.concatenate(img_array_tuple, axis = -1)
+
+    # resizing according to signature_shape. Using helper function from keras
+    resized_image = keras.ops.image.resize(
+        image_array,
+        size = (signature_shape[1], signature_shape[2]),
+        interpolation="bilinear",
+        )
+    
+    # converting to numpy and retyping according to signature_type
+    image_array = resized_image.numpy().reshape(signature_shape)
+    image_array = image_array.astype(signature_dtype)
+
+    return image_array
+
+def make_prediction(model, image_as_array):
+    """
+    Simple function to return a prediction of a given model on a given input array.
+
+    Parameters
+    ----------
+    model : mlflow model
+        Mlflow model object. Has to be retrieved earlier by pufunc loading (mlflow)
+    image_as_array : numpy array
+        Image representation.
+        
+    Returns
+    -------
+    pred_reshaped: numpy array
+        Model prediction as numpy array.
+    """
+
+    prediction = model.predict(image_as_array)
+    pred_reshaped = float(prediction.flatten())
+
+    return pred_reshaped
+
+
+
+' ##############################################################################################'
+' ######################### logging of prediction data #########################################'
+
+def save_performance_data_csv(alias, timestamp, y_true, y_pred, accuracy, file_name, model_version, model_tag):
+    """
+    Recieves data from a model's prediction to generate performance review. 
+    Saves the retrieved data and some additional calculations in a csv-file under a specified path.
+    Also returns the data for further processing (i.e. mlflow-logging).
+
+    Parameters
+    ----------
+    alias : string
+        Alias of mlflow registry model version
+    timestamp : string
+        Contains time of API call.
+    y_true : integer (0 or 1)
+        True label of image
+    y_pred : float (0 <= y_pred <=1)
+        Predicted label of image
+    accuracy : int (0 or 1)
+        Accuracy of prediction
+    file_name: string
+        Name of image file used for prediction
+    model_version : int
+        Version number of mlflow registry model version
+    model_tag : string
+        Tag of mlflow registry model version
+
+    Returns
+    -------
+    data : dictionary
+        Dictionary of data to be logged into csv-file.
+    """ 
+
+    # get absolute path of the project dir to later find required csv-files
+    project_folder = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
+
+    # get path of folder for performance tracking (where csv files are located)
+    tracking_path = os.path.join(project_folder ,f"unified_experiment/performance_tracking")
+    
+    # make folder, if not existing yet
+    os.makedirs(tracking_path, exist_ok=True)
+    file_path = os.path.join(tracking_path, f'performance_data_{alias}.csv')
+    
+    # initializing standard values for cumulative and global values
+    log_counter = 1
+    
+    # Calculate consecutive values from last row's values and current values
+    if os.path.exists(file_path):
+        with open(file_path, 'r') as csvfile:
+            reader = csv.DictReader(csvfile)
+            rows = list(reader)
+            
+            if rows:
+                last_row = rows[-1]
+                # get values of last row to determine cumulations and global accuracy
+                log_counter = int(last_row['log_counter']) + 1
+
+    # prepare data for output (formatting)
+    data = {
+        'log_counter': log_counter,
+        'timestamp': timestamp,
+        'y_true': y_true,
+        'y_pred': y_pred,
+        'accuracy': accuracy,
+        'filename': file_name,
+        'model_version': model_version,
+        'model_tag': model_tag,
+        "model_alias": alias,
+        "model_switch": False
+    }
+    
+    # Check if file exists already
+    file_exists = os.path.isfile(file_path)
+    
+    # Open file in append mode 
+    with open(file_path, 'a', newline='') as csvfile:
+        writer = csv.DictWriter(csvfile, fieldnames=data.keys())
+        # Write header only if file is newly created
+        if not file_exists:
+            writer.writeheader()
+        # Append new row
+        writer.writerow(data)
+
+    # print runtime and execution confirmation
+    print(f"Data has been saved in {file_path}.")
+
+    return data
+
+def save_performance_data_mlflow(log_counter, alias, timestamp, y_true, y_pred, accuracy, file_name, model_version, model_tag):
+    """
+    For a given alias, it stores the received logging data from model predicitons (runs) in a unique mlflow run of the corresponding experiment.
+    
+    Parameters
+    ----------
+    log_counter: int
+        Run number of (csv-logged) run that is to be stored (note: unique mlflow run number usually differs!)
+    alias : string
+        Alias of mlflow registry model version
+    timestamp : string
+        Contains time of API call.
+    y_true : integer (0 or 1)
+        True label of image
+    y_pred : float (0 <= y_pred <=1)
+        Predicted label of image
+    accuracy : int (0 or 1)
+        Accuracy of prediction
+    file_name: string
+        Name of image file used for prediction
+    model_version : int
+        Version number of mlflow registry model version
+    model_tag : string
+        Tag of mlflow registry model version
+
+    Returns
+    -------
+    None
+    """ 
+    
+    # set experiment name for model (logging performance for each model in separate experiment)
+    mlflow.set_experiment(f"performance {alias}")
+
+    # logging of metrics
+    with mlflow.start_run():
+        
+        # log the metrics
+        metrics_dict = {
+            'log counter': log_counter,
+            "y_true": y_true,
+            "y_pred": y_pred,
+            "accuracy": accuracy,
+            }
+        mlflow.log_metrics(metrics_dict)
+
+        # log model version and tag
+        params = {
+            'timestamp': timestamp,
+            "model version": model_version,
+            "model tag": model_tag,
+            'image file name': file_name,
+            }
+        mlflow.log_params(params)
+
+
+
+' ##############################################################################################'
+' ######################### performance reporting and plotting functions #######################'
+
+def get_performance_indicators_mlflow(num_steps_short_term):
     '''
     Function that fetches data from the mlflow client and 
     returns a dictionary summarizing the to-date performance 
-    of the three pneumonia x-ray classification models.
+    of the three pneumonia x-ray classification (aliased) models.
     
     Parameters
     ----------
@@ -261,28 +413,29 @@ def get_performance_indicators(num_steps_short_term = 1):
         
         # 1st row is timestamps, 2nd is accuracies and so on
         values_array = np.array([timestamps, accuracies, y_true])
-        # sorts according to the timestamps
+        # sorting according to the timestamps
         values_array = values_array[:, values_array[0].argsort()]
         # get rid of the timestamps row
         values_array = values_array[1:]
-        
+        # restrict array to latest {num_steps_short_term} runs
+        values_array_short_term = values_array[:,-num_steps_short_term:]
+        print(values_array_short_term.shape)
+
         print(f"{exp_name}: calc confusion matrix")
         # calculate confusion matrix elements
-        true_positives = np.sum((values_array[0] == 1) & (values_array[1] == 1))
-        true_negatives = np.sum((values_array[0] == 1) & (values_array[1] == 0))
-        false_negatives = np.sum((values_array[0] == 0) & (values_array[1] == 1))
-        false_positives = np.sum((values_array[0] == 0) & (values_array[1] == 0))
+        true_positives = np.sum((values_array_short_term[0] == 1) & (values_array_short_term[1] == 1))
+        true_negatives = np.sum((values_array_short_term[0] == 1) & (values_array_short_term[1] == 0))
+        false_negatives = np.sum((values_array_short_term[0] == 0) & (values_array_short_term[1] == 1))
+        false_positives = np.sum((values_array_short_term[0] == 0) & (values_array_short_term[1] == 0))
         
         # save the experiment information in a dictionary
         exp_dictionary ={
-            'all-time average accuracy': str(np.mean(values_array[0])),
             'total number of predictions': str(len(accuracies)),
-            f'average accuracy for the last {num_steps_short_term} predictions': str(np.mean(values_array[0,-num_steps_short_term:])),
+            f'average accuracy for the last {num_steps_short_term} predictions': str(np.mean(values_array_short_term[0])),
             'pneumonia true positives': str(true_positives),
             'pneumonia true negatives': str(true_negatives),
             'pneumonia false positives': str(false_positives), 
-            'pneumonia false negatives': str(false_negatives),
-             
+            'pneumonia false negatives': str(false_negatives),   
         }
         
         # update the dictionary containing the information from the other experiments
@@ -290,99 +443,7 @@ def get_performance_indicators(num_steps_short_term = 1):
           
     return performance_dictionary
 
-def save_performance_data_csv(alias, timestamp, y_true, y_pred, accuracy, filename, model_version, model_tag):
-    """
-    Recieves data from a model's prediction to generate performance review. 
-    Saves the retrieved data and some additional calculations in a csv-file under a specified path.
-    Also returns the data for further processing (i.e. mlflow-logging).
-
-    Parameters
-    ----------
-    alias : string
-        Alias of mlflow registry model version
-    timestamp : string
-        Contains time of API call.
-    y_true : integer (0 or 1)
-        True label of image
-    y_pred : float (0 <= y_pred <=1)
-        Predicted label of image
-    accuracy : int (0 or 1)
-        accuracy of prediction
-    filename: string
-        name of predicted file
-    model_version : int
-        Version number of mlflow registry model version
-    model_tag : string
-        Tag of mlflow registry model version
-
-    Returns
-    -------
-    data : dictionary
-        Dictionary of data to be logged into csv-file
-    """ 
-
-    # take time
-    start_time = time.time()
-
-    # get absolute path of the project dir to later find required csv-files
-    project_folder = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
-
-    # get path of folder for performance tracking (where csv files are located)
-    tracking_path = os.path.join(project_folder ,f"unified_experiment/performance_tracking")
-    
-    # make folder, if not existing yet
-    os.makedirs(tracking_path, exist_ok=True)
-    file_path = os.path.join(tracking_path, f'performance_data_{alias}.csv')
-    
-    # initializing standard values for cumulative and global values
-    log_counter = 1
-    
-    # Calculate consecutive values from last row's values and current values
-    if os.path.exists(file_path):
-        with open(file_path, 'r') as csvfile:
-            reader = csv.DictReader(csvfile)
-            rows = list(reader)
-            
-            if rows:
-                last_row = rows[-1]
-                # get values of last row to determine cumulations and global accuracy
-                log_counter = int(last_row['log_counter']) + 1
-
-    # prepare data for output (formatting)
-    data = {
-        'log_counter': log_counter,
-        'timestamp': timestamp,
-        'y_true': y_true,
-        'y_pred': y_pred,
-        'accuracy': accuracy,
-        'filename': filename,
-        'model_version': model_version,
-        'model_tag': model_tag,
-        "model_alias": alias,
-        "model_switch": False
-    }
-    
-    # Check if file exists already
-    file_exists = os.path.isfile(file_path)
-    
-    # Open file in append mode 
-    with open(file_path, 'a', newline='') as csvfile:
-        writer = csv.DictWriter(csvfile, fieldnames=data.keys())
-        # Write header only if file is newly created
-        if not file_exists:
-            writer.writeheader()
-        # Append new row
-        writer.writerow(data)
-    
-    end_time = time.time()
-
-    # print runtime and execution confirmation
-    print("runtime performance logging: ", end_time-start_time)
-    print(f"Data has been saved in {file_path}.")
-
-    return data
-
-def generate_performance_summary_csv(alias, last_n_predictions = 100):
+def get_performance_indicators_csv(alias, last_n_predictions = 100):
     """
     Fetches logged performance data of model with given alias from corresponding csv-file.
     Fetches global accuracy, number of predictions, and floating average. 
@@ -420,7 +481,6 @@ def generate_performance_summary_csv(alias, last_n_predictions = 100):
     # get values of last prediction (cumulations, averages) to calculate consecutive values
     last_row = rows[-1]
     total_predictions = int(last_row['log_counter'])
-    all_time_average = float(last_row['global_accuracy'])
 
     # initialize confusion matrix
     true_positives = 0
@@ -440,17 +500,11 @@ def generate_performance_summary_csv(alias, last_n_predictions = 100):
 
     # calc avg of last n predictions
     avg_last_n_predictions = np.mean(accuracy)
-    # historical countercheck
-    last_50_average = float(last_row['accuracy_last_50_predictions'])
-    ########## removed! left as comment for historical checks. TODO: final remove!
 
     # generate result dict
     summary = {
         f"performance csv {alias}": {
-            "all-time average accuracy": f"{all_time_average:.4f}",
             "total number of predictions": str(total_predictions),
-            "average accuracy last 50 predictions": f"{last_50_average:.4f}",
-            ########## removed! left as comment for historical checks. TODO: final remove!
             f"average accuracy last {last_n_predictions} predictions": f"{avg_last_n_predictions}",
             "pneumonia true positives": str(true_positives),
             "pneumonia true negatives": str(true_negatives),
@@ -602,11 +656,31 @@ def generate_model_comparison_plot(window = 50, scaling =  "log_counter"):
 
     return fig    
 
+
+
+' ##############################################################################################'
+' ######################## model comparison and takeover (switch) functions ####################'
+
 def moving_average_column(column, window):
     """"
-    TODO: DOCUMENTATION! hier müssen wir auf jeden fall reinschreiben, dass das window am unteren ende der column 
-    abgeschnitten wird!!! 
-    
+    For a given input column, the moving average of column values is calculated. 
+    The window parameter (input) controls, how many consecutive values are uses for the moving average calculation.
+    I.e.: 
+    - For a column element's index, the last {window} predecessor values are used to calculate the moving average.
+    - If there are not enough predecessors available (e.g. at low column indexes), only the avalílable values are taken.
+    - This means: For low column indexes (lower than {window}), the window is shortened by definition!
+
+    Parameters
+    ----------
+    column : array-like
+        array-like integer containing numeric values
+    window: int
+        Controls how many predecessing values of a column element are used to calculate the moving average at that column element's index.
+        
+    Returns
+    -------
+    np.array: numpy array
+        Numpy array containing moving averages for the input column.
     """
     column = np.array(column)
     averaged_col = [np.sum(column[max(0,i-window):i])/min(i, window) for i in range(1,len(column)+1)]
@@ -614,7 +688,26 @@ def moving_average_column(column, window):
     return np.array(averaged_col)
 
 def check_challenger_takeover(last_n_predictions = 20, window=50):
+    """"
+    Fetches data from performance logs (csv-files) of challenger and champion registry model versions. 
+    Checks if the challenger's moving average accuracy has been better than the champion's moving average accuracy during last_n_predictions.
+    Check is done by using accuracy column from csv-files. Moving average calculation is done with {window}.
+    
+    Parameters
+    ----------
+    last_n_predictions : integer
+        Input for takeover condition (model switch). 
+        Challenger has to have better moving average accuracy than champion during {last_n_predictions} to take over. 
+    window: int
+        Window parameter for moving average calculation. Will be passed to helper function moving_average_column.
+        
+    Returns
+    -------
+    check_if_chall_is_better: boolean
+        True if challenger satisfies takeover condition (model switch).
+    """
 
+    # get relevant paths
     project_folder = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
     tracking_path = os.path.join(project_folder, "unified_experiment/performance_tracking")
 
@@ -626,22 +719,23 @@ def check_challenger_takeover(last_n_predictions = 20, window=50):
         reader = csv.DictReader(csvfile)
         rows = list(reader)
         
-    # check if there are at least {last_n_predictions + window} runs
+    # Breaking condition nr. 1: check if there are at least {last_n_predictions + window} runs. If so, break
     if len(rows) < last_n_predictions + window:
         print(f"Initial protection phase (less than {last_n_predictions + window} runs available). No switch allowed yet.")
         return False
     
-    # check if switch was done in the previous {last_n_predictions} runs
-    # organize the last {last_n_predictions} model tag in a list,
-    # then get the unique items using set()
+    
+    # # Breaking condition nr. 2: check if switch was done in the previous {last_n_predictions} runs. If so, break
+    # organize the last {last_n_predictions} model tag in a list, get unique tags (set)
     last_model_tags_unique = set([row['model_tag'] for row in rows[-(last_n_predictions+window):]])
-    # check is switch was performed
+    # check is switch was performed, i.e. more than one model tags in history
     switch_done = len(last_model_tags_unique) > 1
     # quit the function if the switch was done in the last {last_n_predictions + window} runs
     if switch_done:
         print(f"A switch happend during the last {last_n_predictions+window} runs. No switch allowed yet.")
         return False
         
+    # If continuing here, start model comparison.
     # get last last_n_predictions, extract accuracy as integers
     last_rows_champ = rows[-(last_n_predictions + window):]
     last_acc_values_champ = [int(row['accuracy']) for row in last_rows_champ]
@@ -670,7 +764,20 @@ def check_challenger_takeover(last_n_predictions = 20, window=50):
     return check_if_chall_is_better
 
 def switch_champion_and_challenger():
+    """"
+    Swaps mlflow registry model versions that are associated with champion and challenger model aliases.
+    Swap is achieved by swapping content of alias files. 
+    After swapping, function updates the "model_switch" column of the last run in the champion's and challenger's csv files (new column value = "True") 
     
+    Parameters
+    ----------
+    No parameters
+        
+    Returns
+    -------
+    No returns
+    """
+
     # get paths of alias files
     project_folder = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
     unif_exp_path = os.path.join(project_folder, r"unified_experiment")
@@ -710,6 +817,8 @@ def switch_champion_and_challenger():
         writer.writeheader()
         writer.writerows(rows_champ)
     print("challenger and champion have been switched")
+
+
 
 # if run locally (for tests)
 if __name__ == "__main__":
