@@ -114,7 +114,7 @@ async def upload_image_and_integer(
         logged_csv_data = ah.save_performance_data_csv(alias = alias, timestamp = api_timestamp, y_true = label.value, y_pred = y_pred, accuracy=accuracy_pred, file_name="123.jpeg", model_version=model_version, model_tag=model_tag)
 
         # switch off mlflow tracking (if needed)
-        mlflow_tracking = False 
+        mlflow_tracking = True 
         if mlflow_tracking:
             # logging in mlflow performance runs, if switched on
             ah.save_performance_data_mlflow(log_counter = logged_csv_data["log_counter"], alias = alias, timestamp = logged_csv_data["timestamp"], y_true = label, y_pred = y_pred, accuracy = accuracy_pred, file_name = logged_csv_data["filename"], model_version = model_version, model_tag = model_tag)
@@ -223,8 +223,8 @@ async def upload_image_and_integer_from_frontend(
 
 ' ############################### performance review endpoint ###############################'
 # endpoint for uploading image
-@app.post("/get_performance_review")
-async def get_performance(
+@app.post("/get_performance_review_from_mlflow")
+async def get_performance_mlflow(
     last_n_predictions: int,
     ):
     """
@@ -245,7 +245,7 @@ async def get_performance(
 
     # gets the dictionary for all three model
     start_time = time.time()
-    performance_dict = ah.get_performance_indicators(num_steps_short_term = last_n_predictions)
+    performance_dict = ah.get_performance_indicators_mlflow(num_steps_short_term = last_n_predictions)
     end_time = time.time()
     runtime = end_time - start_time
 
@@ -274,9 +274,9 @@ async def get_performance_csv(
     """
     # get results generated from csv
     start_time = time.time()
-    csv_perf_dict_champion = ah.generate_performance_summary_csv(alias = "champion", last_n_predictions=last_n_predictions)
-    csv_perf_dict_challenger = ah.generate_performance_summary_csv(alias = "challenger",last_n_predictions=last_n_predictions)
-    csv_perf_dict_baseline = ah.generate_performance_summary_csv(alias = "baseline", last_n_predictions=last_n_predictions)
+    csv_perf_dict_champion = ah.get_performance_indicators_csv(alias = "champion", last_n_predictions=last_n_predictions)
+    csv_perf_dict_challenger = ah.get_performance_indicators_csv(alias = "challenger",last_n_predictions=last_n_predictions)
+    csv_perf_dict_baseline = ah.get_performance_indicators_csv(alias = "baseline", last_n_predictions=last_n_predictions)
     merged_csv_dict = {
     **csv_perf_dict_baseline,
     **csv_perf_dict_challenger,

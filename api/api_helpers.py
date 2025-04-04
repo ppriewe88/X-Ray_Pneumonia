@@ -201,11 +201,11 @@ def get_modelversion_and_tag(model_name, model_alias):
 
     return version_number, tag
 
-def get_performance_indicators(num_steps_short_term = 1):
+def get_performance_indicators_mlflow(num_steps_short_term):
     '''
     Function that fetches data from the mlflow client and 
     returns a dictionary summarizing the to-date performance 
-    of the three pneumonia x-ray classification models.
+    of the three pneumonia x-ray classification (aliased) models.
     
     Parameters
     ----------
@@ -260,27 +260,29 @@ def get_performance_indicators(num_steps_short_term = 1):
         
         # 1st row is timestamps, 2nd is accuracies and so on
         values_array = np.array([timestamps, accuracies, y_true])
-        # sorts according to the timestamps
+        # sorting according to the timestamps
         values_array = values_array[:, values_array[0].argsort()]
         # get rid of the timestamps row
         values_array = values_array[1:]
-        
+        # restrict array to latest {num_steps_short_term} runs
+        values_array_short_term = values_array[:,-num_steps_short_term:]
+        print(values_array_short_term.shape)
+
         print(f"{exp_name}: calc confusion matrix")
         # calculate confusion matrix elements
-        true_positives = np.sum((values_array[0] == 1) & (values_array[1] == 1))
-        true_negatives = np.sum((values_array[0] == 1) & (values_array[1] == 0))
-        false_negatives = np.sum((values_array[0] == 0) & (values_array[1] == 1))
-        false_positives = np.sum((values_array[0] == 0) & (values_array[1] == 0))
+        true_positives = np.sum((values_array_short_term[0] == 1) & (values_array_short_term[1] == 1))
+        true_negatives = np.sum((values_array_short_term[0] == 1) & (values_array_short_term[1] == 0))
+        false_negatives = np.sum((values_array_short_term[0] == 0) & (values_array_short_term[1] == 1))
+        false_positives = np.sum((values_array_short_term[0] == 0) & (values_array_short_term[1] == 0))
         
         # save the experiment information in a dictionary
         exp_dictionary ={
             'total number of predictions': str(len(accuracies)),
-            f'average accuracy for the last {num_steps_short_term} predictions': str(np.mean(values_array[0,-num_steps_short_term:])),
+            f'average accuracy for the last {num_steps_short_term} predictions': str(np.mean(values_array_short_term[0])),
             'pneumonia true positives': str(true_positives),
             'pneumonia true negatives': str(true_negatives),
             'pneumonia false positives': str(false_positives), 
-            'pneumonia false negatives': str(false_negatives),
-             
+            'pneumonia false negatives': str(false_negatives),   
         }
         
         # update the dictionary containing the information from the other experiments
@@ -428,7 +430,7 @@ def save_performance_data_mlflow(log_counter, alias, timestamp, y_true, y_pred, 
             }
         mlflow.log_params(params)
 
-def generate_performance_summary_csv(alias, last_n_predictions = 100):
+def get_performance_indicators_csv(alias, last_n_predictions = 100):
     """
     Fetches logged performance data of model with given alias from corresponding csv-file.
     Fetches global accuracy, number of predictions, and floating average. 
