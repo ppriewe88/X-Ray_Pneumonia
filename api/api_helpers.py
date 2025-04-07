@@ -516,7 +516,6 @@ def get_performance_indicators_csv(alias, last_n_predictions = 100):
     return summary
 
 def generate_model_comparison_plot(window = 50, scaling =  "log_counter"):
-
     '''
     Function that generates a plot comparing the performance of
     models over time. The upper part of the plot shows the accuracy 
@@ -657,7 +656,20 @@ def generate_model_comparison_plot(window = 50, scaling =  "log_counter"):
     return fig    
 
 def generate_confusion_matrix_plot(last_n_predictions = 10):
+    '''
+    Function that generates plot of confusion matrix of current champion.
     
+    Parameters
+    ----------
+    last_n_predictions : positive int
+        Timeframe (number of last predictions) used for confusion matrix.
+        
+    Returns
+    -------
+    fig: figure object 
+        Figure of confusion matrix.
+    
+    '''
     # get data from csv performance report
     data = get_performance_indicators_csv(alias = "champion", last_n_predictions=last_n_predictions)
 
