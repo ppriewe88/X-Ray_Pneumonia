@@ -11,7 +11,7 @@ import time
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 import pandas as pd
-
+import seaborn as sns
 
 ' ##############################################################################################'
 ' ######################### image preprocessing, model loading, prediction #####################'
@@ -505,7 +505,7 @@ def get_performance_indicators_csv(alias, last_n_predictions = 100):
     summary = {
         f"performance csv {alias}": {
             "total number of predictions": str(total_predictions),
-            f"average accuracy last {last_n_predictions} predictions": f"{avg_last_n_predictions}",
+            f"average accuracy last {min(total_predictions, last_n_predictions)} predictions": f"{round(avg_last_n_predictions, 4)}",
             "pneumonia true positives": str(true_positives),
             "pneumonia true negatives": str(true_negatives),
             "pneumonia false positives": str(false_positives),
@@ -516,7 +516,6 @@ def get_performance_indicators_csv(alias, last_n_predictions = 100):
     return summary
 
 def generate_model_comparison_plot(window = 50, scaling =  "log_counter"):
-
     '''
     Function that generates a plot comparing the performance of
     models over time. The upper part of the plot shows the accuracy 
@@ -656,7 +655,62 @@ def generate_model_comparison_plot(window = 50, scaling =  "log_counter"):
 
     return fig    
 
+def generate_confusion_matrix_plot(last_n_predictions = 10):
+    '''
+    Function that generates plot of confusion matrix of current champion.
+    
+    Parameters
+    ----------
+    last_n_predictions : positive int
+        Timeframe (number of last predictions) used for confusion matrix.
+        
+    Returns
+    -------
+    fig: figure object 
+        Figure of confusion matrix.
+    
+    '''
+    # get data from csv performance report
+    data = get_performance_indicators_csv(alias = "champion", last_n_predictions=last_n_predictions)
 
+    # extract only nested dictionary of champion
+    data_champion = data["performance csv champion"]
+
+    # restructuring input for plot
+    conf_matrix = np.array([
+            [
+                int(data_champion["pneumonia true positives"]), 
+                int(data_champion["pneumonia false positives"])
+                ],
+            [
+                int(data_champion["pneumonia false negatives"]), 
+                int(data_champion["pneumonia true negatives"])
+            ]
+            ])
+    
+    # setting up plot
+    fig = plt.figure(figsize=(6, 5))
+    sns.heatmap(
+        conf_matrix,
+        annot=True,
+        fmt='d',
+        cmap='Blues',
+        xticklabels=['Predicted Positive', 'Predicted Negative'],
+        yticklabels=['Actual Positive', 'Actual Negative']
+    )
+    
+    # get displayed predictions (get_performance_indicators_csv returns total number of available predictions)
+    available_predictions = min(last_n_predictions, int(data_champion["total number of predictions"]))
+    print(available_predictions)
+    # now configure plot
+    plt.xlabel('Predicted')
+    plt.ylabel('Actual')
+    accuracy = data_champion[f"average accuracy last {available_predictions} predictions"]
+    main_title = f'Confusion Matrix (champion) last {available_predictions} predictions'
+    plt.title(f"{main_title}\nAccuracy last {available_predictions} predictions: {accuracy}", pad=20)
+    plt.tight_layout()
+    
+    return fig
 
 ' ##############################################################################################'
 ' ######################## model comparison and takeover (switch) functions ####################'
@@ -823,6 +877,7 @@ def switch_champion_and_challenger():
 # if run locally (for tests)
 if __name__ == "__main__":
     pass
+    generate_confusion_matrix_plot(last_n_predictions = 5)
     # # modell laden
     # model_name_test = "Xray_classifier"  # Small_CNN, MobileNet_transfer_learning, MobileNet_transfer_learning_finetuned
     # model_alias = "baseline"
