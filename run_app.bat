@@ -1,5 +1,5 @@
 REM execute this script from power shell by executing the following line
-REM Start-Process -FilePath "C:\Users\pprie\OneDrive\Dokumente\Python_Projekte\95_Xray\run_servers.bat"
+REM Start-Process -FilePath "C:\Users\pprie\OneDrive\Dokumente\Python_Projekte\95_Xray\run_app.bat"
 
 @echo off
 REM path to virtual environment. ADAPT TO YOUR LOCAL ENVIRONMENT!
