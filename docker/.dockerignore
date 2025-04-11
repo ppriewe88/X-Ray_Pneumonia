@@ -1,0 +1,17 @@
+venv/
+**/pneumonia/
+*.pyc
+*.pyo
+*.pyd
+
+**/fine_tuning/
+**/own_model_training/
+**/transfer_learning/
+**/data/
+
+# ignore local git files
+.git/
+.gitignore
+
+# ignore potential log files
+*.log
