@@ -2,7 +2,7 @@ import requests
 from pathlib import Path
 from enum import Enum
 import random
-
+import pandas as pd
 
 """
 This script serves to simulate frontend-backend interactions. 
@@ -35,7 +35,7 @@ url_with_endpoint = base_url + endpoint
 
 ' ################################ configure nr. of samples to generate #############'
 # samples (prediction runs) to be generated
-samples = 100
+n_samples = 300
 
 ' ################################ get images ########################################'
 # Get absolute path of the project dir
@@ -44,6 +44,8 @@ project_folder = Path(__file__).resolve().parent.parent
 # paths to image folders
 normal_folder = project_folder / "data" / "test" / "NORMAL"
 pneumonia_folder = project_folder / "data" / "test" / "PNEUMONIA"
+tracking_csv_path = project_folder / "unified_experiment" / "performance_tracking" / "performance_data_champion.csv"
+
 print("Normal folder:", normal_folder)
 print("Pneumonia folder:", pneumonia_folder)
 
@@ -51,17 +53,28 @@ print("Pneumonia folder:", pneumonia_folder)
 normal_images = list(normal_folder.glob("*"))
 pneumonia_images = list(pneumonia_folder.glob("*"))
 
-# random choice of images for each class
-selected_normal = random.sample(normal_images, samples // 2)
-selected_pneumonia = random.sample(pneumonia_images, samples // 2)
+# put the images together in one list
+all_images = normal_images + pneumonia_images
 
-# combine and shuffle selected images
-all_selected_images = selected_normal + selected_pneumonia
-random.shuffle(all_selected_images)
+# import logging dataframe to get names of already analysed images
+df_performance = pd.read_csv(tracking_csv_path)
+analysed_images = set(df_performance["filename"])
+
+# filter our already analysed images
+all_images = [image for image in all_images if image.name not in analysed_images]
+
+if n_samples <= len(all_images):
+    # select a random sample from the remaining images
+    selected_images = random.sample(all_images, n_samples)
+else:
+    print("Chosen no. of images larger than remaining images.")
+    print(f"Sending all {len(all_images)} remaining images...")
+    selected_images = all_images
+    random.shuffle(selected_images)
 
 ' ################################ generate predictions via API call ###############################'
 
-for i, image_file in enumerate(all_selected_images):
+for i, image_file in enumerate(selected_images):
     with open(image_file, "rb") as img:
         files = {"file": (image_file.name, img, "image/jpeg")}
         
@@ -80,4 +93,4 @@ for i, image_file in enumerate(all_selected_images):
             print(f"Error during sending. status code: {status_code}")
             print("Error details:", response.text)
 
-    print(f"Call no. {i+1} of {samples} with class {data_class} done.")
+    print(f"Call no. {i+1} of {min(n_samples, len(all_images))} with class {data_class} done.")
