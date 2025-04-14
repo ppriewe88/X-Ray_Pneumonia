@@ -12,6 +12,8 @@ import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 import pandas as pd
 import seaborn as sns
+from pathlib import Path
+import random
 
 ' ##############################################################################################'
 ' ######################### image preprocessing, model loading, prediction #####################'
@@ -163,7 +165,7 @@ def resize_image(
     # convert image to numpy array
     image_array = np.asarray(image)
     image_array = image_array.reshape((*image_array.shape,1))
-
+    
     # if ML model input has more than one channel, populate each channel with the same pixel values
     if signature_shape[-1] > 1:
         img_array_tuple = tuple([image_array for i in range(signature_shape[-1])])
@@ -204,8 +206,47 @@ def make_prediction(model, image_as_array):
 
     return pred_reshaped
 
+def get_image_paths(n_samples):
+    '''
+    Returns the paths of the images to be classified.
+    '''
+    # Get absolute path of the project dir
+    project_folder = Path(__file__).resolve().parent.parent
 
+    # paths to image folders
+    normal_folder = project_folder / "data" / "test" / "NORMAL"
+    pneumonia_folder = project_folder / "data" / "test" / "PNEUMONIA"
+    tracking_csv_path = project_folder / "unified_experiment" / "performance_tracking" / "performance_data_champion.csv"
 
+    # load images of both classes
+    normal_images = list(normal_folder.glob("*"))
+    pneumonia_images = list(pneumonia_folder.glob("*"))
+
+    # put the images together in one list
+    all_images = normal_images + pneumonia_images
+    
+    # filter out images that were already analysed
+    if tracking_csv_path.exists(): 
+        # import logging dataframe to get names of already analysed images
+        df_performance = pd.read_csv(tracking_csv_path)
+        analysed_images = set(df_performance["filename"])
+
+        # filter out already analysed images
+        all_images = [image for image in all_images if image.name not in analysed_images]
+
+    if n_samples <= len(all_images):
+        # select a random sample from the remaining images
+        selected_images = random.sample(all_images, n_samples)
+    else:
+        print("Chosen no. of images larger than remaining images.")
+        print(f"Sending all {len(all_images)} remaining images...")
+        selected_images = all_images
+        random.shuffle(selected_images)
+        
+    return selected_images
+
+def classify_images():
+    pass
 ' ##############################################################################################'
 ' ######################### logging of prediction data #########################################'
 
@@ -819,9 +860,10 @@ def check_challenger_takeover(last_n_predictions = 20, window=50):
 
 def switch_champion_and_challenger():
     """"
-    Swaps mlflow registry model versions that are associated with champion and challenger model aliases.
-    Swap is achieved by swapping content of alias files. 
-    After swapping, function updates the "model_switch" column of the last run in the champion's and challenger's csv files (new column value = "True") 
+    Swaps mlflow registry model versions that are associated with champion and 
+    challenger model aliases. Swap is achieved by swapping content of alias files. 
+    After swapping, function updates the "model_switch" column of the last run 
+    in the champion's and challenger's csv files (new column value = "True") 
     
     Parameters
     ----------
