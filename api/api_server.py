@@ -4,11 +4,12 @@ from fastapi import FastAPI, UploadFile, File, Form, Query, Response
 from enum import Enum
 import mlflow
 import api_helpers as ah
-import time
 from datetime import datetime
 from fastapi.middleware.cors import CORSMiddleware # middleware. requirement for frontend-suitable endpoint
 import matplotlib.pyplot as plt
 import io
+from PIL import Image
+
 
 """ 
 run app by running "fastapi run FastAPIserver.py" in terminal.
@@ -142,6 +143,34 @@ async def upload_image_with_label(
         ah.switch_champion_and_challenger()
     
     return y_pred_as_str
+
+
+# endpoint for analysing more images
+@app.post("/predict_several_images")
+async def predict_several_images( 
+    n_samples: int
+):
+    """
+    Classifies several images without needing to load the keras models several times.
+    The images are chosen randomly.
+    
+    Parameters
+    ----------
+    n_samples: int
+        Number of images to be classified.
+    
+    Returns
+    -------
+        String confirming that all images were succesfully classified.
+    """
+    
+    # get the image paths
+    selected_image_paths = ah.get_image_paths(n_samples)
+
+    # peform classification + logging + model switch when needed
+    ah.predict_log_switch(selected_image_paths)
+       
+    return "All predictions done."
 
 ' ############################### frontend-suitable model serving/prediction endpoint ###############################'
 # endpoint for uploading image
