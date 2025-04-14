@@ -1,0 +1,66 @@
+################################# NOTICE ########################################
+# This file serves for building a docker container of BOTH FRONTEND AND BACKEND !
+############################### EXECUTION NOTICE ################################
+# to build image with this file, ALWAYS start building process from project root! 
+# i.e. one level above "docker"-> project root)
+
+
+################################ backend stage ##################################
+# import python base image
+FROM python:3.12-slim AS backend
+# create backend in working directory
+WORKDIR /app/backend
+# copy requirements into backend root
+COPY requirements.txt .
+# install requirements with pip. NOTE: no folders are created!
+RUN pip install --no-cache-dir -r requirements.txt
+# copy backend contents into backend root ("." =  /app/backend).
+# do this selectively, i.e. manually chose folders!
+COPY api/api_client.py ./api/api_client.py
+COPY api/api_helpers.py ./api/api_helpers.py
+COPY api/api_server.py ./api/api_server.py
+COPY data/test .data/test
+COPY data/helpers.py ./data/helpers.py
+COPY unified_experiment/mlartifacts ./unified_experiment/mlartifacts
+COPY unified_experiment/mlruns ./unified_experiment/mlruns
+
+################################ frontend stage ########################
+# import node base image
+FROM node:20-slim AS frontend
+# create frontend in working directory
+WORKDIR /app/frontend
+# install required node modules (react, bootstrap, etc.) NOTE: using altered package.json, docker specific (no "set" command in npm run)!
+# NOTE: using altered package.docker.json, docker specific (no "set" command in npm run)!
+# Then renaming package.docker.json to package.json
+COPY frontend/package.docker.json ./package.json
+COPY frontend/package-lock.json ./package-lock.json
+COPY frontend/public ./public
+COPY frontend/src ./src
+# install modules. NOTE: creates folder!
+RUN npm install --production
+
+################################ final stage ##########################
+# use python as base image
+FROM backend AS final
+# IMPORTANT: set WORKDIR correctly!
+WORKDIR /app
+# install node again
+RUN apt-get update && apt-get install -y curl \
+    && curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \
+    && apt-get install -y nodejs \
+    && rm -rf /var/lib/apt/lists/*
+# copy backend. Note: NO python modules are copied! run pip again later with requirements!
+COPY --from=backend /app/backend /app/backend
+# reinstalling backend dependencies (dependendcies in requirements.txt from backend stage)
+RUN pip install --no-cache-dir -r /app/backend/requirements.txt
+# copy frontend. Note: This DOES copy node modules (folder structure from frontend stage!)
+COPY --from=frontend /app/frontend /app/frontend
+# copy start script from "docker" to parent directory of frontend (one level up from docker's WORKDIR!)
+COPY docker/run_app_fullstack_docker.sh /app/run_app_fullstack_docker.sh
+
+################################ ports and run configuration ##########
+# open communication ports
+EXPOSE 8000 8080 3000
+
+# command ran during the docker building process
+CMD ["bash", "/app/run_app_fullstack_docker.sh"]
