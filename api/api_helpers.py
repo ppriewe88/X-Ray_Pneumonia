@@ -7,13 +7,13 @@ import os
 from fastapi import HTTPException
 from mlflow import MlflowClient
 import csv
-import time
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 import pandas as pd
 import seaborn as sns
 from pathlib import Path
 import random
+from datetime import datetime
 
 ' ##############################################################################################'
 ' ######################### image preprocessing, model loading, prediction #####################'
@@ -208,7 +208,17 @@ def make_prediction(model, image_as_array):
 
 def get_image_paths(n_samples):
     '''
-    Returns the paths of the images to be classified.
+    Returns a list of the paths of the images to be classified.
+    
+    Parameters
+    ----------
+    n_samples: int
+        Number of images to be classified.
+    
+    Returns
+    -------
+    selected_images: list of Path objects
+        List of image paths. 
     '''
     # Get absolute path of the project dir
     project_folder = Path(__file__).resolve().parent.parent
@@ -245,8 +255,98 @@ def get_image_paths(n_samples):
         
     return selected_images
 
-def classify_images():
-    pass
+def predict_log_switch(selected_image_paths):
+    """
+    Function that takes several image paths as input and classifies the
+    corresponding images, logs the results in csv form and optionally
+    in mlflow, and performs the switch between challenger and champion
+    when needed.
+    
+    Parameters
+    ----------
+    selected_images: list of Path objects
+        List of image paths returned by the get_image_paths() function. 
+    
+    Returns
+    -------
+    None
+    """
+    # set tracking uri for mlflow
+    mlflow.set_tracking_uri("http://127.0.0.1:8080")
+
+    # set model name
+    model_name = "Xray_classifier"
+    
+    # load all three models and save the outputs for later use
+    models = []
+    input_shapes = []
+    input_types = []
+    aliases = ["champion", "challenger", "baseline"]
+    
+    for alias in aliases:
+        # get model and signature
+        model, input_shape, input_type  = load_model_from_registry(model_name = model_name, alias = alias)
+        # store the outputs 
+        models.append(model)
+        input_shapes.append(input_shape)
+        input_types.append(input_type)
+        print(f"Model with alias {alias} loaded.")
+        
+    for i, image_file in enumerate(selected_image_paths):
+        
+        # get class from parent folder name
+        data_class = image_file.parent.name
+        label = 0 if data_class == "NORMAL" else 1
+        
+        api_timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        
+        # make predictions and logging for each of the three models
+        for alias, model, input_shape, input_type in zip(aliases, models, input_shapes, input_types):
+            
+            # get model version and tag for logging
+            model_version, model_tag = get_modelversion_and_tag(model_name=model_name, model_alias=alias)
+            
+            # open image and resize it according to model signature
+            with Image.open(image_file, "r") as img:
+                formatted_image = resize_image(image=img, signature_shape = input_shape, signature_dtype=input_type)
+            
+            # make prediction
+            y_pred = make_prediction(model, image_as_array=formatted_image)
+            accuracy_pred = int(label == np.around(y_pred))
+            
+            # logging and precalculations in csv-file
+            logged_csv_data = save_performance_data_csv(alias = alias, 
+                                                       timestamp = api_timestamp, 
+                                                       y_true = label, 
+                                                       y_pred = y_pred, 
+                                                       accuracy=accuracy_pred, 
+                                                       file_name=image_file.name, 
+                                                       model_version=model_version, 
+                                                       model_tag=model_tag)
+
+            # switch off mlflow tracking (if needed)
+            mlflow_tracking = False 
+            if mlflow_tracking:
+                # logging in mlflow performance runs, if switched on
+                save_performance_data_mlflow(log_counter = logged_csv_data["log_counter"], 
+                                                alias = alias, 
+                                                timestamp = logged_csv_data["timestamp"], 
+                                                y_true = label, 
+                                                y_pred = y_pred, 
+                                                accuracy = accuracy_pred, 
+                                                file_name = logged_csv_data["filename"], 
+                                                model_version = model_version, 
+                                                model_tag = model_tag)
+
+        # check if switch should be made
+        if check_challenger_takeover(last_n_predictions = 20, window = 50):
+            switch_champion_and_challenger()
+            # swap the challenger and champion aliases
+            # instead of loading the models again
+            aliases[0], aliases[1] = aliases[1], aliases[0]
+        
+        print(f"Prediction no. {i+1} of {len(selected_image_paths)} with class {data_class} done.")
+        
 ' ##############################################################################################'
 ' ######################### logging of prediction data #########################################'
 

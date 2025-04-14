@@ -4,7 +4,6 @@ from fastapi import FastAPI, UploadFile, File, Form, Query, Response
 from enum import Enum
 import mlflow
 import api_helpers as ah
-import time
 from datetime import datetime
 from fastapi.middleware.cors import CORSMiddleware # middleware. requirement for frontend-suitable endpoint
 import matplotlib.pyplot as plt
@@ -152,88 +151,25 @@ async def predict_several_images(
     n_samples: int
 ):
     """
-    Perform predictions on several images.
+    Classifies several images without needing to load the keras models several times.
+    The images are chosen randomly.
+    
+    Parameters
+    ----------
+    n_samples: int
+        Number of images to be classified.
+    
+    Returns
+    -------
+        String confirming that all images were succesfully classified.
     """
     
+    # get the image paths
     selected_image_paths = ah.get_image_paths(n_samples)
 
-    # set tracking uri for mlflow
-    mlflow.set_tracking_uri("http://127.0.0.1:8080")
-
-    # set model name
-    model_name = "Xray_classifier"
-    
-    # load all three models and save the outputs for later use
-    # probably need to write this block as a function, as it is used again later
-    models = []
-    input_shapes = []
-    input_types = []
-    aliases = ["champion", "challenger", "baseline"]
-    
-    for alias in aliases:
-        # get model and signature
-        model, input_shape, input_type  = ah.load_model_from_registry(model_name = model_name, alias = alias)
-        # store the outputs 
-        models.append(model)
-        input_shapes.append(input_shape)
-        input_types.append(input_type)
-        print(f"Model with alias {alias} loaded.")
-        
-    for i, image_file in enumerate(selected_image_paths):
-        
-        # get class from parent folder name
-        data_class = image_file.parent.name
-        label = Label.NEGATIVE.value if data_class == "NORMAL" else Label.POSITIVE.value
-        
-        api_timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-        
-        # make predictions and logging for each of the three models
-        for alias, model, input_shape, input_type in zip(aliases, models, input_shapes, input_types):
-            
-            # get model version and tag for logging
-            model_version, model_tag = ah.get_modelversion_and_tag(model_name=model_name, model_alias=alias)
-            
-            # open image and resize it according to model signature
-            with Image.open(image_file, "r") as img:
-                formatted_image = ah.resize_image(image=img, signature_shape = input_shape, signature_dtype=input_type)
-            
-            # make prediction
-            y_pred = ah.make_prediction(model, image_as_array=formatted_image)
-            accuracy_pred = int(label == np.around(y_pred))
-            
-            # logging and precalculations in csv-file
-            logged_csv_data = ah.save_performance_data_csv(alias = alias, 
-                                                       timestamp = api_timestamp, 
-                                                       y_true = label, 
-                                                       y_pred = y_pred, 
-                                                       accuracy=accuracy_pred, 
-                                                       file_name=image_file.name, 
-                                                       model_version=model_version, 
-                                                       model_tag=model_tag)
-
-            # switch off mlflow tracking (if needed)
-            mlflow_tracking = False 
-            if mlflow_tracking:
-                # logging in mlflow performance runs, if switched on
-                ah.save_performance_data_mlflow(log_counter = logged_csv_data["log_counter"], 
-                                                alias = alias, 
-                                                timestamp = logged_csv_data["timestamp"], 
-                                                y_true = label, 
-                                                y_pred = y_pred, 
-                                                accuracy = accuracy_pred, 
-                                                file_name = logged_csv_data["filename"], 
-                                                model_version = model_version, 
-                                                model_tag = model_tag)
-
-        # check if switch should be made
-        if ah.check_challenger_takeover(last_n_predictions = 20, window = 50):
-            ah.switch_champion_and_challenger()
-            # swap the challenger and champion aliases
-            aliases[0], aliases[1] = aliases[1], aliases[0]
-        
-        print(f"Prediction no. {i+1} of {len(selected_image_paths)} with class {data_class} done.")
+    # peform classification + logging + model switch when needed
+    ah.predict_log_switch(selected_image_paths)
        
-    
     return "All predictions done."
 
 ' ############################### frontend-suitable model serving/prediction endpoint ###############################'
